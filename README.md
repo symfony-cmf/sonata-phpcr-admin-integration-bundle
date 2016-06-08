@@ -1,4 +1,4 @@
-# Symfony CMF Seo Bundle
+# Symfony CMF Sonata Admin Bundle
 
 [![Build Status](https://secure.travis-ci.org/symfony-cmf/sonata-admin-bundle.png?branch=master)](http://travis-ci.org/symfony-cmf/sonata-admin-bundle)
 [![StyleCI](https://styleci.io/repos/16372913/shield)](https://styleci.io/repos/16372913)
@@ -8,8 +8,8 @@
 This bundle is part of the [Symfony Content Management Framework (CMF)](http://cmf.symfony.com/)
 and licensed under the [MIT License](LICENSE).
 
-It provides a solution to make content bundles
-aware for Search Engine Optimisation (SEO).
+It provides a Admin implementations for the following bundles:
+* CmfSeoBundle
 
 ## Requirements
 
