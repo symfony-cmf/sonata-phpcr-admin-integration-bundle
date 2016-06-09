@@ -9,7 +9,7 @@
 * file that was distributed with this source code.
 */
 
-$container->loadFromExtension('cmf_sonata_admin', [
+$container->loadFromExtension('cmf_sonata_admin_integration', [
     'bundles' => [
         'seo' =>[
             'enabled' => true,

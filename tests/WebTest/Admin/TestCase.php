@@ -1,9 +1,9 @@
 <?php
 
-namespace Symfony\Cmf\Bundle\SonataAdminBundle\Tests\WebTest\Admin;
+namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Tests\WebTest\Admin;
 
 use Symfony\Cmf\Component\Testing\Functional\BaseTestCase;
-use Symfony\Cmf\Bundle\SonataAdminBundle\Tests\Resources\DataFixtures\Phpcr\LoadContentData;
+use Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Tests\Resources\DataFixtures\Phpcr\LoadContentData;
 
 /**
  * @author Maximilian Berghoff <Maximilian.Berghoff@mayflower.de>

@@ -1,4 +1,4 @@
-cmf_sonata_admin:
+cmf_sonata_admin_integration:
     bundles:
         seo: ~
 

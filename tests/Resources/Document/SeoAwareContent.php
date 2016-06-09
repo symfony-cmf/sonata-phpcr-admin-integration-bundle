@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Cmf\Bundle\SonataAdminBundle\Tests\Resources\Document;
+namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Tests\Resources\Document;
 
 use Doctrine\ODM\PHPCR\Mapping\Annotations as PHPCRODM;
 use Symfony\Cmf\Bundle\SeoBundle\Model\SeoMetadataInterface;

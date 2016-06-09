@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Cmf\Bundle\SonataAdminBundle\Tests\Unit\DependencyInjection;
+namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Tests\Unit\DependencyInjection;
 
 use Matthias\SymfonyDependencyInjectionTest\PhpUnit\AbstractExtensionConfigurationTestCase;
-use Symfony\Cmf\Bundle\SonataAdminBundle\DependencyInjection\CmfSonataAdminExtension;
-use Symfony\Cmf\Bundle\SonataAdminBundle\DependencyInjection\Configuration;
+use Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\DependencyInjection\CmfSonataAdminIntegrationExtension;
+use Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\DependencyInjection\Configuration;
 
 /**
  * This test will try to cover all configs.
@@ -26,7 +26,7 @@ class ConfigurationTest extends AbstractExtensionConfigurationTestCase
 {
     protected function getContainerExtension()
     {
-        return new CmfSonataAdminExtension();
+        return new CmfSonataAdminIntegrationExtension();
     }
 
     protected function getConfiguration()

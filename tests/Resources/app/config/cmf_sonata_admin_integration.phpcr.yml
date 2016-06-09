@@ -13,15 +13,15 @@ cmf_routing:
 
 services:
      sonata.admin.seo_content:
-         class: Symfony\Cmf\Bundle\SonataAdminBundle\Tests\Resources\Admin\SeoAwareContentAdmin
+         class: Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Tests\Resources\Admin\SeoAwareContentAdmin
          tags:
             - { name: sonata.admin, manager_type: doctrine_phpcr, label_catalogue: CmfSeoBundle, group: dashboard.cmf, label: dashboard.label_seo_content, label_translator_strategy: sonata.admin.label.strategy.underscore}
          arguments:
             - ~
-            - Symfony\Cmf\Bundle\SonataAdminBundle\Tests\Resources\Document\SeoAwareContent
+            - Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Tests\Resources\Document\SeoAwareContent
             - SonataAdminBundle:CRUD
          calls:
-            - [ setTranslationDomain, [CmfSonataAdminBundle]]
+            - [ setTranslationDomain, [CmfSonataAdminIntegrationBundle]]
             - [ setRouteBuilder, ['@sonata.admin.route.path_info_slashes']]
             - [ setRootPath, [/test/content]]
 

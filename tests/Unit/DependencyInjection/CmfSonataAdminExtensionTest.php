@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Cmf\Bundle\SonataAdminBundle\Tests\Unit\DependencyInjection;
+namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Tests\Unit\DependencyInjection;
 
 use Matthias\SymfonyDependencyInjectionTest\PhpUnit\AbstractExtensionTestCase;
 use Symfony\Cmf\Bundle\SeoBundle\DependencyInjection\CmfSeoExtension;
-use Symfony\Cmf\Bundle\SonataAdminBundle\DependencyInjection\CmfSonataAdminExtension;
+use Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\DependencyInjection\CmfSonataAdminIntegrationExtension;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\DefinitionDecorator;
 use Symfony\Component\DependencyInjection\Reference;
@@ -26,7 +26,7 @@ class CmfSonataAdminExtensionTest extends AbstractExtensionTestCase
     protected function getContainerExtensions()
     {
         return array(
-            new CmfSonataAdminExtension(),
+            new CmfSonataAdminIntegrationExtension(),
         );
     }
 
@@ -51,6 +51,6 @@ class CmfSonataAdminExtensionTest extends AbstractExtensionTestCase
             ]
         ]);
 
-        $this->assertContainerBuilderHasParameter('cmf_sonata_admin.seo.form_group', 'seo_form');
+        $this->assertContainerBuilderHasParameter('cmf_sonata_admin_integration.seo.form_group', 'seo_form');
     }
 }

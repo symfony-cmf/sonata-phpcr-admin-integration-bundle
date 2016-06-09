@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Cmf\Bundle\SonataAdminBundle\Admin\Seo\Extension;
+namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Seo\Extension;
 
 use Sonata\AdminBundle\Admin\AdminExtension;
 use Sonata\AdminBundle\Admin\AdminInterface;

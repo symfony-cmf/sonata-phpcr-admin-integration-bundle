@@ -5,7 +5,7 @@
     >
 
     <testsuites>
-        <testsuite name="Cmf SonataAdminBundle Test Suite">
+        <testsuite name="Cmf SonataAdminIntegrationBundle Test Suite">
             <directory>./tests/Unit</directory>
         </testsuite>
 

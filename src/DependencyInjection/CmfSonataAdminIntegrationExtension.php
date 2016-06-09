@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Cmf\Bundle\SonataAdminBundle\DependencyInjection;
+namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\FileLocator;
@@ -20,7 +20,7 @@ use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 /**
  * @author Maximilian Berghoff <Maximilian.Berghoff@mayflower.de>
  */
-class CmfSonataAdminExtension extends Extension
+class CmfSonataAdminIntegrationExtension extends Extension
 {
 
     /**
@@ -48,11 +48,11 @@ class CmfSonataAdminExtension extends Extension
                         'To use advanced menu options, you need the burgov/key-value-form-bundle in your project.'
                     );
                 }
-                $container->setParameter(sprintf('cmf_sonata_admin.%s.form_group', $name), $config[$name]['form_group']);
+                $container->setParameter(sprintf('cmf_sonata_admin_integration.%s.form_group', $name), $config[$name]['form_group']);
             }
         }
     }
-    
+
     /**
      * {@inheritdoc}
      */

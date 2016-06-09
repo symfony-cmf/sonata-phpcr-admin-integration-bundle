@@ -1,6 +1,6 @@
 <?php
 
-namespace Symfony\Cmf\Bundle\SonataAdminBundle\DependencyInjection;
+namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\NodeBuilder;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
@@ -18,7 +18,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $treeBuilder->root('cmf_sonata_admin')
+        $treeBuilder->root('cmf_sonata_admin_integration')
             ->fixXmlConfig('bundle')
             ->children()
                 ->arrayNode('bundles')
