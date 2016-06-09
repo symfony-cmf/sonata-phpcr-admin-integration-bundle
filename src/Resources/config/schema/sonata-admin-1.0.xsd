@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xsd:schema xmlns="http://cmf.symfony.com/schema/dic/sonata-admin"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://cmf.symfony.com/schema/dic/sonata-admin"
+    elementFormDefault="qualified">
+
+    <xsd:element name="config" type="config" />
+
+    <xsd:complexType name="config">
+        <xsd:sequence>
+            <xsd:element name="bundle" type="bundle" minOccurs="0" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="bundle">
+        <xsd:attribute name="name" type="xsd:string" />
+        <xsd:attribute name="enabled" type="xsd:boolean" />
+        <xsd:attribute name="form-group" type="xsd:string" />
+    </xsd:complexType>
+
+</xsd:schema>

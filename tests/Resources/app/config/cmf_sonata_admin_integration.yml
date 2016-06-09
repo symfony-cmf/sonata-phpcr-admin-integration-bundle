@@ -1,0 +1,25 @@
+cmf_sonata_admin_integration:
+    bundles:
+        seo: ~
+
+framework:
+    translator: { enabled: true, fallback: en }
+    serializer: true
+
+cmf_seo:
+    title: "Default | %%content_title%%"
+    description: "Default description. %%content_description%%"
+    original_route_pattern: canonical
+
+cmf_routing:
+    chain:
+        routers_by_id:
+            cmf_routing.dynamic_router: 20
+            router.default: 100
+
+twig:
+    exception_controller: cmf_seo.error.suggestion_provider.controller:listAction
+
+cmf_core:
+    multilang:
+        locales: [en, de]

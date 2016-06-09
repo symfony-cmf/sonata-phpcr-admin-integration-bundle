@@ -1,9 +1,9 @@
 # Symfony CMF Sonata Admin Bundle
 
-[![Build Status](https://secure.travis-ci.org/symfony-cmf/sonata-admin-bundle.png?branch=master)](http://travis-ci.org/symfony-cmf/sonata-admin-bundle)
+[![Build Status](https://secure.travis-ci.org/symfony-cmf/sonata-admin-integration-bundle.png?branch=master)](http://travis-ci.org/symfony-cmf/sonata-admin-integration-bundle)
 [![StyleCI](https://styleci.io/repos/16372913/shield)](https://styleci.io/repos/16372913)
-[![Latest Stable Version](https://poser.pugx.org/symfony-cmf/sonata-admin-bundle/version.png)](https://packagist.org/packages/symfony-cmf/sonata-admin-bundle)
-[![Total Downloads](https://poser.pugx.org/symfony-cmf/sonata-admin-bundle/d/total.png)](https://packagist.org/packages/symfony-cmf/sonata-admin-bundle)
+[![Latest Stable Version](https://poser.pugx.org/symfony-cmf/sonata-admin-integration-bundle/version.png)](https://packagist.org/packages/symfony-cmf/sonata-admin-integration-bundle)
+[![Total Downloads](https://poser.pugx.org/symfony-cmf/sonata-admin-integration-bundle/d/total.png)](https://packagist.org/packages/symfony-cmf/sonata-admin-integration-bundle)
 
 This bundle is part of the [Symfony Content Management Framework (CMF)](http://cmf.symfony.com/)
 and licensed under the [MIT License](LICENSE).
@@ -20,7 +20,7 @@ It provides a Admin implementations for the following bundles:
 
 For the install guide and reference, see:
 
-* [CmfSonataAdminBundle documentation](http://symfony.com/doc/master/cmf/bundles/sonata-admin/index.html)
+* [CmfSonataAdminIntegrationBundle documentation](http://symfony.com/doc/master/cmf/bundles/sonata-admin/index.html)
 
 See also:
 
@@ -39,4 +39,4 @@ Unit and/or functional tests exist for this bundle. See the
 for a guide to running the tests.
 
 Thanks to 
-[everyone who has contributed](https://github.com/symfony-cmf/sonata-admin-bundle/contributors) already.
+[everyone who has contributed](https://github.com/symfony-cmf/sonata-admin-integration-bundle/contributors) already.

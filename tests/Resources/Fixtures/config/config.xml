@@ -1,0 +1,6 @@
+<container xmlns="http://symfony.com/schema/dic/services">
+
+    <config xmlns="http://cmf.symfony.com/schema/dic/sonata-admin">
+        <bundle name="seo" enabled="true" form-group="seo_form" />
+    </config>
+</container>

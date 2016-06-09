@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service
+                id="cmf_sonata_admin_integration.seo.admin_extension"
+                class="Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Seo\Extension\SeoContentAdminExtension">
+            <argument>%cmf_sonata_admin_integration.seo.form_group%</argument>
+            <tag name="sonata.admin.extension" />
+        </service>
+    </services>
+</container>
