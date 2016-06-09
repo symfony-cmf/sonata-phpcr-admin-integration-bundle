@@ -12,9 +12,8 @@
 namespace Symfony\Cmf\Bundle\SonataAdminBundle\Tests\Unit\DependencyInjection;
 
 use Matthias\SymfonyDependencyInjectionTest\PhpUnit\AbstractExtensionConfigurationTestCase;
-use Symfony\Cmf\Bundle\SeoBundle\DependencyInjection\CmfSeoExtension;
-use Symfony\Cmf\Bundle\SeoBundle\DependencyInjection\Configuration;
-use Symfony\Cmf\Bundle\SeoBundle\SeoPresentation;
+use Symfony\Cmf\Bundle\SonataAdminBundle\DependencyInjection\CmfSonataAdminExtension;
+use Symfony\Cmf\Bundle\SonataAdminBundle\DependencyInjection\Configuration;
 
 /**
  * This test will try to cover all configs.
@@ -27,7 +26,7 @@ class ConfigurationTest extends AbstractExtensionConfigurationTestCase
 {
     protected function getContainerExtension()
     {
-        return new CmfSeoExtension();
+        return new CmfSonataAdminExtension();
     }
 
     protected function getConfiguration()

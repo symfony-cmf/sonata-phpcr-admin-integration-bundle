@@ -18,7 +18,7 @@ use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\DefinitionDecorator;
 use Symfony\Component\DependencyInjection\Reference;
 
-class CmfSeoExtensionTest extends AbstractExtensionTestCase
+class CmfSonataAdminExtensionTest extends AbstractExtensionTestCase
 {
     /**
      * {@inheritdoc}

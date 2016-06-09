@@ -22,7 +22,7 @@ class XmlSchemaTest extends XmlSchemaTestCase
         }, ['config.xml']);
 
         foreach ($xmlFiles as $xmlFile) {
-            $this->assertSchemaAcceptsXml([$xmlFile], __DIR__.'/../../../Resources/config/schema/sonata-admin-1.0.xsd');
+            $this->assertSchemaAcceptsXml([$xmlFile], __DIR__.'/../../../src/Resources/config/schema/sonata-admin-1.0.xsd');
         }
     }
 }

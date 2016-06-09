@@ -52,4 +52,20 @@ class CmfSonataAdminExtension extends Extension
             }
         }
     }
+    
+    /**
+     * {@inheritdoc}
+     */
+    public function getNamespace()
+    {
+        return 'http://cmf.symfony.com/schema/dic/sonata-admin';
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getXsdValidationBasePath()
+    {
+        return __DIR__.'/../Resources/config/schema';
+    }
 }

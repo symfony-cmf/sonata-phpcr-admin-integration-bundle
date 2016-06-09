@@ -19,43 +19,29 @@ class Configuration implements ConfigurationInterface
     {
         $treeBuilder = new TreeBuilder();
         $treeBuilder->root('cmf_sonata_admin')
+            ->fixXmlConfig('bundle')
             ->children()
                 ->arrayNode('bundles')
-                    ->children()
-                        ->append($this->simpleBundle('seo'))
+                    ->useAttributeAsKey('name')
+                    ->prototype('array')
+                        ->addDefaultsIfNotSet()
+                        ->beforeNormalization()
+                            ->ifTrue(function ($v) { return is_scalar($v); })
+                            ->then(function ($v) {
+                                return ['enabled' => $v];
+                            })
+                        ->end()
+                        ->children()
+                            ->enumNode('enabled')
+                            ->values([true, false, 'auto'])
+                            ->defaultValue('auto')
+                            ->end()
+                            ->scalarNode('form_group')->defaultValue('form.group_seo')->end()
+                        ->end()
                     ->end()
                 ->end()
             ->end();
 
         return $treeBuilder;
-    }
-
-    /**
-     * Creates a simple bundle activation with a form group name configuration.
-     *
-     * @param $name
-     * @return mixed
-     */
-    private function simpleBundle($name)
-    {
-        $builder = new TreeBuilder();
-        $node = $builder->root($name);
-
-        return $node
-            ->addDefaultsIfNotSet()
-            ->beforeNormalization()
-                ->ifTrue(function ($v) { return is_scalar($v); })
-                ->then(function ($v) {
-                    return ['enabled' => $v];
-                })
-            ->end()
-            ->children()
-                ->enumNode('enabled')
-                    ->values([true, false, 'auto'])
-                    ->defaultValue('auto')
-                ->end()
-                ->scalarNode('form_group')->defaultValue('form.group_'.$name)->end()
-            ->end()
-        ;
     }
 }

@@ -1,0 +1,5 @@
+cmf_sonata_admin:
+    bundles:
+        seo:
+            enabled: true
+            form_group: seo_form
