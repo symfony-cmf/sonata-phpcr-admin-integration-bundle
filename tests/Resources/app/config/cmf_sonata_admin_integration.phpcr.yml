@@ -27,7 +27,7 @@ services:
 
 sonata_admin:
     extensions:
-        cmf_seo.admin_extension:
+        cmf_sonata_admin_integration.seo.admin_extension:
             implements:
                - Symfony\Cmf\Bundle\SeoBundle\SeoAwareInterface
     dashboard:
