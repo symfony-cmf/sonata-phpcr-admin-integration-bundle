@@ -16,7 +16,7 @@
         "php": "^5.3.9|^7.0",
         "symfony/framework-bundle": "^3.0",
         "sonata-project/doctrine-phpcr-admin-bundle": "^2.0",
-        "symfony-cmf/core-bundle": "dev-remove_sonata_admin"
+        "symfony-cmf/core-bundle": "dev-dev-remove_sonata_admin"
     },
     "require-dev": {
         "symfony-cmf/testing": "^1.3",
