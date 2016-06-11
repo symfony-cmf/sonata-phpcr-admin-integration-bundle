@@ -8,8 +8,13 @@
 
     <xsd:complexType name="config">
         <xsd:sequence>
+            <xsd:element name="dynamic" type="dynamic" minOccurs="1" />
             <xsd:element name="bundle" type="bundle" minOccurs="0" />
         </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="dynamic">
+        <xsd:attribute name="persistence" type="xsd:string" default="phpcr" />
     </xsd:complexType>
 
     <xsd:complexType name="bundle">
