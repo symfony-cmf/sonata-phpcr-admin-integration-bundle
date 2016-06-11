@@ -8,7 +8,7 @@ cmf_routing:
         enabled: true
         persistence:
             phpcr:
-                route_basepaths: [/test/routes]
+                route_basepaths: [/test/routing]
                 enabled: true
 
 services:
@@ -44,8 +44,8 @@ sonata_admin:
                 label: Content
                 items:
                     - sonata.admin.seo_content
-            route:
-                label: Route
+            routing:
+                label: URLs
                 items:
                     - cmf_sonata_admin_integration.route.admin
                     - cmf_sonata_admin_integration.route.redirect_route_admin
