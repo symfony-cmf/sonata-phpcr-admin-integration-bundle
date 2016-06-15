@@ -1,6 +1,6 @@
 # Symfony CMF Sonata Admin Bundle
 
-[![Build Status](https://secure.travis-ci.org/symfony-cmf/sonata-admin-integration-bundle.png?branch=master)](http://travis-ci.org/symfony-cmf/sonata-admin-integration-bundle)
+[![Build Status](https://travis-ci.org/symfony-cmf/sonata-admin-integration-bundle.svg?branch=routing_bundle)](https://travis-ci.org/symfony-cmf/sonata-admin-integration-bundle)
 [![StyleCI](https://styleci.io/repos/16372913/shield)](https://styleci.io/repos/16372913)
 [![Latest Stable Version](https://poser.pugx.org/symfony-cmf/sonata-admin-integration-bundle/version.png)](https://packagist.org/packages/symfony-cmf/sonata-admin-integration-bundle)
 [![Total Downloads](https://poser.pugx.org/symfony-cmf/sonata-admin-integration-bundle/d/total.png)](https://packagist.org/packages/symfony-cmf/sonata-admin-integration-bundle)
