@@ -30,7 +30,7 @@ class CmfSonataAdminExtensionTest extends AbstractExtensionTestCase
         );
     }
 
-    public function testDefaults()
+    public function testSeo()
     {
         $this->container->setParameter(
             'kernel.bundles',
@@ -43,14 +43,66 @@ class CmfSonataAdminExtensionTest extends AbstractExtensionTestCase
         );
 
         $this->load([
+            'dynamic' => [
+                'persistence' => 'phpcr',
+            ],
             'bundles' => [
                 'seo' =>[
                     'enabled' => true,
                     'form_group' => 'seo_form'
-                ]
+                ],
             ]
         ]);
 
         $this->assertContainerBuilderHasParameter('cmf_sonata_admin_integration.seo.form_group', 'seo_form');
+        $this->assertContainerBuilderHasServiceDefinitionWithTag(
+            'cmf_sonata_admin_integration.seo.admin_extension',
+            'sonata.admin.extension'
+        );
+    }
+
+    public function testRoute()
+    {
+        $this->container->setParameter(
+            'kernel.bundles',
+            array(
+                'CmfRoutingBundle' => true,
+                'SonataDoctrinePHPCRAdminBundle' => true,
+                'DoctrinePHPCRBundle' => true,
+                'BurgovKeyValueFormBundle' => true,
+            )
+        );
+
+        $this->load([
+            'dynamic' => [
+                'persistence' => 'phpcr',
+            ],
+            'bundles' => [
+                'route' =>[
+                    'enabled' => true,
+                    'form_group' => 'route_form',
+                    'admin_basepath' => '/some/path'
+                ],
+            ]
+        ]);
+
+        $this->assertContainerBuilderHasParameter('cmf_sonata_admin_integration.route.form_group', 'route_form');
+        $this->assertContainerBuilderHasParameter('cmf_sonata_admin_integration.route.admin_basepath', '/some/path');
+        $this->assertContainerBuilderHasServiceDefinitionWithTag(
+            'cmf_sonata_admin_integration.route.extension.route_referrers',
+            'sonata.admin.extension'
+        );
+        $this->assertContainerBuilderHasServiceDefinitionWithTag(
+            'cmf_sonata_admin_integration.route.extension.frontend_link',
+            'sonata.admin.extension'
+        );
+        $this->assertContainerBuilderHasService(
+            'cmf_sonata_admin_integration.route.admin',
+            'Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Route\RouteAdmin'
+        );
+        $this->assertContainerBuilderHasService(
+            'cmf_sonata_admin_integration.route.redirect_route_admin',
+            'Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Route\RedirectRouteAdmin'
+        );
     }
 }

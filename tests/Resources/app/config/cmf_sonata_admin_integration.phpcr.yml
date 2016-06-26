@@ -8,7 +8,7 @@ cmf_routing:
         enabled: true
         persistence:
             phpcr:
-                route_basepaths: [/test/routes]
+                route_basepaths: [/test/routing]
                 enabled: true
 
 services:
@@ -30,12 +30,25 @@ sonata_admin:
         cmf_sonata_admin_integration.seo.admin_extension:
             implements:
                - Symfony\Cmf\Bundle\SeoBundle\SeoAwareInterface
+        cmf_sonata_admin_integration.route.extension.frontend_link:
+           implements:
+               - Symfony\Cmf\Component\Routing\RouteReferrersReadInterface
+           extends:
+               - Symfony\Component\Routing\Route
+        cmf_sonata_admin_integration.route.route_referrers:
+            implements:
+                - Symfony\Cmf\Component\Routing\RouteReferrersInterface
     dashboard:
         groups:
             content:
                 label: Content
                 items:
                     - sonata.admin.seo_content
+            routing:
+                label: URLs
+                items:
+                    - cmf_sonata_admin_integration.route.admin
+                    - cmf_sonata_admin_integration.route.redirect_route_admin
 
 cmf_core:
     persistence:

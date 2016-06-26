@@ -32,25 +32,53 @@ class CmfSonataAdminIntegrationExtension extends Extension
         $config = $this->processConfiguration($configuration, $configs);
 
         $loader = new XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
-
+        if (isset($config['dynamic'])) {
+            $this->loadDynamic($config['dynamic'], $loader, $container);
+        }
         $this->loadBundles($config['bundles'], $loader, $container);
     }
 
-    private function loadBundles(array $config, XmlFileLoader $loader, $container)
+    private function loadBundles(array $config, XmlFileLoader $loader, ContainerBuilder $container)
     {
         $bundles = $container->getParameter('kernel.bundles');
-        foreach (['seo'] as $name) {
-            if ($this->isConfigEnabled($container, $config[$name])) {
+        $persistence = $container->getParameter('cmf_sonata_admin_integration.dynamic.persistence');
+        $bundleMapping = ['seo' => [], 'route' => ['phpcr']];
+        foreach ($bundleMapping as $name => $values) {
+            if (isset($config[$name]) && $this->isConfigEnabled($container, $config[$name])) {
                 $loader->load($name.'.xml');
+                if (in_array($persistence, $values)) {
+                    $loader->load(sprintf('%s_%s.xml', $name, $persistence));
+                }
 
                 if ('seo' === $name && !isset($bundles['BurgovKeyValueFormBundle'])) {
                     throw new InvalidConfigurationException(
                         'To use advanced menu options, you need the burgov/key-value-form-bundle in your project.'
                     );
                 }
-                $container->setParameter(sprintf('cmf_sonata_admin_integration.%s.form_group', $name), $config[$name]['form_group']);
+                $formGroup = 'form.group' === $config[$name]['form_group']
+                    ? $config[$name]['form_group'] . '_' . $name
+                    : $config[$name]['form_group'];
+                $container->setParameter(sprintf('cmf_sonata_admin_integration.%s.form_group', $name), $formGroup);
+
+                if (isset($config[$name]['admin_basepath'])) {
+                    // todo $basePath = $config['admin_basepath'] ?: reset($config['route_basepaths']);
+                    $container->setParameter(
+                        sprintf('cmf_sonata_admin_integration.%s.admin_basepath', $name),
+                        $config[$name]['admin_basepath']
+                    );
+                }
             }
         }
+    }
+
+    /**
+     * @param array $config
+     * @param XmlFileLoader $loader
+     * @param ContainerBuilder $container
+     */
+    private function loadDynamic(array $config, XmlFileLoader $loader, ContainerBuilder $container)
+    {
+        $container->setParameter('cmf_sonata_admin_integration.dynamic.persistence', $config['persistence']);
     }
 
     /**

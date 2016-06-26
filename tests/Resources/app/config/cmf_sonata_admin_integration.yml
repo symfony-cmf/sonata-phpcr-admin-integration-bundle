@@ -1,6 +1,10 @@
 cmf_sonata_admin_integration:
+    dynamic:
+        persistence: phpcr
     bundles:
         seo: ~
+        route:
+          admin_basepath: /test/routing
 
 framework:
     translator: { enabled: true, fallback: en }
@@ -16,9 +20,6 @@ cmf_routing:
         routers_by_id:
             cmf_routing.dynamic_router: 20
             router.default: 100
-
-twig:
-    exception_controller: cmf_seo.error.suggestion_provider.controller:listAction
 
 cmf_core:
     multilang:

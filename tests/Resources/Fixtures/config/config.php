@@ -10,10 +10,18 @@
 */
 
 $container->loadFromExtension('cmf_sonata_admin_integration', [
+    'dynamic' => [
+        'persistence' => 'phpcr',
+    ],
     'bundles' => [
         'seo' =>[
             'enabled' => true,
-            'form_group' => 'seo_form'
-        ]
+            'form_group' => 'seo_form',
+        ],
+        'route' =>[
+            'enabled' => true,
+            'form_group' => 'route_form',
+            'admin_basepath' => '/some/path',
+        ],
     ]
 ]);

@@ -37,11 +37,20 @@ class ConfigurationTest extends AbstractExtensionConfigurationTestCase
     public function testDefaultsForAllConfigFormats()
     {
         $expectedConfiguration = [
+            'dynamic' => [
+                'persistence' => 'phpcr',
+            ],
             'bundles' => [
                 'seo' =>[
                     'enabled' => true,
-                    'form_group' => 'seo_form'
-                ]
+                    'form_group' => 'seo_form',
+                    'admin_basepath' => null,
+                ],
+                'route' =>[
+                    'enabled' => true,
+                    'form_group' => 'route_form',
+                    'admin_basepath' => '/some/path',
+                ],
             ]
         ];
 
