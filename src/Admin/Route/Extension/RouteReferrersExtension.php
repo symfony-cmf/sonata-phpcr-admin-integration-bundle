@@ -23,21 +23,24 @@ use Sonata\CoreBundle\Form\Type\CollectionType;
  */
 class RouteReferrersExtension extends AdminExtension
 {
+    /**
+     * @var string
+     */
+    protected $formGroup;
+
+    /**
+     * @param string $formGroup group name to use for form mapper
+     */
+    public function __construct($formGroup = 'form.group_seo')
+    {
+        $this->formGroup = $formGroup;
+    }
+
     public function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->with('form.group_routes', array(
-                'translation_domain' => 'CmfRoutingBundle',
-            ))
-            ->add(
-                'routes',
-                CollectionType::class,
-                array(),
-                array(
-                    'edit' => 'inline',
-                    'inline' => 'table',
-                )
-            )
+            ->with($this->formGroup, ['translation_domain' => 'CmfRoutingBundle'])
+                ->add('routes', CollectionType::class, [], ['edit' => 'inline', 'inline' => 'table'])
             ->end()
         ;
     }

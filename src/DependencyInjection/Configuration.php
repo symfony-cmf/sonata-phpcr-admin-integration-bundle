@@ -45,7 +45,7 @@ class Configuration implements ConfigurationInterface
                                 ->values([true, false, 'auto'])
                                 ->defaultValue('auto')
                             ->end()
-                            ->scalarNode('form_group')->defaultValue('form.group_seo')->end()
+                            ->scalarNode('form_group')->defaultValue('form.group')->end()
                             ->scalarNode('admin_basepath')->defaultNull()->end()
                         ->end()
                     ->end()

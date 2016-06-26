@@ -38,7 +38,7 @@ class RedirectRouteAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->with('form.group_general')
+            ->with('form.group_general', ['translation_domain' => 'CmfSonataAdminIntegrationBundle'])
                 ->add('parentDocument', TreeModelType::class, array('choice_list' => array(), 'select_root_node' => true, 'root_node' => $this->routeRoot))
                 ->add('name', TextType::class)
                 ->add('routeName', TextType::class, array('required' => false))

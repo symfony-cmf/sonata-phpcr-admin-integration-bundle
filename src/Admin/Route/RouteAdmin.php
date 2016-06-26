@@ -26,7 +26,7 @@ use PHPCR\Util\PathHelper;
 
 class RouteAdmin extends Admin
 {
-    protected $translationDomain = 'CmfRoutingBundle';
+    protected $translationDomain = 'CmfSonataAdminIntegrationBundle';
 
     /**
      * Root path for the route parent selection.
@@ -64,28 +64,22 @@ class RouteAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->with('form.group_general', array(
-                'translation_domain' => 'CmfRoutingBundle',
-            ))
+            ->with('form.group_general', ['translation_domain' => 'CmfSonataAdminIntegrationBundle'])
                 ->add(
                     'parentDocument',
                     TreeModelType::class,
-                    array('choice_list' => array(), 'select_root_node' => true, 'root_node' => $this->routeRoot)
+                    ['choice_list' => [], 'select_root_node' => true, 'root_node' => $this->routeRoot]
                 )
                 ->add('name', TextType::class)
         ->end();
 
         if (null === $this->getParentFieldDescription()) {
             $formMapper
-                ->with('form.group_general', array(
-                    'translation_domain' => 'CmfRoutingBundle',
-                ))
-                    ->add('content', TreeModelType::class, array('choice_list' => array(), 'required' => false, 'root_node' => $this->contentRoot))
+                ->with('form.group_general', ['translation_domain' => 'CmfSonataAdminIntegrationBundle'])
+                    ->add('content', TreeModelType::class, ['choice_list' => [], 'required' => false, 'root_node' => $this->contentRoot])
                 ->end()
-                ->with('form.group_advanced', array(
-                    'translation_domain' => 'CmfRoutingBundle',
-                ))
-                    ->add('variablePattern', TextType::class, array('required' => false), array('help' => 'form.help_variable_pattern'))
+                ->with('form.group_advanced', ['translation_domain' => 'CmfSonataAdminIntegrationBundle'])
+                    ->add('variablePattern', TextType::class, ['required' => false], ['help' => 'form.help_variable_pattern'])
                     ->add(
                         'defaults',
                         ImmutableArrayType::class,
@@ -94,8 +88,8 @@ class RouteAdmin extends Admin
                     ->add(
                         'options',
                         ImmutableArrayType::class,
-                        array('keys' => $this->configureFieldsForOptions($this->getSubject()->getOptions())),
-                        array('help' => 'form.help_options')
+                        ['keys' => $this->configureFieldsForOptions($this->getSubject()->getOptions())],
+                        ['help' => 'form.help_options']
                     )
                 ->end()
             ->end();
@@ -131,7 +125,7 @@ class RouteAdmin extends Admin
 
     public function getExportFormats()
     {
-        return array();
+        return [];
     }
 
     /**
@@ -191,9 +185,9 @@ class RouteAdmin extends Admin
     protected function configureFieldsForOptions(array $dynamicOptions)
     {
         $options = array(
-            'add_locale_pattern' => array('add_locale_pattern', CheckboxType::class, array('required' => false, 'label' => 'form.label_add_locale_pattern', 'translation_domain' => 'CmfRoutingBundle')),
-            'add_format_pattern' => array('add_format_pattern', CheckboxType::class, array('required' => false, 'label' => 'form.label_add_format_pattern', 'translation_domain' => 'CmfRoutingBundle')),
-            'add_trailing_slash' => array('add_trailing_slash', CheckboxType::class, array('required' => false, 'label' => 'form.label_add_trailing_slash', 'translation_domain' => 'CmfRoutingBundle')),
+            'add_locale_pattern' => array('add_locale_pattern', CheckboxType::class, array('required' => false, 'label' => 'form.label_add_locale_pattern', 'translation_domain' => 'CmfSonataAdminIntegrationBundle')),
+            'add_format_pattern' => array('add_format_pattern', CheckboxType::class, array('required' => false, 'label' => 'form.label_add_format_pattern', 'translation_domain' => 'CmfSonataAdminIntegrationBundle')),
+            'add_trailing_slash' => array('add_trailing_slash', CheckboxType::class, array('required' => false, 'label' => 'form.label_add_trailing_slash', 'translation_domain' => 'CmfSonataAdminIntegrationBundle')),
         );
 
         foreach ($dynamicOptions as $name => $value) {

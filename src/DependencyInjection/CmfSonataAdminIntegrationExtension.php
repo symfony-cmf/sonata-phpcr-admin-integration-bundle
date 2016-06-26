@@ -55,10 +55,10 @@ class CmfSonataAdminIntegrationExtension extends Extension
                         'To use advanced menu options, you need the burgov/key-value-form-bundle in your project.'
                     );
                 }
-                $container->setParameter(
-                    sprintf('cmf_sonata_admin_integration.%s.form_group', $name),
-                    $config[$name]['form_group']
-                );
+                $formGroup = 'form.group' === $config[$name]['form_group']
+                    ? $config[$name]['form_group'] . '_' . $name
+                    : $config[$name]['form_group'];
+                $container->setParameter(sprintf('cmf_sonata_admin_integration.%s.form_group', $name), $formGroup);
 
                 if (isset($config[$name]['admin_basepath'])) {
                     // todo $basePath = $config['admin_basepath'] ?: reset($config['route_basepaths']);

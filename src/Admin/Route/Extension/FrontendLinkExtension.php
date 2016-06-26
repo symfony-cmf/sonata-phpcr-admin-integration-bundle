@@ -61,7 +61,12 @@ class FrontendLinkExtension extends AdminExtension
     }
 
     /**
-     * @throws InvalidConfigurationException
+     * @param AdminInterface    $admin
+     * @param MenuItemInterface $menu
+     * @param string            $action
+     * @param AdminInterface    $childAdmin
+     *
+     * @return mixed|void
      */
     public function configureTabMenu(
         AdminInterface $admin,
@@ -87,7 +92,7 @@ class FrontendLinkExtension extends AdminExtension
             return;
         }
 
-        $defaults = array();
+        $defaults = [];
         if ($subject instanceof TranslatableInterface) {
             if ($locale = $subject->getLocale()) {
                 $defaults['_locale'] = $locale;
@@ -102,20 +107,20 @@ class FrontendLinkExtension extends AdminExtension
         }
 
         $menu->addChild(
-            $this->translator->trans('admin.menu_frontend_link_caption', array(), 'CmfRoutingBundle'),
-            array(
+            $this->translator->trans('admin.menu_frontend_link_caption', [], 'CmfSonataAdminIntegrationBundle'),
+            [
                 'uri' => $uri,
-                'attributes' => array(
+                'attributes' => [
                     'class' => 'sonata-admin-menu-item',
                     'role' => 'menuitem',
-                ),
-                'linkAttributes' => array(
+                ],
+                'linkAttributes' => [
                     'class' => 'sonata-admin-frontend-link',
                     'role' => 'button',
                     'target' => '_blank',
-                    'title' => $this->translator->trans('admin.menu_frontend_link_title', array(), 'CmfRoutingBundle'),
-                ),
-            )
+                    'title' => $this->translator->trans('admin.menu_frontend_link_title', [], 'CmfSonataAdminIntegrationBundle'),
+                ],
+            ]
         );
     }
 }
