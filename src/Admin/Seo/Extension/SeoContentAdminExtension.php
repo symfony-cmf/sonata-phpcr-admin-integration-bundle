@@ -71,10 +71,13 @@ class SeoContentAdminExtension extends AdminExtension
         if (!$seoAware instanceof TranslatableInterface) {
             return;
         }
+
         $seoMetadata = $seoAware->getSeoMetadata();
+
         if (!$seoMetadata instanceof TranslatableInterface) {
             return;
         }
+
         $seoMetadata->setLocale($seoAware->getLocale());
     }
 }

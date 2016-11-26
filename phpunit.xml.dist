@@ -9,7 +9,7 @@
             <directory>./tests/Unit</directory>
         </testsuite>
 
-        <testsuite name="admin">
+        <testsuite name="phpcr">
             <directory>./tests/WebTest</directory>
         </testsuite>
     </testsuites>
