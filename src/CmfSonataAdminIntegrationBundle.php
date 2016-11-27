@@ -12,16 +12,7 @@
 namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
-use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\DependencyInjection\Factory;
 
 class CmfSonataAdminIntegrationBundle extends Bundle
 {
-    public function build(ContainerBuilder $container)
-    {
-        parent::build($container);
-
-        $extension = $container->getExtension('cmf_sonata_admin_integration');
-        $extension->registerAdminFactory(new Factory\SeoAdminFactory());
-    }
 }

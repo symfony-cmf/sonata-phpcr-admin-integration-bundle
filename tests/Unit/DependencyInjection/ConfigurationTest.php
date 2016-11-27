@@ -32,7 +32,9 @@ class ConfigurationTest extends AbstractExtensionConfigurationTestCase
 
     protected function getConfiguration()
     {
-        return new Configuration([new Factory\SeoAdminFactory()]);
+        return new Configuration([
+            'seo' => new Factory\SeoAdminFactory(),
+        ]);
     }
 
     public function testDefaultsForAllConfigFormats()

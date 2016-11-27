@@ -30,10 +30,16 @@ class CmfSonataAdminIntegrationExtension extends Extension
     private $factories;
 
     /**
-     * @param AdminFactoryInterface[] $factories A list of Admin factories
+     * @param null|AdminFactoryInterface[] $factories A list of Admin factories
      */
-    public function __construct(array $factories = [])
+    public function __construct(array $factories = null)
     {
+        if (null === $factories) {
+            $factories = [
+                'seo' => new Factory\SeoAdminFactory(),
+            ];
+        }
+
         $this->factories = $factories;
     }
 
