@@ -14,6 +14,7 @@ namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Tests\Unit\DependencyI
 use Matthias\SymfonyDependencyInjectionTest\PhpUnit\AbstractExtensionTestCase;
 use Symfony\Cmf\Bundle\SeoBundle\DependencyInjection\CmfSeoExtension;
 use Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\DependencyInjection\CmfSonataAdminIntegrationExtension;
+use Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\DependencyInjection\Factory;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\DefinitionDecorator;
 use Symfony\Component\DependencyInjection\Reference;
@@ -26,7 +27,9 @@ class CmfSonataAdminExtensionTest extends AbstractExtensionTestCase
     protected function getContainerExtensions()
     {
         return array(
-            new CmfSonataAdminIntegrationExtension(),
+            new CmfSonataAdminIntegrationExtension([
+                'seo' => new Factory\SeoAdminFactory(),
+            ]),
         );
     }
 

@@ -8,14 +8,14 @@
 
     <xsd:complexType name="config">
         <xsd:sequence>
-            <xsd:element name="bundle" type="bundle" minOccurs="0" />
+            <xsd:element name="bundles" type="bundles" minOccurs="0" maxOccurs="1" />
         </xsd:sequence>
     </xsd:complexType>
 
-    <xsd:complexType name="bundle">
-        <xsd:attribute name="name" type="xsd:string" />
-        <xsd:attribute name="enabled" type="xsd:boolean" />
-        <xsd:attribute name="form-group" type="xsd:string" />
+    <xsd:complexType name="bundles">
+        <xsd:sequence>
+            <xsd:any minOccurs="0" processContents="skip" />
+        </xsd:sequence>
     </xsd:complexType>
 
 </xsd:schema>
