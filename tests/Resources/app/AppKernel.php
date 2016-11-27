@@ -29,17 +29,18 @@ class AppKernel extends TestKernel
 
         $this->addBundles(array(
             new Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\CmfSonataAdminIntegrationBundle(),
-            new \Sonata\SeoBundle\SonataSeoBundle(),
-            new \Symfony\Cmf\Bundle\SeoBundle\CmfSeoBundle(),
-            new \Burgov\Bundle\KeyValueFormBundle\BurgovKeyValueFormBundle(),
-            new \Symfony\Cmf\Bundle\RoutingBundle\CmfRoutingBundle(),
-            new \Symfony\Cmf\Bundle\CoreBundle\CmfCoreBundle(),
+            new Sonata\SeoBundle\SonataSeoBundle(),
+            new Symfony\Cmf\Bundle\SeoBundle\CmfSeoBundle(),
+            new Symfony\Cmf\Bundle\MenuBundle\CmfMenuBundle(),
+            new Symfony\Cmf\Bundle\RoutingBundle\CmfRoutingBundle(),
+            new Symfony\Cmf\Bundle\CoreBundle\CmfCoreBundle(),
+            new Burgov\Bundle\KeyValueFormBundle\BurgovKeyValueFormBundle(),
         ));
 
         if (class_exists('Symfony\Cmf\Bundle\ResourceRestBundle\CmfResourceRestBundle')) {
             $this->addBundles(array(
-                new \Symfony\Cmf\Bundle\ResourceBundle\CmfResourceBundle(),
-                new \Symfony\Cmf\Bundle\ResourceRestBundle\CmfResourceRestBundle(),
+                new Symfony\Cmf\Bundle\ResourceBundle\CmfResourceBundle(),
+                new Symfony\Cmf\Bundle\ResourceRestBundle\CmfResourceRestBundle(),
             ));
         }
     }

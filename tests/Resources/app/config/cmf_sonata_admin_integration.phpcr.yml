@@ -2,6 +2,11 @@ cmf_seo:
     persistence: { phpcr: true }
     alternate_locale: ~
 
+cmf_menu:
+    persistence:
+        phpcr:
+            menu_basepath: /test/menus
+
 cmf_routing:
     dynamic:
         locales: [de, en]
@@ -12,24 +17,36 @@ cmf_routing:
                 enabled: true
 
 services:
-     sonata.admin.seo_content:
-         class: Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Tests\Resources\Admin\SeoAwareContentAdmin
-         tags:
+    sonata.admin.seo_content:
+        class: Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Tests\Resources\Admin\SeoAwareContentAdmin
+        tags:
             - { name: sonata.admin, manager_type: doctrine_phpcr, label_catalogue: CmfSeoBundle, group: dashboard.cmf, label: dashboard.label_seo_content, label_translator_strategy: sonata.admin.label.strategy.underscore}
-         arguments:
+        arguments:
             - ~
             - Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Tests\Resources\Document\SeoAwareContent
             - SonataAdminBundle:CRUD
-         calls:
+        calls:
             - [ setTranslationDomain, [CmfSonataAdminIntegrationBundle]]
             - [ setRouteBuilder, ['@sonata.admin.route.path_info_slashes']]
             - [ setRootPath, [/test/content]]
+
+    sonata.admin.menu:
+        class: Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Tests\Resources\Admin\MenuContentAdmin
+        tags:
+            - { name: sonata.admin, manager_type: doctrine_phpcr, group: Test, label: Test Content }
+        arguments:
+            - ~
+            - Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Tests\Resources\Document\MenuContent
+            - SonataAdminBundle:CRUD
 
 sonata_admin:
     extensions:
         cmf_sonata_admin_integration.seo.admin_extension:
             implements:
                - Symfony\Cmf\Bundle\SeoBundle\SeoAwareInterface
+        cmf_sonata_admin_integration.menu.extension.menu_node_referrers:
+            implements:
+                - Symfony\Cmf\Bundle\MenuBundle\Model\MenuNodeReferrersInterface
     dashboard:
         groups:
             content:
@@ -41,3 +58,7 @@ cmf_core:
     persistence:
         phpcr:
             basepath: /test
+
+cmf_sonata_admin_integration:
+    bundles:
+        menu: ~
