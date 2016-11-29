@@ -17,6 +17,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 use Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\DependencyInjection\Factory\AdminFactoryInterface;
+use Symfony\Cmf\Bundle\SeoBundle\CmfSeoBundle;
 
 /**
  * @author Maximilian Berghoff <Maximilian.Berghoff@mayflower.de>
@@ -34,13 +35,19 @@ class CmfSonataAdminIntegrationExtension extends Extension
      */
     public function __construct(array $factories = null)
     {
-        if (null === $factories) {
-            $factories = [
-                'seo' => new Factory\SeoAdminFactory(),
+        if (null !== $factories) {
+            $this->factories = $factories;
+        } else {
+            $bundles = [
+                CmfSeoBundle::class => new Factory\SeoAdminFactory(),
             ];
-        }
 
-        $this->factories = $factories;
+            foreach ($bundles as $bundleFqcn => $factory) {
+                if (class_exists($bundleFqcn)) {
+                    $this->registerAdminFactory($factory);
+                }
+            }
+        }
     }
 
     /**
