@@ -17,7 +17,6 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 use Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\DependencyInjection\Factory\AdminFactoryInterface;
-use Symfony\Cmf\Bundle\SeoBundle\CmfSeoBundle;
 
 /**
  * @author Maximilian Berghoff <Maximilian.Berghoff@mayflower.de>
@@ -26,7 +25,7 @@ use Symfony\Cmf\Bundle\SeoBundle\CmfSeoBundle;
 class CmfSonataAdminIntegrationExtension extends Extension
 {
     /**
-     * @var AdminFactoryInterface[]
+     * @var null|AdminFactoryInterface[]
      */
     private $factories;
 
@@ -35,19 +34,7 @@ class CmfSonataAdminIntegrationExtension extends Extension
      */
     public function __construct(array $factories = null)
     {
-        if (null !== $factories) {
-            $this->factories = $factories;
-        } else {
-            $bundles = [
-                CmfSeoBundle::class => new Factory\SeoAdminFactory(),
-            ];
-
-            foreach ($bundles as $bundleFqcn => $factory) {
-                if (class_exists($bundleFqcn)) {
-                    $this->registerAdminFactory($factory);
-                }
-            }
-        }
+        $this->factories = $factories;
     }
 
     /**
@@ -55,6 +42,8 @@ class CmfSonataAdminIntegrationExtension extends Extension
      */
     public function load(array $configs, ContainerBuilder $container)
     {
+        $this->defineFactories($container);
+
         $configuration = new Configuration($this->factories);
         $config = $this->processConfiguration($configuration, $configs);
 
@@ -99,5 +88,23 @@ class CmfSonataAdminIntegrationExtension extends Extension
     public function getXsdValidationBasePath()
     {
         return __DIR__.'/../Resources/config/schema';
+    }
+
+    private function defineFactories(ContainerBuilder $container)
+    {
+        if (null !== $this->factories) {
+            return;
+        }
+
+        $bundles = [
+            'CmfSeoBundle' => new Factory\SeoAdminFactory(),
+        ];
+        $enabledBundles = $container->getParameter('kernel.bundles');
+
+        foreach ($bundles as $bundleName => $factory) {
+            if (isset($enabledBundles[$bundleName])) {
+                $this->registerAdminFactory($factory);
+            }
+        }
     }
 }

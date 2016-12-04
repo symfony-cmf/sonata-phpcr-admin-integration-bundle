@@ -35,6 +35,7 @@ class CmfSonataAdminExtensionTest extends AbstractExtensionTestCase
         $this->container->setParameter(
             'kernel.bundles',
             array(
+                'CmfSeoBundle' => true,
                 'CmfRoutingBundle' => true,
                 'SonataDoctrinePHPCRAdminBundle' => true,
                 'DoctrinePHPCRBundle' => true,
