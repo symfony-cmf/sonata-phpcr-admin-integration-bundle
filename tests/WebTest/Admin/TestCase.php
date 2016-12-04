@@ -25,6 +25,8 @@ abstract class TestCase extends BaseTestCase
     }
 
     abstract public function testAdminExtensionExists();
+
     abstract public function testItemEditView();
+
     abstract public function testItemCreate();
 }
