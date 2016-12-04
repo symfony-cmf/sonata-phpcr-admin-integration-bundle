@@ -101,6 +101,7 @@ class CmfSonataAdminIntegrationExtension extends Extension implements CompilerPa
             'CmfSeoBundle' => new Factory\SeoAdminFactory(),
             'CmfMenuBundle' => new Factory\MenuAdminFactory(),
             'CmfRoutingBundle' => new Factory\RoutingAdminFactory(),
+            'CmfCoreBundle' => new Factory\CoreAdminFactory(),
         ];
         $enabledBundles = $container->getParameter('kernel.bundles');
 
