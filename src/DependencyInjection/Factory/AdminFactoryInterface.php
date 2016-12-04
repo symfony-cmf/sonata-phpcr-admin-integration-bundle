@@ -16,7 +16,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 
 /**
- * Admin factories enable new admin classes to be made available by this 
+ * Admin factories enable new admin classes to be made available by this
  * integration.
  *
  * @author Wouter de Jong <wouter@wouterj.nl>

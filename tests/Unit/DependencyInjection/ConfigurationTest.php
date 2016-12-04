@@ -41,11 +41,11 @@ class ConfigurationTest extends AbstractExtensionConfigurationTestCase
     {
         $expectedConfiguration = [
             'bundles' => [
-                'seo' =>[
+                'seo' => [
                     'enabled' => true,
-                    'form_group' => 'seo_form'
-                ]
-            ]
+                    'form_group' => 'seo_form',
+                ],
+            ],
         ];
 
         $sources = array_map(function ($path) {
@@ -58,5 +58,4 @@ class ConfigurationTest extends AbstractExtensionConfigurationTestCase
 
         $this->assertProcessedConfigurationEquals($expectedConfiguration, $sources);
     }
-
 }

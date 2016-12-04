@@ -12,11 +12,7 @@
 namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Tests\Unit\DependencyInjection;
 
 use Matthias\SymfonyDependencyInjectionTest\PhpUnit\AbstractExtensionTestCase;
-use Symfony\Cmf\Bundle\SeoBundle\DependencyInjection\CmfSeoExtension;
 use Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\DependencyInjection\CmfSonataAdminIntegrationExtension;
-use Symfony\Component\DependencyInjection\Definition;
-use Symfony\Component\DependencyInjection\DefinitionDecorator;
-use Symfony\Component\DependencyInjection\Reference;
 
 class CmfSonataAdminExtensionTest extends AbstractExtensionTestCase
 {
@@ -47,9 +43,9 @@ class CmfSonataAdminExtensionTest extends AbstractExtensionTestCase
             'bundles' => [
                 'seo' => [
                     'enabled' => true,
-                    'form_group' => 'seo_form'
+                    'form_group' => 'seo_form',
                 ],
-            ]
+            ],
         ]);
 
         $this->assertContainerBuilderHasParameter('cmf_sonata_admin_integration.seo.form_group', 'seo_form');
