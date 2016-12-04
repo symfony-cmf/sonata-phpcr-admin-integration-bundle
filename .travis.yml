@@ -13,18 +13,19 @@ cache:
     - $HOME/.composer/cache/files
 
 env:
-  - SYMFONY_VERSION=3.0.* SYMFONY_DEPRECATIONS_HELPER=286
+  matrix: SYMFONY_VERSION=3.2.*
+  global: SYMFONY_DEPRECATIONS_HELPER=216 SYMFONY_PHPUNIT_REMOVE="symfony/yaml"
 
 matrix:
   include:
     - php: 7.0
       env: DEPS=dev SYMFONY_VERSION=3.3.*
-    - php: 5.3
+    - php: 5.5
       env: SYMFONY_VERSION=2.8.* COMPOSER_FLAGS="--prefer-lowest"
     - php: 7.0
-      env: DEPS=dev COMPOSER_FLAGS="--prefer-stable" SYMFONY_VERSION=3.1.*
+      env: DEPS=dev COMPOSER_FLAGS="--prefer-stable" SYMFONY_VERSION=3.0.*
     - php: 7.0
-      env: DEPS=dev COMPOSER_FLAGS="--prefer-stable" SYMFONY_VERSION=3.2.*
+      env: DEPS=dev COMPOSER_FLAGS="--prefer-stable" SYMFONY_VERSION=3.1.*
   fast_finish: true
 
 before_install:
@@ -36,7 +37,7 @@ before_install:
   
 install: composer update --prefer-dist $COMPOSER_FLAGS
 
-script: phpunit
+script: vendor/bin/simple-phpunit
 
 notifications:
   irc: "irc.freenode.org#symfony-cmf"
