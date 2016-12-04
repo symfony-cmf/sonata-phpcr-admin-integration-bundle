@@ -2,7 +2,11 @@ cmf_sonata_admin_integration:
     bundles:
         seo: ~
         core:
-          extensions: ~
+          extensions:
+            publishable:
+              form_group: "FORM_publish"
+            publish_time:
+              form_group: "FORM_publish_time"
 
 framework:
     translator: { enabled: true, fallback: en }
