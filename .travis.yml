@@ -13,7 +13,7 @@ cache:
     - $HOME/.composer/cache/files
 
 env:
-  matrix: SYMFONY_VERSION=3.2.*
+  matrix: SYMFONY_VERSION=3.1.*
   global: SYMFONY_DEPRECATIONS_HELPER=216 SYMFONY_PHPUNIT_REMOVE="symfony/yaml"
 
 matrix:
@@ -25,7 +25,7 @@ matrix:
     - php: 7.0
       env: DEPS=dev COMPOSER_FLAGS="--prefer-stable" SYMFONY_VERSION=3.0.*
     - php: 7.0
-      env: DEPS=dev COMPOSER_FLAGS="--prefer-stable" SYMFONY_VERSION=3.1.*
+      env: DEPS=dev COMPOSER_FLAGS="--prefer-stable" SYMFONY_VERSION=3.2.*
   fast_finish: true
 
 before_install:
