@@ -10,11 +10,9 @@ cmf_menu:
 cmf_routing:
     dynamic:
         locales: [de, en]
-        enabled: true
         persistence:
             phpcr:
-                route_basepaths: [/test/routes]
-                enabled: true
+                route_basepaths: [/test/routing]
 
 services:
     sonata.admin.seo_content:
@@ -47,6 +45,11 @@ sonata_admin:
         cmf_sonata_admin_integration.menu.extension.menu_node_referrers:
             implements:
                 - Symfony\Cmf\Bundle\MenuBundle\Model\MenuNodeReferrersInterface
+        cmf_sonata_admin_integration.routing.extension.frontend_link:
+            implements:
+                - Symfony\Cmf\Component\Routing\RouteReferrersReadInterface
+            extends:
+                - Symfony\Component\Routing\Route
     dashboard:
         groups:
             content:
@@ -62,3 +65,5 @@ cmf_core:
 cmf_sonata_admin_integration:
     bundles:
         menu: ~
+        routing:
+            basepath: /test/routing
