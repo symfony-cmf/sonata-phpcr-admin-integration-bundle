@@ -25,24 +25,16 @@ use Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\DependencyInjection\Factory\
 class CmfSonataAdminIntegrationExtension extends Extension
 {
     /**
-     * @var null|AdminFactoryInterface[]
+     * @var AdminFactoryInterface[]
      */
-    private $factories;
-
-    /**
-     * @param null|AdminFactoryInterface[] $factories A list of Admin factories
-     */
-    public function __construct(array $factories = null)
-    {
-        $this->factories = $factories;
-    }
+    private $factories = [];
 
     /**
      * {@inheritdoc}
      */
     public function load(array $configs, ContainerBuilder $container)
     {
-        $this->defineFactories($container);
+        $this->addDefaultFactories($container);
 
         $configuration = new Configuration($this->factories);
         $config = $this->processConfiguration($configuration, $configs);
@@ -90,12 +82,8 @@ class CmfSonataAdminIntegrationExtension extends Extension
         return __DIR__.'/../Resources/config/schema';
     }
 
-    private function defineFactories(ContainerBuilder $container)
+    private function addDefaultFactories(ContainerBuilder $container)
     {
-        if (null !== $this->factories) {
-            return;
-        }
-
         $bundles = [
             'CmfSeoBundle' => new Factory\SeoAdminFactory(),
         ];
