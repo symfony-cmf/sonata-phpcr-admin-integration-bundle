@@ -61,7 +61,6 @@ class CmfSonataAdminIntegrationExtension extends Extension implements CompilerPa
         foreach ($this->factories as $name => $factory) {
             if ($this->isConfigEnabled($container, $config[$name])) {
                 $factory->create($config[$name], $container, $loader);
-
             }
         }
     }
