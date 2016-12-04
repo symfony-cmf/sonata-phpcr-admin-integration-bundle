@@ -2,10 +2,8 @@
 
 namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Tests\Resources\Document;
 
-use Symfony\Cmf\Bundle\CoreBundle\Model\ChildInterface;
 use Symfony\Cmf\Bundle\CoreBundle\PublishWorkflow\PublishableInterface;
 use Symfony\Cmf\Bundle\CoreBundle\PublishWorkflow\PublishTimePeriodInterface;
-
 use Doctrine\ODM\PHPCR\Mapping\Annotations as PHPCRODM;
 
 /**

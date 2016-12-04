@@ -54,7 +54,7 @@ class ConfigurationTest extends AbstractExtensionConfigurationTestCase
                         'publish_time' => ['form_group' => 'form.group_publish_workflow'],
                         'translatable' => ['form_group' => 'form.group_general'],
                     ],
-                ]
+                ],
             ],
         ];
 
