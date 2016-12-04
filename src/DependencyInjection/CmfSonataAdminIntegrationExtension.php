@@ -53,10 +53,10 @@ class CmfSonataAdminIntegrationExtension extends Extension implements CompilerPa
 
         $loader = new XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
 
-        $this->loadByBundles($config['bundles'], $loader, $container);
+        $this->loadBundles($config['bundles'], $loader, $container);
     }
 
-    private function loadByBundles(array $config, XmlFileLoader $loader, ContainerBuilder $container)
+    private function loadBundles(array $config, XmlFileLoader $loader, ContainerBuilder $container)
     {
         foreach ($this->factories as $name => $factory) {
             if ($this->isConfigEnabled($container, $config[$name])) {

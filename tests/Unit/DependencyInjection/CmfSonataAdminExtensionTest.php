@@ -171,5 +171,15 @@ class CmfSonataAdminExtensionTest extends AbstractExtensionTestCase
             'cmf_sonata_admin_integration.core.translatable.form_group',
             'translatable_form'
         );
+
+        $this->assertContainerBuilderHasService(
+            'cmf_sonata_admin_integration.core.extension.publish_workflow.time_period'
+        );
+        $this->assertContainerBuilderHasService(
+            'cmf_sonata_admin_integration.core.extension.publish_workflow.publishable'
+        );
+        $this->assertContainerBuilderHasService(
+            'cmf_sonata_admin_integration.core.extension.child'
+        );
     }
 }

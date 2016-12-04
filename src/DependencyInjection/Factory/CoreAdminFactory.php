@@ -13,13 +13,12 @@ namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\DependencyInjection\Fa
 
 use Symfony\Component\Config\Definition\Builder\NodeBuilder;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 
 /**
  * @author Maximilian Berghoff <maximilian.berghoff@gmx.de>
  */
-class CoreAdminFactory implements AdminFactoryInterface, CompilerPassInterface
+class CoreAdminFactory implements AdminFactoryInterface
 {
     /**
      * {@inheritdoc}
@@ -80,14 +79,6 @@ class CoreAdminFactory implements AdminFactoryInterface, CompilerPassInterface
                 $values['form_group']
             );
         }
-
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function process(ContainerBuilder $container)
-    {
 
     }
 }
