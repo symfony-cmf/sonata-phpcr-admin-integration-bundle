@@ -18,14 +18,14 @@ env:
 
 matrix:
   include:
-    - php: 7.0
-      env: DEPS=dev SYMFONY_VERSION=3.3.*
+    #- php: 7.0
+    #  env: DEPS=dev SYMFONY_VERSION=3.3.*
     - php: 5.5
-      env: SYMFONY_VERSION=2.8.* COMPOSER_FLAGS="--prefer-lowest"
+      env: COMPOSER_FLAGS="--prefer-lowest" SYMFONY_VERSION=2.8.* SYMFONY_DEPRECATIONS_HELPER=weak
     - php: 7.0
       env: DEPS=dev COMPOSER_FLAGS="--prefer-stable" SYMFONY_VERSION=3.0.*
-    - php: 7.0
-      env: DEPS=dev COMPOSER_FLAGS="--prefer-stable" SYMFONY_VERSION=3.2.*
+    #- php: 7.0
+    #  env: DEPS=dev COMPOSER_FLAGS="--prefer-stable" SYMFONY_VERSION=3.2.*
   fast_finish: true
 
 before_install:
