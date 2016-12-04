@@ -2,15 +2,26 @@
 
 namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\DependencyInjection;
 
+use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\Config\Definition\Builder\NodeBuilder;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
+use Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\DependencyInjection\Factory\AdminFactoryInterface;
 
 /**
  * @author Maximilian Berghoff <Maximilian.Berghoff@mayflower.de>
  */
 class Configuration implements ConfigurationInterface
 {
+    /**
+     * @var AdminFactoryInterface[]
+     */
+    private $factories;
+
+    public function __construct(array $factories = [])
+    {
+        $this->factories = $factories;
+    }
 
     /**
      * {@inheritdoc}
@@ -18,30 +29,25 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $treeBuilder->root('cmf_sonata_admin_integration')
-            ->fixXmlConfig('bundle')
-            ->children()
-                ->arrayNode('bundles')
-                    ->useAttributeAsKey('name')
-                    ->prototype('array')
-                        ->addDefaultsIfNotSet()
-                        ->beforeNormalization()
-                            ->ifTrue(function ($v) { return is_scalar($v); })
-                            ->then(function ($v) {
-                                return ['enabled' => $v];
-                            })
-                        ->end()
-                        ->children()
-                            ->enumNode('enabled')
-                            ->values([true, false, 'auto'])
-                            ->defaultValue('auto')
-                            ->end()
-                            ->scalarNode('form_group')->defaultValue('form.group_seo')->end()
-                        ->end()
-                    ->end()
-                ->end()
-            ->end();
+        $root = $treeBuilder->root('cmf_sonata_admin_integration');
+
+        $this->addBundlesSection($root);
 
         return $treeBuilder;
+    }
+
+    private function addBundlesSection(ArrayNodeDefinition $root)
+    {
+        $bundles = $root->children()->arrayNode('bundles')->children();
+
+        foreach ($this->factories as $factory) {
+            $config = $bundles
+                ->arrayNode($factory->getKey())
+                    ->addDefaultsIfNotSet()
+                    ->canBeEnabled()
+                    ->children();
+
+            $factory->addConfiguration($config);
+        }
     }
 }

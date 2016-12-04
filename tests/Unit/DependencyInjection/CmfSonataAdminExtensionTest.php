@@ -35,6 +35,7 @@ class CmfSonataAdminExtensionTest extends AbstractExtensionTestCase
         $this->container->setParameter(
             'kernel.bundles',
             array(
+                'CmfSeoBundle' => true,
                 'CmfRoutingBundle' => true,
                 'SonataDoctrinePHPCRAdminBundle' => true,
                 'DoctrinePHPCRBundle' => true,
@@ -44,10 +45,10 @@ class CmfSonataAdminExtensionTest extends AbstractExtensionTestCase
 
         $this->load([
             'bundles' => [
-                'seo' =>[
+                'seo' => [
                     'enabled' => true,
                     'form_group' => 'seo_form'
-                ]
+                ],
             ]
         ]);
 

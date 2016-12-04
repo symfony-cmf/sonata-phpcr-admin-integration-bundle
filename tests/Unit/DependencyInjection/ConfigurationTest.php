@@ -14,6 +14,7 @@ namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Tests\Unit\DependencyI
 use Matthias\SymfonyDependencyInjectionTest\PhpUnit\AbstractExtensionConfigurationTestCase;
 use Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\DependencyInjection\CmfSonataAdminIntegrationExtension;
 use Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\DependencyInjection\Configuration;
+use Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\DependencyInjection\Factory;
 
 /**
  * This test will try to cover all configs.
@@ -31,7 +32,9 @@ class ConfigurationTest extends AbstractExtensionConfigurationTestCase
 
     protected function getConfiguration()
     {
-        return new Configuration();
+        return new Configuration([
+            'seo' => new Factory\SeoAdminFactory(),
+        ]);
     }
 
     public function testDefaultsForAllConfigFormats()
