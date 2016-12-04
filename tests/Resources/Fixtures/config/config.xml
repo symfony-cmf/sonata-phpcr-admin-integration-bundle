@@ -1,4 +1,7 @@
-<container xmlns="http://symfony.com/schema/dic/services">
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd
+        http://cmf.symfony.com/schema/dic/sonata-admin http://cmf.symfony.com/schema/dic/sonata-admin/sonata-admin.xsd">
 
     <config xmlns="http://cmf.symfony.com/schema/dic/sonata-admin">
         <bundles>
