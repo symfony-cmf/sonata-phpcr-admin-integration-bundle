@@ -18,7 +18,7 @@ use Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Tests\WebTest\Admin\TestCase
  *
  * @author Maximilian Berghoff <Maximilian.Berghoff@gmx.de>
  */
-class SeoContentExtensionTest extends TestCase
+class SeoContentAdminExtensionTest extends TestCase
 {
     public function testAdminExtensionExists()
     {

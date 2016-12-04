@@ -11,7 +11,6 @@
 
 namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\DependencyInjection;
 
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
@@ -56,7 +55,7 @@ class CmfSonataAdminIntegrationExtension extends Extension
     /**
      * Registers an admin factory.
      *
-     * This method can be called in a bundle's build() method in order to add 
+     * This method can be called in a bundle's build() method in order to add
      * new admin integrations.
      *
      * @param AdminFactoryInterface $factory
