@@ -1,7 +1,8 @@
 cmf_sonata_admin_integration:
     bundles:
         seo: ~
-        core: ~
+        core:
+          extensions: ~
 
 framework:
     translator: { enabled: true, fallback: en }
