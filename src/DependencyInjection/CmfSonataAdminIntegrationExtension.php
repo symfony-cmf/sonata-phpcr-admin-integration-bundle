@@ -85,6 +85,7 @@ class CmfSonataAdminIntegrationExtension extends Extension
     {
         $bundles = [
             'CmfSeoBundle' => new Factory\SeoAdminFactory(),
+            'CmfMenuBundle' => new Factory\MenuAdminFactory(),
         ];
         $enabledBundles = $container->getParameter('kernel.bundles');
 
