@@ -30,9 +30,7 @@ class ChildExtension extends AdminExtension
      */
     public function alterNewInstance(AdminInterface $admin, $object)
     {
-        if (!$admin->hasRequest()
-            || !$parentId = $admin->getRequest()->get('parent')
-        ) {
+        if (!$admin->hasRequest() || !$parentId = $admin->getRequest()->get('parent')) {
             return;
         }
 
