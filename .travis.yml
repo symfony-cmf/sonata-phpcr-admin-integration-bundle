@@ -10,11 +10,14 @@ sudo: false
 
 cache:
   directories:
+    - .phpunit
     - $HOME/.composer/cache/files
 
 env:
   matrix: SYMFONY_VERSION=3.1.*
-  global: SYMFONY_DEPRECATIONS_HELPER=216 SYMFONY_PHPUNIT_REMOVE="symfony/yaml"
+  global:
+    - SYMFONY_DEPRECATIONS_HELPER=337
+    - SYMFONY_PHPUNIT_DIR=".phpunit" SYMFONY_PHPUNIT_REMOVE="symfony/yaml"
 
 matrix:
   include:
