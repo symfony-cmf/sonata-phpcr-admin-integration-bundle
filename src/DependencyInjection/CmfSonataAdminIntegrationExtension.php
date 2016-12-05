@@ -13,20 +13,33 @@ namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\HttpKernel\DependencyInjection\Extension;
+use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
+use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\DependencyInjection\Factory\AdminFactoryInterface;
 
 /**
  * @author Maximilian Berghoff <Maximilian.Berghoff@mayflower.de>
  * @author Wouter de Jong <wouter@wouterj.nl>
  */
-class CmfSonataAdminIntegrationExtension extends Extension
+class CmfSonataAdminIntegrationExtension extends Extension implements CompilerPassInterface
 {
     /**
      * @var AdminFactoryInterface[]
      */
     private $factories = [];
+
+    /**
+     * {@inheritdoc}
+     */
+    public function process(ContainerBuilder $container)
+    {
+        foreach ($this->factories as $factory) {
+            if ($factory instanceof CompilerPassInterface) {
+                $factory->process($container);
+            }
+        }
+    }
 
     /**
      * {@inheritdoc}
@@ -86,6 +99,7 @@ class CmfSonataAdminIntegrationExtension extends Extension
         $bundles = [
             'CmfSeoBundle' => new Factory\SeoAdminFactory(),
             'CmfMenuBundle' => new Factory\MenuAdminFactory(),
+            'CmfRoutingBundle' => new Factory\RoutingAdminFactory(),
         ];
         $enabledBundles = $container->getParameter('kernel.bundles');
 
