@@ -27,7 +27,7 @@ services:
             - [ setTranslationDomain, [CmfSonataAdminIntegrationBundle]]
             - [ setRouteBuilder, ['@sonata.admin.route.path_info_slashes']]
             - [ setRootPath, [/test/content]]
-     sonata.admin.core_examples:
+    sonata.admin.core_examples:
          class: Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Tests\Resources\Admin\CoreExtensionsAdmin
          tags:
            - { name: sonata.admin, manager_type: doctrine_phpcr, label_catalogue: CmfSeoBundle, group: dashboard.cmf, label: dashboard.label_seo_content, label_translator_strategy: sonata.admin.label.strategy.underscore}
@@ -56,12 +56,12 @@ sonata_admin:
                - Symfony\Cmf\Bundle\SeoBundle\SeoAwareInterface
         cmf_sonata_admin_integration.menu.extension.menu_node_referrers:
             implements:
-                - Symfony\Cmf\Bundle\MenuBundle\Model\MenuNodeReferrersInterface
+               - Symfony\Cmf\Bundle\MenuBundle\Model\MenuNodeReferrersInterface
         cmf_sonata_admin_integration.routing.extension.frontend_link:
             implements:
-                - Symfony\Cmf\Component\Routing\RouteReferrersReadInterface
+               - Symfony\Cmf\Component\Routing\RouteReferrersReadInterface
             extends:
-                - Symfony\Component\Routing\Route
+               - Symfony\Component\Routing\Route
         cmf_sonata_admin_integration.core.extension.publish_workflow.publishable:
             implements:
                - Symfony\Cmf\Bundle\CoreBundle\PublishWorkflow\PublishableInterface
