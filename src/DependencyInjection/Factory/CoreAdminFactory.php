@@ -69,10 +69,6 @@ class CoreAdminFactory implements AdminFactoryInterface
 
         $container->setParameter('cmf_sonata_admin_integration.core.form_group', $config['form_group']);
 
-        if (!isset($config['extensions'])) {
-            return;
-        }
-
         foreach ($config['extensions'] as $extension => $values) {
             $container->setParameter(
                 'cmf_sonata_admin_integration.core.'.$extension.'.form_group',
