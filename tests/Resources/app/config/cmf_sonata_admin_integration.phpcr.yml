@@ -80,9 +80,15 @@ cmf_core:
         phpcr:
             basepath: /test
 
+cmf_content:
+    persistence:
+        phpcr:
+            content_basepath: /test/contents
+
 cmf_sonata_admin_integration:
     bundles:
         menu: ~
+        content: ~
         routing:
             basepath: /test/routing
         block:

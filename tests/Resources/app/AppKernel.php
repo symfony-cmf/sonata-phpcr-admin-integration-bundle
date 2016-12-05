@@ -28,14 +28,16 @@ class AppKernel extends TestKernel
         }
 
         $this->addBundles(array(
-            new Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\CmfSonataAdminIntegrationBundle(),
             new Sonata\SeoBundle\SonataSeoBundle(),
+            new Burgov\Bundle\KeyValueFormBundle\BurgovKeyValueFormBundle(),
+
+            new Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\CmfSonataAdminIntegrationBundle(),
             new Symfony\Cmf\Bundle\SeoBundle\CmfSeoBundle(),
-            new Symfony\Cmf\Bundle\MenuBundle\CmfMenuBundle(),
             new Symfony\Cmf\Bundle\RoutingBundle\CmfRoutingBundle(),
             new Symfony\Cmf\Bundle\CoreBundle\CmfCoreBundle(),
             new Symfony\Cmf\Bundle\BlockBundle\CmfBlockBundle(),
-            new Burgov\Bundle\KeyValueFormBundle\BurgovKeyValueFormBundle(),
+            new Symfony\Cmf\Bundle\MenuBundle\CmfMenuBundle(),
+            new Symfony\Cmf\Bundle\ContentBundle\CmfContentBundle(),
         ));
 
         if (class_exists('Symfony\Cmf\Bundle\ResourceRestBundle\CmfResourceRestBundle')) {
