@@ -1,0 +1,131 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+
+        <service
+                id="cmf_sonata_admin_integration.block.admin_extension.cache"
+                class="Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Block\Extension\BlockCacheExtension">
+            <tag name="sonata.admin.extension"/>
+        </service>
+
+        <service
+                id="cmf_sonata_admin_integration.block.simple_admin"
+                class="%cmf_sonata_admin_integration.block.simple_admin.class%">
+            <tag
+                    name="sonata.admin"
+                    manager_type="doctrine_phpcr"
+                    group="dashboard.cmf"
+                    label_catalogue="CmfBlockBundle"
+                    label="dashboard.label_simple_block"
+                    label_translator_strategy="sonata.admin.label.strategy.underscore" />
+            <argument/>
+            <argument>%cmf_sonata_admin_integration.block.simple_document.class%</argument>
+            <argument>SonataAdminBundle:CRUD</argument>
+
+            <call method="setRouteBuilder">
+                <argument type="service" id="sonata.admin.route.path_info_slashes" />
+            </call>
+
+            <call method="setRootPath">
+                <argument>%cmf_sonata_admin_integration.block.persistence.phpcr.basepath%</argument>
+            </call>
+        </service>
+
+        <service
+                id="cmf_sonata_admin_integration.block.action_admin"
+                class="%cmf_sonata_admin_integration.block.action_admin.class%">
+            <tag
+                    name="sonata.admin"
+                    manager_type="doctrine_phpcr"
+                    group="dashboard.cmf"
+                    label_catalogue="CmfBlockBundle"
+                    label="dashboard.label_action_block"
+                    label_translator_strategy="sonata.admin.label.strategy.underscore" />
+            <argument/>
+            <argument>%cmf_sonata_admin_integration.block.action_document.class%</argument>
+            <argument>SonataAdminBundle:CRUD</argument>
+
+            <call method="setRouteBuilder">
+                <argument type="service" id="sonata.admin.route.path_info_slashes" />
+            </call>
+
+            <call method="setRootPath">
+                <argument>%cmf_sonata_admin_integration.block.persistence.phpcr.basepath%</argument>
+            </call>
+        </service>
+
+        <service
+                id="cmf_sonata_admin_integration.block.container_admin"
+                class="%cmf_sonata_admin_integration.block.container_admin.class%">
+            <tag
+                    name="sonata.admin"
+                    manager_type="doctrine_phpcr"
+                    group="dashboard.cmf"
+                    label_catalogue="CmfBlockBundle"
+                    label="dashboard.label_container_block"
+                    label_translator_strategy="sonata.admin.label.strategy.underscore" />
+            <argument/>
+            <argument>%cmf_sonata_admin_integration.block.container_document.class%</argument>
+            <argument>SonataAdminBundle:CRUD</argument>
+
+            <call method="setRouteBuilder">
+                <argument type="service" id="sonata.admin.route.path_info_slashes" />
+            </call>
+
+            <call method="setRootPath">
+                <argument>%cmf_sonata_admin_integration.basepath%</argument>
+            </call>
+        </service>
+
+        <service
+                id="cmf_sonata_admin_integration.block.reference_admin"
+                class="%cmf_sonata_admin_integration.block.reference_admin.class%">
+            <tag
+                    name="sonata.admin"
+                    manager_type="doctrine_phpcr"
+                    group="dashboard.cmf"
+                    label_catalogue="CmfBlockBundle"
+                    label="dashboard.label_reference_block"
+                    label_translator_strategy="sonata.admin.label.strategy.underscore" />
+            <argument/>
+            <argument>%cmf_sonata_admin_integration.block.reference_document.class%</argument>
+            <argument>SonataAdminBundle:CRUD</argument>
+
+            <call method="setRouteBuilder">
+                <argument type="service" id="sonata.admin.route.path_info_slashes" />
+            </call>
+
+            <call method="setRootPath">
+                <argument>%cmf_sonata_admin_integration.block.persistence.phpcr.basepath%</argument>
+            </call>
+        </service>
+
+        <service
+                id="cmf_sonata_admin_integration.block.string_admin"
+                class="%cmf_sonata_admin_integration.block.string_admin.class%">
+            <tag
+                    name="sonata.admin"
+                    manager_type="doctrine_phpcr"
+                    group="dashboard.cmf"
+                    label_catalogue="CmfBlockBundle"
+                    label="dashboard.label_string_block"
+                    label_translator_strategy="sonata.admin.label.strategy.underscore" />
+            <argument/>
+            <argument>%cmf_sonata_admin_integration.block.string_document.class%</argument>
+            <argument>SonataAdminBundle:CRUD</argument>
+
+            <call method="setRouteBuilder">
+                <argument type="service" id="sonata.admin.route.path_info_slashes" />
+            </call>
+
+            <call method="setRootPath">
+                <argument>%cmf_sonata_admin_integration.block.persistence.phpcr.basepath%</argument>
+            </call>
+        </service>
+
+    </services>
+</container>
