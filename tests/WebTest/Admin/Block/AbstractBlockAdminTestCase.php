@@ -3,13 +3,13 @@
 /*
  * This file is part of the Symfony CMF package.
  *
- * (c) 2011-2015 Symfony CMF
+ * (c) 2011-2016 Symfony CMF
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Cmf\Bundle\BlockBundle\Tests\WebTest\Admin;
+namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Tests\WebTest\Admin\Block;
 
 use Symfony\Bundle\FrameworkBundle\Client;
 use Symfony\Cmf\Component\Testing\Functional\BaseTestCase;
@@ -55,7 +55,7 @@ abstract class AbstractBlockAdminTestCase extends BaseTestCase
     public function setUp()
     {
         $this->db('PHPCR')->loadFixtures(array(
-            'Symfony\Cmf\Bundle\BlockBundle\Tests\Resources\DataFixtures\Phpcr\LoadBlockData',
+            'Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Tests\Resources\DataFixtures\Phpcr\LoadBlockData',
         ));
         $this->client = $this->createClient();
     }
