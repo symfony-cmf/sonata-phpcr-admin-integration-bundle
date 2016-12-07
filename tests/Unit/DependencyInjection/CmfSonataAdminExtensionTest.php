@@ -112,7 +112,6 @@ class CmfSonataAdminExtensionTest extends AbstractExtensionTestCase
             'slideshow_admin.class' => 'slideshow_admin_class_value',
             'persistence.phpcr.basepath' => 'basepath_value',
             'persistence.phpcr.menu_basepath' => 'menu_basepath_value',
-
         ];
 
         foreach ($keys as $suffix => $value) {
