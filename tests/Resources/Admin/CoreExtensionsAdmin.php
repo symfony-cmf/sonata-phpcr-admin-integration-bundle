@@ -11,11 +11,6 @@
 
 namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Tests\Resources\Admin;
 
-use Sonata\AdminBundle\Datagrid\DatagridMapper;
-use Sonata\AdminBundle\Datagrid\ListMapper;
-use Sonata\AdminBundle\Form\FormMapper;
-use Sonata\DoctrinePHPCRAdminBundle\Admin\Admin;
-
 class CoreExtensionsAdmin extends BaseAdmin
 {
     protected $baseRouteName = 'cmf_core_extensions';

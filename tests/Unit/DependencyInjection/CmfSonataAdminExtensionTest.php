@@ -133,7 +133,6 @@ class CmfSonataAdminExtensionTest extends AbstractExtensionTestCase
 
     public function testCoreDefaults()
     {
-
         $this->container->setParameter(
             'kernel.bundles',
             array(
@@ -153,7 +152,7 @@ class CmfSonataAdminExtensionTest extends AbstractExtensionTestCase
                         'publishable' => ['form_group' => 'publishable_form'],
                         'publish_time' => ['form_group' => 'publish_time_form'],
                         'translatable' => ['form_group' => 'translatable_form'],
-                    ]
+                    ],
                 ],
             ],
         ]);
