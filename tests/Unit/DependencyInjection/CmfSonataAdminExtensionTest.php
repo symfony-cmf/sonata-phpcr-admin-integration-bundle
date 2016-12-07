@@ -93,12 +93,6 @@ class CmfSonataAdminExtensionTest extends AbstractExtensionTestCase
             ],
         ]);
 
-        $this->assertContainerBuilderHasParameter('cmf_sonata_admin_integration.block.phpcr.basepath', 'basepath_value');
-        $this->assertContainerBuilderHasParameter(
-            'cmf_sonata_admin_integration.block.phpcr.menu_basepath',
-            'menu_basepath_value'
-        );
-
         $keys = [
             'string_document.class' => 'string_document_class_value',
             'simple_document.class' => 'simple_document_class_value',
@@ -116,14 +110,17 @@ class CmfSonataAdminExtensionTest extends AbstractExtensionTestCase
             'action_admin.class' => 'action_admin_class_value',
             'imagine_admin.class' => 'imagine_admin_class_value',
             'slideshow_admin.class' => 'slideshow_admin_class_value',
+            'persistence.phpcr.basepath' => 'basepath_value',
+            'persistence.phpcr.menu_basepath' => 'menu_basepath_value',
+
         ];
 
-        foreach ($keys as $suffix => $className) {
+        foreach ($keys as $suffix => $value) {
             $this->assertContainerBuilderHasParameter(
                 'cmf_sonata_admin_integration.block.'.$suffix,
-                $className
+                $value
             );
-            if (preg_match('/_document/', $suffix)) {
+            if (preg_match('/_document/', $suffix) || preg_match('/persistence.phpcr/', $suffix)) {
                 continue;
             }
             if (in_array($suffix, ['imagine_admin.class', 'slideshow_admin.class'])) {
@@ -131,7 +128,7 @@ class CmfSonataAdminExtensionTest extends AbstractExtensionTestCase
             }
             $this->assertContainerBuilderHasService(
                 'cmf_sonata_admin_integration.block.'.str_replace('.class', '', $suffix),
-                $className
+                $value
             );
         }
     }

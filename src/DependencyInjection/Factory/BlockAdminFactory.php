@@ -100,8 +100,11 @@ class BlockAdminFactory implements AdminFactoryInterface
      */
     public function create(array $config, ContainerBuilder $container, XmlFileLoader $loader)
     {
-        $container->setParameter('cmf_sonata_admin_integration.block.phpcr.basepath', $config['basepath']);
-        $container->setParameter('cmf_sonata_admin_integration.block.phpcr.menu_basepath', $config['menu_basepath']);
+        $container->setParameter('cmf_sonata_admin_integration.block.persistence.phpcr.basepath', $config['basepath']);
+        $container->setParameter(
+            'cmf_sonata_admin_integration.block.persistence.phpcr.menu_basepath',
+            $config['menu_basepath']
+        );
         $keys = [
             'string_document_class' => 'string_document.class',
             'simple_document_class' => 'simple_document.class',
@@ -120,7 +123,7 @@ class BlockAdminFactory implements AdminFactoryInterface
             'imagine_admin_class' => 'imagine_admin.class',
             'slideshow_admin_class' => 'slideshow_admin.class',
         ];
-        $adminClasses = $config['admin_classes'];
+        $adminClasses = isset($config['admin_classes']) ? $config['admin_classes'] : [];
         foreach ($keys as $sourceKey => $targetKey) {
             $container->setParameter('cmf_sonata_admin_integration.block.'.$targetKey, $adminClasses[$sourceKey]);
         }

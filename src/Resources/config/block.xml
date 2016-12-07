@@ -77,7 +77,7 @@
             </call>
 
             <call method="setRootPath">
-                <argument>%cmf_sonata_admin_integration.basepath%</argument>
+                <argument>%cmf_sonata_admin_integration.block.persistence.phpcr.basepath%</argument>
             </call>
         </service>
 

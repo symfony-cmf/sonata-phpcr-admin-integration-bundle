@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Cmf\Bundle\BlockBundle\Admin\Imagine;
+namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Block\Imagine;
 
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
