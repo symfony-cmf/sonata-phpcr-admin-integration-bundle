@@ -68,7 +68,7 @@ cmf_sonata_admin_integration:
         routing:
             basepath: /test/routing
         block:
-            basepath: /test/block
-            menu_basepath: /test/menu_block
+            basepath: /test/blocka
+            menu_basepath: /test/menus
             use_imagine: true
             admin_classes: ~
