@@ -75,6 +75,5 @@ class CoreAdminFactory implements AdminFactoryInterface
                 $values['form_group']
             );
         }
-
     }
 }
