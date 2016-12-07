@@ -20,7 +20,6 @@ use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
  */
 class BlockAdminFactory implements AdminFactoryInterface
 {
-
     /**
      * {@inheritdoc}
      */
