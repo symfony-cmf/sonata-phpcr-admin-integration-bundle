@@ -50,5 +50,6 @@ class AppKernel extends TestKernel
     {
         $loader->load(__DIR__.'/config/config.php');
         $loader->load(__DIR__.'/config/config_'.$this->environment.'.php');
+        $loader->load(__DIR__.'/config/admin-test.xml');
     }
 }
