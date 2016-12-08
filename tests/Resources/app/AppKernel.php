@@ -34,6 +34,7 @@ class AppKernel extends TestKernel
             new Symfony\Cmf\Bundle\MenuBundle\CmfMenuBundle(),
             new Symfony\Cmf\Bundle\RoutingBundle\CmfRoutingBundle(),
             new Symfony\Cmf\Bundle\CoreBundle\CmfCoreBundle(),
+            new Symfony\Cmf\Bundle\BlockBundle\CmfBlockBundle(),
             new Burgov\Bundle\KeyValueFormBundle\BurgovKeyValueFormBundle(),
         ));
 
@@ -49,5 +50,6 @@ class AppKernel extends TestKernel
     {
         $loader->load(__DIR__.'/config/config.php');
         $loader->load(__DIR__.'/config/config_'.$this->environment.'.php');
+        $loader->load(__DIR__.'/config/admin-test.xml');
     }
 }

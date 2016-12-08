@@ -22,6 +22,7 @@
         "symfony-cmf/routing-bundle": "^2.0",
         "symfony-cmf/seo-bundle": "^2.0",
         "symfony-cmf/menu-bundle": "^2.0",
+        "symfony-cmf/block-bundle": "^2.0",
         "doctrine/orm": "^2.4",
         "doctrine/phpcr-odm": "^2.0",
         "symfony/phpunit-bridge": "^3.2",
