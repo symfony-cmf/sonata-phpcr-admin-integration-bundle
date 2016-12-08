@@ -116,20 +116,21 @@ class CmfSonataAdminExtensionTest extends AbstractExtensionTestCase
 
         foreach ($keys as $suffix => $value) {
             $this->assertContainerBuilderHasParameter(
-                'cmf_sonata_admin_integration.block.'.$suffix,
+                'cmf_sonata_admin_integration.block.' . $suffix,
                 $value
             );
             if (preg_match('/_document/', $suffix) || preg_match('/persistence.phpcr/', $suffix)) {
                 continue;
             }
             if (in_array($suffix, ['imagine_admin.class', 'slideshow_admin.class'])) {
-                $suffix = 'imagine.'.$suffix;
+                $suffix = 'imagine.' . $suffix;
             }
             $this->assertContainerBuilderHasService(
-                'cmf_sonata_admin_integration.block.'.str_replace('.class', '', $suffix),
+                'cmf_sonata_admin_integration.block.' . str_replace('.class', '', $suffix),
                 $value
             );
         }
+    }
 
     public function testCoreDefaults()
     {
