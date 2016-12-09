@@ -14,7 +14,8 @@
     "require": {
         "php": "^5.5.6|^7.0",
         "symfony/framework-bundle": "^2.8|^3.0",
-        "sonata-project/doctrine-phpcr-admin-bundle": "^2.0"
+        "sonata-project/doctrine-phpcr-admin-bundle": "^2.0",
+        "sonata-project/admin-bundle": "dev-fix-symfony-compatibility as 3.11.0"
     },
     "require-dev": {
         "symfony-cmf/testing": "^2.0",
@@ -32,6 +33,9 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
+    "repositories": [
+        { "type": "vcs", "url": "https://github.com/Koc/SonataAdminBundle" }
+    ],
     "suggest": {
         "symfony-cmf/routing-bundle": "To make use of the alternate locale provider.",
         "doctrine/phpcr-bundle": "To persist the metadata in PHPCR ODM documents",
