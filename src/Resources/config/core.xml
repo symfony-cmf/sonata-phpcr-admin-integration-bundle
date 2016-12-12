@@ -15,13 +15,16 @@
 
         <service
                 id="cmf_sonata_admin_integration.core.extension.publish_workflow.publishable"
-                class="Symfony\Cmf\Bundle\CoreBundle\Admin\Extension\PublishableExtension"
+                class="Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Core\Extension\PublishableExtension"
                 public="false">
             <argument>%cmf_sonata_admin_integration.core.publishable.form_group%</argument>
             <tag name="sonata.admin.extension"/>
         </service>
 
-        <service id="cmf_sonata_admin_integration.core.extension.publish_workflow.time_period" class="Symfony\Cmf\Bundle\CoreBundle\Admin\Extension\PublishTimePeriodExtension" public="false">
+        <service
+                id="cmf_sonata_admin_integration.core.extension.publish_workflow.time_period"
+                class="Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Core\Extension\PublishTimePeriodExtension"
+                public="false">
             <argument>%cmf_sonata_admin_integration.core.publish_time.form_group%</argument>
             <tag name="sonata.admin.extension"/>
         </service>
