@@ -131,4 +131,55 @@ class CmfSonataAdminExtensionTest extends AbstractExtensionTestCase
             );
         }
     }
+
+    public function testCoreDefaults()
+    {
+        $this->container->setParameter(
+            'kernel.bundles',
+            array(
+                'CmfRoutingBundle' => true,
+                'SonataDoctrinePHPCRAdminBundle' => true,
+                'DoctrinePHPCRBundle' => true,
+                'CmfCoreBundle' => true,
+            )
+        );
+
+        $this->load([
+            'bundles' => [
+                'core' => [
+                    'enabled' => true,
+                    'form_group' => 'core_form',
+                    'extensions' => [
+                        'publishable' => ['form_group' => 'publishable_form'],
+                        'publish_time' => ['form_group' => 'publish_time_form'],
+                        'translatable' => ['form_group' => 'translatable_form'],
+                    ],
+                ],
+            ],
+        ]);
+
+        $this->assertContainerBuilderHasParameter('cmf_sonata_admin_integration.core.form_group', 'core_form');
+        $this->assertContainerBuilderHasParameter(
+            'cmf_sonata_admin_integration.core.publishable.form_group',
+            'publishable_form'
+        );
+        $this->assertContainerBuilderHasParameter(
+            'cmf_sonata_admin_integration.core.publish_time.form_group',
+            'publish_time_form'
+        );
+        $this->assertContainerBuilderHasParameter(
+            'cmf_sonata_admin_integration.core.translatable.form_group',
+            'translatable_form'
+        );
+
+        $this->assertContainerBuilderHasService(
+            'cmf_sonata_admin_integration.core.extension.publish_workflow.time_period'
+        );
+        $this->assertContainerBuilderHasService(
+            'cmf_sonata_admin_integration.core.extension.publish_workflow.publishable'
+        );
+        $this->assertContainerBuilderHasService(
+            'cmf_sonata_admin_integration.core.extension.child'
+        );
+    }
 }

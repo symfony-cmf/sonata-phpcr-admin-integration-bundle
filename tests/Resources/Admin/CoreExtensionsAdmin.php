@@ -11,8 +11,8 @@
 
 namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Tests\Resources\Admin;
 
-class SeoAwareContentAdmin extends BaseAdmin
+class CoreExtensionsAdmin extends BaseAdmin
 {
-    protected $baseRouteName = 'cmf_seo_aware_content';
-    protected $baseRoutePattern = 'cmf/seo/seoawarecontent';
+    protected $baseRouteName = 'cmf_core_extensions';
+    protected $baseRoutePattern = 'cmf/core/extensions';
 }

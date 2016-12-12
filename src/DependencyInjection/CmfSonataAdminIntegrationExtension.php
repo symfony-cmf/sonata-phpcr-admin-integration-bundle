@@ -56,7 +56,7 @@ class CmfSonataAdminIntegrationExtension extends Extension implements CompilerPa
         $this->loadBundles($config['bundles'], $loader, $container);
     }
 
-    private function loadBundles(array $config, XmlFileLoader $loader, $container)
+    private function loadBundles(array $config, XmlFileLoader $loader, ContainerBuilder $container)
     {
         foreach ($this->factories as $name => $factory) {
             if ($this->isConfigEnabled($container, $config[$name])) {
@@ -101,6 +101,7 @@ class CmfSonataAdminIntegrationExtension extends Extension implements CompilerPa
             'CmfMenuBundle' => new Factory\MenuAdminFactory(),
             'CmfRoutingBundle' => new Factory\RoutingAdminFactory(),
             'CmfBlockBundle' => new Factory\BlockAdminFactory(),
+            'CmfCoreBundle' => new Factory\CoreAdminFactory(),
         ];
         $enabledBundles = $container->getParameter('kernel.bundles');
 

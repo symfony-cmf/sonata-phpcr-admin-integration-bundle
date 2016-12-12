@@ -34,6 +34,7 @@ class ConfigurationTest extends AbstractExtensionConfigurationTestCase
     {
         return new Configuration([
             'seo' => new Factory\SeoAdminFactory(),
+            'core' => new Factory\CoreAdminFactory(),
         ]);
     }
 
@@ -44,6 +45,15 @@ class ConfigurationTest extends AbstractExtensionConfigurationTestCase
                 'seo' => [
                     'enabled' => true,
                     'form_group' => 'seo_form',
+                ],
+                'core' => [
+                    'enabled' => true,
+                    'form_group' => 'core_form',
+                    'extensions' => [
+                        'publishable' => ['form_group' => 'form.group_publish_workflow'],
+                        'publish_time' => ['form_group' => 'form.group_publish_workflow'],
+                        'translatable' => ['form_group' => 'form.group_general'],
+                    ],
                 ],
             ],
         ];
