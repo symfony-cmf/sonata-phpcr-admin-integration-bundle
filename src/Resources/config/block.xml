@@ -14,7 +14,7 @@
 
         <service
                 id="cmf_sonata_admin_integration.block.simple_admin"
-                class="%cmf_sonata_admin_integration.block.simple_admin.class%">
+                class="Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Block\SimpleBlockAdmin">
             <tag
                     name="sonata.admin"
                     manager_type="doctrine_phpcr"
@@ -23,7 +23,7 @@
                     label="dashboard.label_simple_block"
                     label_translator_strategy="sonata.admin.label.strategy.underscore" />
             <argument/>
-            <argument>%cmf_sonata_admin_integration.block.simple_document.class%</argument>
+            <argument>Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SimpleBlock</argument>
             <argument>SonataAdminBundle:CRUD</argument>
 
             <call method="setRouteBuilder">
@@ -37,7 +37,7 @@
 
         <service
                 id="cmf_sonata_admin_integration.block.action_admin"
-                class="%cmf_sonata_admin_integration.block.action_admin.class%">
+                class="Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Block\ActionBlockAdmin">
             <tag
                     name="sonata.admin"
                     manager_type="doctrine_phpcr"
@@ -46,7 +46,7 @@
                     label="dashboard.label_action_block"
                     label_translator_strategy="sonata.admin.label.strategy.underscore" />
             <argument/>
-            <argument>%cmf_sonata_admin_integration.block.action_document.class%</argument>
+            <argument>Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ActionBlock</argument>
             <argument>SonataAdminBundle:CRUD</argument>
 
             <call method="setRouteBuilder">
@@ -60,7 +60,7 @@
 
         <service
                 id="cmf_sonata_admin_integration.block.container_admin"
-                class="%cmf_sonata_admin_integration.block.container_admin.class%">
+                class="Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Block\ContainerBlockAdmin">
             <tag
                     name="sonata.admin"
                     manager_type="doctrine_phpcr"
@@ -69,7 +69,7 @@
                     label="dashboard.label_container_block"
                     label_translator_strategy="sonata.admin.label.strategy.underscore" />
             <argument/>
-            <argument>%cmf_sonata_admin_integration.block.container_document.class%</argument>
+            <argument>Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock</argument>
             <argument>SonataAdminBundle:CRUD</argument>
 
             <call method="setRouteBuilder">
@@ -83,7 +83,7 @@
 
         <service
                 id="cmf_sonata_admin_integration.block.reference_admin"
-                class="%cmf_sonata_admin_integration.block.reference_admin.class%">
+                class="Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Block\ReferenceBlockAdmin">
             <tag
                     name="sonata.admin"
                     manager_type="doctrine_phpcr"
@@ -92,7 +92,7 @@
                     label="dashboard.label_reference_block"
                     label_translator_strategy="sonata.admin.label.strategy.underscore" />
             <argument/>
-            <argument>%cmf_sonata_admin_integration.block.reference_document.class%</argument>
+            <argument>Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ReferenceBlock</argument>
             <argument>SonataAdminBundle:CRUD</argument>
 
             <call method="setRouteBuilder">
@@ -106,7 +106,7 @@
 
         <service
                 id="cmf_sonata_admin_integration.block.string_admin"
-                class="%cmf_sonata_admin_integration.block.string_admin.class%">
+                class="Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Block\StringBlockAdmin">
             <tag
                     name="sonata.admin"
                     manager_type="doctrine_phpcr"
@@ -115,7 +115,7 @@
                     label="dashboard.label_string_block"
                     label_translator_strategy="sonata.admin.label.strategy.underscore" />
             <argument/>
-            <argument>%cmf_sonata_admin_integration.block.string_document.class%</argument>
+            <argument>Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\StringBlock</argument>
             <argument>SonataAdminBundle:CRUD</argument>
 
             <call method="setRouteBuilder">
