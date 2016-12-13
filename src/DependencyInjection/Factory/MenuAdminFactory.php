@@ -14,8 +14,6 @@ namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\DependencyInjection\Fa
 use Symfony\Component\Config\Definition\Builder\NodeBuilder;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
-use Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Menu\MenuAdmin;
-use Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Menu\MenuNodeAdmin;
 
 /**
  * @author Wouter de Jong <wouter@wouterj.nl>
