@@ -95,4 +95,3 @@ cmf_sonata_admin_integration:
             basepath: /test/blocks
             menu_basepath: /test/menus
             use_imagine: true
-            admin_classes: ~

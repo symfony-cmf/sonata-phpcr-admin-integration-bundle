@@ -7,7 +7,7 @@
     <services>
         <service
                 id="cmf_sonata_admin_integration.block.menu_admin"
-                class="%cmf_sonata_admin_integration.block.menu_admin.class%">
+                class="Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Block\MenuBlockAdmin">
             <tag
                     name="sonata.admin"
                     manager_type="doctrine_phpcr"
@@ -16,7 +16,7 @@
                     label="dashboard.label_menu_block"
                     label_translator_strategy="sonata.admin.label.strategy.underscore" />
             <argument/>
-            <argument>%cmf_sonata_admin_integration.block.menu_document.class%</argument>
+            <argument>Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\MenuBlock</argument>
             <argument>SonataAdminBundle:CRUD</argument>
 
             <call method="setRouteBuilder">
