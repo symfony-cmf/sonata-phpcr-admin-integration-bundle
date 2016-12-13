@@ -38,8 +38,6 @@ class MenuAdminFactory implements AdminFactoryInterface
     public function addConfiguration(NodeBuilder $builder)
     {
         $builder
-            ->scalarNode('menu_admin_class')->defaultValue(MenuAdmin::class)->end()
-            ->scalarNode('node_admin_class')->defaultValue(MenuNodeAdmin::class)->end()
             ->booleanNode('recursive_breadcrumbs')->defaultTrue()->end()
             ->arrayNode('extensions')
                 ->addDefaultsIfNotSet()
@@ -62,15 +60,7 @@ class MenuAdminFactory implements AdminFactoryInterface
      */
     public function create(array $config, ContainerBuilder $container, XmlFileLoader $loader)
     {
-        $keys = [
-            'menu_admin_class' => 'menu_admin.class',
-            'node_admin_class' => 'node_admin.class',
-            'recursive_breadcrumbs' => 'recursive_breadcrumbs',
-        ];
-
-        foreach ($keys as $sourceKey => $targetKey) {
-            $container->setParameter('cmf_sonata_admin_integration.menu.'.$targetKey, $config[$sourceKey]);
-        }
+        $container->setParameter('cmf_sonata_admin_integration.menu.recursive_breadcrumbs', 'recursive_breadcrumbs');
 
         $loader->load('menu.xml');
 
