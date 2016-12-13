@@ -26,7 +26,7 @@ class CmfSonataAdminExtensionTest extends AbstractExtensionTestCase
         );
     }
 
-    public function testDefaults()
+    public function testSeoBundle()
     {
         $this->container->setParameter(
             'kernel.bundles',

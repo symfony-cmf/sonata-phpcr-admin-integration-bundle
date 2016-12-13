@@ -34,7 +34,7 @@ class ContentAdminFactory implements AdminFactoryInterface
      */
     public function addConfiguration(NodeBuilder $builder)
     {
-        $builder->scalarNode('admin_class')->defaultValue(StaticContentAdmin::class)->end();
+
     }
 
     /**
@@ -50,7 +50,5 @@ class ContentAdminFactory implements AdminFactoryInterface
                 'To use advanced menu options, you need the burgov/key-value-form-bundle in your project.'
             );
         }
-
-        $container->setParameter('cmf_sonata_admin_integration.content.admin.class', $config['admin_class']);
     }
 }
