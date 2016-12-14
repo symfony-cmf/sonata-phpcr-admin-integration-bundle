@@ -7,7 +7,13 @@
         <service
                 id="cmf_sonata_admin_integration.content.admin"
                 class="Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Content\StaticContentAdmin">
-            <tag name="sonata.admin" manager_type="doctrine_phpcr" group="dashboard.cmf" label_catalogue="CmfContentBundle" label="dashboard.label_static_content" label_translator_strategy="sonata.admin.label.strategy.underscore" />
+            <tag
+                    name="sonata.admin"
+                    manager_type="doctrine_phpcr"
+                    group="dashboard.cmf"
+                    label_catalogue="CmfContentBundle"
+                    label="dashboard.label_static_content"
+                    label_translator_strategy="sonata.admin.label.strategy.underscore" />
             <argument/>
             <argument>Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent</argument>
             <argument>SonataAdminBundle:CRUD</argument>

@@ -68,11 +68,15 @@
             </call>
         </service>
 
-        <service id="cmf_sonata_admin_integration.menu.extension.menu_node_referrers" class="Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Menu\Extension\MenuNodeReferrersExtension">
+        <service
+                id="cmf_sonata_admin_integration.menu.extension.menu_node_referrers"
+                class="Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Menu\Extension\MenuNodeReferrersExtension">
             <tag name="sonata.admin.extension"/>
         </service>
 
-        <service id="cmf_sonata_admin_integration.menu.extension.menu_options" class="Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Menu\Extension\MenuOptionsExtension">
+        <service
+                id="cmf_sonata_admin_integration.menu.extension.menu_options"
+                class="Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Menu\Extension\MenuOptionsExtension">
             <argument>form.group_menu_options</argument>
             <argument>%cmf_sonata_admin_integration.menu.extensions.menu_options.advanced%</argument>
             <tag name="sonata.admin.extension"/>
@@ -81,4 +85,3 @@
     </services>
 
 </container>
-
