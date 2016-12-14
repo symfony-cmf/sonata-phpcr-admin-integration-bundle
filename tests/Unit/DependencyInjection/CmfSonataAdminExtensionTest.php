@@ -83,6 +83,18 @@ class CmfSonataAdminExtensionTest extends AbstractExtensionTestCase
             'cmf_sonata_admin_integration.block.persistence.phpcr.menu_basepath',
             'menu_basepath_value'
         );
+
+        $keys = [
+            'persistence.phpcr.basepath' => 'basepath_value',
+            'persistence.phpcr.menu_basepath' => 'menu_basepath_value',
+        ];
+
+        foreach ($keys as $suffix => $value) {
+            $this->assertContainerBuilderHasParameter(
+                'cmf_sonata_admin_integration.block.'.$suffix,
+                $value
+            );
+        }
     }
 
     public function testCoreDefaults()

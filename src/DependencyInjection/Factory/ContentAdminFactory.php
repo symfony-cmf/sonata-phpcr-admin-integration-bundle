@@ -41,12 +41,5 @@ class ContentAdminFactory implements AdminFactoryInterface
     public function create(array $config, ContainerBuilder $container, XmlFileLoader $loader)
     {
         $loader->load('content.xml');
-
-        $bundles = $container->getParameter('kernel.bundles');
-        if (!isset($bundles['BurgovKeyValueFormBundle'])) {
-            throw new InvalidConfigurationException(
-                'To use advanced menu options, you need the burgov/key-value-form-bundle in your project.'
-            );
-        }
     }
 }
