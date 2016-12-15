@@ -11,7 +11,7 @@
 
 namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Block\Extension;
 
-use Sonata\AdminBundle\Admin\AdminExtension;
+use Sonata\AdminBundle\Admin\AbstractAdminExtension;
 use Sonata\AdminBundle\Form\FormMapper;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 
@@ -20,7 +20,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
  *
  * @author Sven Cludius <sven.cludius@valiton.com>
  */
-class BlockCacheExtension extends AdminExtension
+class BlockCacheExtension extends AbstractAdminExtension
 {
     /**
      * Configure form fields.

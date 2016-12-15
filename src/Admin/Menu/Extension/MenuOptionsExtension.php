@@ -12,7 +12,7 @@
 namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Menu\Extension;
 
 use Burgov\Bundle\KeyValueFormBundle\Form\Type\KeyValueType;
-use Sonata\AdminBundle\Admin\AdminExtension;
+use Sonata\AdminBundle\Admin\AbstractAdminExtension;
 use Sonata\AdminBundle\Form\FormMapper;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -23,7 +23,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
  *
  * @author Mojtaba Koosej <mkoosej@gmail.com>
  */
-class MenuOptionsExtension extends AdminExtension
+class MenuOptionsExtension extends AbstractAdminExtension
 {
     /**
      * @var string

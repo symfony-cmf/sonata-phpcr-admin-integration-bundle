@@ -11,7 +11,7 @@
 
 namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Menu\Extension;
 
-use Sonata\AdminBundle\Admin\AdminExtension;
+use Sonata\AdminBundle\Admin\AbstractAdminExtension;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\CoreBundle\Form\Type\CollectionType;
 
@@ -20,7 +20,7 @@ use Sonata\CoreBundle\Form\Type\CollectionType;
  *
  * @author David Buchmann <mail@davidbu.ch>
  */
-class MenuNodeReferrersExtension extends AdminExtension
+class MenuNodeReferrersExtension extends AbstractAdminExtension
 {
     public function configureFormFields(FormMapper $formMapper)
     {

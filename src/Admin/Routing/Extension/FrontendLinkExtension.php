@@ -12,7 +12,7 @@
 namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Routing\Extension;
 
 use Knp\Menu\ItemInterface as MenuItemInterface;
-use Sonata\AdminBundle\Admin\AdminExtension;
+use Sonata\AdminBundle\Admin\AbstractAdminExtension;
 use Sonata\AdminBundle\Admin\AdminInterface;
 use Symfony\Cmf\Bundle\CoreBundle\Translatable\TranslatableInterface;
 use Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\PrefixInterface;
@@ -29,7 +29,7 @@ use Symfony\Component\Translation\TranslatorInterface;
  *
  * @author Frank Neff <fneff89@gmail.com>
  */
-class FrontendLinkExtension extends AdminExtension
+class FrontendLinkExtension extends AbstractAdminExtension
 {
     /**
      * @var RouterInterface

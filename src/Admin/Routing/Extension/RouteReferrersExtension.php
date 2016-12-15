@@ -11,7 +11,7 @@
 
 namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Routing\Extension;
 
-use Sonata\AdminBundle\Admin\AdminExtension;
+use Sonata\AdminBundle\Admin\AbstractAdminExtension;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\CoreBundle\Form\Type\CollectionType;
 
@@ -21,7 +21,7 @@ use Sonata\CoreBundle\Form\Type\CollectionType;
  *
  * @author David Buchmann <mail@davidbu.ch>
  */
-class RouteReferrersExtension extends AdminExtension
+class RouteReferrersExtension extends AbstractAdminExtension
 {
     public function configureFormFields(FormMapper $formMapper)
     {

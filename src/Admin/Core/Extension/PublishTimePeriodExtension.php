@@ -11,7 +11,7 @@
 
 namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Core\Extension;
 
-use Sonata\AdminBundle\Admin\AdminExtension;
+use Sonata\AdminBundle\Admin\AbstractAdminExtension;
 use Sonata\AdminBundle\Form\FormMapper;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 
@@ -21,7 +21,7 @@ use Symfony\Component\Form\Extension\Core\Type\DateType;
  *
  * @author Daniel Leech <daniel@dantleech.com>
  */
-class PublishTimePeriodExtension extends AdminExtension
+class PublishTimePeriodExtension extends AbstractAdminExtension
 {
     /**
      * @var string
