@@ -42,14 +42,6 @@ class SeoAdminFactory implements AdminFactoryInterface
     public function create(array $config, ContainerBuilder $container, XmlFileLoader $loader)
     {
         $loader->load('seo.xml');
-
-        $bundles = $container->getParameter('kernel.bundles');
-        if (!isset($bundles['BurgovKeyValueFormBundle'])) {
-            throw new InvalidConfigurationException(
-                'To use advanced menu options, you need the burgov/key-value-form-bundle in your project.'
-            );
-        }
-
         $container->setParameter('cmf_sonata_admin_integration.seo.form_group', $config['form_group']);
     }
 }

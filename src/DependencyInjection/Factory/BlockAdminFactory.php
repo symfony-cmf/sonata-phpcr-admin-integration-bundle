@@ -40,58 +40,11 @@ class BlockAdminFactory implements AdminFactoryInterface
                 ->values([true, false, 'auto'])
                 ->defaultValue('auto')
             ->end()
-            ->arrayNode('admin_classes')
-                ->children()
-                    ->scalarNode('string_document_class')
-                        ->defaultValue('Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\StringBlock')
-                    ->end()
-                    ->scalarNode('simple_document_class')
-                        ->defaultValue('Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SimpleBlock')
-                    ->end()
-                    ->scalarNode('container_document_class')
-                        ->defaultValue('Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock')
-                    ->end()
-                    ->scalarNode('reference_document_class')
-                        ->defaultValue('Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ReferenceBlock')
-                    ->end()
-                    ->scalarNode('action_document_class')
-                        ->defaultValue('Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ActionBlock')
-                    ->end()
-                    ->scalarNode('slideshow_document_class')
-                        ->defaultValue('Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SlideshowBlock')
-                    ->end()
-                    ->scalarNode('imagine_document_class')
-                        ->defaultValue('Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ImagineBlock')
-                    ->end()
-                    ->scalarNode('menu_document_class')
-                        ->defaultValue('Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\MenuBlock')
-                    ->end()
-                    ->scalarNode('string_admin_class')
-                        ->defaultValue('Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Block\StringBlockAdmin')
-                    ->end()
-                    ->scalarNode('simple_admin_class')
-                        ->defaultValue('Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Block\SimpleBlockAdmin')
-                    ->end()
-                    ->scalarNode('container_admin_class')
-                        ->defaultValue('Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Block\ContainerBlockAdmin')
-                    ->end()
-                    ->scalarNode('reference_admin_class')
-                        ->defaultValue('Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Block\ReferenceBlockAdmin')
-                    ->end()
-                    ->scalarNode('action_admin_class')
-                        ->defaultValue('Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Block\ActionBlockAdmin')
-                    ->end()
-                    ->scalarNode('slideshow_admin_class')
-                        ->defaultValue('Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Block\Imagine\SlideshowBlockAdmin')
-                    ->end()
-                    ->scalarNode('imagine_admin_class')
-                        ->defaultValue('Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Block\Imagine\ImagineBlockAdmin')
-                    ->end()
-                    ->scalarNode('menu_admin_class')
-                        ->defaultValue('Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Block\MenuBlockAdmin')
-                    ->end()
-                ->end()
-            ->end();
+            ->enumNode('enable_menu')
+                ->values([true, false, 'auto'])
+                ->defaultValue('auto')
+            ->end()
+        ;
     }
 
     /**
@@ -104,37 +57,19 @@ class BlockAdminFactory implements AdminFactoryInterface
             'cmf_sonata_admin_integration.block.persistence.phpcr.menu_basepath',
             $config['menu_basepath']
         );
-        $keys = [
-            'string_document_class' => 'string_document.class',
-            'simple_document_class' => 'simple_document.class',
-            'container_document_class' => 'container_document.class',
-            'reference_document_class' => 'reference_document.class',
-            'menu_document_class' => 'menu_document.class',
-            'action_document_class' => 'action_document.class',
-            'imagine_document_class' => 'imagine_document.class',
-            'slideshow_document_class' => 'slideshow_document.class',
-            'string_admin_class' => 'string_admin.class',
-            'simple_admin_class' => 'simple_admin.class',
-            'container_admin_class' => 'container_admin.class',
-            'reference_admin_class' => 'reference_admin.class',
-            'menu_admin_class' => 'menu_admin.class',
-            'action_admin_class' => 'action_admin.class',
-            'imagine_admin_class' => 'imagine_admin.class',
-            'slideshow_admin_class' => 'slideshow_admin.class',
-        ];
-        $adminClasses = isset($config['admin_classes']) ? $config['admin_classes'] : [];
-        foreach ($keys as $sourceKey => $targetKey) {
-            $container->setParameter('cmf_sonata_admin_integration.block.'.$targetKey, $adminClasses[$sourceKey]);
-        }
 
-        $bundles = $container->getParameter('kernel.bundles');
         $loader->load('block.xml');
 
-        if ($config['use_imagine']) {
+        $bundles = $container->getParameter('kernel.bundles');
+        if (true === $config['use_imagine']
+            || ('auto' === $config['use_imagine'] && isset($bundles['CmfMediaBundle']))
+        ) {
             $loader->load('block-imagine.xml');
         }
 
-        if (isset($bundles['CmfMenuBundle'])) {
+        if (true === $config['enable_menu']
+            || ('auto' === $config['enable_menu'] && isset($bundles['CmfMenuBundle']))
+        ) {
             $loader->load('block-menu.xml');
         }
     }
