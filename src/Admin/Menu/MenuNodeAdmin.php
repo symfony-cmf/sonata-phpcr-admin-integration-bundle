@@ -42,12 +42,14 @@ class MenuNodeAdmin extends AbstractMenuNodeAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->with('form.group_general')
-                ->add('parentDocument', TreeModelType::class, array(
-                    'root_node' => $this->menuRoot,
-                    'choice_list' => array(),
-                    'select_root_node' => true,
-                ))
+            ->tab('form.tab_general')
+                ->with('form.group_location', ['class' => 'col-sm-3'])
+                    ->add('parentDocument', TreeModelType::class, array(
+                        'root_node' => $this->menuRoot,
+                        'choice_list' => array(),
+                        'select_root_node' => true,
+                    ))
+                ->end()
             ->end()
         ;
 
@@ -56,29 +58,31 @@ class MenuNodeAdmin extends AbstractMenuNodeAdmin
         if (null === $this->getParentFieldDescription()) {
             // Add the choice for the node links "target"
             $formMapper
-                ->with('form.group_general')
-                    ->add('linkType', ChoiceFieldMaskType::class, array(
-                        'choices' => array(
-                            'route' => 'route',
-                            'uri' => 'uri',
-                            'content' => 'content',
-                        ),
-                        'map' => array(
-                            'route' => array('link'),
-                            'uri' => array('link'),
-                            'content' => array('content', TreeModelType::class),
-                        ),
-                        'placeholder' => 'auto',
-                        'required' => false,
-                    ))
-                    ->add('link', TextType::class, array('required' => false, 'mapped' => false))
-                    ->add('content', TreeModelType::class,
-                        array(
-                            'root_node' => $this->contentRoot,
-                            'choice_list' => array(),
+                ->tab('form.tab_general')
+                    ->with('form.group_target', ['class' => 'col-sm-9'])
+                        ->add('linkType', ChoiceFieldMaskType::class, array(
+                            'choices' => array(
+                                'route' => 'route',
+                                'uri' => 'uri',
+                                'content' => 'content',
+                            ),
+                            'map' => array(
+                                'route' => array('link'),
+                                'uri' => array('link'),
+                                'content' => array('content', TreeModelType::class),
+                            ),
+                            'placeholder' => 'auto',
                             'required' => false,
+                        ))
+                        ->add('link', TextType::class, array('required' => false, 'mapped' => false))
+                        ->add('content', TreeModelType::class,
+                            array(
+                                'root_node' => $this->contentRoot,
+                                'choice_list' => array(),
+                                'required' => false,
+                            )
                         )
-                    )
+                    ->end()
                 ->end()
             ;
         }

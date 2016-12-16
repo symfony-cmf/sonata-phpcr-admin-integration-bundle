@@ -36,7 +36,7 @@ abstract class AbstractMenuNodeAdmin extends Admin
     /**
      * @var string
      */
-    protected $translationDomain = 'CmfMenuBundle';
+    protected $translationDomain = 'CmfSonataAdminIntegrationBundle';
 
     protected function configureListFields(ListMapper $listMapper)
     {
@@ -52,9 +52,11 @@ abstract class AbstractMenuNodeAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->with('form.group_general')
-                ->add('name', TextType::class)
-                ->add('label', TextType::class)
+            ->tab('form.tab_general')
+                ->with('form.group_location')
+                    ->add('name', TextType::class)
+                    ->add('label', TextType::class)
+                ->end()
             ->end()
         ;
     }

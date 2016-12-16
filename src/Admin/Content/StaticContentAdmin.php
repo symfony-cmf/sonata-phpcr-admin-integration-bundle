@@ -20,7 +20,7 @@ use Symfony\Cmf\Bundle\ContentBundle\Model\StaticContentBase;
 
 class StaticContentAdmin extends Admin
 {
-    protected $translationDomain = 'CmfContentBundle';
+    protected $translationDomain = 'CmfSonataAdminIntegrationBundle';
 
     public function getExportFormats()
     {
@@ -42,11 +42,16 @@ class StaticContentAdmin extends Admin
         ]);
 
         $formMapper
-            ->with('form.group_general')
-                ->add($builder->get('parentDocument'))
-                ->add($builder->get('name'))
-                ->add($builder->get('title'))
-                ->add($builder->get('body'))
+            ->tab('form.tab_general')
+                ->with('form.group_content', ['class' => 'col-md-9'])
+                    ->add($builder->get('title'))
+                    ->add($builder->get('body'))
+                ->end()
+
+                ->with('form.group_location', ['class' => 'col-md-3'])
+                    ->add($builder->get('parentDocument'))
+                    ->add($builder->get('name'))
+                ->end()
             ->end()
         ;
     }

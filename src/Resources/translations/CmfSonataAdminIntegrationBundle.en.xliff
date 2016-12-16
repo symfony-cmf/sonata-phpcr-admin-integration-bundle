@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+    <file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <!-- Common -->
+            <trans-unit id="form.tab_general">
+                <source>form.tab_general</source>
+                <target>General</target>
+            </trans-unit>
+
+            <trans-unit id="form.group_general">
+                <source>form.group_general</source>
+                <target>General</target>
+            </trans-unit>
+
+            <!-- Routing -->
+            <trans-unit id="form.tab_routing">
+                <source>form.tab_routing</source>
+                <target>URLs</target>
+            </trans-unit>
+
+            <trans-unit id="form.group_location">
+                <source>form.group_location</source>
+                <target>Location</target>
+            </trans-unit>
+            <trans-unit id="form.group_path">
+                <source>form.group_path</source>
+                <target>Path</target>
+            </trans-unit>
+            <trans-unit id="form.group_data">
+                <source>form.group_data</source>
+                <target>Data</target>
+            </trans-unit>
+
+            <!-- Core -->
+            <trans-unit id="form.tab_publish">
+                <source>form.tab_publish</source>
+                <target>Publish Settings</target>
+            </trans-unit>
+
+            <trans-unit id="form.group_publish_workflow">
+                <source>form.group_publish_workflow</source>
+                <target>Status</target>
+            </trans-unit>
+
+            <trans-unit id="form.help_publishable">
+                <source>form.help_publishable</source>
+                <target>If checked, this item is marked ready to be published. Whether it is actually published may depend on the configured publish date range.</target>
+            </trans-unit>
+
+            <!-- Content -->
+            <trans-unit id="form.group_content">
+                <source>form.group_content</source>
+                <target>Content</target>
+            </trans-unit>
+
+            <!-- Menu -->
+            <trans-unit id="form.tab_menu">
+                <source>form.tab_menu</source>
+                <target>Menu</target>
+            </trans-unit>
+
+            <trans-unit id="form.group_menus">
+                <source>form.group_menus</source>
+                <target>Menu</target>
+            </trans-unit>
+
+            <!-- Seo -->
+            <trans-unit id="form.tab_seo">
+                <source>form.tab_seo</source>
+                <target>SEO</target>
+            </trans-unit>
+
+            <trans-unit id="form.group_seo">
+                <source>form.group_seo</source>
+                <target>SEO</target>
+            </trans-unit>
+
+            <!-- Menu -->
+            <trans-unit id="form.group_target">
+                <source>form.group_target</source>
+                <target>Target link</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

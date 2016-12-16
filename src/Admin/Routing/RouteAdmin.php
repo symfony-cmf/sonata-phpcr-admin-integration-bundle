@@ -41,13 +41,6 @@ class RouteAdmin extends Admin
      */
     protected $contentRoot;
 
-    /**
-     * Full class name for content that can be referenced by a route.
-     *
-     * @var string
-     */
-    protected $contentClass;
-
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper->addIdentifier('path', 'text');
@@ -56,42 +49,52 @@ class RouteAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->with('form.group_general', array(
-                'translation_domain' => 'CmfRoutingBundle',
-            ))
-                ->add(
-                    'parentDocument',
-                    TreeModelType::class,
-                    array('choice_list' => array(), 'select_root_node' => true, 'root_node' => $this->routeRoot)
-                )
-                ->add('name', TextType::class)
-        ->end();
+            ->tab('form.tab_general')
+                ->with('form.group_location', ['class' => 'col-md-3'])
+                    ->add(
+                        'parentDocument',
+                        TreeModelType::class,
+                        ['choice_list' => [], 'select_root_node' => true, 'root_node' => $this->routeRoot]
+                    )
+                    ->add('name', TextType::class)
+                ->end() // group location
 
-        if (null === $this->getParentFieldDescription()) {
-            $formMapper
-                ->with('form.group_general', array(
-                    'translation_domain' => 'CmfRoutingBundle',
-                ))
-                    ->add('content', TreeModelType::class, array('choice_list' => array(), 'required' => false, 'root_node' => $this->contentRoot))
-                ->end()
-                ->with('form.group_advanced', array(
-                    'translation_domain' => 'CmfRoutingBundle',
-                ))
-                    ->add('variablePattern', TextType::class, array('required' => false), array('help' => 'form.help_variable_pattern'))
-                    ->add(
-                        'defaults',
-                        ImmutableArrayType::class,
-                        array('keys' => $this->configureFieldsForDefaults($this->getSubject()->getDefaults()))
-                    )
-                    ->add(
-                        'options',
-                        ImmutableArrayType::class,
-                        array('keys' => $this->configureFieldsForOptions($this->getSubject()->getOptions())),
-                        array('help' => 'form.help_options')
-                    )
-                ->end()
-            ->end();
-        }
+                ->ifTrue(null === $this->getParentFieldDescription())
+                    ->with('form.group_general', ['class' => 'col-md-9'])
+                        ->add(
+                            'content',
+                            TreeModelType::class,
+                            ['choice_list' => [], 'required' => false, 'root_node' => $this->contentRoot]
+                        )
+                    ->end() // group general
+                ->end() // tab general
+
+                ->tab('form.tab_routing')
+                    ->with('form.group_path', ['class' => 'col-md-6'])
+                        ->add(
+                            'variablePattern',
+                            TextType::class,
+                            ['required' => false],
+                            ['help' => 'form.help_variable_pattern']
+                        )
+                        ->add(
+                            'options',
+                            ImmutableArrayType::class,
+                            ['keys' => $this->configureFieldsForOptions($this->getSubject()->getOptions())],
+                            ['help' => 'form.help_options']
+                        )
+                    ->end() // group path
+
+                    ->with('form.group_data', ['class' => 'col-md-6'])
+                        ->add(
+                            'defaults',
+                            ImmutableArrayType::class,
+                            ['keys' => $this->configureFieldsForDefaults($this->getSubject()->getDefaults())]
+                        )
+                    ->end() // group data
+                ->ifEnd()
+
+            ->end(); // tab general/routing
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)

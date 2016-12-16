@@ -22,20 +22,37 @@ use Sonata\CoreBundle\Form\Type\CollectionType;
  */
 class MenuNodeReferrersExtension extends AbstractAdminExtension
 {
+    private $formGroup;
+    private $formTab;
+
+    public function __construct($formGroup = 'form.group_menus', $formTab = 'form.tab_menu')
+    {
+        $this->formGroup = $formGroup;
+        $this->formTab = $formTab;
+    }
+
     public function configureFormFields(FormMapper $formMapper)
     {
+        if ($formMapper->hasOpenTab()) {
+            $formMapper->end();
+        }
+
         $formMapper
-            ->with('form.group_menus', array(
-                'translation_domain' => 'CmfMenuBundle',
-            ))
-            ->add(
-                'menuNodes',
-                CollectionType::class,
-                array(),
-                array(
-                    'edit' => 'inline',
-                    'inline' => 'table',
-                ))
+            ->tab($this->formTab, 'form.tab_menu' === $this->formTab
+                ? ['translation_domain' => 'CmfSonataAdminIntegrationBundle']
+                : []
+            )
+                ->with($this->formGroup, 'form.group_menus' === $this->formGroup
+                    ? ['translation_domain' => 'CmfSonataAdminIntegrationBundle']
+                    : []
+                )
+                    ->add(
+                        'menuNodes',
+                        CollectionType::class,
+                        [],
+                        ['edit' => 'inline', 'inline' => 'table']
+                    )
+                ->end()
             ->end()
         ;
     }

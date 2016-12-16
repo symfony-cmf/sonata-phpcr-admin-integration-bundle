@@ -29,15 +29,17 @@ class MenuAdmin extends AbstractMenuNodeAdmin
 
         if (!$isNew) {
             $formMapper
-                ->with('form.group_items', array())
-                    ->add('children', TreeManagerType::class, array(
-                        'root' => $this->menuRoot,
-                        'edit_in_overlay' => false,
-                        'create_in_overlay' => false,
-                        'delete_in_overlay' => false,
-                    ), array(
-                        'help' => 'help.items_help',
-                    ))
+                ->tab('form.tab_general')
+                    ->with('form.group_items')
+                        ->add('children', TreeManagerType::class, array(
+                            'root' => $this->menuRoot,
+                            'edit_in_overlay' => false,
+                            'create_in_overlay' => false,
+                            'delete_in_overlay' => false,
+                        ), array(
+                            'help' => 'help.items_help',
+                        ))
+                    ->end()
                 ->end()
             ;
         }
