@@ -11,7 +11,7 @@
 
 namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Core\Extension;
 
-use Sonata\AdminBundle\Admin\AdminExtension;
+use Sonata\AdminBundle\Admin\AbstractAdminExtension;
 use Sonata\AdminBundle\Admin\AdminInterface;
 use Symfony\Cmf\Bundle\CoreBundle\Model\ChildInterface;
 use Doctrine\ODM\PHPCR\HierarchyInterface;
@@ -21,7 +21,7 @@ use Doctrine\ODM\PHPCR\HierarchyInterface;
  *
  * @author Emmanuel Vella <vella.emmanuel@gmail.com>
  */
-class ChildExtension extends AdminExtension
+class ChildExtension extends AbstractAdminExtension
 {
     /**
      * Set a default parent if defined in the request.

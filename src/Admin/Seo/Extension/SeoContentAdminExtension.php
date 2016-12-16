@@ -11,7 +11,7 @@
 
 namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Seo\Extension;
 
-use Sonata\AdminBundle\Admin\AdminExtension;
+use Sonata\AdminBundle\Admin\AbstractAdminExtension;
 use Sonata\AdminBundle\Admin\AdminInterface;
 use Sonata\AdminBundle\Form\FormMapper;
 use Symfony\Cmf\Bundle\CoreBundle\Translatable\TranslatableInterface;
@@ -19,12 +19,12 @@ use Symfony\Cmf\Bundle\SeoBundle\Form\Type\SeoMetadataType;
 use Symfony\Cmf\Bundle\SeoBundle\SeoAwareInterface;
 
 /**
- * This AdminExtension will serve the bundle's own form type
+ * This AbstractAdminExtension will serve the bundle's own form type
  * for configuring seo metadata.
  *
  * @author Maximilian Berghoff <maximilian.berghoff@gmx.de>
  */
-class SeoContentAdminExtension extends AdminExtension
+class SeoContentAdminExtension extends AbstractAdminExtension
 {
     /**
      * @var string
