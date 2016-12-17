@@ -14,7 +14,6 @@ namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\DependencyInjection\Fa
 use Symfony\Component\Config\Definition\Builder\NodeBuilder;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
-use Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Content\StaticContentAdmin;
 
 /**
  * @author Wouter de Jong <wouter@wouterj.nl>
@@ -34,7 +33,6 @@ class ContentAdminFactory implements AdminFactoryInterface
      */
     public function addConfiguration(NodeBuilder $builder)
     {
-        $builder->scalarNode('admin_class')->defaultValue(StaticContentAdmin::class)->end();
     }
 
     /**
@@ -43,14 +41,5 @@ class ContentAdminFactory implements AdminFactoryInterface
     public function create(array $config, ContainerBuilder $container, XmlFileLoader $loader)
     {
         $loader->load('content.xml');
-
-        $bundles = $container->getParameter('kernel.bundles');
-        if (!isset($bundles['BurgovKeyValueFormBundle'])) {
-            throw new InvalidConfigurationException(
-                'To use advanced menu options, you need the burgov/key-value-form-bundle in your project.'
-            );
-        }
-
-        $container->setParameter('cmf_sonata_admin_integration.content.admin.class', $config['admin_class']);
     }
 }

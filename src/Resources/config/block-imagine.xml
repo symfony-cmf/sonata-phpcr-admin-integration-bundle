@@ -8,7 +8,7 @@
 
         <service
                 id="cmf_sonata_admin_integration.block.imagine.slideshow_admin"
-                class="%cmf_sonata_admin_integration.block.slideshow_admin.class%">
+                class="Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Block\Imagine\SlideshowBlockAdmin">
             <tag
                     name="sonata.admin"
                     manager_type="doctrine_phpcr"
@@ -17,7 +17,7 @@
                     label="dashboard.label_slideshow_block"
                     label_translator_strategy="sonata.admin.label.strategy.underscore" />
             <argument/>
-            <argument>%cmf_sonata_admin_integration.block.slideshow_document.class%</argument>
+            <argument>Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SlideshowBlock</argument>
             <argument>SonataAdminBundle:CRUD</argument>
 
             <call method="setRouteBuilder">
@@ -35,7 +35,7 @@
 
         <service
                 id="cmf_sonata_admin_integration.block.imagine.imagine_admin"
-                class="%cmf_sonata_admin_integration.block.imagine_admin.class%">
+                class="Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Block\Imagine\ImagineBlockAdmin">
             <tag
                     name="sonata.admin"
                     manager_type="doctrine_phpcr"
@@ -44,7 +44,7 @@
                     label="dashboard.label_imagine_block"
                     label_translator_strategy="sonata.admin.label.strategy.underscore" />
             <argument/>
-            <argument>%cmf_sonata_admin_integration.block.imagine_document.class%</argument>
+            <argument>Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ImagineBlock</argument>
             <argument>SonataAdminBundle:CRUD</argument>
 
             <call method="setRouteBuilder">
