@@ -5,133 +5,137 @@
             <!-- $Common -->
             <trans-unit id="list.label_id">
                 <source>list.label_id</source>
-                <target>Path</target>
+                <target>Percorso</target>
             </trans-unit>
             <trans-unit id="list.label_title">
                 <source>list.label_title</source>
-                <target>Title</target>
+                <target>Titolo</target>
             </trans-unit>
             <trans-unit id="list.label_name">
                 <source>list.label_name</source>
-                <target>Name</target>
+                <target>Nome</target>
             </trans-unit>
 
             <trans-unit id="form.tab_general">
                 <source>form.tab_general</source>
-                <target>General</target>
+                <target>Generale</target>
             </trans-unit>
 
             <trans-unit id="form.group_general">
                 <source>form.group_general</source>
-                <target>General</target>
+                <target>Generale</target>
             </trans-unit>
 
             <trans-unit id="form.label_parentDocument">
                 <source>form.label_parentDocument</source>
-                <target>Parent</target>
+                <target>Nodo padre</target>
             </trans-unit>
             <trans-unit id="form.label_parent_document">
                 <source>form.label_parent_document</source>
-                <target>Parent</target>
+                <target>Nodo padre</target>
             </trans-unit>
             <trans-unit id="form.label_title">
                 <source>form.label_title</source>
-                <target>Title</target>
+                <target>Titolo</target>
             </trans-unit>
             <trans-unit id="form.label_name">
                 <source>form.label_name</source>
-                <target>Name</target>
+                <target>Nome</target>
             </trans-unit>
             <trans-unit id="form.label_content">
                 <source>form.label_content</source>
-                <target>Content</target>
+                <target>Nodo contenuti</target>
             </trans-unit>
 
 
             <!-- $Content -->
             <trans-unit id="dashboard.label_static_content">
                 <source>dashboard.label_static_content</source>
-                <target>Static content</target>
+                <target>Contenuti statici</target>
             </trans-unit>
 
             <trans-unit id="form.group_content">
                 <source>form.group_content</source>
-                <target>Content</target>
+                <!-- TODO: Check translation -->
+                <target>Nodo contenuti</target>
             </trans-unit>
 
             <trans-unit id="form.label_body">
                 <source>form.label_body</source>
-                <target>Body</target>
+                <target>Contenuto</target>
             </trans-unit>
 
             <trans-unit id="breadcrumb.link_static_content_list">
                 <source>breadcrumb.link_static_content_list</source>
-                <target>Static contents</target>
+                <target>Contenuti statici</target>
             </trans-unit>
             <trans-unit id="breadcrumb.link_static_content_create">
                 <source>breadcrumb.link_static_content_create</source>
-                <target>Create</target>
+                <target>Crea</target>
             </trans-unit>
             <trans-unit id="breadcrumb.link_static_content_edit">
                 <source>breadcrumb.link_static_content_edit</source>
-                <target>Edit</target>
+                <target>Modifica</target>
             </trans-unit>
             <trans-unit id="breadcrumb.link_static_content_delete">
                 <source>breadcrumb.link_static_content_delete</source>
-                <target>Delete</target>
+                <target>Elimina</target>
             </trans-unit>
 
 
             <!-- $Core -->
             <trans-unit id="form.tab_publish">
                 <source>form.tab_publish</source>
+                <!-- TODO: Translate -->
                 <target>Publish Settings</target>
             </trans-unit>
 
             <trans-unit id="form.group_publish_workflow">
                 <source>form.group_publish_workflow</source>
+                <!-- TODO: Translate -->
                 <target>Status</target>
             </trans-unit>
 
             <trans-unit id="form.label_publishable">
                 <source>form.label_publishable</source>
-                <target>Publishable</target>
+                <target>Pubblicabile</target>
             </trans-unit>
             <trans-unit id="form.label_publish_start_date">
                 <source>form.label_publish_start_date</source>
-                <target>Publish from</target>
+                <target>Pubblica dal</target>
             </trans-unit>
             <trans-unit id="form.label_publish_end_date">
                 <source>form.label_publish_end_date</source>
-                <target>Publish until</target>
+                <target>Pubblica fino al</target>
             </trans-unit>
             <trans-unit id="form.help_publishable">
                 <source>form.help_publishable</source>
+                <!-- TODO: Translate -->
                 <target>If checked, this item is marked ready to be published. Whether it is actually published may depend on the configured publish date range.</target>
             </trans-unit>
             <trans-unit id="form.help_publish_start_date">
                 <source>form.help_publish_start_date</source>
-                <target>Only publish on or after this date, leave empty to immediately publish</target>
+                <target>Pubblica solo a partire da questa data, lascia vuoto per pubblicare immediatamente</target>
             </trans-unit>
             <trans-unit id="form.help_publish_end_date">
                 <source>form.help_publish_end_date</source>
-                <target>Only publish before this date, leave empty to not end publishing</target>
+                <target>Pubblica solo fino a questa data, lascia vuoto per mantenere pubblicato indefinitamente</target>
             </trans-unit>
 
 
             <!-- $Menu -->
             <trans-unit id="dashboard.label_menu">
                 <source>dashboard.label_menu</source>
-                <target>Menus</target>
+                <target>Menu</target>
             </trans-unit>
             <trans-unit id="dashboard.label_menu_node">
                 <source>dashboard.label_menu_node</source>
-                <target>Menu node</target>
+                <target>Nodo menu</target>
             </trans-unit>
 
             <trans-unit id="list.label_label">
                 <source>list.label_label</source>
-                <target>Label</target>
+                <target>Codice</target>
             </trans-unit>
             <trans-unit id="list.label_uri">
                 <source>list.label_uri</source>
@@ -139,7 +143,7 @@
             </trans-unit>
             <trans-unit id="list.label_route">
                 <source>list.label_route</source>
-                <target>Route</target>
+                <target>Rotta</target>
             </trans-unit>
 
             <trans-unit id="form.tab_menu">
@@ -153,10 +157,11 @@
             </trans-unit>
             <trans-unit id="form.group_items">
                 <source>form.group_items</source>
-                <target>Items</target>
+                <target>Elementi</target>
             </trans-unit>
             <trans-unit id="form.group_target">
                 <source>form.group_target</source>
+                <!-- TODO: Translate -->
                 <target>Target link</target>
             </trans-unit>
 
@@ -166,67 +171,68 @@
             </trans-unit>
             <trans-unit id="form.label_label">
                 <source>form.label_label</source>
-                <target>Label</target>
+                <target>Codice</target>
             </trans-unit>
             <trans-unit id="form.label_link_type">
                 <source>form.label_link_type</source>
-                <target>Link type</target>
+                <target>Tipo link</target>
             </trans-unit>
             <trans-unit id="form.label_link">
                 <source>form.label_link</source>
+                <!-- TODO: Translate -->
                 <target>Link</target>
             </trans-unit>
             <trans-unit id="form.label_route">
                 <source>form.label_route</source>
-                <target>Route</target>
+                <target>Rotta</target>
             </trans-unit>
             <trans-unit id="form.label_children">
                 <source>form.label_children</source>
-                <target>Items</target>
+                <target>Elementi</target>
             </trans-unit>
 
             <trans-unit id="breadcrumb.link_menu_list">
                 <source>breadcrumb.link_menu_list</source>
-                <target>Menus</target>
+                <target>Menu</target>
             </trans-unit>
             <trans-unit id="breadcrumb.link_menu_create">
                 <source>breadcrumb.link_menu_create</source>
-                <target>Create</target>
+                <target>Crea menu</target>
             </trans-unit>
             <trans-unit id="breadcrumb.link_menu_edit">
                 <source>breadcrumb.link_menu_edit</source>
-                <target>Edit</target>
+                <target>Modifica</target>
             </trans-unit>
             <trans-unit id="breadcrumb.link_menu_delete">
                 <source>breadcrumb.link_menu_delete</source>
-                <target>Delete</target>
+                <target>Elimina</target>
             </trans-unit>
             <trans-unit id="breadcrumb.link_menu_node_list">
                 <source>breadcrumb.link_menu_node_list</source>
-                <target>Menu nodes</target>
+                <target>Nodi menu</target>
             </trans-unit>
             <trans-unit id="breadcrumb.link_menu_node_create">
                 <source>breadcrumb.link_menu_node_create</source>
-                <target>Create</target>
+                <target>Crea</target>
             </trans-unit>
             <trans-unit id="breadcrumb.link_menu_node_edit">
                 <source>breadcrumb.link_menu_node_edit</source>
-                <target>Edit</target>
+                <target>Modifica</target>
             </trans-unit>
             <trans-unit id="breadcrumb.link_menu_node_delete">
                 <source>breadcrumb.link_menu_node_delete</source>
-                <target>Delete</target>
+                <target>Elimina</target>
             </trans-unit>
 
 
             <!-- $Routing -->
             <trans-unit id="dashboard.label_routing">
                 <source>dashboard.label_routing</source>
-                <target>Route</target>
+                <target>Rotte</target>
             </trans-unit>
             <trans-unit id="dashboard.label_redirect_routing">
                 <source>dashboard.label_redirect_routing</source>
-                <target>Redirect Route</target>
+                <target>Reindirizzamenti</target>
             </trans-unit>
 
             <trans-unit id="list.label_path">
@@ -236,37 +242,42 @@
 
             <trans-unit id="form.tab_routing">
                 <source>form.tab_routing</source>
+                <!-- TODO: Translate -->
                 <target>URLs</target>
             </trans-unit>
 
             <trans-unit id="form.group_location">
                 <source>form.group_location</source>
+                <!-- TODO: Translate -->
                 <target>Location</target>
             </trans-unit>
             <trans-unit id="form.group_path">
                 <source>form.group_path</source>
+                <!-- TODO: Translate -->
                 <target>Path</target>
             </trans-unit>
             <trans-unit id="form.group_data">
                 <source>form.group_data</source>
+                <!-- TODO: Translate -->
                 <target>Data</target>
             </trans-unit>
 
             <trans-unit id="form.label_defaults">
                 <source>form.label_defaults</source>
-                <target>Default values</target>
+                <target>Valori predefiniti</target>
             </trans-unit>
             <trans-unit id="form.label_variable_pattern">
                 <source>form.label_variable_pattern</source>
-                <target>Variable pattern</target>
+                <target>Parte variabile</target>
             </trans-unit>
             <trans-unit id="form.label_options">
                 <source>form.label_options</source>
-                <target>Options</target>
+                <target>Opzioni</target>
             </trans-unit>
             <trans-unit id="form.label_route_name">
                 <source>form.label_route_name</source>
-                <target>Route</target>
+                <!-- TODO: Translate "Route name" -->
+                <target>Nome</target>
             </trans-unit>
             <trans-unit id="form.label_uri">
                 <source>form.label_uri</source>
@@ -274,55 +285,55 @@
             </trans-unit>
             <trans-unit id="form.label_route_target">
                 <source>form.label_route_target</source>
-                <target>Route target</target>
+                <target>Destinazione della rotta</target>
             </trans-unit>
 
             <trans-unit id="form.help_variable_pattern">
                 <source>form.help_variable_pattern</source>
-                <target>A pattern in the format {variable}/{more}... The fields are passed to the controller if it declares them as arguments.</target>
+                <target>Il pattern deve essere nel formato {variabile}/{altro}... I campi verranno passati al controller se dichiarati come argomenti.</target>
             </trans-unit>
             <trans-unit id="form.help_options">
                 <source>form.help_options</source>
                 <target>
                     <![CDATA[
-                    Locale: Prepend locale to route like /{locale}/your/route<br/>
-                    Format: Append format to route like /your/route.{format}. Default format is 'html'<br/>
-                    Slash: Append a trailing slash to route like /your/route/
+                    Codice lingua: Antepone il codice lingua alla rotta, es. /{locale}/la/mia/rotta<br/>
+                    Formato: Accoda il formato file alla rotta, es. /la/mia/rotta.{format}. Il formato predefinito è 'html'<br/>
+                    Barra: Accoda la barra (slash) alla fine della rotta, es. /la/mia/rotta/
                     ]]>
                 </target>
             </trans-unit>
 
             <trans-unit id="breadcrumb.link_route_list">
                 <source>breadcrumb.link_route_list</source>
-                <target>Routes</target>
+                <target>Rotte</target>
             </trans-unit>
             <trans-unit id="breadcrumb.link_route_create">
                 <source>breadcrumb.link_route_create</source>
-                <target>Create</target>
+                <target>Crea</target>
             </trans-unit>
             <trans-unit id="breadcrumb.link_route_edit">
                 <source>breadcrumb.link_route_edit</source>
-                <target>Edit</target>
+                <target>Modifica</target>
             </trans-unit>
             <trans-unit id="breadcrumb.link_route_delete">
                 <source>breadcrumb.link_route_delete</source>
-                <target>Delete</target>
+                <target>Elimina</target>
             </trans-unit>
             <trans-unit id="breadcrumb.link_redirect_route_list">
                 <source>breadcrumb.link_redirect_route_list</source>
-                <target>Redirect Routes</target>
+                <target>Rotte reindirizzate</target>
             </trans-unit>
             <trans-unit id="breadcrumb.link_redirect_route_create">
                 <source>breadcrumb.link_redirect_route_create</source>
-                <target>Create</target>
+                <target>Crea</target>
             </trans-unit>
             <trans-unit id="breadcrumb.link_redirect_route_edit">
                 <source>breadcrumb.link_redirect_route_edit</source>
-                <target>Edit</target>
+                <target>Modifica</target>
             </trans-unit>
             <trans-unit id="breadcrumb.link_redirect_route_delete">
                 <source>breadcrumb.link_redirect_route_delete</source>
-                <target>Delete</target>
+                <target>Elimina</target>
             </trans-unit>
 
 
