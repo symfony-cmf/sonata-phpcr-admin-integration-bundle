@@ -14,7 +14,6 @@ namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Block;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Sonata\DoctrinePHPCRAdminBundle\Form\Type\TreeModelType;
 
 /**
@@ -38,11 +37,17 @@ class ReferenceBlockAdmin extends AbstractBlockAdmin
      */
     protected function configureFormFields(FormMapper $formMapper)
     {
+        parent::configureFormFields($formMapper);
+
         $formMapper
-            ->with('form.group_general')
-                ->add('parentDocument', TreeModelType::class, array('root_node' => $this->getRootPath(), 'choice_list' => array(), 'select_root_node' => true))
-                ->add('name', TextType::class)
-                ->add('referencedBlock', TreeModelType::class, array('choice_list' => array(), 'required' => false, 'root_node' => $this->getRootPath()))
+            ->tab('form.tab_general')
+                ->with('form.group_block', ['class' => 'col-md-9'])
+                    ->add(
+                        'referencedBlock',
+                        TreeModelType::class,
+                        ['choice_list' => [], 'required' => false, 'root_node' => $this->getRootPath()]
+                    )
+                ->end()
             ->end()
         ;
     }

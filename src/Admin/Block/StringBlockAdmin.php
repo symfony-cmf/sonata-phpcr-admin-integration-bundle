@@ -14,9 +14,7 @@ namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Block;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
-use Sonata\DoctrinePHPCRAdminBundle\Form\Type\TreeModelType;
 
 /**
  * @author Daniel Leech <daniel@dantleech.com>
@@ -36,11 +34,13 @@ class StringBlockAdmin extends AbstractBlockAdmin
      */
     protected function configureFormFields(FormMapper $formMapper)
     {
+        parent::configureFormFields($formMapper);
+
         $formMapper
-            ->with('form.group_general')
-                ->add('parentDocument', TreeModelType::class, array('root_node' => $this->getRootPath(), 'choice_list' => array(), 'select_root_node' => true))
-                ->add('name', TextType::class)
-                ->add('body', TextareaType::class)
+            ->tab('form.tab_general')
+                ->with('form.group_block', ['class' => 'col-md-9'])
+                    ->add('body', TextareaType::class)
+                ->end()
             ->end()
         ;
     }

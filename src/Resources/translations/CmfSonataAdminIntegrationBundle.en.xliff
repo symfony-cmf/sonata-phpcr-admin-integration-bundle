@@ -48,6 +48,26 @@
             </trans-unit>
 
 
+            <!-- $Block -->
+            <trans-unit id="form.group_block">
+                <source>form.group_block</source>
+                <target>Block</target>
+            </trans-unit>
+
+            <trans-unit id="form.label_action_name">
+                <source>form.label_action_name</source>
+                <target>Action name</target>
+            </trans-unit>
+            <trans-unit id="form.label_menu_node">
+                <source>form.label_menu_node</source>
+                <target>Menu</target>
+            </trans-unit>
+            <trans-unit id="form.label_referenced_block">
+                <source>form.label_referenced_block</source>
+                <target>Referenced block</target>
+            </trans-unit>
+
+
             <!-- $Content -->
             <trans-unit id="dashboard.label_static_content">
                 <source>dashboard.label_static_content</source>
