@@ -25,7 +25,7 @@ use PHPCR\Util\PathHelper;
 
 class RouteAdmin extends Admin
 {
-    protected $translationDomain = 'CmfRoutingBundle';
+    protected $translationDomain = 'CmfSonataAdminIntegrationBundle';
 
     /**
      * Root path for the route parent selection.
@@ -60,7 +60,7 @@ class RouteAdmin extends Admin
                 ->end() // group location
 
                 ->ifTrue(null === $this->getParentFieldDescription())
-                    ->with('form.group_general', ['class' => 'col-md-9'])
+                    ->with('form.group_target', ['class' => 'col-md-9'])
                         ->add(
                             'content',
                             TreeModelType::class,

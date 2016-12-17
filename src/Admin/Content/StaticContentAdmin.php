@@ -39,6 +39,8 @@ class StaticContentAdmin extends Admin
     {
         $builder = $formMapper->getFormBuilder()->getFormFactory()->createBuilder(StaticContentType::class, null, [
             'readonly_parent_document' => (bool) $this->id($this->getSubject()),
+            'label_format' => 'form.label_%name%',
+            'translation_domain' => 'CmfSonataAdminIntegrationBundle',
         ]);
 
         $formMapper

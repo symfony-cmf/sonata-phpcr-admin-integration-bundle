@@ -21,7 +21,7 @@ use Symfony\Cmf\Bundle\RoutingBundle\Model\Route;
 
 class RedirectRouteAdmin extends Admin
 {
-    protected $translationDomain = 'CmfRoutingBundle';
+    protected $translationDomain = 'CmfSonataAdminIntegrationBundle';
 
     /**
      * Root path for the route parent selection.
@@ -38,12 +38,23 @@ class RedirectRouteAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->with('form.group_general')
-                ->add('parentDocument', TreeModelType::class, array('choice_list' => array(), 'select_root_node' => true, 'root_node' => $this->routeRoot))
+            ->with('form.group_location', ['class' => 'col-md-3'])
+                ->add(
+                    'parentDocument',
+                    TreeModelType::class,
+                    ['choice_list' => [], 'select_root_node' => true, 'root_node' => $this->routeRoot]
+                )
                 ->add('name', TextType::class)
-                ->add('routeName', TextType::class, array('required' => false))
-                ->add('uri', TextType::class, array('required' => false))
-                ->add('routeTarget', TreeModelType::class, array('choice_list' => array(), 'required' => false, 'root_node' => $this->routeRoot))
+            ->end()
+
+            ->with('form.group_target', ['class' => 'col-md-9'])
+                ->add('routeName', TextType::class, ['required' => false])
+                ->add('uri', TextType::class, ['required' => false])
+                ->add(
+                    'routeTarget',
+                    TreeModelType::class,
+                    ['choice_list' => [], 'required' => false, 'root_node' => $this->routeRoot]
+                )
             ->end()
         ;
     }
