@@ -57,7 +57,11 @@ class SeoContentAdminExtension extends AbstractAdminExtension
                     ? ['translation_domain' => 'CmfSonataAdminIntegrationBundle']
                     : []
                 )
-                    ->add('seoMetadata', SeoMetadataType::class, array('label' => false))
+                    ->add('seoMetadata', SeoMetadataType::class, [
+                        'label' => false,
+                        'label_format' => 'form.label_%name%',
+                        'translation_domain' => 'CmfSonataAdminIntegrationBundle',
+                    ])
                 ->end()
             ->end()
         ;

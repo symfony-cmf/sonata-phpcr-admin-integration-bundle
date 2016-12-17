@@ -42,7 +42,7 @@
                 name="sonata.admin"
                 manager_type="doctrine_phpcr"
                 group="dashboard.cmf"
-                label_catalogue="CmfMenuBundle"
+                label_catalogue="CmfSonataAdminIntegrationBundle"
                 label="dashboard.label_menu_node"
                 label_translator_strategy="sonata.admin.label.strategy.underscore"
             />
