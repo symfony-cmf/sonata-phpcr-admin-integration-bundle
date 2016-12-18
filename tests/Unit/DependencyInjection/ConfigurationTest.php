@@ -45,14 +45,19 @@ class ConfigurationTest extends AbstractExtensionConfigurationTestCase
                 'seo' => [
                     'enabled' => true,
                     'form_group' => 'seo_form',
+                    'form_tab' => 'form.tab_seo',
                 ],
                 'core' => [
                     'enabled' => true,
-                    'form_group' => 'core_form',
                     'extensions' => [
-                        'publishable' => ['form_group' => 'form.group_publish_workflow'],
-                        'publish_time' => ['form_group' => 'form.group_publish_workflow'],
-                        'translatable' => ['form_group' => 'form.group_general'],
+                        'publishable' => [
+                            'form_group' => 'form.group_publish_workflow',
+                            'form_tab' => 'form.tab_publish',
+                        ],
+                        'publish_time' => [
+                            'form_group' => 'form.group_publish_workflow',
+                            'form_tab' => 'form.tab_publish',
+                        ],
                     ],
                 ],
             ],

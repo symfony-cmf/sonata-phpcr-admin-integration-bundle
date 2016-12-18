@@ -70,7 +70,6 @@ class BlockAdminFactory implements AdminFactoryInterface
         $container->setParameter('cmf_sonata_admin_integration.block.extension.block_cache.form_group', $config['extensions']['block_cache']['form_group']);
         $container->setParameter('cmf_sonata_admin_integration.block.extension.block_cache.form_tab', $config['extensions']['block_cache']['form_tab']);
 
-
         $loader->load('block.xml');
 
         $bundles = $container->getParameter('kernel.bundles');

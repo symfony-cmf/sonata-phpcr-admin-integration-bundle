@@ -48,7 +48,7 @@ class CoreAdminFactory implements AdminFactoryInterface
                         ->addDefaultsIfNotSet()
                         ->children()
                             ->scalarNode('form_group')->defaultValue('form.group_publish_workflow')->end()
-                            ->scalarNode('form_tab')->defaultValue('form.group_publish')->end()
+                            ->scalarNode('form_tab')->defaultValue('form.tab_publish')->end()
                         ->end()
                     ->end()
                 ->end()

@@ -87,7 +87,7 @@ class MenuAdminFactory implements AdminFactoryInterface
                         throw new InvalidConfigurationException('To use advanced menu options, you need the burgov/key-value-form-bundle in your project.');
                     }
 
-                    $container->setParameter('cmf_sonata_admin_integration.menu.extensions.menu_options.advanced', $config['menu_options']['advanced']);
+                    $container->setParameter('cmf_sonata_admin_integration.menu.extension.menu_options.advanced', $config['menu_options']['advanced']);
 
                     // no break is intended to allow disabling the menu_options extension
                 default:

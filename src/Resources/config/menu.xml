@@ -71,17 +71,17 @@
         <service
                 id="cmf_sonata_admin_integration.menu.extension.menu_node_referrers"
                 class="Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Menu\Extension\MenuNodeReferrersExtension">
-            <argument>%cmf_sonata_admin_integration.menu.extensions.menu_node_referrers.form_group%</argument>
-            <argument>%cmf_sonata_admin_integration.menu.extensions.menu_node_referrers.form_tab%</argument>
+            <argument>%cmf_sonata_admin_integration.menu.extension.menu_node_referrers.form_group%</argument>
+            <argument>%cmf_sonata_admin_integration.menu.extension.menu_node_referrers.form_tab%</argument>
             <tag name="sonata.admin.extension"/>
         </service>
 
         <service
                 id="cmf_sonata_admin_integration.menu.extension.menu_options"
                 class="Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Menu\Extension\MenuOptionsExtension">
-            <argument>%cmf_sonata_admin_integration.menu.extensions.menu_options.form_group%</argument>
-            <argument>%cmf_sonata_admin_integration.menu.extensions.menu_options.form_tab%</argument>
-            <argument>%cmf_sonata_admin_integration.menu.extensions.menu_options.advanced%</argument>
+            <argument>%cmf_sonata_admin_integration.menu.extension.menu_options.form_group%</argument>
+            <argument>%cmf_sonata_admin_integration.menu.extension.menu_options.form_tab%</argument>
+            <argument>%cmf_sonata_admin_integration.menu.extension.menu_options.advanced%</argument>
             <tag name="sonata.admin.extension"/>
         </service>
 
