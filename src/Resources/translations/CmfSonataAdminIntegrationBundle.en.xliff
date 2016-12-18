@@ -16,6 +16,15 @@
                 <target>Name</target>
             </trans-unit>
 
+            <trans-unit id="filter.label_title">
+                <source>filter.label_title</source>
+                <target>Title</target>
+            </trans-unit>
+            <trans-unit id="filter.label_name">
+                <source>filter.label_name</source>
+                <target>Name</target>
+            </trans-unit>
+
             <trans-unit id="form.tab_general">
                 <source>form.tab_general</source>
                 <target>General</target>
@@ -349,6 +358,14 @@
                 <source>form.group_target</source>
                 <target>Target link</target>
             </trans-unit>
+            <trans-unit id="form.group_menu_options">
+                <source>form.group_menu_options</source>
+                <target>Menu Options</target>
+            </trans-unit>
+            <trans-unit id="form.group_routes">
+                <source>form.group_routes</source>
+                <target>Routes</target>
+            </trans-unit>
 
             <trans-unit id="form.label_menu_nodes">
                 <source>form.label_menu_nodes</source>
@@ -406,6 +423,10 @@
             <trans-unit id="form.help_display_children">
                 <source>form.help_display_children</source>
                 <target>Children are only displayed if the menu entry itself is displayed.</target>
+            </trans-unit>
+            <trans-unit id="help.help_items">
+                <source>help.help_items</source>
+                <target>Click on item to edit, right click to create new items.</target>
             </trans-unit>
 
             <trans-unit id="breadcrumb.link_menu_list">
@@ -474,11 +495,11 @@
                 <source>form.group_data</source>
                 <target>Data</target>
             </trans-unit>
-
-            <trans-unit id="form.label_defaults">
-                <source>form.label_defaults</source>
+            <trans-unit id="form.group_defaults">
+                <source>form.group_defaults</source>
                 <target>Default values</target>
             </trans-unit>
+
             <trans-unit id="form.label_variable_pattern">
                 <source>form.label_variable_pattern</source>
                 <target>Variable pattern</target>
@@ -498,6 +519,18 @@
             <trans-unit id="form.label_route_target">
                 <source>form.label_route_target</source>
                 <target>Route target</target>
+            </trans-unit>
+            <trans-unit id="form.label_add_locale_pattern">
+                <source>form.label_add_locale_pattern</source>
+                <target>Add locale pattern</target>
+            </trans-unit>
+            <trans-unit id="form.label_add_format_pattern">
+                <source>form.label_add_format_pattern</source>
+                <target>Add format pattern</target>
+            </trans-unit>
+            <trans-unit id="form.label_add_trailing_slash">
+                <source>form.label_add_trailing_slash</source>
+                <target>Add trailing slash</target>
             </trans-unit>
 
             <trans-unit id="form.help_variable_pattern">

@@ -53,7 +53,7 @@ abstract class AbstractMenuNodeAdmin extends Admin
     {
         $formMapper
             ->tab('form.tab_general')
-                ->with('form.group_location')
+                ->with('form.group_location', ['class' => 'col-md-3'])
                     ->add('name', TextType::class)
                     ->add('label', TextType::class)
                 ->end()

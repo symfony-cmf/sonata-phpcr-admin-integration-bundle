@@ -59,7 +59,7 @@ class MenuNodeAdmin extends AbstractMenuNodeAdmin
             // Add the choice for the node links "target"
             $formMapper
                 ->tab('form.tab_general')
-                    ->with('form.group_target', ['class' => 'col-sm-9'])
+                    ->with('form.group_target', ['class' => 'col-sm-6'])
                         ->add('linkType', ChoiceFieldMaskType::class, array(
                             'choices' => array(
                                 'route' => 'route',

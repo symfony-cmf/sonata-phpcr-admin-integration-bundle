@@ -34,17 +34,17 @@ class RouteReferrersExtension extends AbstractAdminExtension
 
     public function configureFormFields(FormMapper $formMapper)
     {
-        if ($formMapper->hasOpenTabs()) {
+        if ($formMapper->hasOpenTab()) {
             $formMapper->end();
         }
 
         $formMapper
             ->tab($this->formTab)
-                ->with('form.group_routes')
+                ->with('form.group_routes', ['translation_domain' => 'CmfSonataAdminIntegrationBundle'])
                     ->add(
                         'routes',
                         CollectionType::class,
-                        [],
+                        ['label' => false],
                         [
                             'edit' => 'inline',
                             'inline' => 'table',

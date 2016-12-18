@@ -30,14 +30,14 @@ class MenuAdmin extends AbstractMenuNodeAdmin
         if (!$isNew) {
             $formMapper
                 ->tab('form.tab_general')
-                    ->with('form.group_items')
+                    ->with('form.group_items', ['class' => 'col-md-6'])
                         ->add('children', TreeManagerType::class, array(
                             'root' => $this->menuRoot,
                             'edit_in_overlay' => false,
                             'create_in_overlay' => false,
                             'delete_in_overlay' => false,
                         ), array(
-                            'help' => 'help.items_help',
+                            'help' => 'help.help_items',
                         ))
                     ->end()
                 ->end()

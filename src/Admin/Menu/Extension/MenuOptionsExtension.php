@@ -66,8 +66,8 @@ class MenuOptionsExtension extends AbstractAdminExtension
                 : []
             )
                 ->with($this->formGroup, 'form.group_menu_options' === $this->formGroup
-                    ? ['translation_domain' => 'CmfSonataAdminIntegrationBundle']
-                    : []
+                    ? ['class' => 'col-md-3', 'translation_domain' => 'CmfSonataAdminIntegrationBundle']
+                    : ['class' => 'col-md-3']
                 )
                     ->add('display', CheckboxType::class, ['required' => false], ['help' => 'form.help_display'])
                     ->add('displayChildren', CheckboxType::class, ['required' => false], ['help' => 'form.help_display_children'])

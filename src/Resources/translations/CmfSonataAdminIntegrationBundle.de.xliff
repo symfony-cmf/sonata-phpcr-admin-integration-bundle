@@ -355,6 +355,10 @@
                 <!-- TODO: Translate -->
                 <target>Target link</target>
             </trans-unit>
+            <trans-unit id="form.group_menu_options">
+                <source>form.group_menu_options</source>
+                <target>Menü-Optionen</target>
+            </trans-unit>
 
             <trans-unit id="form.label_menu_nodes">
                 <source>form.label_menu_nodes</source>
@@ -412,6 +416,10 @@
             <trans-unit id="form.help_display_children">
                 <source>form.help_display_children</source>
                 <target>Unterelemente werden nur angezeigt, wenn der Menüeintrag selber angezeigt wird.</target>
+            </trans-unit>
+            <trans-unit id="help.help_items">
+                <source>help.help_items</source>
+                <target>Klicken Sie auf ein Element, um es zu bearbeiten. Rechtsklick um Einträge hinzuzufügen.</target>
             </trans-unit>
 
             <trans-unit id="breadcrumb.link_menu_list">
@@ -482,11 +490,15 @@
                 <!-- TODO: Translate -->
                 <target>Data</target>
             </trans-unit>
-
-            <trans-unit id="form.label_defaults">
-                <source>form.label_defaults</source>
+            <trans-unit id="form.group_defaults">
+                <source>form.group_defaults</source>
                 <target>Vorgabewerte</target>
             </trans-unit>
+            <trans-unit id="form.group_routes">
+                <source>form.group_routes</source>
+                <target>Routen</target>
+            </trans-unit>
+
             <trans-unit id="form.label_variable_pattern">
                 <source>form.label_variable_pattern</source>
                 <target>Variablenmuster</target>
@@ -506,6 +518,18 @@
             <trans-unit id="form.label_route_target">
                 <source>form.label_route_target</source>
                 <target>Routenziel</target>
+            </trans-unit>
+            <trans-unit id="form.label_add_locale_pattern">
+                <source>form.label_add_locale_pattern</source>
+                <target>Sprache hinzufügen</target>
+            </trans-unit>
+            <trans-unit id="form.label_add_format_pattern">
+                <source>form.label_add_format_pattern</source>
+                <target>Formatmuster hinzufügen</target>
+            </trans-unit>
+            <trans-unit id="form.label_add_trailing_slash">
+                <source>form.label_add_trailing_slash</source>
+                <target>Abschließenden Schrägstrich hinzufügen</target>
             </trans-unit>
 
             <trans-unit id="form.help_variable_pattern">

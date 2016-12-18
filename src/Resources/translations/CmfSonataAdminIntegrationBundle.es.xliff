@@ -371,6 +371,11 @@
                 <!-- TODO: Translate -->
                 <target>Target link</target>
             </trans-unit>
+            <trans-unit id="form.group_menu_options">
+                <source>form.group_menu_options</source>
+                <!-- TODO: Translate -->
+                <target>Menu Options</target>
+            </trans-unit>
 
             <trans-unit id="form.label_menu_nodes">
                 <source>form.label_menu_nodes</source>
@@ -442,6 +447,11 @@
                 <source>form.help_display_children</source>
                 <!-- TODO: Translate -->
                 <target>Children are only displayed if the menu entry itself is displayed.</target>
+            </trans-unit>
+            <trans-unit id="help.help_items">
+                <source>help.help_items</source>
+                <!-- TODO: Translate -->
+                <target>Click on item to edit, right click to create new items.</target>
             </trans-unit>
 
             <trans-unit id="breadcrumb.link_menu_list">
@@ -525,12 +535,17 @@
                 <!-- TODO: Translate -->
                 <target>Data</target>
             </trans-unit>
-
-            <trans-unit id="form.label_defaults">
-                <source>form.label_defaults</source>
+            <trans-unit id="form.group_defaults">
+                <source>form.group_defaults</source>
                 <!-- TODO: Translate -->
                 <target>Default values</target>
             </trans-unit>
+            <trans-unit id="form.group_routes">
+                <source>form.group_routes</source>
+                <!-- TODO: Translate -->
+                <target>Routes</target>
+            </trans-unit>
+
             <trans-unit id="form.label_variable_pattern">
                 <source>form.label_variable_pattern</source>
                 <!-- TODO: Translate -->
@@ -555,6 +570,21 @@
                 <source>form.label_route_target</source>
                 <!-- TODO: Translate -->
                 <target>Route target</target>
+            </trans-unit>
+            <trans-unit id="form.label_add_locale_pattern">
+                <source>form.label_add_locale_pattern</source>
+                <!-- TODO: Translate -->
+                <target>Add locale pattern</target>
+            </trans-unit>
+            <trans-unit id="form.label_add_format_pattern">
+                <source>form.label_add_format_pattern</source>
+                <!-- TODO: Translate -->
+                <target>Add format pattern</target>
+            </trans-unit>
+            <trans-unit id="form.label_add_trailing_slash">
+                <source>form.label_add_trailing_slash</source>
+                <!-- TODO: Translate -->
+                <target>Add trailing slash</target>
             </trans-unit>
 
             <trans-unit id="form.help_variable_pattern">

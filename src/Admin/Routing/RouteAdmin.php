@@ -85,11 +85,11 @@ class RouteAdmin extends Admin
                         )
                     ->end() // group path
 
-                    ->with('form.group_data', ['class' => 'col-md-6'])
+                    ->with('form.group_defaults', ['class' => 'col-md-6'])
                         ->add(
                             'defaults',
                             ImmutableArrayType::class,
-                            ['keys' => $this->configureFieldsForDefaults($this->getSubject()->getDefaults())]
+                            ['label' => false, 'keys' => $this->configureFieldsForDefaults($this->getSubject()->getDefaults())]
                         )
                     ->end() // group data
                 ->ifEnd()
@@ -131,17 +131,18 @@ class RouteAdmin extends Admin
     protected function configureFieldsForDefaults($dynamicDefaults)
     {
         $defaults = array(
-            '_controller' => array('_controller', TextType::class, array('required' => false)),
-            '_template' => array('_template', TextType::class, array('required' => false)),
-            'type' => array('type', RouteTypeType::class, array(
+            '_controller' => ['_controller', TextType::class, ['required' => false, 'translation_domain' => 'CmfSonataAdminIntegrationBundle']],
+            '_template' => ['_template', TextType::class, ['required' => false, 'translation_domain' => 'CmfSonataAdminIntegrationBundle']],
+            'type' => ['type', RouteTypeType::class, [
                 'placeholder' => '',
                 'required' => false,
-            )),
+                'translation_domain' => 'CmfSonataAdminIntegrationBundle',
+            ]],
         );
 
         foreach ($dynamicDefaults as $name => $value) {
             if (!isset($defaults[$name])) {
-                $defaults[$name] = array($name, TextType::class, array('required' => false));
+                $defaults[$name] = [$name, TextType::class, ['required' => false]];
             }
         }
 
@@ -153,16 +154,16 @@ class RouteAdmin extends Admin
             foreach ($matches as $match) {
                 $name = substr($match[0][0], 1, -1);
                 if (!isset($defaults[$name])) {
-                    $defaults[$name] = array($name, TextType::class, array('required' => true));
+                    $defaults[$name] = [$name, TextType::class, ['required' => true]];
                 }
             }
         }
 
         if ($route && $route->getOption('add_format_pattern')) {
-            $defaults['_format'] = array('_format', TextType::class, array('required' => true));
+            $defaults['_format'] = ['_format', TextType::class, ['required' => true]];
         }
         if ($route && $route->getOption('add_locale_pattern')) {
-            $defaults['_locale'] = array('_locale', TextType::class, array('required' => false));
+            $defaults['_locale'] = ['_locale', TextType::class, ['required' => false]];
         }
 
         return $defaults;
@@ -177,15 +178,15 @@ class RouteAdmin extends Admin
      */
     protected function configureFieldsForOptions(array $dynamicOptions)
     {
-        $options = array(
-            'add_locale_pattern' => array('add_locale_pattern', CheckboxType::class, array('required' => false, 'label' => 'form.label_add_locale_pattern', 'translation_domain' => 'CmfRoutingBundle')),
-            'add_format_pattern' => array('add_format_pattern', CheckboxType::class, array('required' => false, 'label' => 'form.label_add_format_pattern', 'translation_domain' => 'CmfRoutingBundle')),
-            'add_trailing_slash' => array('add_trailing_slash', CheckboxType::class, array('required' => false, 'label' => 'form.label_add_trailing_slash', 'translation_domain' => 'CmfRoutingBundle')),
-        );
+        $options = [
+            'add_locale_pattern' => ['add_locale_pattern', CheckboxType::class, ['required' => false, 'label' => 'form.label_add_locale_pattern', 'translation_domain' => 'CmfSonataAdminIntegrationBundle']],
+            'add_format_pattern' => ['add_format_pattern', CheckboxType::class, ['required' => false, 'label' => 'form.label_add_format_pattern', 'translation_domain' => 'CmfSonataAdminIntegrationBundle']],
+            'add_trailing_slash' => ['add_trailing_slash', CheckboxType::class, ['required' => false, 'label' => 'form.label_add_trailing_slash', 'translation_domain' => 'CmfSonataAdminIntegrationBundle']],
+        ];
 
         foreach ($dynamicOptions as $name => $value) {
             if (!isset($options[$name])) {
-                $options[$name] = array($name, TextType::class, array('required' => false));
+                $options[$name] = [$name, TextType::class, ['required' => false]];
             }
         }
 
