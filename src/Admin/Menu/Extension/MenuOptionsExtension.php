@@ -71,6 +71,7 @@ class MenuOptionsExtension extends AbstractAdminExtension
                 )
                     ->add('display', CheckboxType::class, ['required' => false], ['help' => 'form.help_display'])
                     ->add('displayChildren', CheckboxType::class, ['required' => false], ['help' => 'form.help_display_children'])
+        ;
 
         if (!$this->advanced) {
             $formMapper->end()->end();

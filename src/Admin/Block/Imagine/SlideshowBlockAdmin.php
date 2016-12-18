@@ -17,7 +17,6 @@ use Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Block\AbstractBlockAdm
 use Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SlideshowBlock;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Sonata\CoreBundle\Form\Type\CollectionType;
-use Sonata\DoctrinePHPCRAdminBundle\Form\Type\TreeModelType;
 
 /**
  * @author Horner

@@ -38,10 +38,14 @@ class BlockCacheExtension extends AbstractAdminExtension
      */
     public function configureFormFields(FormMapper $formMapper)
     {
+        if ($formMapper->hasOpenTab()) {
+            $formMapper->end();
+        }
+
         $formMapper
             ->tab($this->formTab, 'form.tab_general' === $this->formtab
                 ? ['translation_domain' => 'CmfSonataAdminIntegrationBundle'
-                ? []
+                : []
             )
                 ->with($this->formGroup, 'form.group_metadata' === $this->formGroup
                     ? ['translation_domain' => 'CmfSonataAdminIntegrationBundle']
