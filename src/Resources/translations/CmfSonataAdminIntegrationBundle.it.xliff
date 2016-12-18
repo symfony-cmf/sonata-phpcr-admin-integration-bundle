@@ -381,6 +381,39 @@
                 <source>form.label_children</source>
                 <target>Elementi</target>
             </trans-unit>
+            <trans-unit id="form.label_display">
+                <source>form.label_display</source>
+                <target>Visualizza</target>
+            </trans-unit>
+            <trans-unit id="form.label_display_children">
+                <source>form.label_display_children</source>
+                <target>Visualizza figli</target>
+            </trans-unit>
+            <trans-unit id="form.label_attributes">
+                <source>form.label_attributes</source>
+                <target>Attributi menu</target>
+            </trans-unit>
+            <trans-unit id="form.label_label_attributes">
+                <source>form.label_label_attributes</source>
+                <target>Attributi codice</target>
+            </trans-unit>
+            <trans-unit id="form.label_children_attributes">
+                <source>form.label_children_attributes</source>
+                <target>Attributi figli</target>
+            </trans-unit>
+            <trans-unit id="form.label_link_attributes">
+                <source>form.label_link_attributes</source>
+                <target>Attributi link</target>
+            </trans-unit>
+
+            <trans-unit id="form.help_display">
+                <source>form.help_display</source>
+                <target>La voce di menu è visibile solo se il codice non è vuoto.</target>
+            </trans-unit>
+            <trans-unit id="form.help_display_children">
+                <source>form.help_display_children</source>
+                <target>I figli sono visibili solo se anche la voce di menu è visibile.</target>
+            </trans-unit>
 
             <trans-unit id="breadcrumb.link_menu_list">
                 <source>breadcrumb.link_menu_list</source>

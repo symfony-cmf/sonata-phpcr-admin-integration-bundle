@@ -34,6 +34,18 @@ class BlockAdminFactory implements AdminFactoryInterface
     public function addConfiguration(NodeBuilder $builder)
     {
         $builder
+            ->arrayNode('extensions')
+                ->addDefaultsIfNotSet()
+                ->children()
+                    ->arrayNode('block_cache')
+                        ->addDefaultsIfNotSet()
+                        ->children()
+                            ->scalarNode('form_group')->defaultValue('form.group_metadata')->end()
+                            ->scalarNode('form_tab')->defaultValue('form.tab_general')->end()
+                        ->end()
+                    ->end()
+                ->end()
+            ->end()
             ->scalarNode('basepath')->defaultNull()->end()
             ->scalarNode('menu_basepath')->defaultNull()->end()
             ->enumNode('use_imagine')
@@ -53,10 +65,11 @@ class BlockAdminFactory implements AdminFactoryInterface
     public function create(array $config, ContainerBuilder $container, XmlFileLoader $loader)
     {
         $container->setParameter('cmf_sonata_admin_integration.block.persistence.phpcr.basepath', $config['basepath']);
-        $container->setParameter(
-            'cmf_sonata_admin_integration.block.persistence.phpcr.menu_basepath',
-            $config['menu_basepath']
-        );
+        $container->setParameter('cmf_sonata_admin_integration.block.persistence.phpcr.menu_basepath', $config['menu_basepath']);
+
+        $container->setParameter('cmf_sonata_admin_integration.block.extension.block_cache.form_group', $config['extensions']['block_cache']['form_group']);
+        $container->setParameter('cmf_sonata_admin_integration.block.extension.block_cache.form_tab', $config['extensions']['block_cache']['form_tab']);
+
 
         $loader->load('block.xml');
 

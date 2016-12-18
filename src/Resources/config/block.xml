@@ -9,6 +9,8 @@
         <service
                 id="cmf_sonata_admin_integration.block.admin_extension.cache"
                 class="Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Block\Extension\BlockCacheExtension">
+            <argument>%cmf_sonata_admin_integration.block.extension.block_cache.form_group%</argument>
+            <argument>%cmf_sonata_admin_integration.block.extension.block_cache.form_tab%</argument>
             <tag name="sonata.admin.extension"/>
         </service>
 

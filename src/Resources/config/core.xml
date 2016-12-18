@@ -18,6 +18,7 @@
                 class="Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Core\Extension\PublishableExtension"
                 public="false">
             <argument>%cmf_sonata_admin_integration.core.publishable.form_group%</argument>
+            <argument>%cmf_sonata_admin_integration.core.publishable.form_tab%</argument>
             <tag name="sonata.admin.extension"/>
         </service>
 
@@ -26,6 +27,7 @@
                 class="Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Core\Extension\PublishTimePeriodExtension"
                 public="false">
             <argument>%cmf_sonata_admin_integration.core.publish_time.form_group%</argument>
+            <argument>%cmf_sonata_admin_integration.core.publish_time.form_tab%</argument>
             <tag name="sonata.admin.extension"/>
         </service>
 

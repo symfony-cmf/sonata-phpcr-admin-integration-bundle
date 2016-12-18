@@ -9,6 +9,7 @@
                 id="cmf_sonata_admin_integration.seo.admin_extension"
                 class="Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Seo\Extension\SeoContentAdminExtension">
             <argument>%cmf_sonata_admin_integration.seo.form_group%</argument>
+            <argument>%cmf_sonata_admin_integration.seo.form_tab%</argument>
             <tag name="sonata.admin.extension" />
         </service>
     </services>

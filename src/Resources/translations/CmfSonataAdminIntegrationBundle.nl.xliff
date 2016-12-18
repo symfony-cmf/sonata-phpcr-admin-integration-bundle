@@ -374,6 +374,39 @@
                 <source>form.label_children</source>
                 <target>Menu-items</target>
             </trans-unit>
+            <trans-unit id="form.label_display">
+                <source>form.label_display</source>
+                <target>Weergeven</target>
+            </trans-unit>
+            <trans-unit id="form.label_display_children">
+                <source>form.label_display_children</source>
+                <target>Sub-items weergeven</target>
+            </trans-unit>
+            <trans-unit id="form.label_attributes">
+                <source>form.label_attributes</source>
+                <target>Menu attributen</target>
+            </trans-unit>
+            <trans-unit id="form.label_label_attributes">
+                <source>form.label_label_attributes</source>
+                <target>Label attributen</target>
+            </trans-unit>
+            <trans-unit id="form.label_children_attributes">
+                <source>form.label_children_attributes</source>
+                <target>Children attributen</target>
+            </trans-unit>
+            <trans-unit id="form.label_link_attributes">
+                <source>form.label_link_attributes</source>
+                <target>Link attributen</target>
+            </trans-unit>
+
+            <trans-unit id="form.help_display">
+                <source>form.help_display</source>
+                <target>Een menu item wordt alleen getoond wanneer het label is ingevuld.</target>
+            </trans-unit>
+            <trans-unit id="form.help_display_children">
+                <source>form.help_display_children</source>
+                <target>Sub-items worden alleen getoond als het hoofd-item ook wordt getoond.</target>
+            </trans-unit>
 
             <trans-unit id="breadcrumb.link_menu_list">
                 <source>breadcrumb.link_menu_list</source>

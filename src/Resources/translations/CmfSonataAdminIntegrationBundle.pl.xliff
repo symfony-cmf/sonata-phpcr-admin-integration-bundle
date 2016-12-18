@@ -444,6 +444,48 @@
                 <!-- TODO: Translate -->
                 <target>Items</target>
             </trans-unit>
+            <trans-unit id="form.label_display">
+                <source>form.label_display</source>
+                <!-- TODO: Translate -->
+                <target>Display</target>
+            </trans-unit>
+            <trans-unit id="form.label_display_children">
+                <source>form.label_display_children</source>
+                <!-- TODO: Translate -->
+                <target>Display Children</target>
+            </trans-unit>
+            <trans-unit id="form.label_attributes">
+                <source>form.label_attributes</source>
+                <!-- TODO: Translate -->
+                <target>Menu attributes</target>
+            </trans-unit>
+            <trans-unit id="form.label_label_attributes">
+                <source>form.label_label_attributes</source>
+                <!-- TODO: Translate -->
+                <target>Label attributes</target>
+            </trans-unit>
+            <trans-unit id="form.label_children_attributes">
+                <source>form.label_children_attributes</source>
+                <!-- TODO: Translate -->
+                <target>Children attributes</target>
+            </trans-unit>
+            <trans-unit id="form.label_link_attributes">
+                <source>form.label_link_attributes</source>
+                <!-- TODO: Translate -->
+                <target>Link attributes</target>
+            </trans-unit>
+
+            <trans-unit id="form.help_display">
+                <source>form.help_display</source>
+                <!-- TODO: Translate -->
+                <target>A menu entry is only displayed if the label is not empty.</target>
+            </trans-unit>
+            <trans-unit id="form.help_display_children">
+                <source>form.help_display_children</source>
+                <!-- TODO: Translate -->
+                <target>Children are only displayed if the menu entry itself is displayed.</target>
+            </trans-unit>
+
 
             <trans-unit id="breadcrumb.link_menu_list">
                 <source>breadcrumb.link_menu_list</source>

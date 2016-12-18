@@ -45,9 +45,17 @@ class MenuAdminFactory implements AdminFactoryInterface
                         ->canBeDisabled()
                         ->children()
                             ->booleanNode('advanced')->defaultValue(false)->end()
+                            ->scalarNode('form_group')->defaultValue('form.group_menu_options')->end()
+                            ->scalarNode('form_tab')->defaultValue('form.tab_general')->end()
                         ->end()
                     ->end()
-                    ->arrayNode('menu_node_referrers')->canBeDisabled()->end()
+                    ->arrayNode('menu_node_referrers')
+                        ->canBeDisabled()
+                        ->children()
+                            ->scalarNode('form_group')->defaultValue('form.group_menus')->end()
+                            ->scalarNode('form_tab')->defaultValue('form.tab_menu')->end()
+                        ->end()
+                    ->end()
                 ->end()
             ->end()
         ;
@@ -86,6 +94,9 @@ class MenuAdminFactory implements AdminFactoryInterface
                     if (!$this->isConfigEnabled($container, $extensionConfig)) {
                         $container->removeDefinition('cmf_sonata_admin_integration.menu.extension.'.$name);
                     }
+
+                    $container->setParameter('cmf_sonata_admin_integration.menu.extension.'.$name.'.form_group', $extensionConfig['form_group']);
+                    $container->setParameter('cmf_sonata_admin_integration.menu.extension.'.$name.'.form_tab', $extensionConfig['form_tab']);
             }
         }
     }
