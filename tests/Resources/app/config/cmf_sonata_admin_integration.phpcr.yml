@@ -51,7 +51,7 @@ services:
 
 sonata_admin:
     extensions:
-        cmf_sonata_admin_integration.seo.admin_extension:
+        cmf_sonata_admin_integration.seo.extension.metadata:
             implements:
                - Symfony\Cmf\Bundle\SeoBundle\SeoAwareInterface
         cmf_sonata_admin_integration.menu.extension.menu_node_referrers:

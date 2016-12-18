@@ -6,7 +6,7 @@
     <services>
 
         <service
-                id="cmf_sonata_admin_integration.route_admin"
+                id="cmf_sonata_admin_integration.routing.route_admin"
                 class="Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Routing\RouteAdmin">
             <tag
                     name="sonata.admin"
