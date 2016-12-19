@@ -34,7 +34,6 @@ class CoreAdminFactory implements AdminFactoryInterface
     public function addConfiguration(NodeBuilder $builder)
     {
         $builder
-            ->scalarNode('form_group')->defaultValue('form.group_core')->end()
             ->arrayNode('extensions')
                 ->addDefaultsIfNotSet()
                 ->children()
@@ -42,18 +41,14 @@ class CoreAdminFactory implements AdminFactoryInterface
                         ->addDefaultsIfNotSet()
                         ->children()
                             ->scalarNode('form_group')->defaultValue('form.group_publish_workflow')->end()
+                            ->scalarNode('form_tab')->defaultValue('form.tab_publish')->end()
                         ->end()
                     ->end()
                     ->arrayNode('publish_time')
                         ->addDefaultsIfNotSet()
                         ->children()
                             ->scalarNode('form_group')->defaultValue('form.group_publish_workflow')->end()
-                        ->end()
-                    ->end()
-                    ->arrayNode('translatable')
-                        ->addDefaultsIfNotSet()
-                        ->children()
-                            ->scalarNode('form_group')->defaultValue('form.group_general')->end()
+                            ->scalarNode('form_tab')->defaultValue('form.tab_publish')->end()
                         ->end()
                     ->end()
                 ->end()
@@ -67,13 +62,9 @@ class CoreAdminFactory implements AdminFactoryInterface
     {
         $loader->load('core.xml');
 
-        $container->setParameter('cmf_sonata_admin_integration.core.form_group', $config['form_group']);
-
         foreach ($config['extensions'] as $extension => $values) {
-            $container->setParameter(
-                'cmf_sonata_admin_integration.core.'.$extension.'.form_group',
-                $values['form_group']
-            );
+            $container->setParameter('cmf_sonata_admin_integration.core.'.$extension.'.form_group', $values['form_group']);
+            $container->setParameter('cmf_sonata_admin_integration.core.'.$extension.'.form_tab', $values['form_tab']);
         }
     }
 }

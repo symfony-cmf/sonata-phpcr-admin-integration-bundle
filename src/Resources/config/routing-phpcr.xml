@@ -12,7 +12,7 @@
                     name="sonata.admin"
                     manager_type="doctrine_phpcr"
                     group="dashboard.cmf"
-                    label_catalogue="CmfRoutingBundle"
+                    label_catalogue="CmfSonataAdminIntegrationBundle"
                     label="dashboard.label_routing"
                     label_translator_strategy="sonata.admin.label.strategy.underscore" />
             <argument/>
@@ -39,7 +39,7 @@
                     name="sonata.admin"
                     manager_type="doctrine_phpcr"
                     group="dashboard.cmf"
-                    label_catalogue="CmfRoutingBundle"
+                    label_catalogue="CmfSonataAdminIntegrationBundle"
                     label="dashboard.label_redirect_routing"
                     label_translator_strategy="sonata.admin.label.strategy.underscore" />
             <argument/>

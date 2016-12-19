@@ -24,8 +24,6 @@ abstract class TestCase extends BaseTestCase
         $this->assertResponseSuccess($this->getClient()->getResponse());
     }
 
-    abstract public function testAdminExtensionExists();
-
     abstract public function testItemEditView();
 
     abstract public function testItemCreate();

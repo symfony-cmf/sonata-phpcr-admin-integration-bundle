@@ -17,7 +17,6 @@ use Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Block\AbstractBlockAdm
 use Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SlideshowBlock;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Sonata\CoreBundle\Form\Type\CollectionType;
-use Sonata\DoctrinePHPCRAdminBundle\Form\Type\TreeModelType;
 
 /**
  * @author Horner
@@ -58,32 +57,28 @@ class SlideshowBlockAdmin extends AbstractBlockAdmin
      */
     protected function configureFormFields(FormMapper $formMapper)
     {
-        parent::configureFormFields($formMapper);
+        if (null === $this->getParentFieldDescription()) {
+            parent::configureFormFields($formMapper);
+        }
 
         $formMapper
-            ->with('form.group_general')
-                ->add('title', TextType::class, array('required' => false))
-            ->end()
-            ->with('Items')
-                ->add('children', CollectionType::class,
-                    array(),
-                    array(
-                        'edit' => 'inline',
-                        'inline' => 'table',
-                        'admin_code' => $this->embeddedAdminCode,
-                        'sortable' => 'position',
-                    ))
+            ->tab('form.tab_general')
+                ->with('form.group_block', null === $this->getParentFieldDescription()
+                    ? ['class' => 'col-md-9']
+                    : []
+                )
+                    ->add('title', TextType::class, array('required' => false))
+                    ->add('children', CollectionType::class,
+                        array(),
+                        array(
+                            'edit' => 'inline',
+                            'inline' => 'table',
+                            'admin_code' => $this->embeddedAdminCode,
+                            'sortable' => 'position',
+                        ))
+                ->end()
             ->end()
         ;
-
-        if (null === $this->getParentFieldDescription()) {
-            $formMapper
-                ->with('form.group_general')
-                    ->add('parentDocument', TreeModelType::class, array('root_node' => $this->getRootPath(), 'choice_list' => array(), 'select_root_node' => true))
-                    ->add('name', TextType::class)
-                ->end()
-            ;
-        }
     }
 
     /**

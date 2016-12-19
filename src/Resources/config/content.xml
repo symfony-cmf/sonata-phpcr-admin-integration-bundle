@@ -11,7 +11,7 @@
                     name="sonata.admin"
                     manager_type="doctrine_phpcr"
                     group="dashboard.cmf"
-                    label_catalogue="CmfContentBundle"
+                    label_catalogue="CmfSonataAdminIntegrationBundle"
                     label="dashboard.label_static_content"
                     label_translator_strategy="sonata.admin.label.strategy.underscore" />
             <argument/>

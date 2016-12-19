@@ -30,22 +30,39 @@ class SeoContentAdminExtension extends AbstractAdminExtension
      * @var string
      */
     protected $formGroup;
+    protected $formTab;
 
     /**
      * @param string $formGroup group name to use for form mapper
+     * @param string $formTab
      */
-    public function __construct($formGroup = 'form.group_seo')
+    public function __construct($formGroup = 'form.group_seo', $formTab = 'form.tab_seo')
     {
         $this->formGroup = $formGroup;
+        $this->formTab = $formTab;
     }
 
     public function configureFormFields(FormMapper $formMapper)
     {
+        if ($formMapper->hasOpenTab()) {
+            $formMapper->end();
+        }
+
         $formMapper
-            ->with($this->formGroup, array(
-                'translation_domain' => 'CmfSeoBundle',
-            ))
-                ->add('seoMetadata', SeoMetadataType::class, array('label' => false))
+            ->tab($this->formTab, 'form.tab_seo' === $this->formTab
+                ? ['translation_domain' => 'CmfSonataAdminIntegrationBundle']
+                : []
+            )
+                ->with($this->formGroup, 'form.group_seo' === $this->formGroup
+                    ? ['translation_domain' => 'CmfSonataAdminIntegrationBundle']
+                    : []
+                )
+                    ->add('seoMetadata', SeoMetadataType::class, [
+                        'label' => false,
+                        'label_format' => 'form.label_%name%',
+                        'translation_domain' => 'CmfSonataAdminIntegrationBundle',
+                    ])
+                ->end()
             ->end()
         ;
     }

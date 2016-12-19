@@ -23,21 +23,34 @@ use Sonata\CoreBundle\Form\Type\CollectionType;
  */
 class RouteReferrersExtension extends AbstractAdminExtension
 {
+    private $formGroup;
+    private $formTab;
+
+    public function __construct($formGroup = 'form.group_routes', $formTab = 'form.tab_routing')
+    {
+        $this->formGroup = $formGroup;
+        $this->formTab = $formTab;
+    }
+
     public function configureFormFields(FormMapper $formMapper)
     {
+        if ($formMapper->hasOpenTab()) {
+            $formMapper->end();
+        }
+
         $formMapper
-            ->with('form.group_routes', array(
-                'translation_domain' => 'CmfRoutingBundle',
-            ))
-            ->add(
-                'routes',
-                CollectionType::class,
-                array(),
-                array(
-                    'edit' => 'inline',
-                    'inline' => 'table',
-                )
-            )
+            ->tab($this->formTab)
+                ->with('form.group_routes', ['translation_domain' => 'CmfSonataAdminIntegrationBundle'])
+                    ->add(
+                        'routes',
+                        CollectionType::class,
+                        ['label' => false],
+                        [
+                            'edit' => 'inline',
+                            'inline' => 'table',
+                        ]
+                    )
+                ->end()
             ->end()
         ;
     }

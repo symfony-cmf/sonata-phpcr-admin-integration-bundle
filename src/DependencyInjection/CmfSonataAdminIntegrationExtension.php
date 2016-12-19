@@ -35,6 +35,7 @@ class CmfSonataAdminIntegrationExtension extends Extension implements CompilerPa
     public function process(ContainerBuilder $container)
     {
         foreach ($this->factories as $factory) {
+            $container->addObjectResource($factory);
             if ($factory instanceof CompilerPassInterface) {
                 $factory->process($container);
             }

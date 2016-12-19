@@ -27,13 +27,16 @@ class PublishableExtension extends AbstractAdminExtension
      * @var string
      */
     protected $formGroup;
+    protected $formTab;
 
     /**
-     * @param string $formGroup - group to use for form mapper
+     * @param string $formGroup The group to use for form mapper
+     * @param string $formTab   The tab to use for form mapper
      */
-    public function __construct($formGroup = 'form.group_publish_workflow')
+    public function __construct($formGroup = 'form.group_publish_workflow', $formTab = 'form.tab_publish')
     {
         $this->formGroup = $formGroup;
+        $this->formTab = $formTab;
     }
 
     /**
@@ -41,11 +44,24 @@ class PublishableExtension extends AbstractAdminExtension
      */
     public function configureFormFields(FormMapper $formMapper)
     {
+        if ($formMapper->hasOpenTab()) {
+            $formMapper->end();
+        }
+
         $formMapper
-            ->with($this->formGroup, array('translation_domain' => 'CmfCoreBundle'))
-                ->add('publishable', CheckboxType::class, array(
-                    'required' => false,
-                ))
+            ->tab($this->formTab, 'form.tab_publish' === $this->formTab
+                ? ['translation_domain' => 'CmfSonataAdminIntegrationBundle']
+                : []
+            )
+                ->with($this->formGroup, 'form.group_publish_workflow' === $this->formGroup
+                    ? ['translation_domain' => 'CmfSonataAdminIntegrationBundle']
+                    : []
+                )
+                    ->add('publishable', CheckboxType::class, ['required' => false, 'translation_domain' => 'CmfSonataAdminIntegrationBundle'], [
+                        'translation_domain' => 'CmfSonataAdminIntegrationBundle',
+                        'help' => 'form.help_publishable',
+                    ])
+                ->end()
             ->end();
     }
 }

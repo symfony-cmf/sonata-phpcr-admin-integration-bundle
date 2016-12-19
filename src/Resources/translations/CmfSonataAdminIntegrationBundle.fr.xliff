@@ -1,0 +1,626 @@
+<?xml version="1.0"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+    <file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <!-- $Common -->
+            <trans-unit id="list.label_id">
+                <source>list.label_id</source>
+                <target>Chemin</target>
+            </trans-unit>
+            <trans-unit id="list.label_title">
+                <source>list.label_title</source>
+                <target>Titre</target>
+            </trans-unit>
+            <trans-unit id="list.label_name">
+                <source>list.label_name</source>
+                <target>Nom</target>
+            </trans-unit>
+
+            <trans-unit id="form.tab_general">
+                <source>form.tab_general</source>
+                <target>Général</target>
+            </trans-unit>
+
+            <trans-unit id="form.group_general">
+                <source>form.group_general</source>
+                <target>Général</target>
+            </trans-unit>
+
+            <trans-unit id="form.label_parentDocument">
+                <source>form.label_parentDocument</source>
+                <target>Parent</target>
+            </trans-unit>
+            <trans-unit id="form.label_parent_document">
+                <source>form.label_parent_document</source>
+                <target>Parent</target>
+            </trans-unit>
+            <trans-unit id="form.label_title">
+                <source>form.label_title</source>
+                <target>Titre</target>
+            </trans-unit>
+            <trans-unit id="form.label_name">
+                <source>form.label_name</source>
+                <target>Nom</target>
+            </trans-unit>
+            <trans-unit id="form.label_content">
+                <source>form.label_content</source>
+                <target>Contenu</target>
+            </trans-unit>
+
+
+            <!-- $Block -->
+            <trans-unit id="dashboard.label_simple_block">
+                <source>dashboard.label_simple_block</source>
+                <target>Bloc simple</target>
+            </trans-unit>
+            <trans-unit id="dashboard.label_container_block">
+                <source>dashboard.label_container_block</source>
+                <target>Bloc conteneur</target>
+            </trans-unit>
+            <trans-unit id="dashboard.label_menu_block">
+                <source>dashboard.label_menu_block</source>
+                <target>Bloc menu</target>
+            </trans-unit>
+            <trans-unit id="dashboard.label_reference_block">
+                <source>dashboard.label_reference_block</source>
+                <target>Bloc référence</target>
+            </trans-unit>
+            <trans-unit id="dashboard.label_action_block">
+                <source>dashboard.label_action_block</source>
+                <target>Bloc action</target>
+            </trans-unit>
+            <trans-unit id="dashboard.label_slideshow_block">
+                <source>dashboard.label_slideshow_block</source>
+                <target>Bloc slideshow</target>
+            </trans-unit>
+            <trans-unit id="dashboard.label_imagine_block">
+                <source>dashboard.label_imagine_block</source>
+                <target>Bloc image</target>
+            </trans-unit>
+            <trans-unit id="dashboard.label_string_block">
+                <source>dashboard.label_string_block</source>
+                <target>Bloc texte</target>
+            </trans-unit>
+
+            <trans-unit id="form.group_block">
+                <source>form.group_block</source>
+                <!-- TODO: Check translation -->
+                <target>Bloc</target>
+            </trans-unit>
+            <trans-unit id="form.group_metadata">
+                <source>form.group_metadata</source>
+                <target>Metadata</target>
+            </trans-unit>
+
+            <trans-unit id="form.label_action_name">
+                <source>form.label_action_name</source>
+                <target>Nom de l'action</target>
+            </trans-unit>
+            <trans-unit id="form.label_menu_node">
+                <source>form.label_menu_node</source>
+                <target>Menu</target>
+            </trans-unit>
+            <trans-unit id="form.label_referenced_block">
+                <source>form.label_referenced_block</source>
+                <target>Bloc référencé</target>
+            </trans-unit>
+            <trans-unit id="form.label_ttl">
+                <source>form.label_ttl</source>
+                <target>Cache-TTL</target>
+            </trans-unit>
+
+            <trans-unit id="breadcrumb.link_slideshow_block_list">
+                <source>breadcrumb.link_slideshow_block_list</source>
+                <target>Blocs slideshow</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_slideshow_block_create">
+                <source>breadcrumb.link_slideshow_block_create</source>
+                <target>Créer</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_slideshow_block_edit">
+                <source>breadcrumb.link_slideshow_block_edit</source>
+                <target>Éditer</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_slideshow_block_delete">
+                <source>breadcrumb.link_slideshow_block_delete</source>
+                <target>Supprimer</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_simple_block_list">
+                <source>breadcrumb.link_simple_block_list</source>
+                <target>Blocs simples</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_simple_block_create">
+                <source>breadcrumb.link_simple_block_create</source>
+                <target>Créer</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_simple_block_edit">
+                <source>breadcrumb.link_simple_block_edit</source>
+                <target>Éditer</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_simple_block_delete">
+                <source>breadcrumb.link_simple_block_delete</source>
+                <target>Supprimer</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_container_block_list">
+                <source>breadcrumb.link_container_block_list</source>
+                <target>Blocs conteneurs</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_container_block_create">
+                <source>breadcrumb.link_container_block_create</source>
+                <target>Créer</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_container_block_edit">
+                <source>breadcrumb.link_container_block_edit</source>
+                <target>Éditer</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_container_block_delete">
+                <source>breadcrumb.link_container_block_delete</source>
+                <target>Supprimer</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_menu_block_list">
+                <source>breadcrumb.link_menu_block_list</source>
+                <target>Blocs menues</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_menu_block_create">
+                <source>breadcrumb.link_menu_block_create</source>
+                <target>Créer</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_menu_block_edit">
+                <source>breadcrumb.link_menu_block_edit</source>
+                <target>Éditer</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_menu_block_delete">
+                <source>breadcrumb.link_menu_block_delete</source>
+                <target>Supprimer</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_reference_block_list">
+                <source>breadcrumb.link_reference_block_list</source>
+                <target>Blocs référence</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_reference_block_create">
+                <source>breadcrumb.link_reference_block_create</source>
+                <target>Créer</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_reference_block_edit">
+                <source>breadcrumb.link_reference_block_edit</source>
+                <target>Éditer</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_reference_block_delete">
+                <source>breadcrumb.link_reference_block_delete</source>
+                <target>Supprimer</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_action_block_list">
+                <source>breadcrumb.link_action_block_list</source>
+                <target>Blocs action</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_action_block_create">
+                <source>breadcrumb.link_action_block_create</source>
+                <target>Créer</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_action_block_edit">
+                <source>breadcrumb.link_action_block_edit</source>
+                <target>Éditer</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_action_block_delete">
+                <source>breadcrumb.link_action_block_delete</source>
+                <target>Supprimer</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_string_block_list">
+                <source>breadcrumb.link_string_block_list</source>
+                <target>Blocs textes</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_string_block_create">
+                <source>breadcrumb.link_string_block_create</source>
+                <target>Créer</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_string_block_edit">
+                <source>breadcrumb.link_string_block_edit</source>
+                <target>Éditer</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_string_block_delete">
+                <source>breadcrumb.link_string_block_delete</source>
+                <target>Supprimer</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_imagine_block_list">
+                <source>breadcrumb.link_imagine_block_list</source>
+                <target>Blocs image</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_imagine_block_create">
+                <source>breadcrumb.link_imagine_block_create</source>
+                <target>Créer</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_imagineblock_edit">
+                <source>breadcrumb.link_imagine_block_edit</source>
+                <target>Éditer</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_imagine_block_delete">
+                <source>breadcrumb.link_imagine_block_delete</source>
+                <target>Supprimer</target>
+            </trans-unit>
+
+
+            <!-- $Content -->
+            <trans-unit id="dashboard.label_static_content">
+                <source>dashboard.label_static_content</source>
+                <target>Contenu statique</target>
+            </trans-unit>
+
+            <trans-unit id="form.group_content">
+                <source>form.group_content</source>
+                <target>Contenu</target>
+            </trans-unit>
+
+            <trans-unit id="form.label_body">
+                <source>form.label_body</source>
+                <target>Corps</target>
+            </trans-unit>
+
+            <trans-unit id="breadcrumb.link_static_content_list">
+                <source>breadcrumb.link_static_content_list</source>
+                <target>Contenus statiques</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_static_content_create">
+                <source>breadcrumb.link_static_content_create</source>
+                <target>Créer</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_static_content_edit">
+                <source>breadcrumb.link_static_content_edit</source>
+                <target>Éditer</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_static_content_delete">
+                <source>breadcrumb.link_static_content_delete</source>
+                <target>Supprimer</target>
+            </trans-unit>
+
+
+            <!-- $Core -->
+            <trans-unit id="form.tab_publish">
+                <source>form.tab_publish</source>
+                <!-- TODO: Translate -->
+                <target>Publish Settings</target>
+            </trans-unit>
+
+            <trans-unit id="form.group_publish_workflow">
+                <source>form.group_publish_workflow</source>
+                <!-- TODO: Translate -->
+                <target>Status</target>
+            </trans-unit>
+
+            <trans-unit id="form.label_publishable">
+                <source>form.label_publishable</source>
+                <target>Peut être publié</target>
+            </trans-unit>
+            <trans-unit id="form.label_publish_start_date">
+                <source>form.label_publish_start_date</source>
+                <target>Publier dés</target>
+            </trans-unit>
+            <trans-unit id="form.label_publish_end_date">
+                <source>form.label_publish_end_date</source>
+                <target>Publier jusque à</target>
+            </trans-unit>
+            <trans-unit id="form.help_publishable">
+                <source>form.help_publishable</source>
+                <!-- TODO: Translate -->
+                <target>If checked, this item is marked ready to be published. Whether it is actually published may depend on the configured publish date range.</target>
+            </trans-unit>
+            <trans-unit id="form.help_publish_start_date">
+                <source>form.help_publish_start_date</source>
+                <target>Seulement publier après cette date. Laissez vide pour publier immediatement</target>
+            </trans-unit>
+            <trans-unit id="form.help_publish_end_date">
+                <source>form.help_publish_end_date</source>
+                <target>Publier jusqu'à cette date. Laissez vide pour ne pas arreter de publier</target>
+            </trans-unit>
+
+
+            <!-- $Menu -->
+            <trans-unit id="dashboard.label_menu">
+                <source>dashboard.label_menu</source>
+                <target>Menus</target>
+            </trans-unit>
+            <trans-unit id="dashboard.label_menu_node">
+                <source>dashboard.label_menu_node</source>
+                <target>Elément de menu</target>
+            </trans-unit>
+
+            <trans-unit id="list.label_label">
+                <source>list.label_label</source>
+                <target>Label</target>
+            </trans-unit>
+            <trans-unit id="list.label_uri">
+                <source>list.label_uri</source>
+                <target>URI</target>
+            </trans-unit>
+            <trans-unit id="list.label_route">
+                <source>list.label_route</source>
+                <target>Route</target>
+            </trans-unit>
+
+            <trans-unit id="form.tab_menu">
+                <source>form.tab_menu</source>
+                <target>Menu</target>
+            </trans-unit>
+
+            <trans-unit id="form.group_menus">
+                <source>form.group_menus</source>
+                <target>Menu</target>
+            </trans-unit>
+            <trans-unit id="form.group_items">
+                <source>form.group_items</source>
+                <target>Éléments</target>
+            </trans-unit>
+            <trans-unit id="form.group_target">
+                <source>form.group_target</source>
+                <!-- TODO: Translate -->
+                <target>Target link</target>
+            </trans-unit>
+            <trans-unit id="form.group_menu_options">
+                <source>form.group_menu_options</source>
+                <target>Options Menu</target>
+            </trans-unit>
+
+            <trans-unit id="form.label_menu_nodes">
+                <source>form.label_menu_nodes</source>
+                <target>Menu</target>
+            </trans-unit>
+            <trans-unit id="form.label_label">
+                <source>form.label_label</source>
+                <target>Label</target>
+            </trans-unit>
+            <trans-unit id="form.label_link_type">
+                <source>form.label_link_type</source>
+                <target>Type de lien</target>
+            </trans-unit>
+            <trans-unit id="form.label_link">
+                <source>form.label_link</source>
+                <!-- TODO: Translate -->
+                <target>Link</target>
+            </trans-unit>
+            <trans-unit id="form.label_route">
+                <source>form.label_route</source>
+                <target>Route</target>
+            </trans-unit>
+            <trans-unit id="form.label_children">
+                <source>form.label_children</source>
+                <target>Éléments</target>
+            </trans-unit>
+            <trans-unit id="form.label_display">
+                <source>form.label_display</source>
+                <target>Visible</target>
+            </trans-unit>
+            <trans-unit id="form.label_display_children">
+                <source>form.label_display_children</source>
+                <target>Montrer les éléments subordonné</target>
+            </trans-unit>
+            <trans-unit id="form.label_attributes">
+                <source>form.label_attributes</source>
+                <target>Attributs Menu</target>
+            </trans-unit>
+            <trans-unit id="form.label_label_attributes">
+                <source>form.label_label_attributes</source>
+                <target>Attributs Nom</target>
+            </trans-unit>
+            <trans-unit id="form.label_children_attributes">
+                <source>form.label_children_attributes</source>
+                <target>Attributs éléments subordonnés</target>
+            </trans-unit>
+            <trans-unit id="form.label_link_attributes">
+                <source>form.label_link_attributes</source>
+                <target>Attributs Lien</target>
+            </trans-unit>
+
+            <trans-unit id="form.help_display">
+                <source>form.help_display</source>
+                <target>Un élément menu est visible seulement si le nom est remplit.</target>
+            </trans-unit>
+            <trans-unit id="form.help_display_children">
+                <source>form.help_display_children</source>
+                <target>Les éléments subordonné sont visible seulement si l'élément menu lui-même est visible.</target>
+            </trans-unit>
+            <trans-unit id="help.help_items">
+                <source>help.help_items</source>
+                <target>Cliquez sur un élément pour le modifier, cliquez avec la touche droite pour ajouter des éléments.</target>
+            </trans-unit>
+
+            <trans-unit id="breadcrumb.link_menu_list">
+                <source>breadcrumb.link_menu_list</source>
+                <target>Menus</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_menu_create">
+                <source>breadcrumb.link_menu_create</source>
+                <target>Créer</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_menu_edit">
+                <source>breadcrumb.link_menu_edit</source>
+                <target>Editer</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_menu_delete">
+                <source>breadcrumb.link_menu_delete</source>
+                <target>Supprimer</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_menu_node_list">
+                <source>breadcrumb.link_menu_node_list</source>
+                <target>Eléments de menu</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_menu_node_create">
+                <source>breadcrumb.link_menu_node_create</source>
+                <target>Créer</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_menu_node_edit">
+                <source>breadcrumb.link_menu_node_edit</source>
+                <target>Éditer</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_menu_node_delete">
+                <source>breadcrumb.link_menu_node_delete</source>
+                <target>Supprimer</target>
+            </trans-unit>
+
+
+            <!-- $Routing -->
+            <trans-unit id="dashboard.label_routing">
+                <source>dashboard.label_routing</source>
+                <target>Route</target>
+            </trans-unit>
+            <trans-unit id="dashboard.label_redirect_routing">
+                <source>dashboard.label_redirect_routing</source>
+                <target>Redirection</target>
+            </trans-unit>
+
+            <trans-unit id="list.label_path">
+                <source>list.label_path</source>
+                <target>URL</target>
+            </trans-unit>
+
+            <trans-unit id="form.tab_routing">
+                <source>form.tab_routing</source>
+                <!-- TODO: Translate -->
+                <target>URLs</target>
+            </trans-unit>
+
+            <trans-unit id="form.group_location">
+                <source>form.group_location</source>
+                <!-- TODO: Translate -->
+                <target>Location</target>
+            </trans-unit>
+            <trans-unit id="form.group_path">
+                <source>form.group_path</source>
+                <!-- TODO: Translate -->
+                <target>Path</target>
+            </trans-unit>
+            <trans-unit id="form.group_data">
+                <source>form.group_data</source>
+                <!-- TODO: Translate -->
+                <target>Data</target>
+            </trans-unit>
+            <trans-unit id="form.group_defaults">
+                <source>form.group_defaults</source>
+                <target>Defauts</target>
+            </trans-unit>
+            <trans-unit id="form.group_routes">
+                <source>form.group_routes</source>
+                <target>Routes</target>
+            </trans-unit>
+
+            <trans-unit id="form.label_variable_pattern">
+                <source>form.label_variable_pattern</source>
+                <target>Motif variable</target>
+            </trans-unit>
+            <trans-unit id="form.label_options">
+                <source>form.label_options</source>
+                <target>Options</target>
+            </trans-unit>
+            <trans-unit id="form.label_route_name">
+                <source>form.label_route_name</source>
+                <!-- TODO: Translate "Route name" -->
+                <target>Nom</target>
+            </trans-unit>
+            <trans-unit id="form.label_uri">
+                <source>form.label_uri</source>
+                <target>URI</target>
+            </trans-unit>
+            <trans-unit id="form.label_route_target">
+                <source>form.label_route_target</source>
+                <target>Route objectif</target>
+            </trans-unit>
+            <trans-unit id="form.label_add_locale_pattern">
+                <source>form.label_add_locale_pattern</source>
+                <target>Ajouter le langage</target>
+            </trans-unit>
+            <trans-unit id="form.label_add_format_pattern">
+                <source>form.label_add_format_pattern</source>
+                <target>Ajouter le motif du format</target>
+            </trans-unit>
+            <trans-unit id="form.label_add_trailing_slash">
+                <source>form.label_add_trailing_slash</source>
+                <target>Ajouter une barre oblique en fin</target>
+            </trans-unit>
+
+            <trans-unit id="form.help_variable_pattern">
+                <source>form.help_variable_pattern</source>
+                <target>Un motif en format {variable}/{plus}... Les variables sont passé au controlleur s'il les déclare comme arguments.</target>
+            </trans-unit>
+            <trans-unit id="form.help_options">
+                <source>form.help_options</source>
+                <target>
+                    <![CDATA[
+                    Langage: Prefix la route avec le langage tel que /{locale}/your/route<br/>
+                    Format: Ajoute le format à la route tel que /your/route.{format}. Le format par défaut est 'html'<br/>
+                    Barre Oblique: Ajoute un slash à la fin de la route tel que /your/route/
+                    ]]>
+                </target>
+            </trans-unit>
+
+            <trans-unit id="breadcrumb.link_route_list">
+                <source>breadcrumb.link_route_list</source>
+                <target>Routes</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_route_create">
+                <source>breadcrumb.link_route_create</source>
+                <target>Créer</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_route_edit">
+                <source>breadcrumb.link_route_edit</source>
+                <target>Éditer</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_route_delete">
+                <source>breadcrumb.link_route_delete</source>
+                <target>Supprimer</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_redirect_route_list">
+                <source>breadcrumb.link_redirect_route_list</source>
+                <target>Redirection</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_redirect_route_create">
+                <source>breadcrumb.link_redirect_route_create</source>
+                <target>Créer</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_redirect_route_edit">
+                <source>breadcrumb.link_redirect_route_edit</source>
+                <target>Éditer</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb.link_redirect_route_delete">
+                <source>breadcrumb.link_redirect_route_delete</source>
+                <target>Supprimer</target>
+            </trans-unit>
+
+
+            <!-- $Seo -->
+            <trans-unit id="form.tab_seo">
+                <source>form.tab_seo</source>
+                <target>SEO</target>
+            </trans-unit>
+
+            <trans-unit id="form.group_seo">
+                <source>form.group_seo</source>
+                <target>SEO</target>
+            </trans-unit>
+
+            <trans-unit id="form.label_originalUrl">
+                <source>form.label_originalUrl</source>
+                <target>URL d'origine</target>
+            </trans-unit>
+            <trans-unit id="form.label_metaDescription">
+                <source>form.label_metaDescription</source>
+                <target>Description de la page</target>
+            </trans-unit>
+            <trans-unit id="form.label_metaKeywords">
+                <source>form.label_metaKeywords</source>
+                <target>Mots-clés de la page</target>
+            </trans-unit>
+            <trans-unit id="form.label_extraProperties">
+                <source>form.label_extraProperties</source>
+                <target>Tags "meta property"</target>
+            </trans-unit>
+            <trans-unit id="form.label_extraNames">
+                <source>form.label_extraNames</source>
+                <target>Tags "meta name"</target>
+            </trans-unit>
+            <trans-unit id="form.label_extraHttp">
+                <source>form.label_extraHttp</source>
+                <target>Tags "meta http-equiv"</target>
+            </trans-unit>
+
+
+        </body>
+    </file>
+</xliff>

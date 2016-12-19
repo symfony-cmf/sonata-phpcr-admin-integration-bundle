@@ -18,7 +18,6 @@ use Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ImagineBlock;
 use Symfony\Cmf\Bundle\MediaBundle\Form\Type\ImageType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
-use Sonata\DoctrinePHPCRAdminBundle\Form\Type\TreeModelType;
 
 /**
  * @author Horner
@@ -42,32 +41,28 @@ class ImagineBlockAdmin extends AbstractBlockAdmin
      */
     protected function configureFormFields(FormMapper $formMapper)
     {
-        parent::configureFormFields($formMapper);
-
         // image is only required when creating a new item
         // TODO: sonata is not using one admin instance per object, so this doesn't really work - https://github.com/symfony-cmf/BlockBundle/issues/151
         $imageRequired = ($this->getSubject() && $this->getSubject()->getParentDocument()) ? false : true;
 
         if (null === $this->getParentFieldDescription()) {
-            $formMapper
-                ->with('form.group_general')
-                    ->add(
-                        'parentDocument',
-                        TreeModelType::class,
-                        array('root_node' => $this->getRootPath(), 'choice_list' => array(), 'select_root_node' => true)
-                    )
-                    ->add('name', TextType::class)
-                ->end();
+            parent::configureFormFields($formMapper);
         }
 
         $formMapper
-            ->with('form.group_general')
-                ->add('label', TextType::class, array('required' => false))
-                ->add('linkUrl', TextType::class, array('required' => false))
-                ->add('filter', TextType::class, array('required' => false))
-                ->add('image', ImageType::class, array('required' => $imageRequired))
-                ->add('position', HiddenType::class, array('mapped' => false))
-            ->end();
+            ->tab('form.tab_general')
+                ->with('form.group_block', null === $this->getParentFieldDescription()
+                    ? ['class' => 'col-md-9']
+                    : []
+                )
+                    ->add('label', TextType::class, array('required' => false))
+                    ->add('linkUrl', TextType::class, array('required' => false))
+                    ->add('filter', TextType::class, array('required' => false))
+                    ->add('image', ImageType::class, array('required' => $imageRequired))
+                    ->add('position', HiddenType::class, array('mapped' => false))
+                ->end()
+            ->end()
+        ;
     }
 
     public function toString($object)

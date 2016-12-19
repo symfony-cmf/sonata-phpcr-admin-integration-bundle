@@ -22,6 +22,15 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
  */
 class BlockCacheExtension extends AbstractAdminExtension
 {
+    private $formGroup;
+    private $formTab;
+
+    public function __construct($formGroup = 'form.group_metadata', $formTab = 'form.tab_general')
+    {
+        $this->formGroup = $formGroup;
+        $this->formTab = $formTab;
+    }
+
     /**
      * Configure form fields.
      *
@@ -29,9 +38,21 @@ class BlockCacheExtension extends AbstractAdminExtension
      */
     public function configureFormFields(FormMapper $formMapper)
     {
+        if ($formMapper->hasOpenTab()) {
+            $formMapper->end();
+        }
+
         $formMapper
-            ->with('form.group_metadata', array('translation_domain' => 'CmfBlockBundle'))
-                ->add('ttl', TextType::class)
+            ->tab($this->formTab, 'form.tab_general' === $this->formtab
+                ? ['translation_domain' => 'CmfSonataAdminIntegrationBundle']
+                : []
+            )
+                ->with($this->formGroup, 'form.group_metadata' === $this->formGroup
+                    ? ['translation_domain' => 'CmfSonataAdminIntegrationBundle']
+                    : []
+                )
+                    ->add('ttl', TextType::class)
+                ->end()
             ->end()
         ;
     }

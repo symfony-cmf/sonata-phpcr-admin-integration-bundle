@@ -17,7 +17,6 @@ $container->loadFromExtension('cmf_sonata_admin_integration', [
         ],
         'core' => [
             'enabled' => true,
-            'form_group' => 'core_form',
         ],
     ],
 ]);

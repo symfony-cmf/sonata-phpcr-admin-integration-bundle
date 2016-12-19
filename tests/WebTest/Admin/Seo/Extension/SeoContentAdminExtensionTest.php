@@ -35,7 +35,7 @@ class SeoContentAdminExtensionTest extends TestCase
         $this->assertResponseSuccess($this->getClient()->getResponse());
 
         $this->assertCount(1, $crawler->filter('html:contains("SEO")'));
-        $this->assertCount(1, $crawler->filter('html:contains("Page title")'));
+        $this->assertCount(1, $crawler->filter('html:contains("Title")'));
         $this->assertCount(1, $crawler->filter('html:contains("Original URL")'));
         $this->assertCount(1, $crawler->filter('html:contains("description")'));
         $this->assertCount(1, $crawler->filter('html:contains("keywords")'));
@@ -48,7 +48,7 @@ class SeoContentAdminExtensionTest extends TestCase
         $this->assertResponseSuccess($this->getClient()->getResponse());
 
         $this->assertCount(1, $crawler->filter('html:contains("SEO")'));
-        $this->assertCount(1, $crawler->filter('html:contains("Page title")'));
+        $this->assertCount(1, $crawler->filter('html:contains("Title")'));
         $this->assertCount(1, $crawler->filter('html:contains("Original URL")'));
         $this->assertCount(1, $crawler->filter('html:contains("description")'));
         $this->assertCount(1, $crawler->filter('html:contains("keywords")'));

@@ -31,6 +31,11 @@ class MenuOptionsExtension extends AbstractAdminExtension
     protected $formGroup;
 
     /**
+     * @var string
+     */
+    protected $formTab;
+
+    /**
      * @var bool
      */
     protected $advanced;
@@ -39,9 +44,10 @@ class MenuOptionsExtension extends AbstractAdminExtension
      * @param string $formGroup - group to use for form mapper
      * @param bool   $advanced  - activates editing all fields of the node
      */
-    public function __construct($formGroup = 'form.group_menu_options', $advanced = false)
+    public function __construct($formGroup = 'form.group_menu_options', $formTab = 'form.tab_general', $advanced = false)
     {
         $this->formGroup = $formGroup;
+        $this->formTab = $formTab;
         $this->advanced = $advanced;
     }
 
@@ -50,24 +56,26 @@ class MenuOptionsExtension extends AbstractAdminExtension
      */
     public function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->with($this->formGroup, array(
-                'translation_domain' => 'CmfMenuBundle',
-            ))
-            ->add(
-                'display',
-                CheckboxType::class,
-                array('required' => false),
-                array('help' => 'form.help_display')
+        if ($formMapper->hasOpenTab()) {
+            $formMapper->end();
+        }
+
+        $formMapper
+            ->tab($this->formTab, 'form.tab_general' === $this->formTab
+                ? ['translation_domain' => 'CmfSonataAdminIntegrationBundle']
+                : []
             )
-            ->add(
-                'displayChildren',
-                CheckboxType::class,
-                array('required' => false),
-                array('help' => 'form.help_display_children')
-            )
-          ->end();
+                ->with($this->formGroup, 'form.group_menu_options' === $this->formGroup
+                    ? ['class' => 'col-md-3', 'translation_domain' => 'CmfSonataAdminIntegrationBundle']
+                    : ['class' => 'col-md-3']
+                )
+                    ->add('display', CheckboxType::class, ['required' => false], ['help' => 'form.help_display'])
+                    ->add('displayChildren', CheckboxType::class, ['required' => false], ['help' => 'form.help_display_children'])
+        ;
 
         if (!$this->advanced) {
+            $formMapper->end()->end();
+
             return;
         }
 
@@ -77,45 +85,44 @@ class MenuOptionsExtension extends AbstractAdminExtension
             'attr' => array('style' => 'clear:both'),
         );
 
-        $formMapper->with($this->formGroup, array(
-                'translation_domain' => 'CmfMenuBundle',
-            ))
+        $formMapper
             ->add(
                 'attributes',
                 KeyValueType::class,
-                array(
+                [
                   'value_type' => TextType::class,
                   'required' => false,
                   'entry_options' => $child_options,
-                )
+                ]
             )
             ->add(
                 'labelAttributes',
                 KeyValueType::class,
-                array(
+                [
                   'value_type' => TextType::class,
                   'required' => false,
                   'entry_options' => $child_options,
-                )
+                ]
             )
             ->add(
                 'childrenAttributes',
                 KeyValueType::class,
-                array(
+                [
                   'value_type' => TextType::class,
                   'required' => false,
                   'entry_options' => $child_options,
-                )
+                ]
             )
             ->add(
                 'linkAttributes',
                 KeyValueType::class,
-                array(
+                [
                   'value_type' => TextType::class,
                   'required' => false,
                   'entry_options' => $child_options,
-                )
+                ]
             )
-          ->end();
+            ->end() // group
+            ->end(); // tab
     }
 }

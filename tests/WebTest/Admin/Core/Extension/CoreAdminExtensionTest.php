@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Tests\WebTest\Admin\Seo\Extension;
+namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Tests\WebTest\Admin\Core\Extension;
 
 use Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Tests\WebTest\Admin\TestCase;
 
@@ -28,22 +28,15 @@ class CoreAdminExtensionTest extends TestCase
         $this->client = $this->createClient();
     }
 
-    public function testAdminExtensionExists()
-    {
-        $crawler = $this->client->request('GET', '/admin/cmf/core/extensions/list');
-
-        $this->assertResponseSuccess($this->getClient()->getResponse());
-        $this->assertCount(1, $crawler->filter('html:contains("with-extensions")'));
-    }
-
     public function testItemEditView()
     {
         $crawler = $this->getClient()->request('GET', '/admin/cmf/core/extensions/test/core/with-extensions/edit');
 
         $this->assertResponseSuccess($this->getClient()->getResponse());
 
-        $this->assertCount(1, $crawler->filter('html:contains("FORM_publish")'));
-        $this->assertCount(1, $crawler->filter('html:contains("FORM_publish_time")'));
+        $this->assertCount(1, $crawler->filter('html:contains("Publishable")'));
+        $this->assertCount(1, $crawler->filter('html:contains("Publish from")'));
+        $this->assertCount(1, $crawler->filter('html:contains("Publish until")'));
     }
 
     public function testItemCreate()
@@ -52,7 +45,8 @@ class CoreAdminExtensionTest extends TestCase
 
         $this->assertResponseSuccess($this->getClient()->getResponse());
 
-        $this->assertCount(1, $crawler->filter('html:contains("FORM_publish")'));
-        $this->assertCount(1, $crawler->filter('html:contains("FORM_publish_time")'));
+        $this->assertCount(1, $crawler->filter('html:contains("Publishable")'));
+        $this->assertCount(1, $crawler->filter('html:contains("Publish from")'));
+        $this->assertCount(1, $crawler->filter('html:contains("Publish until")'));
     }
 }

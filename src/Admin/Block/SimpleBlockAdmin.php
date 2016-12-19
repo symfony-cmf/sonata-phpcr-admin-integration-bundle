@@ -17,7 +17,6 @@ use Sonata\AdminBundle\Form\FormMapper;
 use Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SimpleBlock;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
-use Sonata\DoctrinePHPCRAdminBundle\Form\Type\TreeModelType;
 
 /**
  * @author Lukas Kahwe Smith <smith@pooteeweet.org>
@@ -40,12 +39,14 @@ class SimpleBlockAdmin extends AbstractBlockAdmin
      */
     protected function configureFormFields(FormMapper $formMapper)
     {
+        parent::configureFormFields($formMapper);
+
         $formMapper
-            ->with('form.group_general')
-                ->add('parentDocument', TreeModelType::class, array('root_node' => $this->getRootPath(), 'choice_list' => array(), 'select_root_node' => true))
-                ->add('name', TextType::class)
-                ->add('title', TextType::class)
-                ->add('body', TextareaType::class)
+            ->tab('form.tab_general')
+                ->with('form.group_block', ['class' => 'col-md-9'])
+                    ->add('title', TextType::class)
+                    ->add('body', TextareaType::class)
+                ->end()
             ->end()
         ;
     }
