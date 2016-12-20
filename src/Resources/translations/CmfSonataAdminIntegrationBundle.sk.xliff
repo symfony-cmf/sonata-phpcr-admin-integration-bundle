@@ -230,14 +230,6 @@
                 <source>filter.label_name</source>
                 <target>Meno</target>
             </trans-unit>
-            <trans-unit id="list.label_id">
-                <source>list.label_id</source>
-                <target>Id</target>
-            </trans-unit>
-            <trans-unit id="list.label_name">
-                <source>list.label_name</source>
-                <target>Meno</target>
-            </trans-unit>
 
 
             <!-- $Content -->
