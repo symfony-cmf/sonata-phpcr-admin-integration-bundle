@@ -14,7 +14,7 @@ namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Block;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
-use Sonata\DoctrinePHPCRAdminBundle\Form\Type\TreeModelType;
+use Symfony\Cmf\Bundle\TreeBrowserBundle\Form\Type\TreeSelectType;
 
 /**
  * @author Lukas Kahwe Smith <smith@pooteeweet.org>
@@ -44,8 +44,8 @@ class ReferenceBlockAdmin extends AbstractBlockAdmin
                 ->with('form.group_block', ['class' => 'col-md-9'])
                     ->add(
                         'referencedBlock',
-                        TreeModelType::class,
-                        ['choice_list' => [], 'required' => false, 'root_node' => $this->getRootPath()]
+                        TreeSelectType::class,
+                        ['root_node' => $this->getRootPath(), 'widget' => 'browser', 'required' => false]
                     )
                 ->end()
             ->end()

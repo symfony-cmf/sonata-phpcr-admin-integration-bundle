@@ -11,6 +11,7 @@
 
 namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Menu;
 
+use Symfony\Cmf\Bundle\TreeBrowserBundle\Form\Type\TreeSelectType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormEvents;
@@ -18,7 +19,6 @@ use Symfony\Cmf\Bundle\MenuBundle\Model\MenuNode;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\DoctrinePHPCRAdminBundle\Form\Type\ChoiceFieldMaskType;
-use Sonata\DoctrinePHPCRAdminBundle\Form\Type\TreeModelType;
 use Knp\Menu\ItemInterface as MenuItemInterface;
 use Doctrine\Common\Util\ClassUtils;
 
@@ -44,14 +44,16 @@ class MenuNodeAdmin extends AbstractMenuNodeAdmin
         $formMapper
             ->tab('form.tab_general')
                 ->with('form.group_location', ['class' => 'col-sm-3'])
-                    ->add('parentDocument', TreeModelType::class, array(
-                        'root_node' => $this->menuRoot,
-                        'choice_list' => array(),
-                        'select_root_node' => true,
-                    ))
+                    ->add(
+                        'parentDocument',
+                        TreeSelectType::class,
+                        ['root_node' => $this->menuRoot, 'widget' => 'browser']
+                    )
                 ->end()
             ->end()
         ;
+
+        $this->addTransformerToField($formMapper->getFormBuilder(), 'parentDocument');
 
         parent::configureFormFields($formMapper);
 
@@ -69,22 +71,22 @@ class MenuNodeAdmin extends AbstractMenuNodeAdmin
                             'map' => array(
                                 'route' => array('link'),
                                 'uri' => array('link'),
-                                'content' => array('content', TreeModelType::class),
+                                'content' => array('content', TreeSelectType::class),
                             ),
                             'placeholder' => 'auto',
                             'required' => false,
                         ))
                         ->add('link', TextType::class, array('required' => false, 'mapped' => false))
-                        ->add('content', TreeModelType::class,
-                            array(
-                                'root_node' => $this->contentRoot,
-                                'choice_list' => array(),
-                                'required' => false,
-                            )
+                        ->add(
+                            'content',
+                            TreeSelectType::class,
+                            ['root_node' => $this->contentRoot, 'widget' => 'browser', 'required' => false]
                         )
                     ->end()
                 ->end()
             ;
+
+            $this->addTransformerToField($formMapper->getFormBuilder(), 'content');
         }
     }
 

@@ -12,14 +12,14 @@
 namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Block;
 
 use Sonata\AdminBundle\Form\FormMapper;
-use Sonata\DoctrinePHPCRAdminBundle\Admin\Admin;
-use Sonata\DoctrinePHPCRAdminBundle\Form\Type\TreeModelType;
+use Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\AbstractAdmin;
+use Symfony\Cmf\Bundle\TreeBrowserBundle\Form\Type\TreeSelectType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 /**
  * @author Nicolas Bastien <nbastien@prestaconcept.net>
  */
-abstract class AbstractBlockAdmin extends Admin
+abstract class AbstractBlockAdmin extends AbstractAdmin
 {
     /**
      * @var string
@@ -31,7 +31,7 @@ abstract class AbstractBlockAdmin extends Admin
      */
     public function getExportFormats()
     {
-        return array();
+        return [];
     }
 
     /**
@@ -44,12 +44,14 @@ abstract class AbstractBlockAdmin extends Admin
                 ->with('form.group_location', ['class' => 'col-md-3'])
                     ->add(
                         'parentDocument',
-                        TreeModelType::class,
-                        ['root_node' => $this->getRootPath(), 'choice_list' => array(), 'select_root_node' => true]
+                        TreeSelectType::class,
+                        ['root_node' => $this->getRootPath(), 'widget' => 'browser']
                     )
                     ->add('name', TextType::class)
                 ->end()
             ->end()
         ;
+
+        $this->addTransformerToField($formMapper->getFormBuilder(), 'parentDocument');
     }
 }
