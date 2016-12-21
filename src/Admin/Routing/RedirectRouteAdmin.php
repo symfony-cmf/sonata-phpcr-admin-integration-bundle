@@ -15,7 +15,7 @@ use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\DoctrinePHPCRAdminBundle\Admin\Admin;
-use Sonata\DoctrinePHPCRAdminBundle\Form\Type\TreeModelType;
+use Symfony\Cmf\Bundle\TreeBrowserBundle\Form\Type\TreeSelectType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Cmf\Bundle\RoutingBundle\Model\Route;
 
@@ -41,8 +41,8 @@ class RedirectRouteAdmin extends Admin
             ->with('form.group_location', ['class' => 'col-md-3'])
                 ->add(
                     'parentDocument',
-                    TreeModelType::class,
-                    ['choice_list' => [], 'select_root_node' => true, 'root_node' => $this->routeRoot]
+                    TreeSelectType::class,
+                    ['root_node' => $this->routeRoot, 'widget' => 'browser']
                 )
                 ->add('name', TextType::class)
             ->end()
@@ -52,8 +52,8 @@ class RedirectRouteAdmin extends Admin
                 ->add('uri', TextType::class, ['required' => false])
                 ->add(
                     'routeTarget',
-                    TreeModelType::class,
-                    ['choice_list' => [], 'required' => false, 'root_node' => $this->routeRoot]
+                    TreeSelectType::class,
+                    ['root_node' => $this->getRootPath(), 'widget' => 'browser', 'required' => false]
                 )
             ->end()
         ;
