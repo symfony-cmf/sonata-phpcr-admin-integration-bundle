@@ -30,6 +30,15 @@ class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder();
         $root = $treeBuilder->root('cmf_sonata_admin_integration');
 
+        $root
+            ->children()
+                ->enumNode('persistence')
+                    ->values([null, 'phpcr', 'orm'])
+                    ->defaultNull()
+                ->end()
+            ->end()
+        ;
+
         $this->addBundlesSection($root);
 
         return $treeBuilder;
@@ -46,7 +55,12 @@ class Configuration implements ConfigurationInterface
                     ->canBeEnabled()
                     ->children();
 
-            $factory->addConfiguration($config);
+            $persistenceConfig = $config
+                ->arrayNode('persistence')
+                    ->addDefaultsIfNotSet()
+                    ->children();
+
+            $factory->addConfiguration($persistenceConfig, $config);
         }
     }
 }

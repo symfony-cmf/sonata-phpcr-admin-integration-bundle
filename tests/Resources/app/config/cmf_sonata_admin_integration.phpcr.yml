@@ -86,12 +86,17 @@ cmf_content:
             content_basepath: /test/contents
 
 cmf_sonata_admin_integration:
+    persistence: phpcr
     bundles:
         menu: ~
         content: ~
         routing:
-            basepath: /test/routing
+            persistence:
+                phpcr: 
+                    basepath: /test/routing
         block:
-            basepath: /test/blocks
-            menu_basepath: /test/menus
+            persistence:
+                phpcr:
+                    basepath: /test/blocks
+                    menu_basepath: /test/menus
             use_imagine: true

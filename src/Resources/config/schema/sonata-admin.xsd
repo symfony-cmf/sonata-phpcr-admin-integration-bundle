@@ -10,6 +10,8 @@
         <xsd:sequence>
             <xsd:element name="bundles" type="bundles" minOccurs="0" maxOccurs="1" />
         </xsd:sequence>
+
+        <xsd:attribute name="persistence" type="persistence" />
     </xsd:complexType>
 
     <xsd:complexType name="bundles">
@@ -17,5 +19,12 @@
             <xsd:any minOccurs="0" processContents="skip" />
         </xsd:sequence>
     </xsd:complexType>
+
+    <xsd:simpleType name="persistence">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="phpcr" />
+            <xsd:enumeration value="orm" />
+        </xsd:restriction>
+    </xsd:simpleType>
 
 </xsd:schema>
