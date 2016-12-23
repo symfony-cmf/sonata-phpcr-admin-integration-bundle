@@ -17,6 +17,17 @@
                 <target>Nombre</target>
             </trans-unit>
 
+            <trans-unit id="filter.label_title">
+                <source>filter.label_title</source>
+                <!-- TODO: Translate -->
+                <target>Title</target>
+            </trans-unit>
+            <trans-unit id="filter.label_name">
+                <source>filter.label_name</source>
+                <!-- TODO: Translate -->
+                <target>Name</target>
+            </trans-unit>
+
             <trans-unit id="form.tab_general">
                 <source>form.tab_general</source>
                 <target>General</target>
