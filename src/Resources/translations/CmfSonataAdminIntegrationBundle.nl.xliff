@@ -16,6 +16,15 @@
                 <target>Naam</target>
             </trans-unit>
 
+            <trans-unit id="filter.label_title">
+                <source>filter.label_title</source>
+                <target>Titel</target>
+            </trans-unit>
+            <trans-unit id="filter.label_name">
+                <source>filter.label_name</source>
+                <target>Naam</target>
+            </trans-unit>
+
             <trans-unit id="form.tab_general">
                 <source>form.tab_general</source>
                 <target>Algemeen</target>
