@@ -14,12 +14,12 @@ namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Routing;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
-use Sonata\DoctrinePHPCRAdminBundle\Admin\Admin;
+use Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\AbstractAdmin;
 use Symfony\Cmf\Bundle\TreeBrowserBundle\Form\Type\TreeSelectType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Cmf\Bundle\RoutingBundle\Model\Route;
 
-class RedirectRouteAdmin extends Admin
+class RedirectRouteAdmin extends AbstractAdmin
 {
     protected $translationDomain = 'CmfSonataAdminIntegrationBundle';
 
@@ -57,6 +57,7 @@ class RedirectRouteAdmin extends Admin
                 )
             ->end()
         ;
+        $this->addTransformerToField('parentDocument');
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)

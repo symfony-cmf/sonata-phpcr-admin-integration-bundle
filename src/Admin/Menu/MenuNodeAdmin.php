@@ -84,6 +84,9 @@ class MenuNodeAdmin extends AbstractMenuNodeAdmin
                     ->end()
                 ->end()
             ;
+
+            $this->addTransformerToField('parentDocument');
+            $this->addTransformerToField('content');
         }
     }
 

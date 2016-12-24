@@ -15,7 +15,7 @@ use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\CoreBundle\Form\Type\ImmutableArrayType;
-use Sonata\DoctrinePHPCRAdminBundle\Admin\Admin;
+use Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\AbstractAdmin;
 use Symfony\Cmf\Bundle\TreeBrowserBundle\Form\Type\TreeSelectType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -23,7 +23,7 @@ use Symfony\Cmf\Bundle\RoutingBundle\Model\Route;
 use Symfony\Cmf\Bundle\RoutingBundle\Form\Type\RouteTypeType;
 use PHPCR\Util\PathHelper;
 
-class RouteAdmin extends Admin
+class RouteAdmin extends AbstractAdmin
 {
     protected $translationDomain = 'CmfSonataAdminIntegrationBundle';
 
@@ -95,6 +95,11 @@ class RouteAdmin extends Admin
                 ->ifEnd()
 
             ->end(); // tab general/routing
+
+        $this->addTransformerToField('parentDocument');
+        if (null === $this->getParentFieldDescription()) {
+            $this->addTransformerToField('content');
+        }
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)

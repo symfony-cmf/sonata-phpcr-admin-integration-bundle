@@ -14,14 +14,14 @@ namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Menu;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
-use Sonata\DoctrinePHPCRAdminBundle\Admin\Admin;
+use Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\AbstractAdmin;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Cmf\Bundle\MenuBundle\Model\MenuNodeBase;
 
 /**
  * Common base admin for Menu and MenuNode.
  */
-abstract class AbstractMenuNodeAdmin extends Admin
+abstract class AbstractMenuNodeAdmin extends AbstractAdmin
 {
     /**
      * @var string

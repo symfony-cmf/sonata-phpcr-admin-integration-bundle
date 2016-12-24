@@ -12,14 +12,14 @@
 namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Block;
 
 use Sonata\AdminBundle\Form\FormMapper;
-use Sonata\DoctrinePHPCRAdminBundle\Admin\Admin;
+use Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\AbstractAdmin;
 use Symfony\Cmf\Bundle\TreeBrowserBundle\Form\Type\TreeSelectType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 /**
  * @author Nicolas Bastien <nbastien@prestaconcept.net>
  */
-abstract class AbstractBlockAdmin extends Admin
+abstract class AbstractBlockAdmin extends AbstractAdmin
 {
     /**
      * @var string
@@ -51,5 +51,7 @@ abstract class AbstractBlockAdmin extends Admin
                 ->end()
             ->end()
         ;
+
+        $this->addTransformerToField('parentDocument');
     }
 }
