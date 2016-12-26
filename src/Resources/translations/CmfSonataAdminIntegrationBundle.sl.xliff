@@ -53,8 +53,7 @@
             </trans-unit>
             <trans-unit id="form.label_content">
                 <source>form.label_content</source>
-                <!-- TODO: Translate -->
-                <target>Content</target>
+                <target>Vsebina</target>
             </trans-unit>
 
 
@@ -94,7 +93,6 @@
 
             <trans-unit id="form.group_block">
                 <source>form.group_block</source>
-                <!-- TODO: Check translation -->
                 <target>Blok</target>
             </trans-unit>
             <trans-unit id="form.group_metadata">
@@ -137,7 +135,7 @@
             </trans-unit>
             <trans-unit id="breadcrumb.link_simple_block_list">
                 <source>breadcrumb.link_simple_block_list</source>
-                <target>Simple blocks</target>
+                <target>Enostavni bloki</target>
             </trans-unit>
             <trans-unit id="breadcrumb.link_simple_block_create">
                 <source>breadcrumb.link_simple_block_create</source>
@@ -257,8 +255,7 @@
 
             <trans-unit id="form.group_content">
                 <source>form.group_content</source>
-                <!-- TODO: Translate -->
-                <target>Content</target>
+                <target>Vsebina</target>
             </trans-unit>
 
             <trans-unit id="form.label_body">
@@ -287,14 +284,12 @@
             <!-- $Core -->
             <trans-unit id="form.tab_publish">
                 <source>form.tab_publish</source>
-                <!-- TODO: Translate -->
-                <target>Publish Settings</target>
+                <target>Objavi nastavitve</target>
             </trans-unit>
 
             <trans-unit id="form.group_publish_workflow">
                 <source>form.group_publish_workflow</source>
-                <!-- TODO: Translate -->
-                <target>Status</target>
+                <target>Stanje</target>
             </trans-unit>
 
             <trans-unit id="form.label_publishable">
@@ -311,8 +306,7 @@
             </trans-unit>
             <trans-unit id="form.help_publishable">
                 <source>form.help_publishable</source>
-                <!-- TODO: Translate -->
-                <target>If checked, this item is marked ready to be published. Whether it is actually published may depend on the configured publish date range.</target>
+                <target>Če je označeno, je ta element pripravljen za objavo. Ali bo dejansko objavljen zavisi od nastavljenega razpona datuma objave.</target>
             </trans-unit>
             <trans-unit id="form.help_publish_start_date">
                 <source>form.help_publish_start_date</source>
@@ -362,13 +356,11 @@
             </trans-unit>
             <trans-unit id="form.group_target">
                 <source>form.group_target</source>
-                <!-- TODO: Translate -->
-                <target>Target link</target>
+                <target>Ciljna povezava</target>
             </trans-unit>
             <trans-unit id="form.group_menu_options">
                 <source>form.group_menu_options</source>
-                <!-- TODO: Translate -->
-                <target>Menu Options</target>
+                <target>Možnosti menija</target>
             </trans-unit>
 
             <trans-unit id="form.label_menu_nodes">
@@ -385,8 +377,7 @@
             </trans-unit>
             <trans-unit id="form.label_link">
                 <source>form.label_link</source>
-                <!-- TODO: Translate -->
-                <target>Link</target>
+                <target>Povezava</target>
             </trans-unit>
             <trans-unit id="form.label_route">
                 <source>form.label_route</source>
@@ -398,44 +389,36 @@
             </trans-unit>
             <trans-unit id="form.label_display">
                 <source>form.label_display</source>
-                <!-- TODO: Translate -->
-                <target>Display</target>
+                <target>Prikaz</target>
             </trans-unit>
             <trans-unit id="form.label_display_children">
                 <source>form.label_display_children</source>
-                <!-- TODO: Translate -->
-                <target>Display Children</target>
+                <target>Prikaži podrejene</target>
             </trans-unit>
             <trans-unit id="form.label_attributes">
                 <source>form.label_attributes</source>
-                <!-- TODO: Translate -->
-                <target>Menu attributes</target>
+                <target>Atributi menija</target>
             </trans-unit>
             <trans-unit id="form.label_label_attributes">
                 <source>form.label_label_attributes</source>
-                <!-- TODO: Translate -->
-                <target>Label attributes</target>
+                <target>Atributi oznake</target>
             </trans-unit>
             <trans-unit id="form.label_children_attributes">
                 <source>form.label_children_attributes</source>
-                <!-- TODO: Translate -->
-                <target>Children attributes</target>
+                <target>Podrejeni atributi</target>
             </trans-unit>
             <trans-unit id="form.label_link_attributes">
                 <source>form.label_link_attributes</source>
-                <!-- TODO: Translate -->
-                <target>Link attributes</target>
+                <target>Atributi povezave</target>
             </trans-unit>
 
             <trans-unit id="form.help_display">
                 <source>form.help_display</source>
-                <!-- TODO: Translate -->
-                <target>A menu entry is only displayed if the label is not empty.</target>
+                <target>Vnos menija je prikazan samo, če oznaka ni prazna.</target>
             </trans-unit>
             <trans-unit id="form.help_display_children">
                 <source>form.help_display_children</source>
-                <!-- TODO: Translate -->
-                <target>Children are only displayed if the menu entry itself is displayed.</target>
+                <target>Podrejeni elementi so prikazani samo, če je meni prikazan.</target>
             </trans-unit>
             <trans-unit id="help.items_help">
                 <source>help.items_help</source>
@@ -479,150 +462,123 @@
             <!-- $Routing -->
             <trans-unit id="dashboard.label_routing">
                 <source>dashboard.label_routing</source>
-                <!-- TODO: Translate -->
-                <target>Route</target>
+                <target>Pot</target>
             </trans-unit>
             <trans-unit id="dashboard.label_redirect_routing">
                 <source>dashboard.label_redirect_routing</source>
-                <!-- TODO: Translate -->
-                <target>Redirect Route</target>
+                <target>Pot preusmeritve</target>
             </trans-unit>
 
             <trans-unit id="list.label_path">
                 <source>list.label_path</source>
-                <!-- TODO: Translate -->
                 <target>URL</target>
             </trans-unit>
 
             <trans-unit id="form.tab_routing">
                 <source>form.tab_routing</source>
-                <!-- TODO: Translate -->
-                <target>URLs</target>
+                <target>URL-ji</target>
             </trans-unit>
 
             <trans-unit id="form.group_location">
                 <source>form.group_location</source>
-                <!-- TODO: Translate -->
-                <target>Location</target>
+                <target>Lokacija</target>
             </trans-unit>
             <trans-unit id="form.group_path">
                 <source>form.group_path</source>
-                <!-- TODO: Translate -->
-                <target>Path</target>
+                <target>Pot</target>
             </trans-unit>
             <trans-unit id="form.group_data">
                 <source>form.group_data</source>
-                <!-- TODO: Translate -->
-                <target>Data</target>
+                <target>Podatki</target>
             </trans-unit>
             <trans-unit id="form.group_defaults">
                 <source>form.group_defaults</source>
-                <!-- TODO: Translate -->
-                <target>Default values</target>
+                <target>Privzete vrednosti</target>
             </trans-unit>
             <trans-unit id="form.group_routes">
                 <source>form.group_routes</source>
-                <!-- TODO: Translate -->
-                <target>Routes</target>
+                <target>Poti</target>
             </trans-unit>
 
             <trans-unit id="form.label_variable_pattern">
                 <source>form.label_variable_pattern</source>
-                <!-- TODO: Translate -->
-                <target>Variable pattern</target>
+                <target>Vzorec spremenljivke</target>
             </trans-unit>
             <trans-unit id="form.label_options">
                 <source>form.label_options</source>
-                <!-- TODO: Translate -->
-                <target>Options</target>
+                <target>Možnosti</target>
             </trans-unit>
             <trans-unit id="form.label_route_name">
                 <source>form.label_route_name</source>
-                <!-- TODO: Translate -->
-                <target>Route</target>
+                <target>Pot</target>
             </trans-unit>
             <trans-unit id="form.label_uri">
                 <source>form.label_uri</source>
-                <!-- TODO: Translate -->
                 <target>URI</target>
             </trans-unit>
             <trans-unit id="form.label_route_target">
                 <source>form.label_route_target</source>
-                <!-- TODO: Translate -->
-                <target>Route target</target>
+                <target>Cilj poti</target>
             </trans-unit>
             <trans-unit id="form.label_add_locale_pattern">
                 <source>form.label_add_locale_pattern</source>
-                <!-- TODO: Translate -->
-                <target>Add locale pattern</target>
+                <target>Dodaj vzorec lokalizacije</target>
             </trans-unit>
             <trans-unit id="form.label_add_format_pattern">
                 <source>form.label_add_format_pattern</source>
-                <!-- TODO: Translate -->
-                <target>Add format pattern</target>
+                <target>Dodaj vzorec oblike</target>
             </trans-unit>
             <trans-unit id="form.label_add_trailing_slash">
                 <source>form.label_add_trailing_slash</source>
-                <!-- TODO: Translate -->
-                <target>Add trailing slash</target>
+                <target>Dodaj zaključno poševnico</target>
             </trans-unit>
 
             <trans-unit id="form.help_variable_pattern">
                 <source>form.help_variable_pattern</source>
-                <!-- TODO: Translate -->
-                <target>A pattern in the format {variable}/{more}... The fields are passed to the controller if it declares them as arguments.</target>
+                <target>Vzorec oblike {spremenljivka}/{več}... Polja so podana krmilniku, če jih razglasi kot argumente.</target>
             </trans-unit>
             <trans-unit id="form.help_options">
                 <source>form.help_options</source>
-                <!-- TODO: Translate -->
                 <target>
                     <![CDATA[
-                    Locale: Prepend locale to route like /{locale}/your/route<br/>
-                    Format: Append format to route like /your/route.{format}. Default format is 'html'<br/>
-                    Slash: Append a trailing slash to route like /your/route/
+                    Lokalizacija: Poti dodaj predpono lokalizacije /{locale}/your/route<br/>
+                    Oblika: Poti pripni obliko /your/route.{format}. Privzeta oblika je 'html'<br/>
+                    Poševnica: Poti pripni zaključno poševnico /your/route/
                     ]]>
                 </target>
             </trans-unit>
 
             <trans-unit id="breadcrumb.link_route_list">
                 <source>breadcrumb.link_route_list</source>
-                <!-- TODO: Translate -->
-                <target>Routes</target>
+                <target>Poti</target>
             </trans-unit>
             <trans-unit id="breadcrumb.link_route_create">
                 <source>breadcrumb.link_route_create</source>
-                <!-- TODO: Translate -->
-                <target>Create</target>
+                <target>Ustvari</target>
             </trans-unit>
             <trans-unit id="breadcrumb.link_route_edit">
                 <source>breadcrumb.link_route_edit</source>
-                <!-- TODO: Translate -->
-                <target>Edit</target>
+                <target>Uredi</target>
             </trans-unit>
             <trans-unit id="breadcrumb.link_route_delete">
                 <source>breadcrumb.link_route_delete</source>
-                <!-- TODO: Translate -->
-                <target>Delete</target>
+                <target>Izbriši</target>
             </trans-unit>
             <trans-unit id="breadcrumb.link_redirect_route_list">
                 <source>breadcrumb.link_redirect_route_list</source>
-                <!-- TODO: Translate -->
-                <target>Redirect Routes</target>
+                <target>Poti preusmeritve</target>
             </trans-unit>
             <trans-unit id="breadcrumb.link_redirect_route_create">
                 <source>breadcrumb.link_redirect_route_create</source>
-                <!-- TODO: Translate -->
-                <target>Create</target>
+                <target>Ustvari</target>
             </trans-unit>
             <trans-unit id="breadcrumb.link_redirect_route_edit">
                 <source>breadcrumb.link_redirect_route_edit</source>
-                <!-- TODO: Translate -->
-                <target>Edit</target>
+                <target>Uredi</target>
             </trans-unit>
             <trans-unit id="breadcrumb.link_redirect_route_delete">
                 <source>breadcrumb.link_redirect_route_delete</source>
-                <!-- TODO: Translate -->
-                <target>Delete</target>
+                <target>Izbriši</target>
             </trans-unit>
 
 
@@ -639,33 +595,27 @@
 
             <trans-unit id="form.label_originalUrl">
                 <source>form.label_originalUrl</source>
-                <!-- TODO: Translate -->
-                <target>Original URL</target>
+                <target>Prvotni URL</target>
             </trans-unit>
             <trans-unit id="form.label_metaDescription">
                 <source>form.label_metaDescription</source>
-                <!-- TODO: Translate -->
-                <target>Page description</target>
+                <target>Opis strani</target>
             </trans-unit>
             <trans-unit id="form.label_metaKeywords">
                 <source>form.label_metaKeywords</source>
-                <!-- TODO: Translate -->
-                <target>Page keywords</target>
+                <target>Ključne besede strani</target>
             </trans-unit>
             <trans-unit id="form.label_extraProperties">
                 <source>form.label_extraProperties</source>
-                <!-- TODO: Translate -->
-                <target>Meta property tags</target>
+                <target>Oznake meta lastnosti</target>
             </trans-unit>
             <trans-unit id="form.label_extraNames">
                 <source>form.label_extraNames</source>
-                <!-- TODO: Translate -->
-                <target>Meta name tags</target>
+                <target>Oznake meta imena</target>
             </trans-unit>
             <trans-unit id="form.label_extraHttp">
                 <source>form.label_extraHttp</source>
-                <!-- TODO: Translate -->
-                <target>Meta http-equiv tags</target>
+                <target>Oznake meta http-equiv</target>
             </trans-unit>
 
         </body>
