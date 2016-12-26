@@ -294,32 +294,32 @@
 
             <trans-unit id="form.label_publishable">
                 <source>form.label_publishable</source>
-                <target>Publizierbar</target>
+                <target>Veröffentlichen</target>
             </trans-unit>
             <trans-unit id="form.label_publish_start_date">
                 <source>form.label_publish_start_date</source>
-                <target>Publizieren ab</target>
+                <target>Veröffentlichen ab</target>
             </trans-unit>
             <trans-unit id="form.label_publish_end_date">
                 <source>form.label_publish_end_date</source>
-                <target>Publizieren bis</target>
+                <target>Veröffentlichen bis</target>
             </trans-unit>
             <trans-unit id="form.help_publishable">
                 <source>form.help_publishable</source>
                 <target>
                     <![CDATA[
-                    Prüfe ob dieses Element als publizierbar markiert wurde. Ob es sofort veröffentlicht
+                    Prüfe ob dieses Element als veröffentlich markiert wurde. Ob es sofort veröffentlicht
                     kann vom eingestellten Publikationsdatum oder dessen Range abhängen.
                     ]]>
                 </target>
             </trans-unit>
             <trans-unit id="form.help_publish_start_date">
                 <source>form.help_publish_start_date</source>
-                <target>Erst ab diesem Datum publizieren. Leer lassen um sofort zu publizieren</target>
+                <target>Erst ab diesem Datum veröffentlichen. Leer lassen um sofort zu veröffentlichen.</target>
             </trans-unit>
             <trans-unit id="form.help_publish_end_date">
                 <source>form.help_publish_end_date</source>
-                <target>Nur bis zu diesem Datum publizieren. Leer lassen um nicht aufzuhören</target>
+                <target>Nur bis zu diesem Datum veröffentlichen. Leer lassen für dauerhaft Öffentliches.</target>
             </trans-unit>
 
 
