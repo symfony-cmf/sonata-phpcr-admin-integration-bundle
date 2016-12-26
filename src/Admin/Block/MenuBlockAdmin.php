@@ -53,6 +53,8 @@ class MenuBlockAdmin extends AbstractBlockAdmin
                 ->end()
             ->end()
         ;
+
+        $this->addTransformerToField($formMapper->getFormBuilder(), 'menuNode');
     }
 
     /**

@@ -14,6 +14,7 @@ namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Menu;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\DoctrinePHPCRAdminBundle\Form\Type\TreeManagerType;
 use Symfony\Cmf\Bundle\MenuBundle\Doctrine\Phpcr\Menu;
+use Symfony\Cmf\Bundle\TreeBrowserBundle\Form\Type\TreeSelectType;
 
 class MenuAdmin extends AbstractMenuNodeAdmin
 {
@@ -31,17 +32,17 @@ class MenuAdmin extends AbstractMenuNodeAdmin
             $formMapper
                 ->tab('form.tab_general')
                     ->with('form.group_items', ['class' => 'col-md-6'])
-                        ->add('children', TreeManagerType::class, array(
-                            'root' => $this->menuRoot,
-                            'edit_in_overlay' => false,
-                            'create_in_overlay' => false,
-                            'delete_in_overlay' => false,
-                        ), array(
-                            'help' => 'help.help_items',
-                        ))
+                        ->add(
+                            'children',
+                            TreeSelectType::class,
+                            ['root_node' => $this->menuRoot],
+                            ['help' => 'help.help_items',]
+                        )
                     ->end()
                 ->end()
             ;
+
+            $this->addTransformerToField($formMapper->getFormBuilder(), 'children');
         }
     }
 
