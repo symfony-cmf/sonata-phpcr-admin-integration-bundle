@@ -35,6 +35,10 @@
             <call method="setRootPath">
                 <argument>%cmf_sonata_admin_integration.block.persistence.phpcr.basepath%</argument>
             </call>
+
+            <call method="setManagerRegistry">
+                <argument type="service" id="doctrine_phpcr"></argument>
+            </call>
         </service>
 
         <service
@@ -57,6 +61,10 @@
 
             <call method="setRootPath">
                 <argument>%cmf_sonata_admin_integration.block.persistence.phpcr.basepath%</argument>
+            </call>
+
+            <call method="setManagerRegistry">
+                <argument type="service" id="doctrine_phpcr"></argument>
             </call>
         </service>
 
@@ -81,6 +89,10 @@
             <call method="setRootPath">
                 <argument>%cmf_sonata_admin_integration.block.persistence.phpcr.basepath%</argument>
             </call>
+
+            <call method="setManagerRegistry">
+                <argument type="service" id="doctrine_phpcr"></argument>
+            </call>
         </service>
 
         <service
@@ -104,6 +116,10 @@
             <call method="setRootPath">
                 <argument>%cmf_sonata_admin_integration.block.persistence.phpcr.basepath%</argument>
             </call>
+
+            <call method="setManagerRegistry">
+                <argument type="service" id="doctrine_phpcr"></argument>
+            </call>
         </service>
 
         <service
@@ -126,6 +142,10 @@
 
             <call method="setRootPath">
                 <argument>%cmf_sonata_admin_integration.block.persistence.phpcr.basepath%</argument>
+            </call>
+
+            <call method="setManagerRegistry">
+                <argument type="service" id="doctrine_phpcr"></argument>
             </call>
         </service>
 

@@ -33,6 +33,10 @@
             <call method="setMenuRoot">
                 <argument>%cmf_menu.persistence.phpcr.menu_basepath%</argument>
             </call>
+
+            <call method="setManagerRegistry">
+                <argument type="service" id="doctrine_phpcr"></argument>
+            </call>
         </service>
 
         <service
@@ -65,6 +69,10 @@
 
             <call method="setRecursiveBreadcrumbs">
                 <argument>%cmf_sonata_admin_integration.menu.recursive_breadcrumbs%</argument>
+            </call>
+
+            <call method="setManagerRegistry">
+                <argument type="service" id="doctrine_phpcr"></argument>
             </call>
         </service>
 

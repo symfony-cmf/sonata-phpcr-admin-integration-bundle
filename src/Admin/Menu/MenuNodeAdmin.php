@@ -85,8 +85,8 @@ class MenuNodeAdmin extends AbstractMenuNodeAdmin
                 ->end()
             ;
 
-            $this->addTransformerToField('parentDocument');
-            $this->addTransformerToField('content');
+            $this->addTransformerToField($formMapper->getFormBuilder(), 'parentDocument');
+            $this->addTransformerToField($formMapper->getFormBuilder(), 'content');
         }
     }
 

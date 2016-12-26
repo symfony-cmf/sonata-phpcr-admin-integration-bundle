@@ -96,9 +96,9 @@ class RouteAdmin extends AbstractAdmin
 
             ->end(); // tab general/routing
 
-        $this->addTransformerToField('parentDocument');
+        $this->addTransformerToField($formMapper->getFormBuilder(), 'parentDocument');
         if (null === $this->getParentFieldDescription()) {
-            $this->addTransformerToField('content');
+            $this->addTransformerToField($formMapper->getFormBuilder(), 'content');
         }
     }
 

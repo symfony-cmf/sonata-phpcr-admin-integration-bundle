@@ -30,6 +30,10 @@
             <call method="setRouteRoot">
                 <argument>%cmf_sonata_admin_integration.routing.phpcr.basepath%</argument>
             </call>
+
+            <call method="setManagerRegistry">
+                <argument type="service" id="doctrine_phpcr"></argument>
+            </call>
         </service>
 
         <service
@@ -52,6 +56,10 @@
 
             <call method="setRouteRoot">
                 <argument>%cmf_sonata_admin_integration.routing.phpcr.basepath%</argument>
+            </call>
+
+            <call method="setManagerRegistry">
+                <argument type="service" id="doctrine_phpcr"></argument>
             </call>
         </service>
 

@@ -29,6 +29,10 @@
             <call method="setMenuPath">
                 <argument>%cmf_sonata_admin_integration.block.persistence.phpcr.menu_basepath%</argument>
             </call>
+
+            <call method="setManagerRegistry">
+                <argument type="service" id="doctrine_phpcr"></argument>
+            </call>
         </service>
     </services>
 </container>

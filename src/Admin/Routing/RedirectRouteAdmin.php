@@ -53,11 +53,11 @@ class RedirectRouteAdmin extends AbstractAdmin
                 ->add(
                     'routeTarget',
                     TreeSelectType::class,
-                    ['root_node' => $this->getRootPath(), 'widget' => 'browser', 'required' => false]
+                    ['root_node' => $this->routeRoot, 'widget' => 'browser', 'required' => false]
                 )
             ->end()
         ;
-        $this->addTransformerToField('parentDocument');
+        $this->addTransformerToField($formMapper->getFormBuilder(), 'parentDocument');
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)

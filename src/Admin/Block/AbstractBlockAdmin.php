@@ -52,6 +52,6 @@ abstract class AbstractBlockAdmin extends AbstractAdmin
             ->end()
         ;
 
-        $this->addTransformerToField('parentDocument');
+        $this->addTransformerToField($formMapper->getFormBuilder(), 'parentDocument');
     }
 }
