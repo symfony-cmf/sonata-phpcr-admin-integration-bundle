@@ -53,7 +53,6 @@
             </trans-unit>
             <trans-unit id="form.label_content">
                 <source>form.label_content</source>
-                <!-- TODO: Translate -->
                 <target>Content</target>
             </trans-unit>
 
@@ -85,12 +84,11 @@
             </trans-unit>
             <trans-unit id="dashboard.label_menu_block">
                 <source>dashboard.label_menu_block</source>
-                <target>MenuBlock</target>
+                <target>MenüBlock</target>
             </trans-unit>
 
             <trans-unit id="form.group_block">
                 <source>form.group_block</source>
-                <!-- TODO: Check translation -->
                 <target>Block</target>
             </trans-unit>
             <trans-unit id="form.group_metadata">
@@ -100,7 +98,7 @@
 
             <trans-unit id="form.label_action_name">
                 <source>form.label_action_name</source>
-                <target>Aktionsname</target>
+                <target>Name der Action</target>
             </trans-unit>
             <trans-unit id="form.label_menu_node">
                 <source>form.label_menu_node</source>
@@ -185,7 +183,7 @@
             </trans-unit>
             <trans-unit id="breadcrumb.link_action_block_list">
                 <source>breadcrumb.link_action_block_list</source>
-                <target>Aktionsblöcke</target>
+                <target>Action-Blöcke</target>
             </trans-unit>
             <trans-unit id="breadcrumb.link_action_block_create">
                 <source>breadcrumb.link_action_block_create</source>
@@ -257,7 +255,6 @@
 
             <trans-unit id="form.group_content">
                 <source>form.group_content</source>
-                <!-- TODO: Translate -->
                 <target>Content</target>
             </trans-unit>
 
@@ -287,8 +284,7 @@
             <!-- $Core -->
             <trans-unit id="form.tab_publish">
                 <source>form.tab_publish</source>
-                <!-- TODO: Translate -->
-                <target>Publish Settings</target>
+                <target>Einstellungen zum Veröffentlichen</target>
             </trans-unit>
 
             <trans-unit id="form.group_publish_workflow">
@@ -298,28 +294,32 @@
 
             <trans-unit id="form.label_publishable">
                 <source>form.label_publishable</source>
-                <target>Publizierbar</target>
+                <target>Veröffentlichen</target>
             </trans-unit>
             <trans-unit id="form.label_publish_start_date">
                 <source>form.label_publish_start_date</source>
-                <target>Publizieren ab</target>
+                <target>Veröffentlichen ab</target>
             </trans-unit>
             <trans-unit id="form.label_publish_end_date">
                 <source>form.label_publish_end_date</source>
-                <target>Publizieren bis</target>
+                <target>Veröffentlichen bis</target>
             </trans-unit>
             <trans-unit id="form.help_publishable">
                 <source>form.help_publishable</source>
-                <!-- TODO: Translate -->
-                <target>If checked, this item is marked ready to be published. Whether it is actually published may depend on the configured publish date range.</target>
+                <target>
+                    <![CDATA[
+                    Prüfe ob dieses Element als veröffentlich markiert wurde. Ob es sofort veröffentlicht
+                    kann vom eingestellten Publikationsdatum oder dessen Range abhängen.
+                    ]]>
+                </target>
             </trans-unit>
             <trans-unit id="form.help_publish_start_date">
                 <source>form.help_publish_start_date</source>
-                <target>Erst ab diesem Datum publizieren. Leer lassen um sofort zu publizieren</target>
+                <target>Erst ab diesem Datum veröffentlichen. Leer lassen um sofort zu veröffentlichen.</target>
             </trans-unit>
             <trans-unit id="form.help_publish_end_date">
                 <source>form.help_publish_end_date</source>
-                <target>Nur bis zu diesem Datum publizieren. Leer lassen um nicht aufzuhören</target>
+                <target>Nur bis zu diesem Datum veröffentlichen. Leer lassen für dauerhaft Öffentliches.</target>
             </trans-unit>
 
 
@@ -361,8 +361,7 @@
             </trans-unit>
             <trans-unit id="form.group_target">
                 <source>form.group_target</source>
-                <!-- TODO: Translate -->
-                <target>Target link</target>
+                <target>Ziellink</target>
             </trans-unit>
             <trans-unit id="form.group_menu_options">
                 <source>form.group_menu_options</source>
@@ -487,7 +486,6 @@
 
             <trans-unit id="form.group_location">
                 <source>form.group_location</source>
-                <!-- TODO: Translate -->
                 <target>Location</target>
             </trans-unit>
             <trans-unit id="form.group_path">
@@ -496,8 +494,7 @@
             </trans-unit>
             <trans-unit id="form.group_data">
                 <source>form.group_data</source>
-                <!-- TODO: Translate -->
-                <target>Data</target>
+                <target>Daten</target>
             </trans-unit>
             <trans-unit id="form.group_defaults">
                 <source>form.group_defaults</source>
@@ -526,7 +523,7 @@
             </trans-unit>
             <trans-unit id="form.label_route_target">
                 <source>form.label_route_target</source>
-                <target>Routenziel</target>
+                <target>Ziel der Route</target>
             </trans-unit>
             <trans-unit id="form.label_add_locale_pattern">
                 <source>form.label_add_locale_pattern</source>
@@ -603,33 +600,27 @@
 
             <trans-unit id="form.label_originalUrl">
                 <source>form.label_originalUrl</source>
-                <!-- TODO: Translate -->
-                <target>Original URL</target>
+                <target>Original-URL</target>
             </trans-unit>
             <trans-unit id="form.label_metaDescription">
                 <source>form.label_metaDescription</source>
-                <!-- TODO: Translate -->
-                <target>Page description</target>
+                <target>Seitenbeschreibung</target>
             </trans-unit>
             <trans-unit id="form.label_metaKeywords">
                 <source>form.label_metaKeywords</source>
-                <!-- TODO: Translate -->
-                <target>Page keywords</target>
+                <target>Keywords der Seite</target>
             </trans-unit>
             <trans-unit id="form.label_extraProperties">
                 <source>form.label_extraProperties</source>
-                <!-- TODO: Translate -->
-                <target>Meta property tags</target>
+                <target>Property Tags</target>
             </trans-unit>
             <trans-unit id="form.label_extraNames">
                 <source>form.label_extraNames</source>
-                <!-- TODO: Translate -->
-                <target>Meta name tags</target>
+                <target>Name Tags</target>
             </trans-unit>
             <trans-unit id="form.label_extraHttp">
                 <source>form.label_extraHttp</source>
-                <!-- TODO: Translate -->
-                <target>Meta http-equiv tags</target>
+                <target>http-equiv Tags</target>
             </trans-unit>
 
         </body>
