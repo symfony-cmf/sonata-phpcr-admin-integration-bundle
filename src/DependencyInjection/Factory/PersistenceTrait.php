@@ -12,7 +12,6 @@
 namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\DependencyInjection\Factory;
 
 use Symfony\Component\Config\Definition\Builder\NodeBuilder;
-use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 trait PersistenceTrait
 {
