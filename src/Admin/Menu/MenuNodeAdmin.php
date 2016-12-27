@@ -19,7 +19,6 @@ use Symfony\Cmf\Bundle\MenuBundle\Model\MenuNode;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\DoctrinePHPCRAdminBundle\Form\Type\ChoiceFieldMaskType;
-use Sonata\DoctrinePHPCRAdminBundle\Form\Type\TreeModelType;
 use Knp\Menu\ItemInterface as MenuItemInterface;
 use Doctrine\Common\Util\ClassUtils;
 

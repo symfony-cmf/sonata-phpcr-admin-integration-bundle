@@ -3,7 +3,6 @@
 namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin;
 
 use Doctrine\Bundle\PHPCRBundle\Form\DataTransformer\DocumentToPathTransformer;
-use Doctrine\ODM\PHPCR\DocumentManager;
 use Sonata\DoctrinePHPCRAdminBundle\Admin\Admin;
 use Symfony\Bridge\Doctrine\ManagerRegistry;
 use Symfony\Component\Form\FormBuilder;
