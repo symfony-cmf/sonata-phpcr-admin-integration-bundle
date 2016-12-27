@@ -7,7 +7,8 @@
 
         <service
                 id="cmf_sonata_admin_integration.routing.route_admin"
-                class="Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Routing\RouteAdmin">
+                class="Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Routing\RouteAdmin"
+                parent="cmf_sonata_admin_integration.abstract_admin">
             <tag
                     name="sonata.admin"
                     manager_type="doctrine_phpcr"
@@ -30,15 +31,12 @@
             <call method="setRouteRoot">
                 <argument>%cmf_sonata_admin_integration.routing.phpcr.basepath%</argument>
             </call>
-
-            <call method="setManagerRegistry">
-                <argument type="service" id="doctrine_phpcr"></argument>
-            </call>
         </service>
 
         <service
                 id="cmf_sonata_admin_integration.routing.redirect_route_admin"
-                class="Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Routing\RedirectRouteAdmin">
+                class="Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Routing\RedirectRouteAdmin"
+                parent="cmf_sonata_admin_integration.abstract_admin">
             <tag
                     name="sonata.admin"
                     manager_type="doctrine_phpcr"
@@ -56,10 +54,6 @@
 
             <call method="setRouteRoot">
                 <argument>%cmf_sonata_admin_integration.routing.phpcr.basepath%</argument>
-            </call>
-
-            <call method="setManagerRegistry">
-                <argument type="service" id="doctrine_phpcr"></argument>
             </call>
         </service>
 

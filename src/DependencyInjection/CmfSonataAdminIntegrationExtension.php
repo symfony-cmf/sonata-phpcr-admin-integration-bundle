@@ -55,6 +55,8 @@ class CmfSonataAdminIntegrationExtension extends Extension implements CompilerPa
         $loader = new XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
 
         $this->loadBundles($config['bundles'], $loader, $container);
+
+        $loader->load('main-phpcr.xml');
     }
 
     private function loadBundles(array $config, XmlFileLoader $loader, ContainerBuilder $container)

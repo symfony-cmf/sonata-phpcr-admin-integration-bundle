@@ -16,7 +16,8 @@
 
         <service
                 id="cmf_sonata_admin_integration.block.simple_admin"
-                class="Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Block\SimpleBlockAdmin">
+                class="Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Block\SimpleBlockAdmin"
+                parent="cmf_sonata_admin_integration.abstract_admin">
             <tag
                     name="sonata.admin"
                     manager_type="doctrine_phpcr"
@@ -35,15 +36,12 @@
             <call method="setRootPath">
                 <argument>%cmf_sonata_admin_integration.block.persistence.phpcr.basepath%</argument>
             </call>
-
-            <call method="setManagerRegistry">
-                <argument type="service" id="doctrine_phpcr"></argument>
-            </call>
         </service>
 
         <service
                 id="cmf_sonata_admin_integration.block.action_admin"
-                class="Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Block\ActionBlockAdmin">
+                class="Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Block\ActionBlockAdmin"
+                parent="cmf_sonata_admin_integration.abstract_admin">
             <tag
                     name="sonata.admin"
                     manager_type="doctrine_phpcr"
@@ -62,15 +60,12 @@
             <call method="setRootPath">
                 <argument>%cmf_sonata_admin_integration.block.persistence.phpcr.basepath%</argument>
             </call>
-
-            <call method="setManagerRegistry">
-                <argument type="service" id="doctrine_phpcr"></argument>
-            </call>
         </service>
 
         <service
                 id="cmf_sonata_admin_integration.block.container_admin"
-                class="Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Block\ContainerBlockAdmin">
+                class="Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Block\ContainerBlockAdmin"
+                parent="cmf_sonata_admin_integration.abstract_admin">
             <tag
                     name="sonata.admin"
                     manager_type="doctrine_phpcr"
@@ -89,15 +84,12 @@
             <call method="setRootPath">
                 <argument>%cmf_sonata_admin_integration.block.persistence.phpcr.basepath%</argument>
             </call>
-
-            <call method="setManagerRegistry">
-                <argument type="service" id="doctrine_phpcr"></argument>
-            </call>
         </service>
 
         <service
                 id="cmf_sonata_admin_integration.block.reference_admin"
-                class="Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Block\ReferenceBlockAdmin">
+                class="Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Block\ReferenceBlockAdmin"
+                parent="cmf_sonata_admin_integration.abstract_admin">
             <tag
                     name="sonata.admin"
                     manager_type="doctrine_phpcr"
@@ -116,15 +108,12 @@
             <call method="setRootPath">
                 <argument>%cmf_sonata_admin_integration.block.persistence.phpcr.basepath%</argument>
             </call>
-
-            <call method="setManagerRegistry">
-                <argument type="service" id="doctrine_phpcr"></argument>
-            </call>
         </service>
 
         <service
                 id="cmf_sonata_admin_integration.block.string_admin"
-                class="Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Block\StringBlockAdmin">
+                class="Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Block\StringBlockAdmin"
+                parent="cmf_sonata_admin_integration.abstract_admin">
             <tag
                     name="sonata.admin"
                     manager_type="doctrine_phpcr"
@@ -142,10 +131,6 @@
 
             <call method="setRootPath">
                 <argument>%cmf_sonata_admin_integration.block.persistence.phpcr.basepath%</argument>
-            </call>
-
-            <call method="setManagerRegistry">
-                <argument type="service" id="doctrine_phpcr"></argument>
             </call>
         </service>
 
