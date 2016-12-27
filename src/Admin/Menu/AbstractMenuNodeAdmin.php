@@ -74,7 +74,7 @@ abstract class AbstractMenuNodeAdmin extends AbstractAdmin
 
     public function getExportFormats()
     {
-        return array();
+        return [];
     }
 
     public function setContentRoot($contentRoot)

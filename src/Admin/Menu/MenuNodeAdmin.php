@@ -54,6 +54,8 @@ class MenuNodeAdmin extends AbstractMenuNodeAdmin
             ->end()
         ;
 
+        $this->addTransformerToField($formMapper->getFormBuilder(), 'parentDocument');
+
         parent::configureFormFields($formMapper);
 
         if (null === $this->getParentFieldDescription()) {
@@ -85,7 +87,6 @@ class MenuNodeAdmin extends AbstractMenuNodeAdmin
                 ->end()
             ;
 
-            $this->addTransformerToField($formMapper->getFormBuilder(), 'parentDocument');
             $this->addTransformerToField($formMapper->getFormBuilder(), 'content');
         }
     }

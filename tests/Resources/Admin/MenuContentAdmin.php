@@ -11,7 +11,6 @@
 
 namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Tests\Resources\Admin;
 
-use Doctrine\Bundle\PHPCRBundle\Form\DataTransformer\DocumentToPathTransformer;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\DoctrinePHPCRAdminBundle\Admin\Admin;
