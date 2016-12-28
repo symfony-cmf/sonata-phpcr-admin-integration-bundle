@@ -5,8 +5,7 @@
             <!-- $Common -->
             <trans-unit id="list.label_id">
                 <source>list.label_id</source>
-                <!-- TODO: Translate "Path" -->
-                <target>Id</target>
+                <target>Ruta</target>
             </trans-unit>
             <trans-unit id="list.label_title">
                 <source>list.label_title</source>
@@ -19,13 +18,11 @@
 
             <trans-unit id="filter.label_title">
                 <source>filter.label_title</source>
-                <!-- TODO: Translate -->
-                <target>Title</target>
+                <target>Título</target>
             </trans-unit>
             <trans-unit id="filter.label_name">
                 <source>filter.label_name</source>
-                <!-- TODO: Translate -->
-                <target>Name</target>
+                <target>Nombre</target>
             </trans-unit>
 
             <trans-unit id="form.tab_general">
@@ -63,45 +60,44 @@
             <!-- $Block -->
             <trans-unit id="dashboard.label_simple_block">
                 <source>dashboard.label_simple_block</source>
-                <target>Bloque Simple</target>
+                <target>Bloque simple</target>
             </trans-unit>
             <trans-unit id="dashboard.label_container_block">
                 <source>dashboard.label_container_block</source>
-                <target>Contenedor de Bloques</target>
+                <target>Contenedor de bloques</target>
             </trans-unit>
             <trans-unit id="dashboard.label_reference_block">
                 <source>dashboard.label_reference_block</source>
-                <target>Referencia de Bloque</target>
+                <target>Referencia de bloque</target>
             </trans-unit>
             <trans-unit id="dashboard.label_action_block">
                 <source>dashboard.label_action_block</source>
-                <target>Bloque Acción</target>
+                <target>Bloque de acción</target>
             </trans-unit>
             <trans-unit id="dashboard.label_slideshow_block">
                 <source>dashboard.label_slideshow_block</source>
-                <target>Bloque de Slideshow</target>
+                <target>Bloque de presentación de diapositivas</target>
             </trans-unit>
             <trans-unit id="dashboard.label_imagine_block">
                 <source>dashboard.label_imagine_block</source>
-                <target>Bloque Imágen</target>
+                <target>Bloque de imagen</target>
             </trans-unit>
             <trans-unit id="dashboard.label_string_block">
                 <source>dashboard.label_string_block</source>
-                <target>Bloque Texto</target>
+                <target>Bloque de texto</target>
             </trans-unit>
             <trans-unit id="dashboard.label_menu_block">
                 <source>dashboard.label_menu_block</source>
-                <target>Bloque de Menú</target>
+                <target>Bloque de menú</target>
             </trans-unit>
 
             <trans-unit id="form.group_block">
                 <source>form.group_block</source>
-                <!-- TODO: Check translation -->
                 <target>Bloque</target>
             </trans-unit>
             <trans-unit id="form.group_metadata">
                 <source>form.group_metadata</source>
-                <target>Metadata</target>
+                <target>Metadato</target>
             </trans-unit>
 
             <trans-unit id="form.label_action_name">
@@ -110,7 +106,6 @@
             </trans-unit>
             <trans-unit id="form.label_menu_node">
                 <source>form.label_menu_node</source>
-                <!-- TODO: Check translation -->
                 <target>Menú</target>
             </trans-unit>
             <trans-unit id="form.label_referenced_block">
@@ -124,7 +119,7 @@
 
             <trans-unit id="breadcrumb.link_slideshow_block_list">
                 <source>breadcrumb.link_slideshow_block_list</source>
-                <target>Bloques de Slideshow</target>
+                <target>Bloques de presentación de diapositivas</target>
             </trans-unit>
             <trans-unit id="breadcrumb.link_slideshow_block_create">
                 <source>breadcrumb.link_slideshow_block_create</source>
@@ -140,7 +135,7 @@
             </trans-unit>
             <trans-unit id="breadcrumb.link_simple_block_list">
                 <source>breadcrumb.link_simple_block_list</source>
-                <target>Bloques Simple</target>
+                <target>Bloques simples</target>
             </trans-unit>
             <trans-unit id="breadcrumb.link_simple_block_create">
                 <source>breadcrumb.link_simple_block_create</source>
@@ -156,7 +151,7 @@
             </trans-unit>
             <trans-unit id="breadcrumb.link_container_block_list">
                 <source>breadcrumb.link_container_block_list</source>
-                <target>Bloques Contenedor</target>
+                <target>Bloques contenedor</target>
             </trans-unit>
             <trans-unit id="breadcrumb.link_container_block_create">
                 <source>breadcrumb.link_container_block_create</source>
@@ -172,7 +167,7 @@
             </trans-unit>
             <trans-unit id="breadcrumb.link_reference_block_list">
                 <source>breadcrumb.link_reference_block_list</source>
-                <target>Bloques Referencia</target>
+                <target>Bloques de referencia</target>
             </trans-unit>
             <trans-unit id="breadcrumb.link_reference_block_create">
                 <source>breadcrumb.link_reference_block_create</source>
@@ -188,7 +183,7 @@
             </trans-unit>
             <trans-unit id="breadcrumb.link_action_block_list">
                 <source>breadcrumb.link_action_block_list</source>
-                <target>Bloques Acción</target>
+                <target>Bloques de acción</target>
             </trans-unit>
             <trans-unit id="breadcrumb.link_action_block_create">
                 <source>breadcrumb.link_action_block_create</source>
@@ -204,7 +199,7 @@
             </trans-unit>
             <trans-unit id="breadcrumb.link_string_block_list">
                 <source>breadcrumb.link_string_block_list</source>
-                <target>Bloques Texto</target>
+                <target>Bloques de texto</target>
             </trans-unit>
             <trans-unit id="breadcrumb.link_string_block_create">
                 <source>breadcrumb.link_string_block_create</source>
@@ -220,7 +215,7 @@
             </trans-unit>
             <trans-unit id="breadcrumb.link_menu_block_list">
                 <source>breadcrumb.link_menu_block_list</source>
-                <target>Bloques Menú</target>
+                <target>Bloques de menú</target>
             </trans-unit>
             <trans-unit id="breadcrumb.link_menu_block_create">
                 <source>breadcrumb.link_menu_block_create</source>
@@ -236,7 +231,7 @@
             </trans-unit>
             <trans-unit id="breadcrumb.link_imagine_block_list">
                 <source>breadcrumb.link_imagine_block_list</source>
-                <target>Bloques Imágen</target>
+                <target>Bloques de imagen</target>
             </trans-unit>
             <trans-unit id="breadcrumb.link_imagine_block_create">
                 <source>breadcrumb.link_imagine_block_create</source>
@@ -255,55 +250,46 @@
             <!-- $Content -->
             <trans-unit id="dashboard.label_static_content">
                 <source>dashboard.label_static_content</source>
-                <!-- TODO: Translate -->
-                <target>Static content</target>
+                <target>Contenido estático</target>
             </trans-unit>
 
             <trans-unit id="form.group_content">
                 <source>form.group_content</source>
-                <!-- TODO: Translate -->
-                <target>Content</target>
+                <target>Contenido</target>
             </trans-unit>
 
             <trans-unit id="form.label_body">
                 <source>form.label_body</source>
-                <!-- TODO: Translate -->
-                <target>Body</target>
+                <target>Cuerpo</target>
             </trans-unit>
 
             <trans-unit id="breadcrumb.link_static_content_list">
                 <source>breadcrumb.link_static_content_list</source>
-                <!-- TODO: Translate -->
-                <target>Static contents</target>
+                <target>Contenido estático</target>
             </trans-unit>
             <trans-unit id="breadcrumb.link_static_content_create">
                 <source>breadcrumb.link_static_content_create</source>
-                <!-- TODO: Translate -->
-                <target>Create</target>
+                <target>Crear</target>
             </trans-unit>
             <trans-unit id="breadcrumb.link_static_content_edit">
                 <source>breadcrumb.link_static_content_edit</source>
-                <!-- TODO: Translate -->
-                <target>Edit</target>
+                <target>Editar</target>
             </trans-unit>
             <trans-unit id="breadcrumb.link_static_content_delete">
                 <source>breadcrumb.link_static_content_delete</source>
-                <!-- TODO: Translate -->
-                <target>Delete</target>
+                <target>Eliminar</target>
             </trans-unit>
 
 
             <!-- $Core -->
             <trans-unit id="form.tab_publish">
                 <source>form.tab_publish</source>
-                <!-- TODO: Translate -->
-                <target>Publish Settings</target>
+                <target>Configuración de publicación</target>
             </trans-unit>
 
             <trans-unit id="form.group_publish_workflow">
                 <source>form.group_publish_workflow</source>
-                <!-- TODO: Translate -->
-                <target>Status</target>
+                <target>Estado</target>
             </trans-unit>
 
             <trans-unit id="form.label_publishable">
@@ -312,393 +298,324 @@
             </trans-unit>
             <trans-unit id="form.label_publish_start_date">
                 <source>form.label_publish_start_date</source>
-                <target>Fecha de inicio de Publicación</target>
+                <target>Fecha de inicio de publicación</target>
             </trans-unit>
             <trans-unit id="form.label_publish_end_date">
                 <source>form.label_publish_end_date</source>
-                <target>Fecha de fin de Publicación</target>
+                <target>Fecha de fin de publicación</target>
             </trans-unit>
             <trans-unit id="form.help_publishable">
                 <source>form.help_publishable</source>
-                <!-- TODO: Translate -->
-                <target>If checked, this item is marked ready to be published. Whether it is actually published may depend on the configured publish date range.</target>
+                <target>Si es seleccionado, este elemento es marcado como preparado para ser publicado. Cuando será efectivamente publicado dependerá de la configuración de rangos de fecha de publicación.</target>
             </trans-unit>
             <trans-unit id="form.help_publish_start_date">
                 <source>form.help_publish_start_date</source>
-                <target>Sólo publica en esta fecha o después. Dejar vacío para publicar de inmediato.</target>
+                <target>Sólo publicar en esta fecha o después. Dejar vacío para publicar de inmediato.</target>
             </trans-unit>
             <trans-unit id="form.help_publish_end_date">
                 <source>form.help_publish_end_date</source>
-                <target>Sólo publica antes de esta fecha. Dejar vacío para no terminar la publicación.</target>
+                <target>Sólo publicar antes de esta fecha. Dejar vacío para no terminar la publicación.</target>
             </trans-unit>
 
 
             <!-- $Menu -->
             <trans-unit id="dashboard.label_menu">
                 <source>dashboard.label_menu</source>
-                <!-- TODO: Translate -->
-                <target>Menus</target>
+                <target>Menús</target>
             </trans-unit>
             <trans-unit id="dashboard.label_menu_node">
                 <source>dashboard.label_menu_node</source>
-                <!-- TODO: Translate -->
-                <target>Menu node</target>
+                <target>Nodo menú</target>
             </trans-unit>
 
             <trans-unit id="list.label_label">
                 <source>list.label_label</source>
-                <!-- TODO: Translate -->
-                <target>Label</target>
+                <target>Etiqueta</target>
             </trans-unit>
             <trans-unit id="list.label_uri">
                 <source>list.label_uri</source>
-                <!-- TODO: Translate -->
                 <target>URI</target>
             </trans-unit>
             <trans-unit id="list.label_route">
                 <source>list.label_route</source>
-                <!-- TODO: Translate -->
-                <target>Route</target>
+                <target>Ruta</target>
             </trans-unit>
 
             <trans-unit id="form.tab_menu">
                 <source>form.tab_menu</source>
-                <!-- TODO: Translate -->
-                <target>Menu</target>
+                <target>Menú</target>
             </trans-unit>
 
             <trans-unit id="form.group_menus">
                 <source>form.group_menus</source>
-                <!-- TODO: Translate -->
-                <target>Menu</target>
+                <target>Menú</target>
             </trans-unit>
             <trans-unit id="form.group_items">
                 <source>form.group_items</source>
-                <!-- TODO: Translate -->
-                <target>Items</target>
+                <target>Elementos</target>
             </trans-unit>
             <trans-unit id="form.group_target">
                 <source>form.group_target</source>
-                <!-- TODO: Translate -->
-                <target>Target link</target>
+                <target>Enlace destino</target>
             </trans-unit>
             <trans-unit id="form.group_menu_options">
                 <source>form.group_menu_options</source>
-                <!-- TODO: Translate -->
-                <target>Menu Options</target>
+                <target>Opciones de menú</target>
             </trans-unit>
 
             <trans-unit id="form.label_menu_nodes">
                 <source>form.label_menu_nodes</source>
-                <!-- TODO: Translate -->
-                <target>Menu</target>
+                <target>Menú</target>
             </trans-unit>
             <trans-unit id="form.label_label">
                 <source>form.label_label</source>
-                <!-- TODO: Translate -->
-                <target>Label</target>
+                <target>Etiqueta</target>
             </trans-unit>
             <trans-unit id="form.label_link_type">
                 <source>form.label_link_type</source>
-                <!-- TODO: Translate -->
-                <target>Link type</target>
+                <target>Tipo de enlace</target>
             </trans-unit>
             <trans-unit id="form.label_link">
                 <source>form.label_link</source>
-                <!-- TODO: Translate -->
-                <target>Link</target>
+                <target>Enlace</target>
             </trans-unit>
             <trans-unit id="form.label_route">
                 <source>form.label_route</source>
-                <!-- TODO: Translate -->
-                <target>Route</target>
+                <target>Ruta</target>
             </trans-unit>
             <trans-unit id="form.label_children">
                 <source>form.label_children</source>
-                <!-- TODO: Translate -->
-                <target>Items</target>
+                <target>Elementos</target>
             </trans-unit>
             <trans-unit id="form.label_display">
                 <source>form.label_display</source>
-                <!-- TODO: Translate -->
-                <target>Display</target>
+                <target>Mostrar</target>
             </trans-unit>
             <trans-unit id="form.label_display_children">
                 <source>form.label_display_children</source>
-                <!-- TODO: Translate -->
-                <target>Display Children</target>
+                <target>Mostrar hijos</target>
             </trans-unit>
             <trans-unit id="form.label_attributes">
                 <source>form.label_attributes</source>
-                <!-- TODO: Translate -->
-                <target>Menu attributes</target>
+                <target>Atributos de menú</target>
             </trans-unit>
             <trans-unit id="form.label_label_attributes">
                 <source>form.label_label_attributes</source>
-                <!-- TODO: Translate -->
-                <target>Label attributes</target>
+                <target>Atributos de etiqueta</target>
             </trans-unit>
             <trans-unit id="form.label_children_attributes">
                 <source>form.label_children_attributes</source>
-                <!-- TODO: Translate -->
-                <target>Children attributes</target>
+                <target>Atributos de los hijos</target>
             </trans-unit>
             <trans-unit id="form.label_link_attributes">
                 <source>form.label_link_attributes</source>
-                <!-- TODO: Translate -->
-                <target>Link attributes</target>
+                <target>Atributos de enlace</target>
             </trans-unit>
 
             <trans-unit id="form.help_display">
                 <source>form.help_display</source>
-                <!-- TODO: Translate -->
-                <target>A menu entry is only displayed if the label is not empty.</target>
+                <target>Una entrada de menú solo se muestra si la etiqueta no está vacía.</target>
             </trans-unit>
             <trans-unit id="form.help_display_children">
                 <source>form.help_display_children</source>
-                <!-- TODO: Translate -->
-                <target>Children are only displayed if the menu entry itself is displayed.</target>
+                <target>Los hijos solo se muestran si la entrada de menú en sí misma está visible.</target>
             </trans-unit>
             <trans-unit id="help.help_items">
                 <source>help.help_items</source>
-                <!-- TODO: Translate -->
-                <target>Click on item to edit, right click to create new items.</target>
+                <target>Click en el elemento a editar, click derecho para crear nuevos elementos.</target>
             </trans-unit>
 
             <trans-unit id="breadcrumb.link_menu_list">
                 <source>breadcrumb.link_menu_list</source>
-                <!-- TODO: Translate -->
-                <target>Menus</target>
+                <target>Menús</target>
             </trans-unit>
             <trans-unit id="breadcrumb.link_menu_create">
                 <source>breadcrumb.link_menu_create</source>
-                <!-- TODO: Translate -->
-                <target>Create</target>
+                <target>Crear</target>
             </trans-unit>
             <trans-unit id="breadcrumb.link_menu_edit">
                 <source>breadcrumb.link_menu_edit</source>
-                <!-- TODO: Translate -->
-                <target>Edit</target>
+                <target>Editar</target>
             </trans-unit>
             <trans-unit id="breadcrumb.link_menu_delete">
                 <source>breadcrumb.link_menu_delete</source>
-                <!-- TODO: Translate -->
-                <target>Delete</target>
+                <target>Borrar</target>
             </trans-unit>
             <trans-unit id="breadcrumb.link_menu_node_list">
                 <source>breadcrumb.link_menu_node_list</source>
-                <!-- TODO: Translate -->
-                <target>Menu nodes</target>
+                <target>Nodos de menú</target>
             </trans-unit>
             <trans-unit id="breadcrumb.link_menu_node_create">
                 <source>breadcrumb.link_menu_node_create</source>
-                <!-- TODO: Translate -->
-                <target>Create</target>
+                <target>Crear</target>
             </trans-unit>
             <trans-unit id="breadcrumb.link_menu_node_edit">
                 <source>breadcrumb.link_menu_node_edit</source>
-                <!-- TODO: Translate -->
-                <target>Edit</target>
+                <target>Editar</target>
             </trans-unit>
             <trans-unit id="breadcrumb.link_menu_node_delete">
                 <source>breadcrumb.link_menu_node_delete</source>
-                <!-- TODO: Translate -->
-                <target>Delete</target>
+                <target>Borrar</target>
             </trans-unit>
 
 
             <!-- $Routing -->
             <trans-unit id="dashboard.label_routing">
                 <source>dashboard.label_routing</source>
-                <!-- TODO: Translate -->
-                <target>Route</target>
+                <target>Ruta</target>
             </trans-unit>
             <trans-unit id="dashboard.label_redirect_routing">
                 <source>dashboard.label_redirect_routing</source>
-                <!-- TODO: Translate -->
-                <target>Redirect Route</target>
+                <target>Redirección</target>
             </trans-unit>
 
             <trans-unit id="list.label_path">
                 <source>list.label_path</source>
-                <!-- TODO: Translate -->
                 <target>URL</target>
             </trans-unit>
 
             <trans-unit id="form.tab_routing">
                 <source>form.tab_routing</source>
-                <!-- TODO: Translate -->
                 <target>URLs</target>
             </trans-unit>
 
             <trans-unit id="form.group_location">
                 <source>form.group_location</source>
-                <!-- TODO: Translate -->
-                <target>Location</target>
+                <target>Ubicación</target>
             </trans-unit>
             <trans-unit id="form.group_path">
                 <source>form.group_path</source>
-                <!-- TODO: Translate -->
-                <target>Path</target>
+                <target>Camino</target>
             </trans-unit>
             <trans-unit id="form.group_data">
                 <source>form.group_data</source>
-                <!-- TODO: Translate -->
-                <target>Data</target>
+                <target>Datos</target>
             </trans-unit>
             <trans-unit id="form.group_defaults">
                 <source>form.group_defaults</source>
-                <!-- TODO: Translate -->
-                <target>Default values</target>
+                <target>Valores por defecto</target>
             </trans-unit>
             <trans-unit id="form.group_routes">
                 <source>form.group_routes</source>
-                <!-- TODO: Translate -->
-                <target>Routes</target>
+                <target>Rutas</target>
             </trans-unit>
 
             <trans-unit id="form.label_variable_pattern">
                 <source>form.label_variable_pattern</source>
-                <!-- TODO: Translate -->
-                <target>Variable pattern</target>
+                <target>Patrón variable</target>
             </trans-unit>
             <trans-unit id="form.label_options">
                 <source>form.label_options</source>
-                <!-- TODO: Translate -->
-                <target>Options</target>
+                <target>Opciones</target>
             </trans-unit>
             <trans-unit id="form.label_route_name">
                 <source>form.label_route_name</source>
-                <!-- TODO: Translate -->
-                <target>Route</target>
+                <target>Ruta</target>
             </trans-unit>
             <trans-unit id="form.label_uri">
                 <source>form.label_uri</source>
-                <!-- TODO: Translate -->
                 <target>URI</target>
             </trans-unit>
             <trans-unit id="form.label_route_target">
                 <source>form.label_route_target</source>
-                <!-- TODO: Translate -->
-                <target>Route target</target>
+                <target>Destino de la ruta</target>
             </trans-unit>
             <trans-unit id="form.label_add_locale_pattern">
                 <source>form.label_add_locale_pattern</source>
-                <!-- TODO: Translate -->
-                <target>Add locale pattern</target>
+                <target>Añadir patrón de configuración regional</target>
             </trans-unit>
             <trans-unit id="form.label_add_format_pattern">
                 <source>form.label_add_format_pattern</source>
-                <!-- TODO: Translate -->
-                <target>Add format pattern</target>
+                <target>Añadir patrón de formato</target>
             </trans-unit>
             <trans-unit id="form.label_add_trailing_slash">
                 <source>form.label_add_trailing_slash</source>
-                <!-- TODO: Translate -->
-                <target>Add trailing slash</target>
+                <target>Añadir barra al final</target>
             </trans-unit>
 
             <trans-unit id="form.help_variable_pattern">
                 <source>form.help_variable_pattern</source>
-                <!-- TODO: Translate -->
-                <target>A pattern in the format {variable}/{more}... The fields are passed to the controller if it declares them as arguments.</target>
+                <target>Un patrón en formato {variable}/{más}... Los campos se pasan al controlador si este los declara como argumentos.</target>
             </trans-unit>
             <trans-unit id="form.help_options">
                 <source>form.help_options</source>
-                <!-- TODO: Translate -->
                 <target>
                     <![CDATA[
-                    Locale: Prepend locale to route like /{locale}/your/route<br/>
-                    Format: Append format to route like /your/route.{format}. Default format is 'html'<br/>
-                    Slash: Append a trailing slash to route like /your/route/
+                    Configuración regional: Añadir prefijo de configuración regional a la ruta como en /{locale}/tu/ruta<br/>
+                    Formato: Añadir un formato a la ruta como en /tu/ruta.{format}. El formato por defecto es 'html'<br/>
+                    Barra: Añadir una barra al final a la ruta como en /tu/ruta/
                     ]]>
                 </target>
             </trans-unit>
 
             <trans-unit id="breadcrumb.link_route_list">
                 <source>breadcrumb.link_route_list</source>
-                <!-- TODO: Translate -->
-                <target>Routes</target>
+                <target>Rutas</target>
             </trans-unit>
             <trans-unit id="breadcrumb.link_route_create">
                 <source>breadcrumb.link_route_create</source>
-                <!-- TODO: Translate -->
-                <target>Create</target>
+                <target>Crear</target>
             </trans-unit>
             <trans-unit id="breadcrumb.link_route_edit">
                 <source>breadcrumb.link_route_edit</source>
-                <!-- TODO: Translate -->
-                <target>Edit</target>
+                <target>Editar</target>
             </trans-unit>
             <trans-unit id="breadcrumb.link_route_delete">
                 <source>breadcrumb.link_route_delete</source>
-                <!-- TODO: Translate -->
-                <target>Delete</target>
+                <target>Borrar</target>
             </trans-unit>
             <trans-unit id="breadcrumb.link_redirect_route_list">
                 <source>breadcrumb.link_redirect_route_list</source>
-                <!-- TODO: Translate -->
-                <target>Redirect Routes</target>
+                <target>Rutas de redirección</target>
             </trans-unit>
             <trans-unit id="breadcrumb.link_redirect_route_create">
                 <source>breadcrumb.link_redirect_route_create</source>
-                <!-- TODO: Translate -->
-                <target>Create</target>
+                <target>Crear</target>
             </trans-unit>
             <trans-unit id="breadcrumb.link_redirect_route_edit">
                 <source>breadcrumb.link_redirect_route_edit</source>
-                <!-- TODO: Translate -->
-                <target>Edit</target>
+                <target>Editar</target>
             </trans-unit>
             <trans-unit id="breadcrumb.link_redirect_route_delete">
                 <source>breadcrumb.link_redirect_route_delete</source>
-                <!-- TODO: Translate -->
-                <target>Delete</target>
+                <target>Borrar</target>
             </trans-unit>
 
 
             <!-- $Seo -->
             <trans-unit id="form.tab_seo">
                 <source>form.tab_seo</source>
-                <!-- TODO: Translate -->
                 <target>SEO</target>
             </trans-unit>
 
             <trans-unit id="form.group_seo">
                 <source>form.group_seo</source>
-                <!-- TODO: Translate -->
                 <target>SEO</target>
             </trans-unit>
 
             <trans-unit id="form.label_originalUrl">
                 <source>form.label_originalUrl</source>
-                <!-- TODO: Translate -->
-                <target>Original URL</target>
+                <target>URL original</target>
             </trans-unit>
             <trans-unit id="form.label_metaDescription">
                 <source>form.label_metaDescription</source>
-                <!-- TODO: Translate -->
-                <target>Page description</target>
+                <target>Descripción de la página</target>
             </trans-unit>
             <trans-unit id="form.label_metaKeywords">
                 <source>form.label_metaKeywords</source>
-                <!-- TODO: Translate -->
-                <target>Page keywords</target>
+                <target>Palabras clave de la página</target>
             </trans-unit>
             <trans-unit id="form.label_extraProperties">
                 <source>form.label_extraProperties</source>
-                <!-- TODO: Translate -->
-                <target>Meta property tags</target>
+                <target>Propiedades de etiquetas meta</target>
             </trans-unit>
             <trans-unit id="form.label_extraNames">
                 <source>form.label_extraNames</source>
-                <!-- TODO: Translate -->
-                <target>Meta name tags</target>
+                <target>Nombres de etiquetas meta</target>
             </trans-unit>
             <trans-unit id="form.label_extraHttp">
                 <source>form.label_extraHttp</source>
-                <!-- TODO: Translate -->
-                <target>Meta http-equiv tags</target>
+                <target>http-equiv de etiquetas meta</target>
             </trans-unit>
 
         </body>
