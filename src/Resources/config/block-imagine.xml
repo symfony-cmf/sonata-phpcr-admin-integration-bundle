@@ -25,7 +25,7 @@
             </call>
 
             <call method="setEmbeddedSlidesAdmin">
-                <argument>cmf_block.imagine.imagine_admin</argument>
+                <argument>cmf_sonata_admin_integration.block.imagine.imagine_admin</argument>
             </call>
 
             <call method="setRootPath">
