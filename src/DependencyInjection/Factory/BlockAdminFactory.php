@@ -20,6 +20,8 @@ use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
  */
 class BlockAdminFactory implements AdminFactoryInterface
 {
+    use PersistenceTrait;
+
     /**
      * {@inheritdoc}
      */
@@ -31,8 +33,13 @@ class BlockAdminFactory implements AdminFactoryInterface
     /**
      * {@inheritdoc}
      */
-    public function addConfiguration(NodeBuilder $builder)
+    public function addConfiguration(NodeBuilder $persistenceBuilder, NodeBuilder $builder)
     {
+        $this->addPersistenceNode('phpcr', $persistenceBuilder)
+            ->scalarNode('basepath')->defaultNull()->end()
+            ->scalarNode('menu_basepath')->defaultNull()->end()
+        ;
+
         $builder
             ->arrayNode('extensions')
                 ->addDefaultsIfNotSet()
@@ -46,8 +53,6 @@ class BlockAdminFactory implements AdminFactoryInterface
                     ->end()
                 ->end()
             ->end()
-            ->scalarNode('basepath')->defaultNull()->end()
-            ->scalarNode('menu_basepath')->defaultNull()->end()
             ->enumNode('use_imagine')
                 ->values([true, false, 'auto'])
                 ->defaultValue('auto')
@@ -62,27 +67,36 @@ class BlockAdminFactory implements AdminFactoryInterface
     /**
      * {@inheritdoc}
      */
-    public function create(array $config, ContainerBuilder $container, XmlFileLoader $loader)
+    public function create($persistence, array $config, ContainerBuilder $container, XmlFileLoader $loader)
     {
-        $container->setParameter('cmf_sonata_admin_integration.block.persistence.phpcr.basepath', $config['basepath']);
-        $container->setParameter('cmf_sonata_admin_integration.block.persistence.phpcr.menu_basepath', $config['menu_basepath']);
+        $config['persistence'] = $this->useGlobalIfImplicit($persistence, $config['persistence']);
+
+        if ($this->isConfigEnabled($container, $config['persistence']['phpcr'])) {
+            $this->createPhpcr($config, $container, $loader);
+        }
+    }
+
+    private function createPhpcr($config, ContainerBuilder $container, XmlFileLoader $loader)
+    {
+        $loader->load('block-phpcr.xml');
+
+        $container->setParameter('cmf_sonata_admin_integration.block.persistence.phpcr.basepath', $config['persistence']['phpcr']['basepath']);
+        $container->setParameter('cmf_sonata_admin_integration.block.persistence.phpcr.menu_basepath', $config['persistence']['phpcr']['menu_basepath']);
 
         $container->setParameter('cmf_sonata_admin_integration.block.extension.block_cache.form_group', $config['extensions']['block_cache']['form_group']);
         $container->setParameter('cmf_sonata_admin_integration.block.extension.block_cache.form_tab', $config['extensions']['block_cache']['form_tab']);
-
-        $loader->load('block.xml');
 
         $bundles = $container->getParameter('kernel.bundles');
         if (true === $config['use_imagine']
             || ('auto' === $config['use_imagine'] && isset($bundles['CmfMediaBundle']))
         ) {
-            $loader->load('block-imagine.xml');
+            $loader->load('block-imagine-phpcr.xml');
         }
 
         if (true === $config['enable_menu']
             || ('auto' === $config['enable_menu'] && isset($bundles['CmfMenuBundle']))
         ) {
-            $loader->load('block-menu.xml');
+            $loader->load('block-menu-phpcr.xml');
         }
     }
 }

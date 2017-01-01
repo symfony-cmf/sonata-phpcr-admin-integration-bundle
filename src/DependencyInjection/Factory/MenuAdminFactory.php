@@ -20,7 +20,7 @@ use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
  */
 class MenuAdminFactory implements AdminFactoryInterface
 {
-    use IsConfigEnabledTrait;
+    use PersistenceTrait;
 
     /**
      * {@inheritdoc}
@@ -33,8 +33,10 @@ class MenuAdminFactory implements AdminFactoryInterface
     /**
      * {@inheritdoc}
      */
-    public function addConfiguration(NodeBuilder $builder)
+    public function addConfiguration(NodeBuilder $persistenceBuilder, NodeBuilder $builder)
     {
+        $this->addPersistenceNode('phpcr', $persistenceBuilder);
+
         $builder
             ->booleanNode('recursive_breadcrumbs')->defaultTrue()->end()
             ->arrayNode('extensions')
@@ -64,13 +66,17 @@ class MenuAdminFactory implements AdminFactoryInterface
     /**
      * {@inheritdoc}
      */
-    public function create(array $config, ContainerBuilder $container, XmlFileLoader $loader)
+    public function create($persistence, array $config, ContainerBuilder $container, XmlFileLoader $loader)
     {
+        $config['persistence'] = $this->useGlobalIfImplicit($persistence, $config['persistence']);
+
         $container->setParameter('cmf_sonata_admin_integration.menu.recursive_breadcrumbs', 'recursive_breadcrumbs');
 
-        $loader->load('menu.xml');
+        if ($this->isConfigEnabled($container, $config['persistence']['phpcr'])) {
+            $loader->load('menu-phpcr.xml');
 
-        $this->loadExtensions($config['extensions'], $container, $loader);
+            $this->loadExtensions($config['extensions'], $container, $loader);
+        }
     }
 
     private function loadExtensions(array $config, ContainerBuilder $container, XmlFileLoader $loader)

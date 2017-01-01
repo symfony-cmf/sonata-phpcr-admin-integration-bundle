@@ -20,6 +20,8 @@ use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
  */
 class SeoAdminFactory implements AdminFactoryInterface
 {
+    use PersistenceTrait;
+
     /**
      * {@inheritdoc}
      */
@@ -31,8 +33,11 @@ class SeoAdminFactory implements AdminFactoryInterface
     /**
      * {@inheritdoc}
      */
-    public function addConfiguration(NodeBuilder $builder)
+    public function addConfiguration(NodeBuilder $persistenceBuilder, NodeBuilder $builder)
     {
+        $this->addPersistenceNode('phpcr', $persistenceBuilder);
+        $this->addPersistenceNode('orm', $persistenceBuilder);
+
         $builder
             ->scalarNode('form_group')->defaultValue('form.group_seo')->end()
             ->scalarNode('form_tab')->defaultValue('form.tab_seo')->end()
@@ -42,10 +47,17 @@ class SeoAdminFactory implements AdminFactoryInterface
     /**
      * {@inheritdoc}
      */
-    public function create(array $config, ContainerBuilder $container, XmlFileLoader $loader)
+    public function create($persistence, array $config, ContainerBuilder $container, XmlFileLoader $loader)
     {
-        $loader->load('seo.xml');
-        $container->setParameter('cmf_sonata_admin_integration.seo.form_group', $config['form_group']);
-        $container->setParameter('cmf_sonata_admin_integration.seo.form_tab', $config['form_tab']);
+        $config['persistence'] = $this->useGlobalIfImplicit($persistence, $config['persistence']);
+
+        if ($this->isConfigEnabled($container, $config['persistence']['phpcr'])
+            || $this->isConfigEnabled($container, $config['persistence']['orm'])
+        ) {
+            $loader->load('seo.xml');
+
+            $container->setParameter('cmf_sonata_admin_integration.seo.form_group', $config['form_group']);
+            $container->setParameter('cmf_sonata_admin_integration.seo.form_tab', $config['form_tab']);
+        }
     }
 }

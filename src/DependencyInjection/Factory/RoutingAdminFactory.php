@@ -21,6 +21,8 @@ use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
  */
 class RoutingAdminFactory implements AdminFactoryInterface, CompilerPassInterface
 {
+    use PersistenceTrait;
+
     /**
      * {@inheritdoc}
      */
@@ -32,19 +34,24 @@ class RoutingAdminFactory implements AdminFactoryInterface, CompilerPassInterfac
     /**
      * {@inheritdoc}
      */
-    public function addConfiguration(NodeBuilder $builder)
+    public function addConfiguration(NodeBuilder $persistenceBuilder, NodeBuilder $builder)
     {
-        $builder->scalarNode('basepath')->defaultNull()->end();
+        $this->addPersistenceNode('phpcr', $persistenceBuilder)
+            ->scalarNode('basepath')->defaultNull()->end();
     }
 
     /**
      * {@inheritdoc}
      */
-    public function create(array $config, ContainerBuilder $container, XmlFileLoader $loader)
+    public function create($persistence, array $config, ContainerBuilder $container, XmlFileLoader $loader)
     {
-        $loader->load('routing-phpcr.xml');
+        $config['persistence'] = $this->useGlobalIfImplicit($persistence, $config['persistence']);
 
-        $container->setParameter('cmf_sonata_admin_integration.routing.phpcr.basepath', $config['basepath']);
+        if ($this->isConfigEnabled($container, $config['persistence']['phpcr'])) {
+            $loader->load('routing-phpcr.xml');
+
+            $container->setParameter('cmf_sonata_admin_integration.routing.phpcr.basepath', $config['persistence']['phpcr']['basepath']);
+        }
     }
 
     /**

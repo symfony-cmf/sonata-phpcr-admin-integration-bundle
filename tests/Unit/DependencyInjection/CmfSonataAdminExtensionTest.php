@@ -40,9 +40,9 @@ class CmfSonataAdminExtensionTest extends AbstractExtensionTestCase
         );
 
         $this->load([
+            'persistence' => 'phpcr',
             'bundles' => [
                 'seo' => [
-                    'enabled' => true,
                     'form_group' => 'seo_form',
                 ],
             ],
@@ -67,10 +67,13 @@ class CmfSonataAdminExtensionTest extends AbstractExtensionTestCase
         $this->load([
             'bundles' => [
                 'block' => [
-                    'enabled' => true,
                     'use_imagine' => true,
-                    'basepath' => 'basepath_value',
-                    'menu_basepath' => 'menu_basepath_value',
+                    'persistence' => [
+                        'phpcr' => [
+                            'basepath' => 'basepath_value',
+                            'menu_basepath' => 'menu_basepath_value',
+                        ],
+                    ],
                 ],
             ],
         ]);
@@ -98,6 +101,7 @@ class CmfSonataAdminExtensionTest extends AbstractExtensionTestCase
         );
 
         $this->load([
+            'persistence' => 'phpcr',
             'bundles' => [
                 'core' => [
                     'enabled' => true,

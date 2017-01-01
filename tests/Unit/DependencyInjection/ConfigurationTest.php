@@ -41,11 +41,16 @@ class ConfigurationTest extends AbstractExtensionConfigurationTestCase
     public function testDefaultsForAllConfigFormats()
     {
         $expectedConfiguration = [
+            'persistence' => null,
             'bundles' => [
                 'seo' => [
                     'enabled' => true,
                     'form_group' => 'seo_form',
                     'form_tab' => 'form.tab_seo',
+                    'persistence' => [
+                        'phpcr' => ['enabled' => null],
+                        'orm' => ['enabled' => null],
+                    ],
                 ],
                 'core' => [
                     'enabled' => true,
@@ -57,6 +62,11 @@ class ConfigurationTest extends AbstractExtensionConfigurationTestCase
                         'publish_time' => [
                             'form_group' => 'form.group_publish_workflow',
                             'form_tab' => 'form.tab_publish',
+                        ],
+                    ],
+                    'persistence' => [
+                        'phpcr' => [
+                            'enabled' => null,
                         ],
                     ],
                 ],

@@ -20,6 +20,8 @@ use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
  */
 class CoreAdminFactory implements AdminFactoryInterface
 {
+    use PersistenceTrait;
+
     /**
      * {@inheritdoc}
      */
@@ -31,8 +33,10 @@ class CoreAdminFactory implements AdminFactoryInterface
     /**
      * {@inheritdoc}
      */
-    public function addConfiguration(NodeBuilder $builder)
+    public function addConfiguration(NodeBuilder $persistenceConfig, NodeBuilder $builder)
     {
+        $this->addPersistenceNode('phpcr', $persistenceConfig);
+
         $builder
             ->arrayNode('extensions')
                 ->addDefaultsIfNotSet()
@@ -58,9 +62,18 @@ class CoreAdminFactory implements AdminFactoryInterface
     /**
      * {@inheritdoc}
      */
-    public function create(array $config, ContainerBuilder $container, XmlFileLoader $loader)
+    public function create($persistence, array $config, ContainerBuilder $container, XmlFileLoader $loader)
     {
-        $loader->load('core.xml');
+        $config['persistence'] = $this->useGlobalIfImplicit($persistence, $config['persistence']);
+
+        if ($this->isConfigEnabled($container, $config['persistence']['phpcr'])) {
+            $this->loadPhpcr($config, $container, $loader);
+        }
+    }
+
+    private function loadPhpcr(array $config, ContainerBuilder $container, XmlFileLoader $loader)
+    {
+        $loader->load('core-phpcr.xml');
 
         foreach ($config['extensions'] as $extension => $values) {
             $container->setParameter('cmf_sonata_admin_integration.core.'.$extension.'.form_group', $values['form_group']);

@@ -20,6 +20,8 @@ use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
  */
 class ContentAdminFactory implements AdminFactoryInterface
 {
+    use PersistenceTrait;
+
     /**
      * {@inheritdoc}
      */
@@ -31,15 +33,20 @@ class ContentAdminFactory implements AdminFactoryInterface
     /**
      * {@inheritdoc}
      */
-    public function addConfiguration(NodeBuilder $builder)
+    public function addConfiguration(NodeBuilder $persistenceConfig, NodeBuilder $builder)
     {
+        $this->addPersistenceNode('phpcr', $persistenceConfig);
     }
 
     /**
      * {@inheritdoc}
      */
-    public function create(array $config, ContainerBuilder $container, XmlFileLoader $loader)
+    public function create($persistence, array $config, ContainerBuilder $container, XmlFileLoader $loader)
     {
-        $loader->load('content.xml');
+        $config['persistence'] = $this->useGlobalIfImplicit($persistence, $config['persistence']);
+
+        if ($this->isConfigEnabled($container, $config['persistence']['phpcr'])) {
+            $loader->load('content-phpcr.xml');
+        }
     }
 }
