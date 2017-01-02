@@ -37,7 +37,7 @@ class Configuration implements ConfigurationInterface
 
     private function addBundlesSection(ArrayNodeDefinition $root)
     {
-        $bundles = $root->children()->arrayNode('bundles')->children();
+        $bundles = $root->children()->arrayNode('bundles')->isRequired()->children();
 
         foreach ($this->factories as $factory) {
             $config = $bundles
