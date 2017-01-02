@@ -93,7 +93,6 @@
 
             <trans-unit id="form.group_block">
                 <source>form.group_block</source>
-                <!-- TODO: Check translation -->
                 <target>Bloc</target>
             </trans-unit>
             <trans-unit id="form.group_metadata">
@@ -285,14 +284,12 @@
             <!-- $Core -->
             <trans-unit id="form.tab_publish">
                 <source>form.tab_publish</source>
-                <!-- TODO: Translate -->
-                <target>Publish Settings</target>
+                <target>Paramètres de publication</target>
             </trans-unit>
 
             <trans-unit id="form.group_publish_workflow">
                 <source>form.group_publish_workflow</source>
-                <!-- TODO: Translate -->
-                <target>Status</target>
+                <target>Statut</target>
             </trans-unit>
 
             <trans-unit id="form.label_publishable">
@@ -309,8 +306,7 @@
             </trans-unit>
             <trans-unit id="form.help_publishable">
                 <source>form.help_publishable</source>
-                <!-- TODO: Translate -->
-                <target>If checked, this item is marked ready to be published. Whether it is actually published may depend on the configured publish date range.</target>
+                <target>Si coché, cet élément est signalé comme "prêt à être publié". Sa publication réelle peut varier selon l'intervalle de temps choisie.</target>
             </trans-unit>
             <trans-unit id="form.help_publish_start_date">
                 <source>form.help_publish_start_date</source>
@@ -359,9 +355,8 @@
                 <target>Éléments</target>
             </trans-unit>
             <trans-unit id="form.group_target">
-                <source>form.group_target</source>
-                <!-- TODO: Translate -->
-                <target>Target link</target>
+                <source>form.group_target</source>                
+                <target>Destination du lien</target>
             </trans-unit>
             <trans-unit id="form.group_menu_options">
                 <source>form.group_menu_options</source>
@@ -381,9 +376,8 @@
                 <target>Type de lien</target>
             </trans-unit>
             <trans-unit id="form.label_link">
-                <source>form.label_link</source>
-                <!-- TODO: Translate -->
-                <target>Link</target>
+                <source>form.label_link</source>                
+                <target>Lien</target>
             </trans-unit>
             <trans-unit id="form.label_route">
                 <source>form.label_route</source>
@@ -482,24 +476,20 @@
 
             <trans-unit id="form.tab_routing">
                 <source>form.tab_routing</source>
-                <!-- TODO: Translate -->
                 <target>URLs</target>
             </trans-unit>
 
             <trans-unit id="form.group_location">
                 <source>form.group_location</source>
-                <!-- TODO: Translate -->
-                <target>Location</target>
+                <target>Emplacement</target>
             </trans-unit>
             <trans-unit id="form.group_path">
-                <source>form.group_path</source>
-                <!-- TODO: Translate -->
-                <target>Path</target>
+                <source>form.group_path</source>                
+                <target>Chemin</target>
             </trans-unit>
             <trans-unit id="form.group_data">
                 <source>form.group_data</source>
-                <!-- TODO: Translate -->
-                <target>Data</target>
+                <target>Données</target>
             </trans-unit>
             <trans-unit id="form.group_defaults">
                 <source>form.group_defaults</source>
@@ -520,8 +510,7 @@
             </trans-unit>
             <trans-unit id="form.label_route_name">
                 <source>form.label_route_name</source>
-                <!-- TODO: Translate "Route name" -->
-                <target>Nom</target>
+                <target>Nom de la route</target>
             </trans-unit>
             <trans-unit id="form.label_uri">
                 <source>form.label_uri</source>
@@ -546,13 +535,13 @@
 
             <trans-unit id="form.help_variable_pattern">
                 <source>form.help_variable_pattern</source>
-                <target>Un motif en format {variable}/{plus}... Les variables sont passé au controlleur s'il les déclare comme arguments.</target>
+                <target>Un motif en format {variable}/{plus}... Les variables sont passées au controlleur s'il les déclare comme arguments.</target>
             </trans-unit>
             <trans-unit id="form.help_options">
                 <source>form.help_options</source>
                 <target>
                     <![CDATA[
-                    Langage: Prefix la route avec le langage tel que /{locale}/your/route<br/>
+                    Langage: Prefixe la route avec le langage tel que /{locale}/your/route<br/>
                     Format: Ajoute le format à la route tel que /your/route.{format}. Le format par défaut est 'html'<br/>
                     Barre Oblique: Ajoute un slash à la fin de la route tel que /your/route/
                     ]]>
