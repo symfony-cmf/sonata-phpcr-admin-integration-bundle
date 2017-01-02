@@ -8,7 +8,8 @@
 
         <service
                 id="cmf_sonata_admin_integration.block.imagine.slideshow_admin"
-                class="Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Block\Imagine\SlideshowBlockAdmin">
+                class="Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Block\Imagine\SlideshowBlockAdmin"
+                parent="cmf_sonata_admin_integration.abstract_admin">
             <tag
                     name="sonata.admin"
                     manager_type="doctrine_phpcr"
@@ -35,7 +36,8 @@
 
         <service
                 id="cmf_sonata_admin_integration.block.imagine.imagine_admin"
-                class="Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Block\Imagine\ImagineBlockAdmin">
+                class="Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Block\Imagine\ImagineBlockAdmin"
+                parent="cmf_sonata_admin_integration.abstract_admin">
             <tag
                     name="sonata.admin"
                     manager_type="doctrine_phpcr"

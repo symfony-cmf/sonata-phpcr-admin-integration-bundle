@@ -14,7 +14,7 @@ namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Block;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
-use Sonata\DoctrinePHPCRAdminBundle\Form\Type\TreeModelType;
+use Symfony\Cmf\Bundle\TreeBrowserBundle\Form\Type\TreeSelectType;
 
 /**
  * Sonata admin for the MenuBlock. Allows to select the target menu node from
@@ -47,12 +47,14 @@ class MenuBlockAdmin extends AbstractBlockAdmin
                 ->with('form.group_block', ['class' => 'col-md-9'])
                     ->add(
                         'menuNode',
-                        TreeModelType::class,
-                        ['choice_list' => [], 'required' => true, 'root_node' => $this->menuPath]
+                        TreeSelectType::class,
+                        ['root_node' => $this->menuPath, 'widget' => 'browser', 'required' => true]
                     )
                 ->end()
             ->end()
         ;
+
+        $this->addTransformerToField($formMapper->getFormBuilder(), 'menuNode');
     }
 
     /**

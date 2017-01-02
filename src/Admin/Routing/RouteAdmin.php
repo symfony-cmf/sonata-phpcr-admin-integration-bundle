@@ -15,15 +15,15 @@ use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\CoreBundle\Form\Type\ImmutableArrayType;
-use Sonata\DoctrinePHPCRAdminBundle\Admin\Admin;
-use Sonata\DoctrinePHPCRAdminBundle\Form\Type\TreeModelType;
+use Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\AbstractAdmin;
+use Symfony\Cmf\Bundle\TreeBrowserBundle\Form\Type\TreeSelectType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Cmf\Bundle\RoutingBundle\Model\Route;
 use Symfony\Cmf\Bundle\RoutingBundle\Form\Type\RouteTypeType;
 use PHPCR\Util\PathHelper;
 
-class RouteAdmin extends Admin
+class RouteAdmin extends AbstractAdmin
 {
     protected $translationDomain = 'CmfSonataAdminIntegrationBundle';
 
@@ -53,8 +53,8 @@ class RouteAdmin extends Admin
                 ->with('form.group_location', ['class' => 'col-md-3'])
                     ->add(
                         'parentDocument',
-                        TreeModelType::class,
-                        ['choice_list' => [], 'select_root_node' => true, 'root_node' => $this->routeRoot]
+                        TreeSelectType::class,
+                        ['root_node' => $this->routeRoot, 'widget' => 'browser']
                     )
                     ->add('name', TextType::class)
                 ->end() // group location
@@ -63,8 +63,8 @@ class RouteAdmin extends Admin
                     ->with('form.group_target', ['class' => 'col-md-9'])
                         ->add(
                             'content',
-                            TreeModelType::class,
-                            ['choice_list' => [], 'required' => false, 'root_node' => $this->contentRoot]
+                            TreeSelectType::class,
+                            ['root_node' => $this->routeRoot, 'widget' => 'browser', 'required' => false]
                         )
                     ->end() // group general
                 ->end() // tab general
@@ -95,6 +95,11 @@ class RouteAdmin extends Admin
                 ->ifEnd()
 
             ->end(); // tab general/routing
+
+        $this->addTransformerToField($formMapper->getFormBuilder(), 'parentDocument');
+        if (null === $this->getParentFieldDescription()) {
+            $this->addTransformerToField($formMapper->getFormBuilder(), 'content');
+        }
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
