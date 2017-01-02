@@ -27,7 +27,7 @@ class CmfSonataAdminExtensionTest extends AbstractExtensionTestCase
     }
 
     /**
-     * @expectedException Symfony\Component\Config\Definition\Exception\InvalidConfigurationException
+     * @expectedException \Symfony\Component\Config\Definition\Exception\InvalidConfigurationException
      */
     public function testThatBundlesAreConfigured()
     {
