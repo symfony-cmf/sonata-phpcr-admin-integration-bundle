@@ -1,9 +1,9 @@
 # Symfony CMF Sonata PHPCR Admin Bundle
 
-[![Build Status](https://travis-ci.org/symfony-cmf/sonata-admin-integration-bundle.svg?branch=master)](https://travis-ci.org/symfony-cmf/sonata-admin-integration-bundle)
+[![Build Status](https://travis-ci.org/symfony-cmf/sonata-phpcr-admin-integration-bundle.svg?branch=master)](https://travis-ci.org/symfony-cmf/sonata-phpcr-admin-integration-bundle)
 [![StyleCI](https://styleci.io/repos/60730554/shield?style=plastic)](https://styleci.io/repos/60730554)
-[![Latest Stable Version](https://poser.pugx.org/symfony-cmf/sonata-admin-integration-bundle/version.png)](https://packagist.org/packages/symfony-cmf/sonata-admin-integration-bundle)
-[![Total Downloads](https://poser.pugx.org/symfony-cmf/sonata-admin-integration-bundle/d/total.png)](https://packagist.org/packages/symfony-cmf/sonata-admin-integration-bundle)
+[![Latest Stable Version](https://poser.pugx.org/symfony-cmf/sonata-phpcr-admin-integration-bundle/version.png)](https://packagist.org/packages/symfony-cmf/sonata-phpcr-admin-integration-bundle)
+[![Total Downloads](https://poser.pugx.org/symfony-cmf/sonata-phpcr-admin-integration-bundle/d/total.png)](https://packagist.org/packages/symfony-cmf/sonata-phpcr-admin-integration-bundle)
 
 This bundle is part of the [Symfony Content Management Framework (CMF)](http://cmf.symfony.com/)
 and licensed under the [MIT License](LICENSE).
@@ -36,4 +36,4 @@ Unit and/or functional tests exist for this bundle. See the
 for a guide to running the tests.
 
 Thanks to 
-[everyone who has contributed](https://github.com/symfony-cmf/sonata-admin-integration-bundle/contributors) already.
+[everyone who has contributed](https://github.com/symfony-cmf/sonata-phpcr-admin-integration-bundle/contributors) already.
