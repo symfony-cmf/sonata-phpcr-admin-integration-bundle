@@ -26,6 +26,25 @@ class CmfSonataAdminExtensionTest extends AbstractExtensionTestCase
         );
     }
 
+    /**
+     * @expectedException \Symfony\Component\Config\Definition\Exception\InvalidConfigurationException
+     */
+    public function testThatBundlesAreConfigured()
+    {
+        $this->container->setParameter(
+            'kernel.bundles',
+            array(
+                'CmfSeoBundle' => true,
+                'CmfRoutingBundle' => true,
+                'SonataDoctrinePHPCRAdminBundle' => true,
+                'DoctrinePHPCRBundle' => true,
+                'BurgovKeyValueFormBundle' => true,
+            )
+        );
+
+        $this->load([]);
+    }
+
     public function testSeoBundle()
     {
         $this->container->setParameter(
