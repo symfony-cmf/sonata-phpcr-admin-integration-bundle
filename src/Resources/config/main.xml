@@ -6,8 +6,8 @@
 
     <services>
         <service
-                id="cmf_sonata_admin_integration.abstract_admin"
-                class="Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\AbstractAdmin"
+                id="cmf_sonata_phpcr_admin_integration.abstract_admin"
+                class="Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\AbstractAdmin"
                 abstract="true">
             
             <call method="setManagerRegistry">

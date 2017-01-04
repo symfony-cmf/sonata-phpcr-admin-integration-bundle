@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Tests\Unit\Admin\Core\Extension;
+namespace Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Unit\Admin\Core\Extension;
 
-use Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Core\Extension\ChildExtension;
+use Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\Core\Extension\ChildExtension;
 
 class ChildExtensionTest extends \PHPUnit_Framework_TestCase
 {

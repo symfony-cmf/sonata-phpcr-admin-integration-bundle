@@ -1,12 +1,12 @@
 <?php
 
-namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Tests\Resources\DataFixtures\Phpcr;
+namespace Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Resources\DataFixtures\Phpcr;
 
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\ODM\PHPCR\Document\Generic;
 use PHPCR\Util\NodeHelper;
-use Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Tests\Resources\Document\CoreExtensionsAwareContent;
+use Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Resources\Document\CoreExtensionsAwareContent;
 
 /**
  * @author Maximilian Berghoff <Maximilian.Berghoff@mayflower.de>

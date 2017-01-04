@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Tests\WebTest\Admin\Menu;
+namespace Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\WebTest\Admin\Menu;
 
 use Symfony\Cmf\Component\Testing\Functional\BaseTestCase;
-use Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Tests\Resources\DataFixtures\Phpcr\LoadMenuData;
+use Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Resources\DataFixtures\Phpcr\LoadMenuData;
 
 class MenuAdminTest extends BaseTestCase
 {

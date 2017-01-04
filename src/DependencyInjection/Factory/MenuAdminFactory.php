@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\DependencyInjection\Factory;
+namespace Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\DependencyInjection\Factory;
 
 use Symfony\Component\Config\Definition\Builder\NodeBuilder;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -66,7 +66,7 @@ class MenuAdminFactory implements AdminFactoryInterface
      */
     public function create(array $config, ContainerBuilder $container, XmlFileLoader $loader)
     {
-        $container->setParameter('cmf_sonata_admin_integration.menu.recursive_breadcrumbs', 'recursive_breadcrumbs');
+        $container->setParameter('cmf_sonata_phpcr_admin_integration.menu.recursive_breadcrumbs', 'recursive_breadcrumbs');
 
         $loader->load('menu.xml');
 
@@ -87,16 +87,16 @@ class MenuAdminFactory implements AdminFactoryInterface
                         throw new InvalidConfigurationException('To use advanced menu options, you need the burgov/key-value-form-bundle in your project.');
                     }
 
-                    $container->setParameter('cmf_sonata_admin_integration.menu.extension.menu_options.advanced', $config['menu_options']['advanced']);
+                    $container->setParameter('cmf_sonata_phpcr_admin_integration.menu.extension.menu_options.advanced', $config['menu_options']['advanced']);
 
                     // no break is intended to allow disabling the menu_options extension
                 default:
                     if (!$this->isConfigEnabled($container, $extensionConfig)) {
-                        $container->removeDefinition('cmf_sonata_admin_integration.menu.extension.'.$name);
+                        $container->removeDefinition('cmf_sonata_phpcr_admin_integration.menu.extension.'.$name);
                     }
 
-                    $container->setParameter('cmf_sonata_admin_integration.menu.extension.'.$name.'.form_group', $extensionConfig['form_group']);
-                    $container->setParameter('cmf_sonata_admin_integration.menu.extension.'.$name.'.form_tab', $extensionConfig['form_tab']);
+                    $container->setParameter('cmf_sonata_phpcr_admin_integration.menu.extension.'.$name.'.form_group', $extensionConfig['form_group']);
+                    $container->setParameter('cmf_sonata_phpcr_admin_integration.menu.extension.'.$name.'.form_tab', $extensionConfig['form_tab']);
             }
         }
     }

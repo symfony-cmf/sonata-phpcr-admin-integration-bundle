@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Tests\WebTest\Admin\Core\Extension;
+namespace Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\WebTest\Admin\Core\Extension;
 
-use Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Tests\WebTest\Admin\TestCase;
+use Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\WebTest\Admin\TestCase;
 
 /**
  * This test will cover all behavior with the provides admin extension.
@@ -23,7 +23,7 @@ class CoreAdminExtensionTest extends TestCase
     public function setUp()
     {
         $this->db('PHPCR')->loadFixtures(array(
-            'Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Tests\Resources\DataFixtures\Phpcr\LoadCoreData',
+            'Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Resources\DataFixtures\Phpcr\LoadCoreData',
         ));
         $this->client = $this->createClient();
     }

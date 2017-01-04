@@ -1,6 +1,6 @@
 <?php
 
-namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Tests\Resources\Admin;
+namespace Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Resources\Admin;
 
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;

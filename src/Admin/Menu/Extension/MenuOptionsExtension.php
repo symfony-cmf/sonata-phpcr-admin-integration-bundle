@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Menu\Extension;
+namespace Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\Menu\Extension;
 
 use Burgov\Bundle\KeyValueFormBundle\Form\Type\KeyValueType;
 use Sonata\AdminBundle\Admin\AbstractAdminExtension;
@@ -62,11 +62,11 @@ class MenuOptionsExtension extends AbstractAdminExtension
 
         $formMapper
             ->tab($this->formTab, 'form.tab_general' === $this->formTab
-                ? ['translation_domain' => 'CmfSonataAdminIntegrationBundle']
+                ? ['translation_domain' => 'CmfSonataPhpcrAdminIntegrationBundle']
                 : []
             )
                 ->with($this->formGroup, 'form.group_menu_options' === $this->formGroup
-                    ? ['class' => 'col-md-3', 'translation_domain' => 'CmfSonataAdminIntegrationBundle']
+                    ? ['class' => 'col-md-3', 'translation_domain' => 'CmfSonataPhpcrAdminIntegrationBundle']
                     : ['class' => 'col-md-3']
                 )
                     ->add('display', CheckboxType::class, ['required' => false], ['help' => 'form.help_display'])

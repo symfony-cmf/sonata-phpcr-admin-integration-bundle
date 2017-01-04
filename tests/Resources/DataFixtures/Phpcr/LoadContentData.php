@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Tests\Resources\DataFixtures\Phpcr;
+namespace Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Resources\DataFixtures\Phpcr;
 
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use PHPCR\Util\NodeHelper;
 use Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\Route;
 use Symfony\Cmf\Bundle\SeoBundle\Doctrine\Phpcr\SeoMetadata;
-use Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Tests\Resources\Document\SeoAwareContent;
+use Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Resources\Document\SeoAwareContent;
 
 class LoadContentData implements FixtureInterface
 {

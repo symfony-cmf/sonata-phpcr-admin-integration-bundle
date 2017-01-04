@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Routing\Extension;
+namespace Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\Routing\Extension;
 
 use Sonata\AdminBundle\Admin\AbstractAdminExtension;
 use Sonata\AdminBundle\Form\FormMapper;
@@ -40,7 +40,7 @@ class RouteReferrersExtension extends AbstractAdminExtension
 
         $formMapper
             ->tab($this->formTab)
-                ->with('form.group_routes', ['translation_domain' => 'CmfSonataAdminIntegrationBundle'])
+                ->with('form.group_routes', ['translation_domain' => 'CmfSonataPhpcrAdminIntegrationBundle'])
                     ->add(
                         'routes',
                         CollectionType::class,

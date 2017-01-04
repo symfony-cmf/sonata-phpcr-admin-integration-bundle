@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Tests\WebTest\Admin\Routing;
+namespace Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\WebTest\Admin\Routing;
 
 use Symfony\Cmf\Component\Testing\Functional\BaseTestCase;
 use Symfony\Component\DomCrawler\Crawler;
@@ -19,7 +19,7 @@ class RedirectRouteAdminTest extends BaseTestCase
     public function setUp()
     {
         $this->db('PHPCR')->loadFixtures(array(
-            'Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Tests\Resources\DataFixtures\Phpcr\LoadRouteData',
+            'Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Resources\DataFixtures\Phpcr\LoadRouteData',
         ));
         $this->client = $this->createClient();
     }

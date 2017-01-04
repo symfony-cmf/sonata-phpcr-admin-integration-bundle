@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Content;
+namespace Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\Content;
 
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
@@ -20,7 +20,7 @@ use Symfony\Cmf\Bundle\ContentBundle\Model\StaticContentBase;
 
 class StaticContentAdmin extends Admin
 {
-    protected $translationDomain = 'CmfSonataAdminIntegrationBundle';
+    protected $translationDomain = 'CmfSonataPhpcrAdminIntegrationBundle';
 
     public function getExportFormats()
     {
@@ -40,7 +40,7 @@ class StaticContentAdmin extends Admin
         $builder = $formMapper->getFormBuilder()->getFormFactory()->createBuilder(StaticContentType::class, null, [
             'readonly_parent_document' => (bool) $this->id($this->getSubject()),
             'label_format' => 'form.label_%name%',
-            'translation_domain' => 'CmfSonataAdminIntegrationBundle',
+            'translation_domain' => 'CmfSonataPhpcrAdminIntegrationBundle',
         ]);
 
         $formMapper

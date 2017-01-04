@@ -9,19 +9,19 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Routing;
+namespace Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\Routing;
 
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
-use Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\AbstractAdmin;
+use Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\AbstractAdmin;
 use Symfony\Cmf\Bundle\TreeBrowserBundle\Form\Type\TreeSelectType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Cmf\Bundle\RoutingBundle\Model\Route;
 
 class RedirectRouteAdmin extends AbstractAdmin
 {
-    protected $translationDomain = 'CmfSonataAdminIntegrationBundle';
+    protected $translationDomain = 'CmfSonataPhpcrAdminIntegrationBundle';
 
     /**
      * Root path for the route parent selection.

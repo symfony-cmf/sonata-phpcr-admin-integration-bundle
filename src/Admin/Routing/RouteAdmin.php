@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Routing;
+namespace Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\Routing;
 
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\CoreBundle\Form\Type\ImmutableArrayType;
-use Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\AbstractAdmin;
+use Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\AbstractAdmin;
 use Symfony\Cmf\Bundle\TreeBrowserBundle\Form\Type\TreeSelectType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -25,7 +25,7 @@ use PHPCR\Util\PathHelper;
 
 class RouteAdmin extends AbstractAdmin
 {
-    protected $translationDomain = 'CmfSonataAdminIntegrationBundle';
+    protected $translationDomain = 'CmfSonataPhpcrAdminIntegrationBundle';
 
     /**
      * Root path for the route parent selection.
@@ -136,12 +136,12 @@ class RouteAdmin extends AbstractAdmin
     protected function configureFieldsForDefaults($dynamicDefaults)
     {
         $defaults = array(
-            '_controller' => ['_controller', TextType::class, ['required' => false, 'translation_domain' => 'CmfSonataAdminIntegrationBundle']],
-            '_template' => ['_template', TextType::class, ['required' => false, 'translation_domain' => 'CmfSonataAdminIntegrationBundle']],
+            '_controller' => ['_controller', TextType::class, ['required' => false, 'translation_domain' => 'CmfSonataPhpcrAdminIntegrationBundle']],
+            '_template' => ['_template', TextType::class, ['required' => false, 'translation_domain' => 'CmfSonataPhpcrAdminIntegrationBundle']],
             'type' => ['type', RouteTypeType::class, [
                 'placeholder' => '',
                 'required' => false,
-                'translation_domain' => 'CmfSonataAdminIntegrationBundle',
+                'translation_domain' => 'CmfSonataPhpcrAdminIntegrationBundle',
             ]],
         );
 
@@ -184,9 +184,9 @@ class RouteAdmin extends AbstractAdmin
     protected function configureFieldsForOptions(array $dynamicOptions)
     {
         $options = [
-            'add_locale_pattern' => ['add_locale_pattern', CheckboxType::class, ['required' => false, 'label' => 'form.label_add_locale_pattern', 'translation_domain' => 'CmfSonataAdminIntegrationBundle']],
-            'add_format_pattern' => ['add_format_pattern', CheckboxType::class, ['required' => false, 'label' => 'form.label_add_format_pattern', 'translation_domain' => 'CmfSonataAdminIntegrationBundle']],
-            'add_trailing_slash' => ['add_trailing_slash', CheckboxType::class, ['required' => false, 'label' => 'form.label_add_trailing_slash', 'translation_domain' => 'CmfSonataAdminIntegrationBundle']],
+            'add_locale_pattern' => ['add_locale_pattern', CheckboxType::class, ['required' => false, 'label' => 'form.label_add_locale_pattern', 'translation_domain' => 'CmfSonataPhpcrAdminIntegrationBundle']],
+            'add_format_pattern' => ['add_format_pattern', CheckboxType::class, ['required' => false, 'label' => 'form.label_add_format_pattern', 'translation_domain' => 'CmfSonataPhpcrAdminIntegrationBundle']],
+            'add_trailing_slash' => ['add_trailing_slash', CheckboxType::class, ['required' => false, 'label' => 'form.label_add_trailing_slash', 'translation_domain' => 'CmfSonataPhpcrAdminIntegrationBundle']],
         ];
 
         foreach ($dynamicOptions as $name => $value) {

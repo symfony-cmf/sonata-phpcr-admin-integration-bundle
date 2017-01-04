@@ -1,4 +1,4 @@
-# Symfony CMF Sonata Admin Bundle
+# Symfony CMF Sonata Phpcr Admin Bundle
 
 [![Build Status](https://travis-ci.org/symfony-cmf/sonata-admin-integration-bundle.svg?branch=master)](https://travis-ci.org/symfony-cmf/sonata-admin-integration-bundle)
 [![StyleCI](https://styleci.io/repos/60730554/shield?style=plastic)](https://styleci.io/repos/60730554)

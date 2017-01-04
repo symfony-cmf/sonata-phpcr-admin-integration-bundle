@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Tests\Resources\DataFixtures\Phpcr;
+namespace Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Resources\DataFixtures\Phpcr;
 
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\ODM\PHPCR\DocumentManager;
 use Symfony\Cmf\Bundle\MenuBundle\Doctrine\Phpcr\MenuNode;
 use Symfony\Cmf\Bundle\MenuBundle\Doctrine\Phpcr\Menu;
-use Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Tests\Resources\Document\MenuContent;
+use Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Resources\Document\MenuContent;
 use Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\Route;
 use PHPCR\Util\NodeHelper;
 

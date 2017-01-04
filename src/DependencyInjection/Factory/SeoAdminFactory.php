@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\DependencyInjection\Factory;
+namespace Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\DependencyInjection\Factory;
 
 use Symfony\Component\Config\Definition\Builder\NodeBuilder;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -45,7 +45,7 @@ class SeoAdminFactory implements AdminFactoryInterface
     public function create(array $config, ContainerBuilder $container, XmlFileLoader $loader)
     {
         $loader->load('seo.xml');
-        $container->setParameter('cmf_sonata_admin_integration.seo.form_group', $config['form_group']);
-        $container->setParameter('cmf_sonata_admin_integration.seo.form_tab', $config['form_tab']);
+        $container->setParameter('cmf_sonata_phpcr_admin_integration.seo.form_group', $config['form_group']);
+        $container->setParameter('cmf_sonata_phpcr_admin_integration.seo.form_tab', $config['form_tab']);
     }
 }

@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Block\Extension;
+namespace Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\Block\Extension;
 
 use Sonata\AdminBundle\Admin\AbstractAdminExtension;
 use Sonata\AdminBundle\Form\FormMapper;
@@ -44,11 +44,11 @@ class BlockCacheExtension extends AbstractAdminExtension
 
         $formMapper
             ->tab($this->formTab, 'form.tab_general' === $this->formtab
-                ? ['translation_domain' => 'CmfSonataAdminIntegrationBundle']
+                ? ['translation_domain' => 'CmfSonataPhpcrAdminIntegrationBundle']
                 : []
             )
                 ->with($this->formGroup, 'form.group_metadata' === $this->formGroup
-                    ? ['translation_domain' => 'CmfSonataAdminIntegrationBundle']
+                    ? ['translation_domain' => 'CmfSonataPhpcrAdminIntegrationBundle']
                     : []
                 )
                     ->add('ttl', TextType::class)

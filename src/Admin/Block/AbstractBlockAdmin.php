@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Block;
+namespace Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\Block;
 
 use Sonata\AdminBundle\Form\FormMapper;
-use Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\AbstractAdmin;
+use Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\AbstractAdmin;
 use Symfony\Cmf\Bundle\TreeBrowserBundle\Form\Type\TreeSelectType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 
@@ -24,7 +24,7 @@ abstract class AbstractBlockAdmin extends AbstractAdmin
     /**
      * @var string
      */
-    protected $translationDomain = 'CmfSonataAdminIntegrationBundle';
+    protected $translationDomain = 'CmfSonataPhpcrAdminIntegrationBundle';
 
     /**
      * {@inheritdoc}
