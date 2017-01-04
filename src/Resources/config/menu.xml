@@ -7,9 +7,9 @@
     <services>
 
         <service
-                id="cmf_sonata_admin_integration.menu.menu_admin"
-                class="Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Menu\MenuAdmin"
-                parent="cmf_sonata_admin_integration.abstract_admin">
+                id="cmf_sonata_phpcr_admin_integration.menu.menu_admin"
+                class="Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\Menu\MenuAdmin"
+                parent="cmf_sonata_phpcr_admin_integration.abstract_admin">
             <tag
                 name="sonata.admin"
                 manager_type="doctrine_phpcr"
@@ -37,14 +37,14 @@
         </service>
 
         <service
-                id="cmf_sonata_admin_integration.menu.node_admin"
-                class="Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Menu\MenuNodeAdmin"
-                parent="cmf_sonata_admin_integration.abstract_admin">
+                id="cmf_sonata_phpcr_admin_integration.menu.node_admin"
+                class="Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\Menu\MenuNodeAdmin"
+                parent="cmf_sonata_phpcr_admin_integration.abstract_admin">
             <tag
                 name="sonata.admin"
                 manager_type="doctrine_phpcr"
                 group="dashboard.cmf"
-                label_catalogue="CmfSonataAdminIntegrationBundle"
+                label_catalogue="CmfSonataPhpcrAdminIntegrationBundle"
                 label="dashboard.label_menu_node"
                 label_translator_strategy="sonata.admin.label.strategy.underscore"
             />
@@ -66,24 +66,24 @@
             </call>
 
             <call method="setRecursiveBreadcrumbs">
-                <argument>%cmf_sonata_admin_integration.menu.recursive_breadcrumbs%</argument>
+                <argument>%cmf_sonata_phpcr_admin_integration.menu.recursive_breadcrumbs%</argument>
             </call>
         </service>
 
         <service
-                id="cmf_sonata_admin_integration.menu.extension.menu_node_referrers"
-                class="Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Menu\Extension\MenuNodeReferrersExtension">
-            <argument>%cmf_sonata_admin_integration.menu.extension.menu_node_referrers.form_group%</argument>
-            <argument>%cmf_sonata_admin_integration.menu.extension.menu_node_referrers.form_tab%</argument>
+                id="cmf_sonata_phpcr_admin_integration.menu.extension.menu_node_referrers"
+                class="Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\Menu\Extension\MenuNodeReferrersExtension">
+            <argument>%cmf_sonata_phpcr_admin_integration.menu.extension.menu_node_referrers.form_group%</argument>
+            <argument>%cmf_sonata_phpcr_admin_integration.menu.extension.menu_node_referrers.form_tab%</argument>
             <tag name="sonata.admin.extension"/>
         </service>
 
         <service
-                id="cmf_sonata_admin_integration.menu.extension.menu_options"
-                class="Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Menu\Extension\MenuOptionsExtension">
-            <argument>%cmf_sonata_admin_integration.menu.extension.menu_options.form_group%</argument>
-            <argument>%cmf_sonata_admin_integration.menu.extension.menu_options.form_tab%</argument>
-            <argument>%cmf_sonata_admin_integration.menu.extension.menu_options.advanced%</argument>
+                id="cmf_sonata_phpcr_admin_integration.menu.extension.menu_options"
+                class="Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\Menu\Extension\MenuOptionsExtension">
+            <argument>%cmf_sonata_phpcr_admin_integration.menu.extension.menu_options.form_group%</argument>
+            <argument>%cmf_sonata_phpcr_admin_integration.menu.extension.menu_options.form_tab%</argument>
+            <argument>%cmf_sonata_phpcr_admin_integration.menu.extension.menu_options.advanced%</argument>
             <tag name="sonata.admin.extension"/>
         </service>
 

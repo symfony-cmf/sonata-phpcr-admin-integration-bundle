@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle;
+namespace Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class CmfSonataAdminIntegrationBundle extends Bundle
+class CmfSonataPhpcrAdminIntegrationBundle extends Bundle
 {
 }

@@ -12,7 +12,7 @@
 namespace Symfony\Cmf\Bundle\MenuBundle\Tests\WebTest\Admin\Extension;
 
 use Symfony\Cmf\Component\Testing\Functional\BaseTestCase;
-use Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Tests\Resources\DataFixtures\Phpcr\LoadMenuData;
+use Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Resources\DataFixtures\Phpcr\LoadMenuData;
 
 class MenuNodeReferrersExtensionTest extends BaseTestCase
 {

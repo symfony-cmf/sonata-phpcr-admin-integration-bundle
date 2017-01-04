@@ -5,13 +5,13 @@
 
     <services>
         <service
-                id="cmf_sonata_admin_integration.content.admin"
-                class="Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Content\StaticContentAdmin">
+                id="cmf_sonata_phpcr_admin_integration.content.admin"
+                class="Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\Content\StaticContentAdmin">
             <tag
                     name="sonata.admin"
                     manager_type="doctrine_phpcr"
                     group="dashboard.cmf"
-                    label_catalogue="CmfSonataAdminIntegrationBundle"
+                    label_catalogue="CmfSonataPhpcrAdminIntegrationBundle"
                     label="dashboard.label_static_content"
                     label_translator_strategy="sonata.admin.label.strategy.underscore" />
             <argument/>

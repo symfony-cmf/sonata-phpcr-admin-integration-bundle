@@ -9,20 +9,20 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\DependencyInjection;
+namespace Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
-use Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\DependencyInjection\Factory\AdminFactoryInterface;
+use Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\DependencyInjection\Factory\AdminFactoryInterface;
 
 /**
  * @author Maximilian Berghoff <Maximilian.Berghoff@mayflower.de>
  * @author Wouter de Jong <wouter@wouterj.nl>
  */
-class CmfSonataAdminIntegrationExtension extends Extension implements CompilerPassInterface
+class CmfSonataPhpcrAdminIntegrationExtension extends Extension implements CompilerPassInterface
 {
     /**
      * @var AdminFactoryInterface[]
@@ -51,12 +51,17 @@ class CmfSonataAdminIntegrationExtension extends Extension implements CompilerPa
 
         $configuration = new Configuration($this->factories);
         $config = $this->processConfiguration($configuration, $configs);
+        $bundles = $container->getParameter('kernel.bundles');
+
+        if (!isset($bundles['SonataDoctrinePHPCRAdminBundle'])) {
+            throw new \LogicException('The SonataDoctrinePhpcrAdminBundle must be registered in order to use the CmfSonataPhpcrAdminIntegrationBundle.');
+        }
 
         $loader = new XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
 
         $this->loadBundles($config['bundles'], $loader, $container);
 
-        $loader->load('main-phpcr.xml');
+        $loader->load('main.xml');
     }
 
     private function loadBundles(array $config, XmlFileLoader $loader, ContainerBuilder $container)
@@ -86,7 +91,7 @@ class CmfSonataAdminIntegrationExtension extends Extension implements CompilerPa
      */
     public function getNamespace()
     {
-        return 'http://cmf.symfony.com/schema/dic/sonata-admin';
+        return 'http://cmf.symfony.com/schema/dic/sonata-phpcr-admin-integration';
     }
 
     /**

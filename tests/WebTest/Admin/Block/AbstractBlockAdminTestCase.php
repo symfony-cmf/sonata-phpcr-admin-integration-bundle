@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Tests\WebTest\Admin\Block;
+namespace Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\WebTest\Admin\Block;
 
 use Symfony\Bundle\FrameworkBundle\Client;
 use Symfony\Cmf\Component\Testing\Functional\BaseTestCase;
@@ -55,7 +55,7 @@ abstract class AbstractBlockAdminTestCase extends BaseTestCase
     public function setUp()
     {
         $this->db('PHPCR')->loadFixtures(array(
-            'Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Tests\Resources\DataFixtures\Phpcr\LoadBlockData',
+            'Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Resources\DataFixtures\Phpcr\LoadBlockData',
         ));
         $this->client = $this->createClient();
     }

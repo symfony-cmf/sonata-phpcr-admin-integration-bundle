@@ -6,9 +6,9 @@
 
     <services>
         <service
-                id="cmf_sonata_admin_integration.block.menu_admin"
-                class="Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Block\MenuBlockAdmin"
-                parent="cmf_sonata_admin_integration.abstract_admin">
+                id="cmf_sonata_phpcr_admin_integration.block.menu_admin"
+                class="Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\Block\MenuBlockAdmin"
+                parent="cmf_sonata_phpcr_admin_integration.abstract_admin">
             <tag
                     name="sonata.admin"
                     manager_type="doctrine_phpcr"
@@ -25,10 +25,10 @@
             </call>
 
             <call method="setRootPath">
-                <argument>%cmf_sonata_admin_integration.block.persistence.phpcr.basepath%</argument>
+                <argument>%cmf_sonata_phpcr_admin_integration.block.persistence.basepath%</argument>
             </call>
             <call method="setMenuPath">
-                <argument>%cmf_sonata_admin_integration.block.persistence.phpcr.menu_basepath%</argument>
+                <argument>%cmf_sonata_phpcr_admin_integration.block.persistence.menu_basepath%</argument>
             </call>
         </service>
     </services>

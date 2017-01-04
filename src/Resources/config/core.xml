@@ -7,27 +7,27 @@
     <services>
 
         <service
-                id="cmf_sonata_admin_integration.core.extension.child"
-                class="Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Core\Extension\ChildExtension"
+                id="cmf_sonata_phpcr_admin_integration.core.extension.child"
+                class="Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\Core\Extension\ChildExtension"
                 public="false">
             <tag name="sonata.admin.extension"/>
         </service>
 
         <service
-                id="cmf_sonata_admin_integration.core.extension.publish_workflow.publishable"
-                class="Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Core\Extension\PublishableExtension"
+                id="cmf_sonata_phpcr_admin_integration.core.extension.publish_workflow.publishable"
+                class="Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\Core\Extension\PublishableExtension"
                 public="false">
-            <argument>%cmf_sonata_admin_integration.core.publishable.form_group%</argument>
-            <argument>%cmf_sonata_admin_integration.core.publishable.form_tab%</argument>
+            <argument>%cmf_sonata_phpcr_admin_integration.core.publishable.form_group%</argument>
+            <argument>%cmf_sonata_phpcr_admin_integration.core.publishable.form_tab%</argument>
             <tag name="sonata.admin.extension"/>
         </service>
 
         <service
-                id="cmf_sonata_admin_integration.core.extension.publish_workflow.time_period"
-                class="Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Core\Extension\PublishTimePeriodExtension"
+                id="cmf_sonata_phpcr_admin_integration.core.extension.publish_workflow.time_period"
+                class="Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\Core\Extension\PublishTimePeriodExtension"
                 public="false">
-            <argument>%cmf_sonata_admin_integration.core.publish_time.form_group%</argument>
-            <argument>%cmf_sonata_admin_integration.core.publish_time.form_tab%</argument>
+            <argument>%cmf_sonata_phpcr_admin_integration.core.publish_time.form_group%</argument>
+            <argument>%cmf_sonata_phpcr_admin_integration.core.publish_time.form_tab%</argument>
             <tag name="sonata.admin.extension"/>
         </service>
 

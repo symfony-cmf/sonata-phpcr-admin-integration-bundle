@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Tests\Unit\DependencyInjection;
+namespace Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Unit\DependencyInjection;
 
 use Matthias\SymfonyDependencyInjectionTest\PhpUnit\AbstractExtensionTestCase;
-use Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\DependencyInjection\CmfSonataAdminIntegrationExtension;
+use Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\DependencyInjection\CmfSonataPhpcrAdminIntegrationExtension;
 
 class CmfSonataAdminExtensionTest extends AbstractExtensionTestCase
 {
@@ -22,7 +22,7 @@ class CmfSonataAdminExtensionTest extends AbstractExtensionTestCase
     protected function getContainerExtensions()
     {
         return array(
-            new CmfSonataAdminIntegrationExtension(),
+            new CmfSonataPhpcrAdminIntegrationExtension(),
         );
     }
 
@@ -67,7 +67,7 @@ class CmfSonataAdminExtensionTest extends AbstractExtensionTestCase
             ],
         ]);
 
-        $this->assertContainerBuilderHasParameter('cmf_sonata_admin_integration.seo.form_group', 'seo_form');
+        $this->assertContainerBuilderHasParameter('cmf_sonata_phpcr_admin_integration.seo.form_group', 'seo_form');
     }
 
     public function testBlockBundle()
@@ -94,14 +94,8 @@ class CmfSonataAdminExtensionTest extends AbstractExtensionTestCase
             ],
         ]);
 
-        $this->assertContainerBuilderHasParameter(
-            'cmf_sonata_admin_integration.block.persistence.phpcr.basepath',
-            'basepath_value'
-        );
-        $this->assertContainerBuilderHasParameter(
-            'cmf_sonata_admin_integration.block.persistence.phpcr.menu_basepath',
-            'menu_basepath_value'
-        );
+        $this->assertContainerBuilderHasParameter('cmf_sonata_phpcr_admin_integration.block.persistence.basepath', 'basepath_value');
+        $this->assertContainerBuilderHasParameter('cmf_sonata_phpcr_admin_integration.block.persistence.menu_basepath', 'menu_basepath_value');
     }
 
     public function testCoreDefaults()
@@ -129,22 +123,22 @@ class CmfSonataAdminExtensionTest extends AbstractExtensionTestCase
         ]);
 
         $this->assertContainerBuilderHasParameter(
-            'cmf_sonata_admin_integration.core.publishable.form_group',
+            'cmf_sonata_phpcr_admin_integration.core.publishable.form_group',
             'publishable_form'
         );
         $this->assertContainerBuilderHasParameter(
-            'cmf_sonata_admin_integration.core.publish_time.form_group',
+            'cmf_sonata_phpcr_admin_integration.core.publish_time.form_group',
             'publish_time_form'
         );
 
         $this->assertContainerBuilderHasService(
-            'cmf_sonata_admin_integration.core.extension.publish_workflow.time_period'
+            'cmf_sonata_phpcr_admin_integration.core.extension.publish_workflow.time_period'
         );
         $this->assertContainerBuilderHasService(
-            'cmf_sonata_admin_integration.core.extension.publish_workflow.publishable'
+            'cmf_sonata_phpcr_admin_integration.core.extension.publish_workflow.publishable'
         );
         $this->assertContainerBuilderHasService(
-            'cmf_sonata_admin_integration.core.extension.child'
+            'cmf_sonata_phpcr_admin_integration.core.extension.child'
         );
     }
 }

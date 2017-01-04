@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\DependencyInjection\Factory;
+namespace Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\DependencyInjection\Factory;
 
 use Symfony\Component\Config\Definition\Builder\NodeBuilder;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -42,9 +42,9 @@ class RoutingAdminFactory implements AdminFactoryInterface, CompilerPassInterfac
      */
     public function create(array $config, ContainerBuilder $container, XmlFileLoader $loader)
     {
-        $loader->load('routing-phpcr.xml');
+        $loader->load('routing.xml');
 
-        $container->setParameter('cmf_sonata_admin_integration.routing.phpcr.basepath', $config['basepath']);
+        $container->setParameter('cmf_sonata_phpcr_admin_integration.routing.basepath', $config['basepath']);
     }
 
     /**
@@ -52,16 +52,16 @@ class RoutingAdminFactory implements AdminFactoryInterface, CompilerPassInterfac
      */
     public function process(ContainerBuilder $container)
     {
-        if (!$container->hasParameter('cmf_sonata_admin_integration.routing.phpcr.basepath')) {
+        if (!$container->hasParameter('cmf_sonata_phpcr_admin_integration.routing.basepath')) {
             return;
         }
 
-        $basepath = $container->getParameter('cmf_sonata_admin_integration.routing.phpcr.basepath');
+        $basepath = $container->getParameter('cmf_sonata_phpcr_admin_integration.routing.basepath');
         if (null !== $basepath) {
             return;
         }
 
-        $basepaths = $container->getParameter('cmf_routing.dynamic.persistence.phpcr.route_basepaths');
-        $container->setParameter('cmf_sonata_admin_integration.routing.phpcr.basepath', reset($basepaths));
+        $basepaths = $container->getParameter('cmf_routing.dynamic.persistence.route_basepaths');
+        $container->setParameter('cmf_sonata_phpcr_admin_integration.routing.basepath', reset($basepaths));
     }
 }

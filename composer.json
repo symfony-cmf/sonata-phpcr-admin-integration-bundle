@@ -1,5 +1,5 @@
 {
-    "name": "symfony-cmf/sonata-admin-integration-bundle",
+    "name": "symfony-cmf/sonata-phpcr-admin-integration-bundle",
     "type": "symfony-bundle",
     "description": "Symfony CMF sonata admin implementations",
     "keywords": ["Symfony CMF", "Sonata", "Admin"],
@@ -43,8 +43,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Symfony\\Cmf\\Bundle\\SonataAdminIntegrationBundle\\": "src/",
-            "Symfony\\Cmf\\Bundle\\SonataAdminIntegrationBundle\\Tests\\": "tests/"
+            "Symfony\\Cmf\\Bundle\\SonataPhpcrAdminIntegrationBundle\\": "src/",
+            "Symfony\\Cmf\\Bundle\\SonataPhpcrAdminIntegrationBundle\\Tests\\": "tests/"
         }
     },
     "extra": {

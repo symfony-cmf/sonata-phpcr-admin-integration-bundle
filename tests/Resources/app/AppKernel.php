@@ -31,7 +31,7 @@ class AppKernel extends TestKernel
             new Sonata\SeoBundle\SonataSeoBundle(),
             new Burgov\Bundle\KeyValueFormBundle\BurgovKeyValueFormBundle(),
 
-            new Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\CmfSonataAdminIntegrationBundle(),
+            new Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\CmfSonataPhpcrAdminIntegrationBundle(),
             new Symfony\Cmf\Bundle\SeoBundle\CmfSeoBundle(),
             new Symfony\Cmf\Bundle\RoutingBundle\CmfRoutingBundle(),
             new Symfony\Cmf\Bundle\CoreBundle\CmfCoreBundle(),

@@ -7,9 +7,9 @@
     <services>
 
         <service
-                id="cmf_sonata_admin_integration.block.imagine.slideshow_admin"
-                class="Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Block\Imagine\SlideshowBlockAdmin"
-                parent="cmf_sonata_admin_integration.abstract_admin">
+                id="cmf_sonata_phpcr_admin_integration.block.imagine.slideshow_admin"
+                class="Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\Block\Imagine\SlideshowBlockAdmin"
+                parent="cmf_sonata_phpcr_admin_integration.abstract_admin">
             <tag
                     name="sonata.admin"
                     manager_type="doctrine_phpcr"
@@ -30,14 +30,14 @@
             </call>
 
             <call method="setRootPath">
-                <argument>%cmf_sonata_admin_integration.block.persistence.phpcr.basepath%</argument>
+                <argument>%cmf_sonata_phpcr_admin_integration.block.persistence.basepath%</argument>
             </call>
         </service>
 
         <service
-                id="cmf_sonata_admin_integration.block.imagine.imagine_admin"
-                class="Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Block\Imagine\ImagineBlockAdmin"
-                parent="cmf_sonata_admin_integration.abstract_admin">
+                id="cmf_sonata_phpcr_admin_integration.block.imagine.imagine_admin"
+                class="Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\Block\Imagine\ImagineBlockAdmin"
+                parent="cmf_sonata_phpcr_admin_integration.abstract_admin">
             <tag
                     name="sonata.admin"
                     manager_type="doctrine_phpcr"
@@ -54,7 +54,7 @@
             </call>
 
             <call method="setRootPath">
-                <argument>%cmf_sonata_admin_integration.block.persistence.phpcr.basepath%</argument>
+                <argument>%cmf_sonata_phpcr_admin_integration.block.persistence.basepath%</argument>
             </call>
         </service>
 

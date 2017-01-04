@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\DependencyInjection\Factory;
+namespace Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\DependencyInjection\Factory;
 
 use Symfony\Component\Config\Definition\Builder\NodeBuilder;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -64,11 +64,11 @@ class BlockAdminFactory implements AdminFactoryInterface
      */
     public function create(array $config, ContainerBuilder $container, XmlFileLoader $loader)
     {
-        $container->setParameter('cmf_sonata_admin_integration.block.persistence.phpcr.basepath', $config['basepath']);
-        $container->setParameter('cmf_sonata_admin_integration.block.persistence.phpcr.menu_basepath', $config['menu_basepath']);
+        $container->setParameter('cmf_sonata_phpcr_admin_integration.block.persistence.basepath', $config['basepath']);
+        $container->setParameter('cmf_sonata_phpcr_admin_integration.block.persistence.menu_basepath', $config['menu_basepath']);
 
-        $container->setParameter('cmf_sonata_admin_integration.block.extension.block_cache.form_group', $config['extensions']['block_cache']['form_group']);
-        $container->setParameter('cmf_sonata_admin_integration.block.extension.block_cache.form_tab', $config['extensions']['block_cache']['form_tab']);
+        $container->setParameter('cmf_sonata_phpcr_admin_integration.block.extension.block_cache.form_group', $config['extensions']['block_cache']['form_group']);
+        $container->setParameter('cmf_sonata_phpcr_admin_integration.block.extension.block_cache.form_tab', $config['extensions']['block_cache']['form_tab']);
 
         $loader->load('block.xml');
 

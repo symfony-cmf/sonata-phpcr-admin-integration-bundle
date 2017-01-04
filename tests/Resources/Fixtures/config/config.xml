@@ -1,9 +1,9 @@
 <container xmlns="http://symfony.com/schema/dic/services"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd
-        http://cmf.symfony.com/schema/dic/sonata-admin http://cmf.symfony.com/schema/dic/sonata-admin/sonata-admin.xsd">
+        http://cmf.symfony.com/schema/dic/sonata-phpcr-admin-integration http://cmf.symfony.com/schema/dic/sonata-phpcr-admin-integration/sonata-phpcr-admin-integration.xsd">
 
-    <config xmlns="http://cmf.symfony.com/schema/dic/sonata-admin">
+    <config xmlns="http://cmf.symfony.com/schema/dic/sonata-phpcr-admin-integration">
         <bundles>
             <seo enabled="true" form-group="seo_form" />
         </bundles>

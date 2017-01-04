@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Core\Extension;
+namespace Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\Core\Extension;
 
 use Sonata\AdminBundle\Admin\AbstractAdminExtension;
 use Sonata\AdminBundle\Form\FormMapper;
@@ -50,15 +50,15 @@ class PublishableExtension extends AbstractAdminExtension
 
         $formMapper
             ->tab($this->formTab, 'form.tab_publish' === $this->formTab
-                ? ['translation_domain' => 'CmfSonataAdminIntegrationBundle']
+                ? ['translation_domain' => 'CmfSonataPhpcrAdminIntegrationBundle']
                 : []
             )
                 ->with($this->formGroup, 'form.group_publish_workflow' === $this->formGroup
-                    ? ['translation_domain' => 'CmfSonataAdminIntegrationBundle']
+                    ? ['translation_domain' => 'CmfSonataPhpcrAdminIntegrationBundle']
                     : []
                 )
-                    ->add('publishable', CheckboxType::class, ['required' => false, 'translation_domain' => 'CmfSonataAdminIntegrationBundle'], [
-                        'translation_domain' => 'CmfSonataAdminIntegrationBundle',
+                    ->add('publishable', CheckboxType::class, ['required' => false, 'translation_domain' => 'CmfSonataPhpcrAdminIntegrationBundle'], [
+                        'translation_domain' => 'CmfSonataPhpcrAdminIntegrationBundle',
                         'help' => 'form.help_publishable',
                     ])
                 ->end()

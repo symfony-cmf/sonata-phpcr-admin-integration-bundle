@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Tests\Unit\DependencyInjection;
+namespace Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Unit\DependencyInjection;
 
 use Symfony\Cmf\Component\Testing\Unit\XmlSchemaTestCase;
 
@@ -22,7 +22,7 @@ class XmlSchemaTest extends XmlSchemaTestCase
         }, ['config.xml']);
 
         foreach ($xmlFiles as $xmlFile) {
-            $this->assertSchemaAcceptsXml([$xmlFile], __DIR__.'/../../../src/Resources/config/schema/sonata-admin.xsd');
+            $this->assertSchemaAcceptsXml([$xmlFile], __DIR__.'/../../../src/Resources/config/schema/sonata-phpcr-admin-integration.xsd');
         }
     }
 }

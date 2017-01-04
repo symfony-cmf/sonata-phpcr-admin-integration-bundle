@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Seo\Extension;
+namespace Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\Seo\Extension;
 
 use Sonata\AdminBundle\Admin\AbstractAdminExtension;
 use Sonata\AdminBundle\Admin\AdminInterface;
@@ -50,17 +50,17 @@ class SeoContentAdminExtension extends AbstractAdminExtension
 
         $formMapper
             ->tab($this->formTab, 'form.tab_seo' === $this->formTab
-                ? ['translation_domain' => 'CmfSonataAdminIntegrationBundle']
+                ? ['translation_domain' => 'CmfSonataPhpcrAdminIntegrationBundle']
                 : []
             )
                 ->with($this->formGroup, 'form.group_seo' === $this->formGroup
-                    ? ['translation_domain' => 'CmfSonataAdminIntegrationBundle']
+                    ? ['translation_domain' => 'CmfSonataPhpcrAdminIntegrationBundle']
                     : []
                 )
                     ->add('seoMetadata', SeoMetadataType::class, [
                         'label' => false,
                         'label_format' => 'form.label_%name%',
-                        'translation_domain' => 'CmfSonataAdminIntegrationBundle',
+                        'translation_domain' => 'CmfSonataPhpcrAdminIntegrationBundle',
                     ])
                 ->end()
             ->end()

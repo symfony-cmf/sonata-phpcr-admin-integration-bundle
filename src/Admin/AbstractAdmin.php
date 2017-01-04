@@ -1,6 +1,6 @@
 <?php
 
-namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin;
+namespace Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin;
 
 use Doctrine\Bundle\PHPCRBundle\Form\DataTransformer\DocumentToPathTransformer;
 use Sonata\DoctrinePHPCRAdminBundle\Admin\Admin;

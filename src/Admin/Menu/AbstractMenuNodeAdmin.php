@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\Menu;
+namespace Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\Menu;
 
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
-use Symfony\Cmf\Bundle\SonataAdminIntegrationBundle\Admin\AbstractAdmin;
+use Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\AbstractAdmin;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Cmf\Bundle\MenuBundle\Model\MenuNodeBase;
 
@@ -36,7 +36,7 @@ abstract class AbstractMenuNodeAdmin extends AbstractAdmin
     /**
      * @var string
      */
-    protected $translationDomain = 'CmfSonataAdminIntegrationBundle';
+    protected $translationDomain = 'CmfSonataPhpcrAdminIntegrationBundle';
 
     protected function configureListFields(ListMapper $listMapper)
     {
