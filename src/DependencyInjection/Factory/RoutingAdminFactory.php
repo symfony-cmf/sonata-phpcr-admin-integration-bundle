@@ -61,7 +61,7 @@ class RoutingAdminFactory implements AdminFactoryInterface, CompilerPassInterfac
             return;
         }
 
-        $basepaths = $container->getParameter('cmf_routing.dynamic.persistence.route_basepaths');
+        $basepaths = $container->getParameter('cmf_routing.dynamic.persistence.phpcr.route_basepaths');
         $container->setParameter('cmf_sonata_phpcr_admin_integration.routing.basepath', reset($basepaths));
     }
 }
