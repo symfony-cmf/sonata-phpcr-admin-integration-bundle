@@ -1,4 +1,4 @@
-# Symfony CMF Sonata Phpcr Admin Bundle
+# Symfony CMF Sonata PHPCR Admin Bundle
 
 [![Build Status](https://travis-ci.org/symfony-cmf/sonata-admin-integration-bundle.svg?branch=master)](https://travis-ci.org/symfony-cmf/sonata-admin-integration-bundle)
 [![StyleCI](https://styleci.io/repos/60730554/shield?style=plastic)](https://styleci.io/repos/60730554)
@@ -8,19 +8,16 @@
 This bundle is part of the [Symfony Content Management Framework (CMF)](http://cmf.symfony.com/)
 and licensed under the [MIT License](LICENSE).
 
-It provides a Admin implementations for the following bundles:
-* CmfSeoBundle
-
 ## Requirements
 
-* Symfony 2.5+
+* Symfony 2.8+
 * See also the `require` section of [composer.json](composer.json)
 
 ## Documentation
 
 For the install guide and reference, see:
 
-* [CmfSonataAdminIntegrationBundle documentation](http://symfony.com/doc/master/cmf/bundles/sonata-admin/index.html)
+* [CmfSonataPhpcrAdminIntegrationBundle documentation](http://symfony.com/doc/master/cmf/bundles/sonata_phpcr_admin_integration/index.html)
 
 See also:
 
