@@ -10,7 +10,8 @@ and licensed under the [MIT License](LICENSE).
 
 ## Requirements
 
-* Symfony 2.8+
+* PHP 5.6 / 7
+* Symfony 2.8 / 3
 * See also the `require` section of [composer.json](composer.json)
 
 ## Documentation
