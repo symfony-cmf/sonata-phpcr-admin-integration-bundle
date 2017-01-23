@@ -11,6 +11,7 @@
 
 namespace Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\DependencyInjection\Factory;
 
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\Definition\Builder\NodeBuilder;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
@@ -70,10 +71,10 @@ class BlockAdminFactory implements AdminFactoryInterface
 
         $bundles = $container->getParameter('kernel.bundles');
 
-        if (true === $config['enable_menu']
-            || ('auto' === $config['enable_menu'] && isset($bundles['CmfMenuBundle']))
-        ) {
+        if ($config['enable_menu'] && array_key_exists('CmfMenuBundle', $bundles)) {
             $loader->load('block-menu.xml');
+        } elseif (true === $config['enable_menu'] && !array_key_exists('CmfMenuBundle', $bundles)) {
+            throw new InvalidConfigurationException('To use the menu block, you need the symfony-cmf/menu-bundle in your project.');
         }
     }
 }
