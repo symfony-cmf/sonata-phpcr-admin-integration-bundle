@@ -38,6 +38,7 @@ class AppKernel extends TestKernel
             new Symfony\Cmf\Bundle\BlockBundle\CmfBlockBundle(),
             new Symfony\Cmf\Bundle\MenuBundle\CmfMenuBundle(),
             new Symfony\Cmf\Bundle\ContentBundle\CmfContentBundle(),
+            new JMS\SerializerBundle\JMSSerializerBundle(),
         ));
 
         if (class_exists('Symfony\Cmf\Bundle\ResourceRestBundle\CmfResourceRestBundle')) {
