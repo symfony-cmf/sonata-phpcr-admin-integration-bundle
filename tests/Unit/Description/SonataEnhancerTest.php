@@ -17,9 +17,9 @@ use Sonata\AdminBundle\Admin\Pool;
 use Sonata\AdminBundle\Model\AuditManagerInterface;
 use Sonata\AdminBundle\Model\ModelManagerInterface;
 use Sonata\AdminBundle\Route\PathInfoBuilder;
+use Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Description\SonataEnhancer;
 use Symfony\Cmf\Component\Resource\Description\Description;
 use Symfony\Cmf\Component\Resource\Description\Descriptor;
-use Symfony\Cmf\Component\Resource\Description\Enhancer\Sonata\AdminEnhancer;
 use Symfony\Cmf\Component\Resource\Repository\Resource\CmfResource;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
@@ -69,7 +69,7 @@ class SonataEnhancerTest extends \PHPUnit_Framework_TestCAse
         });
 
         $description = new Description($this->resource->reveal());
-        $enhancer = new AdminEnhancer($this->pool, $this->generator->reveal());
+        $enhancer = new SonataEnhancer($this->pool, $this->generator->reveal());
         $enhancer->enhance($description);
 
         $this->assertEquals('/std_class_edit', $description->get(Descriptor::LINK_EDIT_HTML));
