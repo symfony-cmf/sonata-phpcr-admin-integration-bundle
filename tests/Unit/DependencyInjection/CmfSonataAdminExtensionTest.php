@@ -141,4 +141,23 @@ class CmfSonataAdminExtensionTest extends AbstractExtensionTestCase
             'cmf_sonata_phpcr_admin_integration.core.extension.child'
         );
     }
+
+    public function testEnhancerExists()
+    {
+        $this->container->setParameter(
+            'kernel.bundles',
+            [
+                'SonataDoctrinePHPCRAdminBundle' => true,
+                'SonataAdminBundle' => true,
+            ]
+        );
+
+        $this->load(['bundles' => []]);
+
+        $this->assertContainerBuilderHasServiceDefinitionWithTag(
+            'cmf_sonata_phpcr_admin_integration.description.enhancer',
+            'cmf_resource.description.enhancer',
+            ['alias' => 'sonata_phpcr_admin']
+        );
+    }
 }

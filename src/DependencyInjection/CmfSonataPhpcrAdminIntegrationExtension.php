@@ -62,6 +62,7 @@ class CmfSonataPhpcrAdminIntegrationExtension extends Extension implements Compi
         $this->loadBundles($config['bundles'], $loader, $container);
 
         $loader->load('main.xml');
+        $loader->load('enhancer.xml');
     }
 
     private function loadBundles(array $config, XmlFileLoader $loader, ContainerBuilder $container)
