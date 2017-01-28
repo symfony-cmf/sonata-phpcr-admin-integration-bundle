@@ -17,6 +17,7 @@ use Symfony\Cmf\Component\Resource\Description\Description;
 use Symfony\Cmf\Component\Resource\Description\DescriptionEnhancerInterface;
 use Symfony\Cmf\Component\Resource\Description\Descriptor;
 use Symfony\Cmf\Component\Resource\Puli\Api\PuliResource;
+use Symfony\Cmf\Component\Resource\Repository\Resource\CmfResource;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 /**
@@ -108,7 +109,7 @@ class SonataEnhancer implements DescriptionEnhancerInterface
      */
     public function supports(PuliResource $resource)
     {
-        if (false === $resource instanceof CmfResource) {
+        if (!$resource instanceof CmfResource) {
             return false;
         }
 
