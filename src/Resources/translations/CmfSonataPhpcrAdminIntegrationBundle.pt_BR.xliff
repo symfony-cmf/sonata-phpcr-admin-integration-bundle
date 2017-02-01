@@ -542,13 +542,6 @@
                 <source>form.help_options</source>
                 <target>
                     <![CDATA[
-                    Locale: Prepend locale to route like /{locale}/your/route<br/>
-                    Format: Append format to route like /your/route.{format}. Default format is 'html'<br/>
-                    Slash: Append a trailing slash to route like /your/route/
-                    ]]>
-                </target>
-                <target>
-                    <![CDATA[
                     Locale: Adiciona no começo um local para a rota, ex /{locale}/sua/rota<br/>
                     Format: Adiciona no final um local para a rota, ex /sua/rota.{formato}. O formato padrão é 'html'<br/>
                     Slash: Adiciona uma barra ao final da rota, ex /your/route/
