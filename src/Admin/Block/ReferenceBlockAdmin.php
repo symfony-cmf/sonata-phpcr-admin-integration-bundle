@@ -50,6 +50,8 @@ class ReferenceBlockAdmin extends AbstractBlockAdmin
                 ->end()
             ->end()
         ;
+
+        $this->addTransformerToField($formMapper->getFormBuilder(), 'referencedBlock');
     }
 
     /**
