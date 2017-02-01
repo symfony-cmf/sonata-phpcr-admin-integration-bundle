@@ -14,11 +14,13 @@ namespace Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\Content;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
-use Sonata\DoctrinePHPCRAdminBundle\Admin\Admin;
-use Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\Form\Type\StaticContentType;
 use Symfony\Cmf\Bundle\ContentBundle\Model\StaticContentBase;
+use Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\AbstractAdmin;
+use Symfony\Cmf\Bundle\TreeBrowserBundle\Form\Type\TreeSelectType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
-class StaticContentAdmin extends Admin
+class StaticContentAdmin extends AbstractAdmin
 {
     protected $translationDomain = 'CmfSonataPhpcrAdminIntegrationBundle';
 
@@ -37,25 +39,31 @@ class StaticContentAdmin extends Admin
 
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $builder = $formMapper->getFormBuilder()->getFormFactory()->createBuilder(StaticContentType::class, null, [
-            'readonly_parent_document' => (bool) $this->id($this->getSubject()),
-            'label_format' => 'form.label_%name%',
-            'translation_domain' => 'CmfSonataPhpcrAdminIntegrationBundle',
-        ]);
-
+        $editView = (bool) $this->id($this->getSubject());
         $formMapper
             ->tab('form.tab_general')
                 ->with('form.group_content', ['class' => 'col-md-9'])
-                    ->add($builder->get('title'))
-                    ->add($builder->get('body'))
+                    ->add('title', TextType::class)
+                    ->add('body', TextareaType::class)
                 ->end()
 
                 ->with('form.group_location', ['class' => 'col-md-3'])
-                    ->add($builder->get('parentDocument'))
-                    ->add($builder->get('name'))
+                    ->ifTrue($editView)
+                        ->add('parentDocument', TextType::class, ['disabled' => true])
+                    ->ifEnd()
+                    ->ifFalse($editView)
+                        ->add('parentDocument', TreeSelectType::class, [
+                            'widget' => 'browser',
+                            'root_node' => $this->getRootPath(),
+                        ])
+                    ->ifend()
+
+                    ->add('name', TextType::class)
                 ->end()
             ->end()
         ;
+
+        $this->addTransformerToField($formMapper->getFormBuilder(), 'parentDocument');
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
