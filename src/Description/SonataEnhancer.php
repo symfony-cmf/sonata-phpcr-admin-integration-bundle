@@ -39,6 +39,8 @@ class SonataEnhancer implements DescriptionEnhancerInterface
      */
     private $urlGenerator;
 
+    private $adminMap = [];
+
     /**
      * @param Pool                  $pool
      * @param UrlGeneratorInterface $urlGenerator
@@ -58,7 +60,7 @@ class SonataEnhancer implements DescriptionEnhancerInterface
 
         // sonata has dependency on ClassUtils so this is fine.
         $class = ClassUtils::getClass($object);
-        $admin = $this->pool->getAdminByClass($class);
+        $admin = $this->getAdminByClass($class);
 
         $links = [];
 
@@ -118,6 +120,22 @@ class SonataEnhancer implements DescriptionEnhancerInterface
         // sonata has dependency on ClassUtils so this is fine.
         $class = ClassUtils::getClass($payload);
 
-        return $this->pool->hasAdminByClass($class);
+        return null !== $this->getAdminByClass($class);
+    }
+
+    private function getAdminByClass($class)
+    {
+        if (array_key_exists($class, $this->adminMap)) {
+            return $this->adminMap[$class];
+        }
+
+        $_class = $class;
+        while ($_class && !$this->pool->hasAdminByClass($_class)) {
+            $_class = get_parent_class($_class);
+        }
+
+        $this->adminMap[$class] = $_class ? $this->pool->getAdminByClass($_class) : null;
+
+        return $this->adminMap[$class];
     }
 }

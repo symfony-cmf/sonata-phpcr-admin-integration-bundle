@@ -40,6 +40,7 @@ class SonataEnhancerTest extends \PHPUnit_Framework_TestCAse
         $this->pool = new Pool($this->container, 'Test', 'logo');
         $this->pool->setAdminClasses([
             'stdClass' => ['std_class_admin'],
+            'Exception' => ['std_class_admin'],
         ]);
         $this->pool->setAdminServiceIds(['std_class_admin']);
 
@@ -58,11 +59,11 @@ class SonataEnhancerTest extends \PHPUnit_Framework_TestCAse
     }
 
     /**
-     * It should provide a description.
+     * @dataProvider provideDescriptionData
      */
-    public function testDescriptionProvide()
+    public function testDescriptionProvide($class)
     {
-        $this->resource->getPayload()->willReturn(new \stdClass());
+        $this->resource->getPayload()->willReturn($class);
 
         $this->generator->generate(Argument::cetera())->will(function ($args) {
             return '/'.$args[0];
@@ -76,6 +77,14 @@ class SonataEnhancerTest extends \PHPUnit_Framework_TestCAse
         $this->assertEquals('/std_class_create', $description->get(Descriptor::LINK_CREATE_HTML));
         $this->assertEquals('/std_class_show', $description->get(Descriptor::LINK_SHOW_HTML));
         $this->assertEquals('/std_class_delete', $description->get(Descriptor::LINK_REMOVE_HTML));
+    }
+
+    public function provideDescriptionData()
+    {
+        return [
+            [new \stdClass()],
+            [new \LogicException()],
+        ];
     }
 }
 
