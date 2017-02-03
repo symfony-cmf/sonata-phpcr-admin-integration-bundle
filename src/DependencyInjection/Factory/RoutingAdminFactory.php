@@ -35,6 +35,7 @@ class RoutingAdminFactory implements AdminFactoryInterface, CompilerPassInterfac
     public function addConfiguration(NodeBuilder $builder)
     {
         $builder->scalarNode('basepath')->defaultNull()->end();
+        $builder->scalarNode('content_basepath')->defaultNull()->end();
     }
 
     /**
@@ -45,6 +46,7 @@ class RoutingAdminFactory implements AdminFactoryInterface, CompilerPassInterfac
         $loader->load('routing.xml');
 
         $container->setParameter('cmf_sonata_phpcr_admin_integration.routing.basepath', $config['basepath']);
+        $container->setParameter('cmf_sonata_phpcr_admin_integration.routing.content_basepath', $config['content_basepath']);
     }
 
     /**
@@ -57,11 +59,17 @@ class RoutingAdminFactory implements AdminFactoryInterface, CompilerPassInterfac
         }
 
         $basepath = $container->getParameter('cmf_sonata_phpcr_admin_integration.routing.basepath');
-        if (null !== $basepath) {
-            return;
+        if (null === $basepath) {
+            $basepaths = $container->getParameter('cmf_routing.dynamic.persistence.phpcr.route_basepaths');
+            $container->setParameter('cmf_sonata_phpcr_admin_integration.routing.basepath', reset($basepaths));
         }
 
-        $basepaths = $container->getParameter('cmf_routing.dynamic.persistence.phpcr.route_basepaths');
-        $container->setParameter('cmf_sonata_phpcr_admin_integration.routing.basepath', reset($basepaths));
+        $contentBasepath = $container->getParameter('cmf_sonata_phpcr_admin_integration.routing.content_basepath');
+        if (null === $contentBasepath) {
+            $contentBasepath = $container->hasParameter('cmf_content.persistence.phpcr.content_basepath')
+                ? $container->getParameter('cmf_content.persistence.phpcr.content_basepath')
+                : '/';
+            $container->setParameter('cmf_sonata_phpcr_admin_integration.routing.content_basepath', $contentBasepath);
+        }
     }
 }
