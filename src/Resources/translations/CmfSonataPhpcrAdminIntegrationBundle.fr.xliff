@@ -355,7 +355,7 @@
                 <target>Éléments</target>
             </trans-unit>
             <trans-unit id="form.group_target">
-                <source>form.group_target</source>                
+                <source>form.group_target</source>
                 <target>Destination du lien</target>
             </trans-unit>
             <trans-unit id="form.group_menu_options">
@@ -376,7 +376,7 @@
                 <target>Type de lien</target>
             </trans-unit>
             <trans-unit id="form.label_link">
-                <source>form.label_link</source>                
+                <source>form.label_link</source>
                 <target>Lien</target>
             </trans-unit>
             <trans-unit id="form.label_route">
@@ -484,7 +484,7 @@
                 <target>Emplacement</target>
             </trans-unit>
             <trans-unit id="form.group_path">
-                <source>form.group_path</source>                
+                <source>form.group_path</source>
                 <target>Chemin</target>
             </trans-unit>
             <trans-unit id="form.group_data">
@@ -579,6 +579,15 @@
             <trans-unit id="breadcrumb.link_redirect_route_delete">
                 <source>breadcrumb.link_redirect_route_delete</source>
                 <target>Supprimer</target>
+            </trans-unit>
+
+            <trans-unit id="admin.menu_frontend_link_caption">
+                <source>admin.menu_frontend_link_caption</source>
+                <target>Frontend</target>
+            </trans-unit>
+            <trans-unit id="admin.menu_frontend_link_title">
+                <source>admin.menu_frontend_link_title</source>
+                <target>Aperçu dans la page</target>
             </trans-unit>
 
 

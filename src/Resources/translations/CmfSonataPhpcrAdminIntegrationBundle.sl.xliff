@@ -581,6 +581,16 @@
                 <target>Izbriši</target>
             </trans-unit>
 
+            <!-- TODO translate -->
+            <trans-unit id="admin.menu_frontend_link_caption">
+                <source>admin.menu_frontend_link_caption</source>
+                <target>Frontend</target>
+            </trans-unit>
+            <trans-unit id="admin.menu_frontend_link_title">
+                <source>admin.menu_frontend_link_title</source>
+                <target>Open frontend view in new tab</target>
+            </trans-unit>
+
 
             <!-- $Seo -->
             <trans-unit id="form.tab_seo">
