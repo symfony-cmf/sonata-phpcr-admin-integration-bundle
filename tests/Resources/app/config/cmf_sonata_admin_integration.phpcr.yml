@@ -94,4 +94,3 @@ cmf_sonata_phpcr_admin_integration:
         block:
             basepath: /test/blocks
             menu_basepath: /test/menus
-            use_imagine: true

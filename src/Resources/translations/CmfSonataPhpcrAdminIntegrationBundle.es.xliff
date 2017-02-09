@@ -78,10 +78,6 @@
                 <source>dashboard.label_slideshow_block</source>
                 <target>Bloque de presentación de diapositivas</target>
             </trans-unit>
-            <trans-unit id="dashboard.label_imagine_block">
-                <source>dashboard.label_imagine_block</source>
-                <target>Bloque de imagen</target>
-            </trans-unit>
             <trans-unit id="dashboard.label_string_block">
                 <source>dashboard.label_string_block</source>
                 <target>Bloque de texto</target>
@@ -227,22 +223,6 @@
             </trans-unit>
             <trans-unit id="breadcrumb.link_menu_block_delete">
                 <source>breadcrumb.link_menu_block_delete</source>
-                <target>Eliminar</target>
-            </trans-unit>
-            <trans-unit id="breadcrumb.link_imagine_block_list">
-                <source>breadcrumb.link_imagine_block_list</source>
-                <target>Bloques de imagen</target>
-            </trans-unit>
-            <trans-unit id="breadcrumb.link_imagine_block_create">
-                <source>breadcrumb.link_imagine_block_create</source>
-                <target>Crear</target>
-            </trans-unit>
-            <trans-unit id="breadcrumb.link_imagineblock_edit">
-                <source>breadcrumb.link_imagine_block_edit</source>
-                <target>Editar</target>
-            </trans-unit>
-            <trans-unit id="breadcrumb.link_imagine_block_delete">
-                <source>breadcrumb.link_imagine_block_delete</source>
                 <target>Eliminar</target>
             </trans-unit>
 

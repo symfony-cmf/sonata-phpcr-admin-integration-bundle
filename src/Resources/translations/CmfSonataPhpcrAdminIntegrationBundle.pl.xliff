@@ -83,10 +83,6 @@
                 <!-- TODO: Translate -->
                 <target>Slideshow block</target>
             </trans-unit>
-            <trans-unit id="dashboard.label_imagine_block">
-                <source>dashboard.label_imagine_block</source>
-                <!-- TODO: Translate -->
-                <target>Image block</target>
             </trans-unit>
             <trans-unit id="dashboard.label_string_block">
                 <source>dashboard.label_string_block</source>
@@ -268,26 +264,6 @@
             </trans-unit>
             <trans-unit id="breadcrumb.link_menu_block_delete">
                 <source>breadcrumb.link_menu_block_delete</source>
-                <!-- TODO: Translate -->
-                <target>Delete</target>
-            </trans-unit>
-            <trans-unit id="breadcrumb.link_imagine_block_list">
-                <source>breadcrumb.link_imagine_block_list</source>
-                <!-- TODO: Translate -->
-                <target>Image blocks</target>
-            </trans-unit>
-            <trans-unit id="breadcrumb.link_imagine_block_create">
-                <source>breadcrumb.link_imagine_block_create</source>
-                <!-- TODO: Translate -->
-                <target>Create</target>
-            </trans-unit>
-            <trans-unit id="breadcrumb.link_imagineblock_edit">
-                <source>breadcrumb.link_imagine_block_edit</source>
-                <!-- TODO: Translate -->
-                <target>Edit</target>
-            </trans-unit>
-            <trans-unit id="breadcrumb.link_imagine_block_delete">
-                <source>breadcrumb.link_imagine_block_delete</source>
                 <!-- TODO: Translate -->
                 <target>Delete</target>
             </trans-unit>
