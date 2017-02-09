@@ -47,9 +47,7 @@ class CmfSonataPhpcrAdminIntegrationExtension extends Extension implements Compi
      */
     public function load(array $configs, ContainerBuilder $container)
     {
-        $this->addDefaultFactories($container);
-
-        $configuration = new Configuration($this->factories);
+        $configuration = $this->getConfiguration([], $container);
         $config = $this->processConfiguration($configuration, $configs);
         $bundles = $container->getParameter('kernel.bundles');
 
@@ -63,6 +61,18 @@ class CmfSonataPhpcrAdminIntegrationExtension extends Extension implements Compi
 
         $loader->load('main.xml');
         $loader->load('enhancer.xml');
+    }
+
+    /**
+     * {@inheritdoc}
+     *
+     * Overwritten because configuration can not be auto instantiated as it has a constructor.
+     */
+    public function getConfiguration(array $config, ContainerBuilder $container)
+    {
+        $this->addDefaultFactories($container);
+
+        return new Configuration($this->factories);
     }
 
     private function loadBundles(array $config, XmlFileLoader $loader, ContainerBuilder $container)

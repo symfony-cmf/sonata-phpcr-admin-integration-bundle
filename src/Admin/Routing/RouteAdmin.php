@@ -64,7 +64,7 @@ class RouteAdmin extends AbstractAdmin
                         ->add(
                             'content',
                             TreeSelectType::class,
-                            ['root_node' => $this->routeRoot, 'widget' => 'browser', 'required' => false]
+                            ['root_node' => $this->contentRoot, 'widget' => 'browser', 'required' => false]
                         )
                     ->end() // group general
                 ->end() // tab general
