@@ -117,10 +117,6 @@
                 <source>breadcrumb.link_slideshow_block_list</source>
                 <target>Slideshow Blöcke</target>
             </trans-unit>
-            <trans-unit id="dashboard.label_imagine_block">
-                <source>dashboard.label_imagine_block</source>
-                <target>Image Blöcke</target>
-            </trans-unit>
             <trans-unit id="breadcrumb.link_slideshow_block_create">
                 <source>breadcrumb.link_slideshow_block_create</source>
                 <target>Erstellen</target>
@@ -227,22 +223,6 @@
             </trans-unit>
             <trans-unit id="breadcrumb.link_menu_block_delete">
                 <source>breadcrumb.link_menu_block_delete</source>
-                <target>Löschen</target>
-            </trans-unit>
-            <trans-unit id="breadcrumb.link_imagine_block_list">
-                <source>breadcrumb.link_imagine_block_list</source>
-                <target>Imageblöcke</target>
-            </trans-unit>
-            <trans-unit id="breadcrumb.link_imagine_block_create">
-                <source>breadcrumb.link_imagine_block_create</source>
-                <target>Erstellen</target>
-            </trans-unit>
-            <trans-unit id="breadcrumb.link_imagineblock_edit">
-                <source>breadcrumb.link_imagine_block_edit</source>
-                <target>Bearbeiten</target>
-            </trans-unit>
-            <trans-unit id="breadcrumb.link_imagine_block_delete">
-                <source>breadcrumb.link_imagine_block_delete</source>
                 <target>Löschen</target>
             </trans-unit>
 

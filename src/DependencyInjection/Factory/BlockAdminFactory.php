@@ -48,10 +48,6 @@ class BlockAdminFactory implements AdminFactoryInterface
             ->end()
             ->scalarNode('basepath')->defaultNull()->end()
             ->scalarNode('menu_basepath')->defaultNull()->end()
-            ->enumNode('use_imagine')
-                ->values([true, false, 'auto'])
-                ->defaultValue('auto')
-            ->end()
             ->enumNode('enable_menu')
                 ->values([true, false, 'auto'])
                 ->defaultValue('auto')
@@ -73,11 +69,6 @@ class BlockAdminFactory implements AdminFactoryInterface
         $loader->load('block.xml');
 
         $bundles = $container->getParameter('kernel.bundles');
-        if (true === $config['use_imagine']
-            || ('auto' === $config['use_imagine'] && isset($bundles['CmfMediaBundle']))
-        ) {
-            $loader->load('block-imagine.xml');
-        }
 
         if (true === $config['enable_menu']
             || ('auto' === $config['enable_menu'] && isset($bundles['CmfMenuBundle']))
