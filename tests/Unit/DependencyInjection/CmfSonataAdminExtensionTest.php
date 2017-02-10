@@ -45,37 +45,6 @@ class CmfSonataAdminExtensionTest extends AbstractExtensionTestCase
         $this->load([]);
     }
 
-    public function testSeoBundle()
-    {
-        $this->container->setParameter(
-            'kernel.bundles',
-            array(
-                'CmfSeoBundle' => true,
-                'CmfRoutingBundle' => true,
-                'SonataDoctrinePHPCRAdminBundle' => true,
-                'DoctrinePHPCRBundle' => true,
-                'BurgovKeyValueFormBundle' => true,
-            )
-        );
-
-        $this->load([
-            'bundles' => [
-                'seo' => [
-                    'enabled' => true,
-                    'extensions' => [
-                        'metadata' => [
-                            'form_group' => 'seo_group',
-                            'form_tab' => 'seo_tab',
-                        ],
-                    ],
-                ],
-            ],
-        ]);
-
-        $this->assertContainerBuilderHasParameter('cmf_sonata_phpcr_admin_integration.seo.extension.metadata.form_group', 'seo_group');
-        $this->assertContainerBuilderHasParameter('cmf_sonata_phpcr_admin_integration.seo.extension.metadata.form_tab', 'seo_tab');
-    }
-
     public function testBlockBundle()
     {
         $this->container->setParameter(
