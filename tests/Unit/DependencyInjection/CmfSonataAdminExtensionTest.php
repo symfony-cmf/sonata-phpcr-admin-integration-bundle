@@ -45,32 +45,6 @@ class CmfSonataAdminExtensionTest extends AbstractExtensionTestCase
         $this->load([]);
     }
 
-    public function testBlockBundle()
-    {
-        $this->container->setParameter(
-            'kernel.bundles',
-            [
-                'CmfBlockBundle' => true,
-                'CmfMenuBundle' => true,
-                'CmfRoutingBundle' => true,
-                'SonataDoctrinePHPCRAdminBundle' => true,
-                'DoctrinePHPCRBundle' => true,
-            ]
-        );
-
-        $this->load([
-            'bundles' => [
-                'block' => [
-                    'enabled' => true,
-                    'basepath' => 'basepath_value',
-                    'menu_basepath' => 'menu_basepath_value',
-                ],
-            ],
-        ]);
-
-        $this->assertContainerBuilderHasParameter('cmf_sonata_phpcr_admin_integration.block.persistence.basepath', 'basepath_value');
-        $this->assertContainerBuilderHasParameter('cmf_sonata_phpcr_admin_integration.block.persistence.menu_basepath', 'menu_basepath_value');
-    }
 
     public function testCoreDefaults()
     {
