@@ -58,6 +58,7 @@ class RedirectRouteAdmin extends AbstractAdmin
             ->end()
         ;
         $this->addTransformerToField($formMapper->getFormBuilder(), 'parentDocument');
+        $this->addTransformerToField($formMapper->getFormBuilder(), 'routeTarget');
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
