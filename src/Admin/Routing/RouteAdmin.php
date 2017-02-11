@@ -58,42 +58,46 @@ class RouteAdmin extends AbstractAdmin
                     )
                     ->add('name', TextType::class)
                 ->end() // group location
+        ;
 
-                ->ifTrue(null === $this->getParentFieldDescription())
-                    ->with('form.group_target', ['class' => 'col-md-9'])
-                        ->add(
-                            'content',
-                            TreeSelectType::class,
-                            ['root_node' => $this->contentRoot, 'widget' => 'browser', 'required' => false]
-                        )
-                    ->end() // group general
-                ->end() // tab general
+        if (null === $this->getParentFieldDescription()) {
+            $formMapper
+                ->with('form.group_target', ['class' => 'col-md-9'])
+                    ->add(
+                        'content',
+                        TreeSelectType::class,
+                        ['root_node' => $this->contentRoot, 'widget' => 'browser', 'required' => false]
+                    )
+                ->end() // group general
+            ->end() // tab general
 
-                ->tab('form.tab_routing')
-                    ->with('form.group_path', ['class' => 'col-md-6'])
-                        ->add(
-                            'variablePattern',
-                            TextType::class,
-                            ['required' => false],
-                            ['help' => 'form.help_variable_pattern']
-                        )
-                        ->add(
-                            'options',
-                            ImmutableArrayType::class,
-                            ['keys' => $this->configureFieldsForOptions($this->getSubject()->getOptions())],
-                            ['help' => 'form.help_options']
-                        )
-                    ->end() // group path
+            ->tab('form.tab_routing')
+                ->with('form.group_path', ['class' => 'col-md-6'])
+                    ->add(
+                        'variablePattern',
+                        TextType::class,
+                        ['required' => false],
+                        ['help' => 'form.help_variable_pattern']
+                    )
+                    ->add(
+                        'options',
+                        ImmutableArrayType::class,
+                        ['keys' => $this->configureFieldsForOptions($this->getSubject()->getOptions())],
+                        ['help' => 'form.help_options']
+                    )
+                ->end() // group path
 
-                    ->with('form.group_defaults', ['class' => 'col-md-6'])
-                        ->add(
-                            'defaults',
-                            ImmutableArrayType::class,
-                            ['label' => false, 'keys' => $this->configureFieldsForDefaults($this->getSubject()->getDefaults())]
-                        )
-                    ->end() // group data
-                ->ifEnd()
+                ->with('form.group_defaults', ['class' => 'col-md-6'])
+                    ->add(
+                        'defaults',
+                        ImmutableArrayType::class,
+                        ['label' => false, 'keys' => $this->configureFieldsForDefaults($this->getSubject()->getDefaults())]
+                    )
+                ->end() // group data
+            ;
+        }
 
+        $formMapper
             ->end(); // tab general/routing
 
         $this->addTransformerToField($formMapper->getFormBuilder(), 'parentDocument');
