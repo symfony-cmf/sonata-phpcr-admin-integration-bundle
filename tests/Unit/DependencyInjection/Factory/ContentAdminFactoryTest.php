@@ -1,24 +1,9 @@
 <?php
 
-/*
- * This file is part of the Symfony CMF package.
- *
- * (c) 2011-2017 Symfony CMF
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 namespace Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Unit\DependencyInjection\Factory;
 
-use Symfony\Component\Config\Definition\Builder\TreeBuilder;
-use Symfony\Component\Config\Definition\Processor;
-use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
-use Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\DependencyInjection\Factory\ContentAdminFactory;
-
 /**
- * @author Wouter de Jong <wouter@wouterj.nl>
+ * @author Maximilian Berghoff <Maximilian.Berghoff@mayflower.de>
  */
 class ContentAdminFactoryTest extends \PHPUnit_Framework_TestCase
 {
