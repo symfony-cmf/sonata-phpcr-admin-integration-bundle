@@ -23,13 +23,6 @@ class RedirectRouteAdmin extends AbstractAdmin
 {
     protected $translationDomain = 'CmfSonataPhpcrAdminIntegrationBundle';
 
-    /**
-     * Root path for the route parent selection.
-     *
-     * @var string
-     */
-    protected $routeRoot;
-
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper->addIdentifier('path', 'text');
@@ -42,7 +35,7 @@ class RedirectRouteAdmin extends AbstractAdmin
                 ->add(
                     'parentDocument',
                     TreeSelectType::class,
-                    ['root_node' => $this->routeRoot, 'widget' => 'browser']
+                    ['root_node' => $this->getRootPath(), 'widget' => 'browser']
                 )
                 ->add('name', TextType::class)
             ->end()
@@ -53,7 +46,7 @@ class RedirectRouteAdmin extends AbstractAdmin
                 ->add(
                     'routeTarget',
                     TreeSelectType::class,
-                    ['root_node' => $this->routeRoot, 'widget' => 'browser', 'required' => false]
+                    ['root_node' => $this->getRootPath(), 'widget' => 'browser', 'required' => false]
                 )
             ->end()
         ;
@@ -64,11 +57,6 @@ class RedirectRouteAdmin extends AbstractAdmin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper->add('name', 'doctrine_phpcr_nodename');
-    }
-
-    public function setRouteRoot($routeRoot)
-    {
-        $this->routeRoot = $routeRoot;
     }
 
     public function getExportFormats()

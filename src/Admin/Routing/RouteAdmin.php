@@ -21,18 +21,10 @@ use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Cmf\Bundle\RoutingBundle\Model\Route;
 use Symfony\Cmf\Bundle\RoutingBundle\Form\Type\RouteTypeType;
-use PHPCR\Util\PathHelper;
 
 class RouteAdmin extends AbstractAdmin
 {
     protected $translationDomain = 'CmfSonataPhpcrAdminIntegrationBundle';
-
-    /**
-     * Root path for the route parent selection.
-     *
-     * @var string
-     */
-    protected $routeRoot;
 
     /**
      * Root path for the route content selection.
@@ -54,7 +46,7 @@ class RouteAdmin extends AbstractAdmin
                     ->add(
                         'parentDocument',
                         TreeSelectType::class,
-                        ['root_node' => $this->routeRoot, 'widget' => 'browser']
+                        ['root_node' => $this->getRootPath(), 'widget' => 'browser']
                     )
                     ->add('name', TextType::class)
                 ->end() // group location
@@ -109,15 +101,6 @@ class RouteAdmin extends AbstractAdmin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper->add('name', 'doctrine_phpcr_nodename');
-    }
-
-    public function setRouteRoot($routeRoot)
-    {
-        // make limitation on base path work
-        parent::setRootPath($routeRoot);
-        // TODO: fix widget to show root node when root is selectable
-        // https://github.com/sonata-project/SonataDoctrinePhpcrAdminBundle/issues/148
-        $this->routeRoot = PathHelper::getParentPath($routeRoot);
     }
 
     public function setContentRoot($contentRoot)
