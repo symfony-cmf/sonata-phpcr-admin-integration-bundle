@@ -55,6 +55,14 @@
                 <source>form.label_content</source>
                 <target>Content</target>
             </trans-unit>
+            <trans-unit id="form.label_key">
+                <source>form.label_content</source>
+                <target>Key</target>
+            </trans-unit>
+            <trans-unit id="form.label_value">
+                <source>form.label_content</source>
+                <target>Value</target>
+            </trans-unit>
 
 
             <!-- $Block -->
