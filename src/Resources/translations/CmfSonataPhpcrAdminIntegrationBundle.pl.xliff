@@ -93,7 +93,6 @@
                 <!-- TODO: Translate -->
                 <target>Slideshow block</target>
             </trans-unit>
-            </trans-unit>
             <trans-unit id="dashboard.label_string_block">
                 <source>dashboard.label_string_block</source>
                 <!-- TODO: Translate -->
