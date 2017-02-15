@@ -492,7 +492,6 @@
 
             <trans-unit id="form.label_variable_pattern">
                 <source>form.label_variable_pattern</source>
-                <target>Variable pattern</target>
                 <target>Padrão variável</target>
             </trans-unit>
             <trans-unit id="form.label_options">
