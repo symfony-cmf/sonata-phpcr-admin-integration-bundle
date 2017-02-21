@@ -65,7 +65,6 @@ class CmfSonataPhpcrAdminIntegrationExtension extends Extension implements Compi
         $loader->load('main.xml');
         $loader->load('enhancer.xml');
 
-
         $this->loadIvoryCKEditor($config['ivory_ckeditor'], $container);
     }
 
