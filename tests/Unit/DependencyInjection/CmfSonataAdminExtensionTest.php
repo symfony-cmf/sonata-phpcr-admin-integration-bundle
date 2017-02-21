@@ -128,11 +128,11 @@ class CmfSonataAdminExtensionTest extends AbstractExtensionTestCase
         ]);
 
         $this->assertContainerBuilderHasParameter(
-            'cmf_sonata_phpcr_admin_integration.core.publishable.form_group',
+            'cmf_sonata_phpcr_admin_integration.core.extension.publishable.form_group',
             'publishable_form'
         );
         $this->assertContainerBuilderHasParameter(
-            'cmf_sonata_phpcr_admin_integration.core.publish_time.form_group',
+            'cmf_sonata_phpcr_admin_integration.core.extension.publish_time.form_group',
             'publish_time_form'
         );
 

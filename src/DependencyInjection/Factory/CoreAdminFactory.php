@@ -63,8 +63,8 @@ class CoreAdminFactory implements AdminFactoryInterface
         $loader->load('core.xml');
 
         foreach ($config['extensions'] as $extension => $values) {
-            $container->setParameter('cmf_sonata_phpcr_admin_integration.core.'.$extension.'.form_group', $values['form_group']);
-            $container->setParameter('cmf_sonata_phpcr_admin_integration.core.'.$extension.'.form_tab', $values['form_tab']);
+            $container->setParameter('cmf_sonata_phpcr_admin_integration.core.extension.'.$extension.'.form_group', $values['form_group']);
+            $container->setParameter('cmf_sonata_phpcr_admin_integration.core.extension.'.$extension.'.form_tab', $values['form_tab']);
         }
     }
 }
