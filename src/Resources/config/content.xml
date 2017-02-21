@@ -26,6 +26,10 @@
             <call method="setRootPath">
                 <argument>%cmf_content.persistence.phpcr.content_basepath%</argument>
             </call>
+
+            <call method="setCkEditorConfig">
+                <argument>%cmf_sonata_phpcr_admin_integration.content.ivory_ckeditor.config%</argument>
+            </call>
         </service>
     </services>
 </container>
