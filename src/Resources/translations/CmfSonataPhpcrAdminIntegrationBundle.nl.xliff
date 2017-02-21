@@ -483,8 +483,8 @@
                 <source>form.group_defaults</source>
                 <target>Standaardwaarden</target>
             </trans-unit>
-            <trans-unit id="form.group_routes">
-                <source>form.group_routes</source>
+            <trans-unit id="form.group_routing">
+                <source>form.group_routing</source>
                 <target>Routen</target>
             </trans-unit>
 

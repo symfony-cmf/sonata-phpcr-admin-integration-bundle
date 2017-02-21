@@ -573,8 +573,8 @@
                 <source>form.group_defaults</source>
                 <target>Domyślne</target>
             </trans-unit>
-            <trans-unit id="form.group_routes">
-                <source>form.group_routes</source>
+            <trans-unit id="form.group_routing">
+                <source>form.group_routing</source>
                 <target>Ścieżki</target>
             </trans-unit>
 

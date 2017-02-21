@@ -26,7 +26,7 @@ class RouteReferrersExtension extends AbstractAdminExtension
     private $formGroup;
     private $formTab;
 
-    public function __construct($formGroup = 'form.group_routes', $formTab = 'form.tab_routing')
+    public function __construct($formGroup = 'form.group_routing', $formTab = 'form.tab_routing')
     {
         $this->formGroup = $formGroup;
         $this->formTab = $formTab;
@@ -40,7 +40,7 @@ class RouteReferrersExtension extends AbstractAdminExtension
 
         $formMapper
             ->tab($this->formTab)
-                ->with('form.group_routes', ['translation_domain' => 'CmfSonataPhpcrAdminIntegrationBundle'])
+                ->with($this->formGroup, ['translation_domain' => 'CmfSonataPhpcrAdminIntegrationBundle'])
                     ->add(
                         'routes',
                         CollectionType::class,

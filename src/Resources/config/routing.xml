@@ -60,6 +60,8 @@
         <service
                 id="cmf_sonata_phpcr_admin_integration.routing.extension.route_referrers"
                 class="Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\Routing\Extension\RouteReferrersExtension">
+            <argument>%cmf_sonata_phpcr_admin_integration.routing.extension.referrers.from_group%</argument>
+            <argument>%cmf_sonata_phpcr_admin_integration.routing.extension.referrers.from_tab%</argument>
             <tag name="sonata.admin.extension"/>
         </service>
 

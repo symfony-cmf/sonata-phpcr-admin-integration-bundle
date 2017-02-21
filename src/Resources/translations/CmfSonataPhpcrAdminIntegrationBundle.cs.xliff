@@ -491,8 +491,8 @@
                 <!-- TODO: Translate -->
                 <target>Default values</target>
             </trans-unit>
-            <trans-unit id="form.group_routes">
-                <source>form.group_routes</source>
+            <trans-unit id="form.group_routing">
+                <source>form.group_routing</source>
                 <!-- TODO: Translate -->
                 <target>Routes</target>
             </trans-unit>
