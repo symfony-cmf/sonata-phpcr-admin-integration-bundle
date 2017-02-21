@@ -5,7 +5,7 @@
 
     <config xmlns="http://cmf.symfony.com/schema/dic/sonata-phpcr-admin-integration">
         <bundles>
-            <seo enabled="true" form-group="seo_form" />
+            <seo enabled="true" />
         </bundles>
     </config>
 </container>
