@@ -7,5 +7,6 @@
         <bundles>
             <seo enabled="true" />
         </bundles>
+        <ivory_ckeditor config_name="cmf_sonata_phpcr_admin_integration" />
     </config>
 </container>

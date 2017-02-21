@@ -28,7 +28,7 @@ class StaticContentAdmin extends AbstractAdmin
     /**
      * Configuration, that can be passed to CKEditorType.
      *
-     * @var array
+     * @var []
      */
     private $ckEditorConfig;
 
