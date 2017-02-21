@@ -40,7 +40,7 @@ class ContentAdminFactory implements AdminFactoryInterface
                 ->addDefaultsIfNotSet()
                 ->canBeEnabled()
                 ->children()
-                    ->scalarNode('config_name')->defaultValue('cmf_sonata_phpcr_admin_integration')->end()
+                    ->scalarNode('config_name')->defaultValue('cmf_content')->end()
                 ->end()
             ->end();
     }
