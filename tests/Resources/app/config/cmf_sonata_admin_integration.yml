@@ -2,6 +2,8 @@ cmf_sonata_phpcr_admin_integration:
     bundles:
         seo: ~
         core: ~
+    ivory_ckeditor:
+        config_name: "cmf_sonata_phpcr_admin_integration"
 
 framework:
     translator: { enabled: true, fallback: en }
@@ -24,3 +26,7 @@ twig:
 cmf_core:
     multilang:
         locales: [en, de]
+
+ivory_ck_editor:
+    configs:
+        cmf_sonata_phpcr_admin_integration: { toolbar: standard }

@@ -41,6 +41,20 @@ class Configuration implements ConfigurationInterface
 
         $this->addBundlesSection($root);
 
+        $root
+            ->children()
+                ->arrayNode('ivory_ckeditor')
+                    ->addDefaultsIfNotSet()
+                    ->children()
+                        ->enumNode('enabled')
+                            ->values([true, false, 'auto'])
+                            ->defaultValue('auto')
+                        ->end()
+                        ->scalarNode('config_name')->isRequired()->end()
+                    ->end()
+                ->end()
+            ->end();
+
         return $treeBuilder;
     }
 

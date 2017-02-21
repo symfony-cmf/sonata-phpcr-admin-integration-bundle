@@ -32,7 +32,8 @@
         "symfony/phpunit-bridge": "^3.2",
         "matthiasnoback/symfony-dependency-injection-test": "~0.6",
         "matthiasnoback/symfony-config-test": "^1.3.1",
-        "burgov/key-value-form-bundle": "^1.0"
+        "burgov/key-value-form-bundle": "^1.0",
+        "egeloen/ckeditor-bundle": "^4.0"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
@@ -40,7 +41,8 @@
         "symfony-cmf/routing-bundle": "To make use of the alternate locale provider.",
         "doctrine/phpcr-bundle": "To persist the metadata in PHPCR ODM documents",
         "doctrine/doctrine-bundle": "To persist the metadata in ORM entities",
-        "doctrine/orm": "To persist the metadata in ORM entities, ~2.4"
+        "doctrine/orm": "To persist the metadata in ORM entities, ~2.4",
+        "egeloen/ckeditor-bundle": "To have CkEditor support on textareas."
     },
     "autoload": {
         "psr-4": {
