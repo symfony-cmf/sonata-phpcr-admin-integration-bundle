@@ -41,6 +41,17 @@ class Configuration implements ConfigurationInterface
 
         $this->addBundlesSection($root);
 
+        $root
+            ->children()
+                ->arrayNode('ivory_ckeditor')
+                    ->addDefaultsIfNotSet()
+                    ->canBeEnabled()
+                    ->children()
+                        ->scalarNode('config_name')->defaultValue('cmf_sonata_phpcr_admin_integration')->end()
+                    ->end()
+                ->end()
+            ->end();
+
         return $treeBuilder;
     }
 

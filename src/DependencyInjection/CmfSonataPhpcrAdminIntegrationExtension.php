@@ -11,6 +11,7 @@
 
 namespace Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\DependencyInjection;
 
+use Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\DependencyInjection\Factory\IsConfigEnabledTrait;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
@@ -24,6 +25,8 @@ use Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\DependencyInjection\Fac
  */
 class CmfSonataPhpcrAdminIntegrationExtension extends Extension implements CompilerPassInterface
 {
+    use IsConfigEnabledTrait;
+
     /**
      * @var AdminFactoryInterface[]
      */
@@ -61,6 +64,35 @@ class CmfSonataPhpcrAdminIntegrationExtension extends Extension implements Compi
 
         $loader->load('main.xml');
         $loader->load('enhancer.xml');
+
+
+        $this->loadIvoryCKEditor($config['ivory_ckeditor'], $container);
+    }
+
+    protected function loadIvoryCKEditor(array $config, ContainerBuilder $container)
+    {
+        $container->setParameter('cmf_sonata_phpcr_admin_integration.ivory_ckeditor.config', []);
+        $bundles = $container->getParameter('kernel.bundles');
+        if ('auto' === $config['enabled'] && !isset($bundles['IvoryCKEditorBundle'])) {
+            return;
+        }
+
+        if ($this->isConfigEnabled($container, $config) && !isset($bundles['IvoryCKEditorBundle'])) {
+            $message = 'IvoryCKEditorBundle integration was explicitely enabled, but the bundle is not available';
+            if (class_exists('Ivory\CKEditorBundle\IvoryCKEditorBundle')) {
+                $message .= ' (did you forget to register the bundle in the AppKernel?)';
+            }
+            throw new \LogicException($message.'.');
+        }
+
+        if (!$this->isConfigEnabled($container, $config) || !isset($bundles['IvoryCKEditorBundle'])) {
+            return;
+        }
+
+        $container->setParameter(
+            'cmf_sonata_phpcr_admin_integration.ivory_ckeditor.config',
+            ['config_name' => $config['config_name']]
+        );
     }
 
     /**
