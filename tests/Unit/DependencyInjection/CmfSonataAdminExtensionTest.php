@@ -62,12 +62,18 @@ class CmfSonataAdminExtensionTest extends AbstractExtensionTestCase
             'bundles' => [
                 'seo' => [
                     'enabled' => true,
-                    'form_group' => 'seo_form',
+                    'extensions' => [
+                        'metadata' => [
+                            'form_group' => 'seo_group',
+                            'form_tab' => 'seo_tab',
+                        ],
+                    ],
                 ],
             ],
         ]);
 
-        $this->assertContainerBuilderHasParameter('cmf_sonata_phpcr_admin_integration.seo.form_group', 'seo_form');
+        $this->assertContainerBuilderHasParameter('cmf_sonata_phpcr_admin_integration.seo.extension.metadata.form_group', 'seo_group');
+        $this->assertContainerBuilderHasParameter('cmf_sonata_phpcr_admin_integration.seo.extension.metadata.form_tab', 'seo_tab');
     }
 
     public function testBlockBundle()
@@ -122,11 +128,11 @@ class CmfSonataAdminExtensionTest extends AbstractExtensionTestCase
         ]);
 
         $this->assertContainerBuilderHasParameter(
-            'cmf_sonata_phpcr_admin_integration.core.publishable.form_group',
+            'cmf_sonata_phpcr_admin_integration.core.extension.publishable.form_group',
             'publishable_form'
         );
         $this->assertContainerBuilderHasParameter(
-            'cmf_sonata_phpcr_admin_integration.core.publish_time.form_group',
+            'cmf_sonata_phpcr_admin_integration.core.extension.publish_time.form_group',
             'publish_time_form'
         );
 

@@ -485,8 +485,8 @@
                 <source>form.group_defaults</source>
                 <target>Valores por defecto</target>
             </trans-unit>
-            <trans-unit id="form.group_routes">
-                <source>form.group_routes</source>
+            <trans-unit id="form.group_routing">
+                <source>form.group_routing</source>
                 <target>Rutas</target>
             </trans-unit>
 

@@ -34,8 +34,18 @@ class SeoAdminFactory implements AdminFactoryInterface
     public function addConfiguration(NodeBuilder $builder)
     {
         $builder
-            ->scalarNode('form_group')->defaultValue('form.group_seo')->end()
-            ->scalarNode('form_tab')->defaultValue('form.tab_seo')->end()
+            ->arrayNode('extensions')
+                ->addDefaultsIfNotSet()
+                ->children()
+                    ->arrayNode('metadata')
+                    ->addDefaultsIfNotSet()
+                    ->children()
+                        ->scalarNode('form_group')->defaultValue('form.group_seo')->end()
+                        ->scalarNode('form_tab')->defaultValue('form.tab_seo')->end()
+                    ->end()
+                ->end()
+                ->end()
+            ->end()
         ;
     }
 
@@ -45,7 +55,7 @@ class SeoAdminFactory implements AdminFactoryInterface
     public function create(array $config, ContainerBuilder $container, XmlFileLoader $loader)
     {
         $loader->load('seo.xml');
-        $container->setParameter('cmf_sonata_phpcr_admin_integration.seo.form_group', $config['form_group']);
-        $container->setParameter('cmf_sonata_phpcr_admin_integration.seo.form_tab', $config['form_tab']);
+        $container->setParameter('cmf_sonata_phpcr_admin_integration.seo.extension.metadata.form_group', $config['extensions']['metadata']['form_group']);
+        $container->setParameter('cmf_sonata_phpcr_admin_integration.seo.extension.metadata.form_tab', $config['extensions']['metadata']['form_tab']);
     }
 }

@@ -44,8 +44,12 @@ class ConfigurationTest extends AbstractExtensionConfigurationTestCase
             'bundles' => [
                 'seo' => [
                     'enabled' => true,
-                    'form_group' => 'seo_form',
-                    'form_tab' => 'form.tab_seo',
+                    'extensions' => [
+                        'metadata' => [
+                            'form_group' => 'form.group_seo',
+                            'form_tab' => 'form.tab_seo',
+                        ],
+                    ],
                 ],
                 'core' => [
                     'enabled' => true,

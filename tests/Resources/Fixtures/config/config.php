@@ -13,7 +13,6 @@ $container->loadFromExtension('cmf_sonata_phpcr_admin_integration', [
     'bundles' => [
         'seo' => [
             'enabled' => true,
-            'form_group' => 'seo_form',
         ],
         'core' => [
             'enabled' => true,

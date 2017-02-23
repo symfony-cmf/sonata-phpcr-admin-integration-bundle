@@ -34,8 +34,21 @@ class RoutingAdminFactory implements AdminFactoryInterface, CompilerPassInterfac
      */
     public function addConfiguration(NodeBuilder $builder)
     {
-        $builder->scalarNode('basepath')->defaultNull()->end();
-        $builder->scalarNode('content_basepath')->defaultNull()->end();
+        $builder
+            ->arrayNode('extensions')
+                ->addDefaultsIfNotSet()
+                ->children()
+                    ->arrayNode('referrers')
+                    ->addDefaultsIfNotSet()
+                    ->children()
+                        ->scalarNode('form_group')->defaultValue('form.group_routing')->end()
+                        ->scalarNode('form_tab')->defaultValue('form.tab_routing')->end()
+                    ->end()
+                    ->end()
+                ->end()
+            ->end()
+            ->scalarNode('basepath')->defaultNull()->end()
+            ->scalarNode('content_basepath')->defaultNull()->end();
     }
 
     /**
@@ -47,6 +60,14 @@ class RoutingAdminFactory implements AdminFactoryInterface, CompilerPassInterfac
 
         $container->setParameter('cmf_sonata_phpcr_admin_integration.routing.basepath', $config['basepath']);
         $container->setParameter('cmf_sonata_phpcr_admin_integration.routing.content_basepath', $config['content_basepath']);
+        $container->setParameter(
+            'cmf_sonata_phpcr_admin_integration.routing.extension.referrers.from_group',
+            $config['extensions']['referrers']['form_group']
+        );
+        $container->setParameter(
+            'cmf_sonata_phpcr_admin_integration.routing.extension.referrers.from_tab',
+            $config['extensions']['referrers']['form_tab']
+        );
     }
 
     /**
