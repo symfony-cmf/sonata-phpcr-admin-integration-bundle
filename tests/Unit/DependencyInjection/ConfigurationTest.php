@@ -67,7 +67,7 @@ class ConfigurationTest extends AbstractExtensionConfigurationTestCase
             ],
             'ivory_ckeditor' => [
                 'enabled' => 'auto',
-                'config_name' => 'cmf_sonata_phpcr_admin_integration'
+                'config_name' => 'cmf_sonata_phpcr_admin_integration',
             ],
         ];
 
