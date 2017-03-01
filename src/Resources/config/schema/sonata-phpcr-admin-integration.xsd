@@ -20,6 +20,7 @@
     </xsd:complexType>
 
     <xsd:complexType name="ivory_ckeditor">
+        <xsd:attribute name="enabled" type="xsd:boolean" />
         <xsd:attribute name="config_name" type="xsd:string"/>
     </xsd:complexType>
 
