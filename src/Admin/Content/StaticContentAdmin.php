@@ -28,7 +28,7 @@ class StaticContentAdmin extends AbstractAdmin
     /**
      * Configuration, that can be passed to CKEditorType.
      *
-     * @var []
+     * @var array
      */
     private $ckEditorConfig;
 
@@ -42,7 +42,7 @@ class StaticContentAdmin extends AbstractAdmin
      *
      * Documentation: http://symfony.com/doc/master/bundles/IvoryCKEditorBundle/usage/config.html
      *
-     * @param [] $config Configuration for CKEditorType.
+     * @param array $config Configuration for CKEditorType.
      */
     public function setCkEditorConfig(array $config)
     {

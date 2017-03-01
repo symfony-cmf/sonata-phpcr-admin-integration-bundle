@@ -73,7 +73,7 @@ class CmfSonataPhpcrAdminIntegrationExtension extends Extension implements Compi
      * Adds the ckEditor configuration to the parameters list when configuration is enabled (auto, true). For both
      * settings the "egeloen/ckeditor-bundle" has to be installed and enabled.
      *
-     * @param [] $config
+     * @param array $config
      * @param ContainerBuilder $container
      *
      * @throws \LogicException When configuration is enabled by true and "IvoryCKEditorBundle" is not enabled.
