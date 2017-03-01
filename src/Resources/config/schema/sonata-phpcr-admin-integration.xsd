@@ -25,7 +25,7 @@
     </xsd:complexType>
 
     <xsd:simpleType name="enabled">
-        <xsd:restriction>
+        <xsd:restriction base="xsd:string">
             <xsd:enumeration value="true"/>
             <xsd:enumeration value="false"/>
             <xsd:enumeration value="auto"/>
