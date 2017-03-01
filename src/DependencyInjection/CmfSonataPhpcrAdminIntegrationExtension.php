@@ -76,7 +76,7 @@ class CmfSonataPhpcrAdminIntegrationExtension extends Extension implements Compi
      * @param array            $config
      * @param ContainerBuilder $container
      *
-     * @throws \LogicException When configuration is enabled by true and "IvoryCKEditorBundle" is not enabled.
+     * @throws \LogicException when configuration is enabled by true and "IvoryCKEditorBundle" is not enabled
      */
     protected function loadIvoryCKEditor(array $config, ContainerBuilder $container)
     {
