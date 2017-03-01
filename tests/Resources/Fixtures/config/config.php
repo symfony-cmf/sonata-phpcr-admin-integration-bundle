@@ -19,6 +19,6 @@ $container->loadFromExtension('cmf_sonata_phpcr_admin_integration', [
         ],
     ],
     'ivory_ckeditor' => [
-        'config_name' => 'cmf_sonata_phpcr_admin_integration'
+        'config_name' => 'cmf_sonata_phpcr_admin_integration',
     ],
 ]);
