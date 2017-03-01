@@ -11,22 +11,42 @@
 
 namespace Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\Content;
 
+use Ivory\CKEditorBundle\Form\Type\CKEditorType;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Symfony\Cmf\Bundle\ContentBundle\Model\StaticContentBase;
 use Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\AbstractAdmin;
 use Symfony\Cmf\Bundle\TreeBrowserBundle\Form\Type\TreeSelectType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class StaticContentAdmin extends AbstractAdmin
 {
     protected $translationDomain = 'CmfSonataPhpcrAdminIntegrationBundle';
 
+    /**
+     * Configuration, that can be passed to CKEditorType.
+     *
+     * @var array
+     */
+    private $ckEditorConfig;
+
     public function getExportFormats()
     {
-        return array();
+        return [];
+    }
+
+    /**
+     * Set configuration for CKEditorType.
+     *
+     * Documentation: http://symfony.com/doc/master/bundles/IvoryCKEditorBundle/usage/config.html
+     *
+     * @param array $config configuration for CKEditorType
+     */
+    public function setCkEditorConfig(array $config)
+    {
+        $this->ckEditorConfig = $config;
     }
 
     protected function configureListFields(ListMapper $listMapper)
@@ -44,7 +64,11 @@ class StaticContentAdmin extends AbstractAdmin
             ->tab('form.tab_general')
                 ->with('form.group_content', ['class' => 'col-md-9'])
                     ->add('title', TextType::class)
-                    ->add('body', TextareaType::class)
+                    ->add(
+                        'body',
+                        $this->ckEditorConfig ? CKEditorType::class : TextareaType::class,
+                        $this->ckEditorConfig
+                    )
                 ->end()
 
                 ->with('form.group_location', ['class' => 'col-md-3'])

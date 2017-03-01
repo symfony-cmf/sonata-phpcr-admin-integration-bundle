@@ -1,4 +1,5 @@
 cmf_sonata_phpcr_admin_integration:
     bundles:
-        seo:
-            enabled: true
+        seo: ~
+    ivory_ckeditor:
+        config_name: "cmf_sonata_phpcr_admin_integration"

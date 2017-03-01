@@ -11,6 +11,8 @@
 
 namespace Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\DependencyInjection;
 
+use Ivory\CKEditorBundle\IvoryCKEditorBundle;
+use Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\DependencyInjection\Factory\IsConfigEnabledTrait;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
@@ -24,6 +26,8 @@ use Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\DependencyInjection\Fac
  */
 class CmfSonataPhpcrAdminIntegrationExtension extends Extension implements CompilerPassInterface
 {
+    use IsConfigEnabledTrait;
+
     /**
      * @var AdminFactoryInterface[]
      */
@@ -61,6 +65,36 @@ class CmfSonataPhpcrAdminIntegrationExtension extends Extension implements Compi
 
         $loader->load('main.xml');
         $loader->load('enhancer.xml');
+
+        $this->loadIvoryCKEditor($config['ivory_ckeditor'], $container);
+    }
+
+    /**
+     * Adds the ckEditor configuration to the parameters list when configuration is enabled (auto, true). For both
+     * settings the "egeloen/ckeditor-bundle" has to be installed and enabled.
+     *
+     * @param array            $config
+     * @param ContainerBuilder $container
+     *
+     * @throws \LogicException when configuration is enabled by true and "IvoryCKEditorBundle" is not enabled
+     */
+    protected function loadIvoryCKEditor(array $config, ContainerBuilder $container)
+    {
+        $configParameter = [];
+        if ($this->isConfigEnabled($container, $config)) {
+            $bundles = $container->getParameter('kernel.bundles');
+            if (true === $config['enabled'] && !isset($bundles['IvoryCKEditorBundle'])) {
+                $message = 'IvoryCKEditorBundle integration was explicitely enabled, but the bundle is not available';
+                if (class_exists(IvoryCKEditorBundle::class)) {
+                    $message .= ' (did you forget to register the bundle in the AppKernel?)';
+                }
+                throw new \LogicException($message.'.');
+            } elseif (isset($bundles['IvoryCKEditorBundle'])) {
+                $configParameter = ['config_name' => $config['config_name']];
+            }
+        }
+
+        $container->setParameter('cmf_sonata_phpcr_admin_integration.ivory_ckeditor.config', $configParameter);
     }
 
     /**

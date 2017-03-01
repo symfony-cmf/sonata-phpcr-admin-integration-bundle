@@ -38,6 +38,7 @@ class StaticContentAdminTest extends BaseTestCase
 
         $this->assertResponseSuccess($res);
         $this->assertCount(1, $crawler->filter('input[value="content-1"]'));
+        $this->assertCount(1, $crawler->filter('script[src*="ckeditor.js"]'));
     }
 
     public function testContentCreate()
