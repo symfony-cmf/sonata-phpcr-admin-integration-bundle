@@ -20,8 +20,16 @@
     </xsd:complexType>
 
     <xsd:complexType name="ivory_ckeditor">
-        <xsd:attribute name="enabled" type="xsd:boolean" />
+        <xsd:attribute name="enabled" type="enabled" default="auto" />
         <xsd:attribute name="config_name" type="xsd:string"/>
     </xsd:complexType>
+
+    <xsd:simpleType name="enabled">
+        <xsd:restriction>
+            <xsd:enumeration value="true"/>
+            <xsd:enumeration value="false"/>
+            <xsd:enumeration value="auto"/>
+        </xsd:restriction>
+    </xsd:simpleType>
 
 </xsd:schema>
