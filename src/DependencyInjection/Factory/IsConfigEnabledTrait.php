@@ -16,12 +16,19 @@ use Symfony\Component\DependencyInjection\Exception\InvalidArgumentException;
 
 trait IsConfigEnabledTrait
 {
-    public function isConfigEnabled(ContainerBuilder $container, array $config)
+    /**
+     * @param ContainerBuilder $container   The container
+     * @param array            $config      The configuration section that could be enabled
+     * @param string           $enabledFlag Name of the flag that tells if config is enabled. Defaults to "enabled"
+     *
+     * @return bool
+     */
+    public function isConfigEnabled(ContainerBuilder $container, array $config, $enabledFlag = 'enabled')
     {
-        if (!array_key_exists('enabled', $config)) {
+        if (!array_key_exists($enabledFlag, $config)) {
             throw new InvalidArgumentException("The config array has no 'enabled' key.");
         }
 
-        return (bool) $container->getParameterBag()->resolveValue($config['enabled']);
+        return (bool) $container->getParameterBag()->resolveValue($config[$enabledFlag]);
     }
 }
