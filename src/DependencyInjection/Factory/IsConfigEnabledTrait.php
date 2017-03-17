@@ -24,4 +24,22 @@ trait IsConfigEnabledTrait
 
         return (bool) $container->getParameterBag()->resolveValue($config['enabled']);
     }
+
+    public function isConfigEnabledAuto(ContainerBuilder $container, $enabled, $requiredBundle, $message = null)
+    {
+        $enabled = $container->getParameterBag()->resolveValue($enabled);
+        $bundleExists = array_key_exists($requiredBundle, $container->getParameter('kernel.bundles'));
+
+        if ('auto' === $enabled) {
+            $enabled = $bundleExists;
+        } elseif (true === $enabled && !$bundleExists) {
+            if (null === $message) {
+                $message = $bundleName.' integration was explicitely enabled, but the bundle is not available.';
+            }
+
+            throw new \LogicException($message);
+        }
+
+        return $enabled;
+    }
 }
