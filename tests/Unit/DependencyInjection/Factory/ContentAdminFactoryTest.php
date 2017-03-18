@@ -42,7 +42,7 @@ class ContentAdminFactoryTest extends \PHPUnit_Framework_TestCase
     {
         $config = $this->process($this->buildConfig(), [[
             'bundles' => [
-                'content' => true
+                'content' => true,
             ],
         ]]);
 
