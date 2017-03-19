@@ -11,6 +11,7 @@
 
 namespace Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\DependencyInjection\Factory;
 
+use Symfony\Cmf\Bundle\MenuBundle\CmfMenuBundle;
 use Symfony\Component\Config\Definition\Builder\NodeBuilder;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
@@ -20,6 +21,8 @@ use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
  */
 class BlockAdminFactory implements AdminFactoryInterface
 {
+    use IsConfigEnabledTrait;
+
     /**
      * {@inheritdoc}
      */
@@ -70,9 +73,11 @@ class BlockAdminFactory implements AdminFactoryInterface
 
         $bundles = $container->getParameter('kernel.bundles');
 
-        if (true === $config['enable_menu']
-            || ('auto' === $config['enable_menu'] && isset($bundles['CmfMenuBundle']))
-        ) {
+        $message = 'CmfMenuBundle integration was explicitely enabled, but the bundle is not available.';
+        if (class_exists(CmfMenuBundle::class)) {
+            $message .= ' (did you forget to register the bundle in the AppKernel?)';
+        }
+        if ($this->isConfigEnabledAuto($container, $config['enable_menu'], 'CmfMenuBundle', $message)) {
             $loader->load('block-menu.xml');
         }
     }
