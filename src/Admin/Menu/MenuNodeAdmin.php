@@ -53,7 +53,7 @@ class MenuNodeAdmin extends AbstractMenuNodeAdmin
                 ->end()
             ->end()
         ;
-
+        
         $this->addTransformerToField($formMapper->getFormBuilder(), 'parentDocument');
 
         parent::configureFormFields($formMapper);
@@ -70,7 +70,7 @@ class MenuNodeAdmin extends AbstractMenuNodeAdmin
                                 'content' => 'content',
                             ),
                             'map' => array(
-                                'route' => array('link','routeParameters'),
+                                'route' => array('link', 'routeParameters'),
                                 'uri' => array('link'),
                                 'content' => array('content', TreeSelectType::class),
                             ),
@@ -78,16 +78,25 @@ class MenuNodeAdmin extends AbstractMenuNodeAdmin
                             'required' => false,
                         ))
                         ->add('link', TextType::class, array('required' => false, 'mapped' => false))
-                        ->add('routeParameters', KeyValueType::class, array(
+            ;
+            
+            if ($this->advanced) 
+            {
+                $formMapper
+                    ->add('routeParameters', KeyValueType::class, array(
+                        'value_type' => TextType::class,
+                        'required' => false,
+                        'entry_options' => array(
                             'value_type' => TextType::class,
-                            'required' => false,
-                            'entry_options' => array(
-                                'value_type' => TextType::class,
-                                'label' => false,
-                                'attr' => array('style' => 'clear:both'),
-                            ),
-                            "label" => "form.label_options"
-                        ))                    
+                            'label' => false,
+                            'attr' => array('style' => 'clear:both'),
+                        ),
+                        'label' => 'form.label_options'
+                    ))                    
+                ;                    
+            }
+            
+            $formMapper
                         ->add(
                             'content',
                             TreeSelectType::class,

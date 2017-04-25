@@ -34,6 +34,11 @@ abstract class AbstractMenuNodeAdmin extends AbstractAdmin
     protected $menuRoot;
 
     /**
+     * @var bool
+     */
+    protected $advanced;
+    
+    /**
      * @var string
      */
     protected $translationDomain = 'CmfSonataPhpcrAdminIntegrationBundle';
@@ -92,6 +97,11 @@ abstract class AbstractMenuNodeAdmin extends AbstractAdmin
         $this->contentTreeBlock = $contentTreeBlock;
     }
 
+    public function setAdvanced($advanced)
+    {
+        $this->advanced = $advanced;
+    }
+    
     public function toString($object)
     {
         if ($object instanceof MenuNodeBase && $object->getLabel()) {
