@@ -13,7 +13,6 @@ namespace Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\WebTest\Adm
 
 use Symfony\Cmf\Bundle\BlockBundle\Block\PhpcrBlockLoader;
 use Symfony\Cmf\Component\Testing\Functional\BaseTestCase;
-use Symfony\Bundle\FrameworkBundle\Client;
 
 class PHPCRBlockLoaderTest extends BaseTestCase
 {

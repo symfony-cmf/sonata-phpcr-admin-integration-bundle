@@ -63,7 +63,7 @@ class RouteAdmin extends AbstractAdmin
                 ->end() // group general
             ->end() // tab general
 
-            ->tab('form.tab_routing')
+            ->tab('form.tab_routes')
                 ->with('form.group_path', ['class' => 'col-md-6'])
                     ->add(
                         'variablePattern',

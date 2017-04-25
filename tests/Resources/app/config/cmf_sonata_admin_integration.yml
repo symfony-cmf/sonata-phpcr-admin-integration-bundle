@@ -2,8 +2,15 @@ cmf_sonata_phpcr_admin_integration:
     bundles:
         seo: ~
         core: ~
-    ivory_ckeditor:
-        config_name: "cmf_sonata_phpcr_admin_integration"
+        menu: ~
+        content:
+            ivory_ckeditor: { config_name: cmf_sonata_admin_integration }
+
+        routing:
+            basepath: /test/routing
+        block:
+            basepath: /test/blocks
+            menu_basepath: /test/menus
 
 framework:
     translator: { enabled: true, fallback: en }
@@ -13,8 +20,15 @@ cmf_seo:
     title: "Default | %%content_title%%"
     description: "Default description. %%content_description%%"
     original_route_pattern: canonical
+    persistence: { phpcr: true }
+    alternate_locale: ~
 
 cmf_routing:
+    dynamic:
+        locales: [de, en]
+        persistence:
+            phpcr:
+                route_basepaths: [/test/routing]
     chain:
         routers_by_id:
             cmf_routing.dynamic_router: 20
@@ -24,9 +38,85 @@ twig:
     exception_controller: cmf_seo.error.suggestion_provider.controller:listAction
 
 cmf_core:
+    persistence:
+        phpcr:
+            basepath: /test
     multilang:
         locales: [en, de]
 
 ivory_ck_editor:
     configs:
-        cmf_sonata_phpcr_admin_integration: { toolbar: standard }
+        cmf_sonata_admin_integration: { toolbar: standard }
+
+cmf_menu:
+    persistence:
+        phpcr:
+            menu_basepath: /test/menus
+
+services:
+    sonata.admin.seo_content:
+        class: Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Resources\Admin\SeoAwareContentAdmin
+        tags:
+            - { name: sonata.admin, manager_type: doctrine_phpcr, label_catalogue: CmfSeoBundle, group: dashboard.cmf, label: dashboard.label_seo_content, label_translator_strategy: sonata.admin.label.strategy.underscore}
+        arguments:
+            - ~
+            - Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Resources\Document\SeoAwareContent
+            - SonataAdminBundle:CRUD
+        calls:
+            - [ setTranslationDomain, [CmfSonataPhpcrAdminIntegrationBundle]]
+            - [ setRouteBuilder, ['@sonata.admin.route.path_info_slashes']]
+            - [ setRootPath, [/test/content]]
+    sonata.admin.core_examples:
+         class: Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Resources\Admin\CoreExtensionsAdmin
+         tags:
+           - { name: sonata.admin, manager_type: doctrine_phpcr, label_catalogue: CmfSeoBundle, group: dashboard.cmf, label: dashboard.label_seo_content, label_translator_strategy: sonata.admin.label.strategy.underscore}
+         arguments:
+            - ~
+            - Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Resources\Document\CoreExtensionsAwareContent
+            - SonataAdminBundle:CRUD
+         calls:
+            - [ setTranslationDomain, [CmfSonataPhpcrAdminIntegrationBundle]]
+            - [ setRouteBuilder, ['@sonata.admin.route.path_info_slashes']]
+            - [ setRootPath, [/test/core]]
+
+    sonata.admin.menu:
+        class: Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Resources\Admin\MenuContentAdmin
+        tags:
+            - { name: sonata.admin, manager_type: doctrine_phpcr, group: Test, label: Test Content }
+        arguments:
+            - ~
+            - Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Resources\Document\MenuContent
+            - SonataAdminBundle:CRUD
+
+sonata_admin:
+    extensions:
+        cmf_sonata_phpcr_admin_integration.seo.extension.metadata:
+            implements:
+               - Symfony\Cmf\Bundle\SeoBundle\SeoAwareInterface
+        cmf_sonata_phpcr_admin_integration.menu.extension.menu_node_referrers:
+            implements:
+               - Symfony\Cmf\Bundle\MenuBundle\Model\MenuNodeReferrersInterface
+        cmf_sonata_phpcr_admin_integration.routing.extension.frontend_link:
+            implements:
+               - Symfony\Cmf\Component\Routing\RouteReferrersReadInterface
+            extends:
+               - Symfony\Component\Routing\Route
+        cmf_sonata_phpcr_admin_integration.core.extension.publish_workflow.publishable:
+            implements:
+               - Symfony\Cmf\Bundle\CoreBundle\PublishWorkflow\PublishableInterface
+        cmf_sonata_phpcr_admin_integration.core.extension.publish_workflow.time_period:
+            implements:
+               - Symfony\Cmf\Bundle\CoreBundle\PublishWorkflow\PublishTimePeriodInterface
+    dashboard:
+        groups:
+            content:
+                label: Content
+                items:
+                    - sonata.admin.seo_content
+
+cmf_content:
+    persistence:
+        phpcr:
+            content_basepath: /test/contents
+
+

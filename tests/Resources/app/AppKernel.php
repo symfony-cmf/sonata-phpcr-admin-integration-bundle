@@ -18,14 +18,10 @@ class AppKernel extends TestKernel
     {
         $this->requireBundleSet('default');
 
-        if ('phpcr' === $this->environment) {
-            $this->requireBundleSets(array(
-                'phpcr_odm',
-                'sonata_admin_phpcr',
-            ));
-        } elseif ('orm' === $this->environment) {
-            $this->requireBundleSet('doctrine_orm');
-        }
+        $this->requireBundleSets(array(
+            'phpcr_odm',
+            'sonata_admin_phpcr',
+        ));
 
         $this->addBundles(array(
             new Sonata\SeoBundle\SonataSeoBundle(),
@@ -53,7 +49,6 @@ class AppKernel extends TestKernel
     public function registerContainerConfiguration(LoaderInterface $loader)
     {
         $loader->load(__DIR__.'/config/config.php');
-        $loader->load(__DIR__.'/config/config_'.$this->environment.'.php');
         $loader->load(__DIR__.'/config/admin-test.xml');
     }
 }

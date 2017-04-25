@@ -469,8 +469,8 @@
                 <target>URL</target>
             </trans-unit>
 
-            <trans-unit id="form.tab_routing">
-                <source>form.tab_routing</source>
+            <trans-unit id="form.tab_routes">
+                <source>form.tab_routes</source>
                 <target>URLs</target>
             </trans-unit>
 
@@ -490,8 +490,8 @@
                 <source>form.group_defaults</source>
                 <target>Vorgabewerte</target>
             </trans-unit>
-            <trans-unit id="form.group_routing">
-                <source>form.group_routing</source>
+            <trans-unit id="form.group_routes">
+                <source>form.group_routes</source>
                 <target>Routen</target>
             </trans-unit>
 

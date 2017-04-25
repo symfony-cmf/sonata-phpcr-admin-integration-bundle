@@ -26,7 +26,7 @@ class RouteReferrersExtension extends AbstractAdminExtension
     private $formGroup;
     private $formTab;
 
-    public function __construct($formGroup = 'form.group_routing', $formTab = 'form.tab_routing')
+    public function __construct($formGroup = 'form.group_routes', $formTab = 'form.tab_routes')
     {
         $this->formGroup = $formGroup;
         $this->formTab = $formTab;
