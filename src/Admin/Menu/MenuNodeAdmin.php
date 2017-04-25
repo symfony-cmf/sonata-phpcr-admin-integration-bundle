@@ -53,7 +53,7 @@ class MenuNodeAdmin extends AbstractMenuNodeAdmin
                 ->end()
             ->end()
         ;
-        
+
         $this->addTransformerToField($formMapper->getFormBuilder(), 'parentDocument');
 
         parent::configureFormFields($formMapper);
