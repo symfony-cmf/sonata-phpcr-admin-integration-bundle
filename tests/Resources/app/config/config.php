@@ -12,4 +12,5 @@
 $container->setParameter('cmf_testing.bundle_fqn', 'Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle');
 $loader->import(CMF_TEST_CONFIG_DIR.'/default.php');
 $loader->import(__DIR__.'/cmf_sonata_admin_integration.yml');
-$loader->import(CMF_TEST_CONFIG_DIR.'/sonata_admin.php'); // todo: move that file into that bundle
+$loader->import(__DIR__.'/sonata_admin.yml');
+$loader->import(CMF_TEST_CONFIG_DIR.'/phpcr_odm.php');
