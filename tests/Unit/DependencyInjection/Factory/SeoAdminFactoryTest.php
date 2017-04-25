@@ -34,14 +34,18 @@ class SeoAdminFactoryTest extends AbstractFactoryTest
             'bundles' => [
                 'seo' => [
                     'enabled' => true,
-                    'form_group' => 'seo_group',
-                    'form_tab' => 'seo_tab'
+                    'extensions' => [
+                        'metadata' => [
+                            'form_group' => 'seo_group',
+                            'form_tab' => 'seo_tab',
+                        ],
+                    ],
                 ],
             ],
         ]);
 
-        $this->assertContainerBuilderHasParameter('cmf_sonata_phpcr_admin_integration.seo.form_group', 'seo_group');
-        $this->assertContainerBuilderHasParameter('cmf_sonata_phpcr_admin_integration.seo.form_tab', 'seo_tab');
+        $this->assertContainerBuilderHasParameter('cmf_sonata_phpcr_admin_integration.seo.extension.metadata.form_group', 'seo_group');
+        $this->assertContainerBuilderHasParameter('cmf_sonata_phpcr_admin_integration.seo.extension.metadata.form_tab', 'seo_tab');
     }
 
     public function testAdminServicesBundle()

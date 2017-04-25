@@ -24,7 +24,6 @@ class BlockAdminFactoryTest extends AbstractFactoryTest
             'bundles' => [
                 'block' => [
                     'enabled' => true,
-                    'use_imagine' => true,
                     'basepath' => 'basepath_value',
                     'menu_basepath' => 'menu_basepath_value',
                     'extensions' => [
