@@ -47,7 +47,6 @@ class MenuAdminFactoryTest extends AbstractFactoryTest
             'cmf_sonata_phpcr_admin_integration.menu.extension.menu_options.advanced',
             false
         );
-
     }
 
     public function testAdminServicesBundle()
