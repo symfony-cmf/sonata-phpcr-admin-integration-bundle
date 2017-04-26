@@ -16,7 +16,6 @@ namespace Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Unit\Depend
  */
 class SeoAdminFactoryTest extends AbstractFactoryTest
 {
-
     public function testParametersBundle()
     {
         $this->container->setParameter(
