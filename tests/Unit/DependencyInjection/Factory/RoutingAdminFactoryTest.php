@@ -12,7 +12,7 @@ class RoutingAdminFactoryTest extends AbstractFactoryTest
         $this->container->setParameter('kernel.bundles', [
             'CmfRoutingBundle' => true,
             'SonataDoctrinePHPCRAdminBundle' => true,
-            'CmfSonataPhpcrAdminIntegrationBundle.' => true,
+            'CmfSonataPhpcrAdminIntegrationBundle' => true,
         ]);
         $this->load([
             'bundles' => [

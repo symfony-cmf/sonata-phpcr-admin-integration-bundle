@@ -12,7 +12,7 @@ class MenuAdminFactoryTest extends AbstractFactoryTest
         $this->container->setParameter('kernel.bundles', [
             'CmfMenuBundle' => true,
             'SonataDoctrinePHPCRAdminBundle' => true,
-            'CmfSonataPhpcrAdminIntegrationBundle.' => true,
+            'CmfSonataPhpcrAdminIntegrationBundle' => true,
         ]);
         $this->load([
             'bundles' => [

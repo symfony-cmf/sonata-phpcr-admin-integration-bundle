@@ -12,7 +12,7 @@ class CoreAdminFactoryTest extends AbstractFactoryTest
         $this->container->setParameter('kernel.bundles', [
             'CmfCoreBundle' => true,
             'SonataDoctrinePHPCRAdminBundle' => true,
-            'CmfSonataPhpcrAdminIntegrationBundle.' => true,
+            'CmfSonataPhpcrAdminIntegrationBundle' => true,
         ]);
         $this->load([
             'bundles' => [

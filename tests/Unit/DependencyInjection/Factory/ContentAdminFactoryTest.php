@@ -9,6 +9,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 
 /**
+ * @author Wouter de Jong <wouter@wouterj.nl>
  * @author Maximilian Berghoff <Maximilian.Berghoff@mayflower.de>
  */
 class ContentAdminFactoryTest extends \PHPUnit_Framework_TestCase
