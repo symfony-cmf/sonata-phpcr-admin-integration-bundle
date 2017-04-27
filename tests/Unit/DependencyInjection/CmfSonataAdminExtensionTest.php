@@ -33,118 +33,16 @@ class CmfSonataAdminExtensionTest extends AbstractExtensionTestCase
     {
         $this->container->setParameter(
             'kernel.bundles',
-            array(
-                'CmfSeoBundle' => true,
-                'CmfRoutingBundle' => true,
-                'SonataDoctrinePHPCRAdminBundle' => true,
-                'DoctrinePHPCRBundle' => true,
-                'BurgovKeyValueFormBundle' => true,
-            )
-        );
-
-        $this->load([]);
-    }
-
-    public function testSeoBundle()
-    {
-        $this->container->setParameter(
-            'kernel.bundles',
-            array(
-                'CmfSeoBundle' => true,
-                'CmfRoutingBundle' => true,
-                'SonataDoctrinePHPCRAdminBundle' => true,
-                'DoctrinePHPCRBundle' => true,
-                'BurgovKeyValueFormBundle' => true,
-            )
-        );
-
-        $this->load([
-            'bundles' => [
-                'seo' => [
-                    'enabled' => true,
-                    'extensions' => [
-                        'metadata' => [
-                            'form_group' => 'seo_group',
-                            'form_tab' => 'seo_tab',
-                        ],
-                    ],
-                ],
-            ],
-        ]);
-
-        $this->assertContainerBuilderHasParameter('cmf_sonata_phpcr_admin_integration.seo.extension.metadata.form_group', 'seo_group');
-        $this->assertContainerBuilderHasParameter('cmf_sonata_phpcr_admin_integration.seo.extension.metadata.form_tab', 'seo_tab');
-    }
-
-    public function testBlockBundle()
-    {
-        $this->container->setParameter(
-            'kernel.bundles',
             [
-                'CmfBlockBundle' => true,
-                'CmfMenuBundle' => true,
+                'CmfSeoBundle' => true,
                 'CmfRoutingBundle' => true,
                 'SonataDoctrinePHPCRAdminBundle' => true,
                 'DoctrinePHPCRBundle' => true,
+                'BurgovKeyValueFormBundle' => true,
             ]
         );
 
-        $this->load([
-            'bundles' => [
-                'block' => [
-                    'enabled' => true,
-                    'basepath' => 'basepath_value',
-                    'menu_basepath' => 'menu_basepath_value',
-                ],
-            ],
-        ]);
-
-        $this->assertContainerBuilderHasParameter('cmf_sonata_phpcr_admin_integration.block.persistence.basepath', 'basepath_value');
-        $this->assertContainerBuilderHasParameter('cmf_sonata_phpcr_admin_integration.block.persistence.menu_basepath', 'menu_basepath_value');
-    }
-
-    public function testCoreDefaults()
-    {
-        $this->container->setParameter(
-            'kernel.bundles',
-            array(
-                'CmfRoutingBundle' => true,
-                'SonataDoctrinePHPCRAdminBundle' => true,
-                'DoctrinePHPCRBundle' => true,
-                'CmfCoreBundle' => true,
-            )
-        );
-
-        $this->load([
-            'bundles' => [
-                'core' => [
-                    'enabled' => true,
-                    'extensions' => [
-                        'publishable' => ['form_group' => 'publishable_form'],
-                        'publish_time' => ['form_group' => 'publish_time_form'],
-                    ],
-                ],
-            ],
-        ]);
-
-        $this->assertContainerBuilderHasParameter(
-            'cmf_sonata_phpcr_admin_integration.core.extension.publishable.form_group',
-            'publishable_form'
-        );
-        $this->assertContainerBuilderHasParameter(
-            'cmf_sonata_phpcr_admin_integration.core.extension.publish_time.form_group',
-            'publish_time_form'
-        );
-
-        $this->assertContainerBuilderHasService(
-            'cmf_sonata_phpcr_admin_integration.core.extension.publish_workflow.time_period'
-        );
-        $this->assertContainerBuilderHasService(
-            'cmf_sonata_phpcr_admin_integration.core.extension.publish_workflow.publishable'
-        );
-        $this->assertContainerBuilderHasService(
-            'cmf_sonata_phpcr_admin_integration.core.extension.child'
-        );
+        $this->load([]);
     }
 
     public function testEnhancerExists()
