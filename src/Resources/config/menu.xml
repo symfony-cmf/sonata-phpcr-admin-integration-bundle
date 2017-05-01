@@ -69,8 +69,8 @@
                 <argument>%cmf_sonata_phpcr_admin_integration.menu.recursive_breadcrumbs%</argument>
             </call>
             
-            <call method="setAdvanced">
-                <argument>%cmf_sonata_phpcr_admin_integration.menu.extension.menu_options.advanced%</argument>
+            <call method="setUseBurgovKeyValueForm">
+                <argument>%cmf_sonata_phpcr_admin_integration.menu.use_burgov_keyvalue_form%</argument>
             </call>
         </service>
 

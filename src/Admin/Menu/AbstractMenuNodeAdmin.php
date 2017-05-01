@@ -36,7 +36,7 @@ abstract class AbstractMenuNodeAdmin extends AbstractAdmin
     /**
      * @var bool
      */
-    protected $advanced;
+    protected $useBurgovKeyValueForm;
     
     /**
      * @var string
@@ -97,9 +97,9 @@ abstract class AbstractMenuNodeAdmin extends AbstractAdmin
         $this->contentTreeBlock = $contentTreeBlock;
     }
 
-    public function setAdvanced($advanced)
+    public function setUseBurgovKeyValueForm($useBurgovKeyValueForm)
     {
-        $this->advanced = $advanced;
+        $this->useBurgovKeyValueForm = $useBurgovKeyValueForm;
     }
     
     public function toString($object)

@@ -80,7 +80,7 @@ class MenuNodeAdmin extends AbstractMenuNodeAdmin
                         ->add('link', TextType::class, array('required' => false, 'mapped' => false))
             ;
             
-            if ($this->advanced) 
+            if ($this->useBurgovKeyValueForm) 
             {
                 $formMapper
                     ->add('routeParameters', KeyValueType::class, array(
