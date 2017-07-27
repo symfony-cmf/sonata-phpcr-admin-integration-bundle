@@ -119,4 +119,6 @@ cmf_content:
         phpcr:
             content_basepath: /test/contents
 
-
+sonata_doctrine_phpcr_admin:
+    document_tree:
+        routing_defaults: []
