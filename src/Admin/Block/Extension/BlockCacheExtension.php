@@ -43,7 +43,7 @@ class BlockCacheExtension extends AbstractAdminExtension
         }
 
         $formMapper
-            ->tab($this->formTab, 'form.tab_general' === $this->formtab
+            ->tab($this->formTab, 'form.tab_general' === $this->formTab
                 ? ['translation_domain' => 'CmfSonataPhpcrAdminIntegrationBundle']
                 : []
             )
