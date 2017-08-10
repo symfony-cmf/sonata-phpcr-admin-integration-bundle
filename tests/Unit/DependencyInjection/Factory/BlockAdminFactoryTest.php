@@ -45,8 +45,8 @@ class BlockAdminFactoryTest extends AbstractFactoryTest
             ],
         ]);
 
-        $this->assertContainerBuilderHasParameter('cmf_sonata_phpcr_admin_integration.block.persistence.basepath', 'basepath_value');
-        $this->assertContainerBuilderHasParameter('cmf_sonata_phpcr_admin_integration.block.persistence.menu_basepath', 'menu_basepath_value');
+        $this->assertContainerBuilderHasParameter('cmf_sonata_phpcr_admin_integration.block.basepath', 'basepath_value');
+        $this->assertContainerBuilderHasParameter('cmf_sonata_phpcr_admin_integration.block.menu_basepath', 'menu_basepath_value');
         $this->assertContainerBuilderHasParameter('cmf_sonata_phpcr_admin_integration.block.extension.block_cache.form_group', 'block_group');
         $this->assertContainerBuilderHasParameter('cmf_sonata_phpcr_admin_integration.block.extension.block_cache.form_tab', 'block_tab');
     }
