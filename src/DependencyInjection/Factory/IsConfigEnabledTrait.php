@@ -34,7 +34,7 @@ trait IsConfigEnabledTrait
             $enabled = $bundleExists;
         } elseif (true === $enabled && !$bundleExists) {
             if (null === $message) {
-                $message = $bundleName.' integration was explicitely enabled, but the bundle is not available.';
+                $message = $requiredBundle.' integration was explicitely enabled, but the bundle is not available.';
             }
 
             throw new \LogicException($message);

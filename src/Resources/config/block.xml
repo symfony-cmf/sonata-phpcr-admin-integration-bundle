@@ -34,7 +34,7 @@
             </call>
 
             <call method="setRootPath">
-                <argument>%cmf_sonata_phpcr_admin_integration.block.persistence.basepath%</argument>
+                <argument>%cmf_sonata_phpcr_admin_integration.block.basepath%</argument>
             </call>
         </service>
 
@@ -58,7 +58,7 @@
             </call>
 
             <call method="setRootPath">
-                <argument>%cmf_sonata_phpcr_admin_integration.block.persistence.basepath%</argument>
+                <argument>%cmf_sonata_phpcr_admin_integration.block.basepath%</argument>
             </call>
         </service>
 
@@ -82,7 +82,7 @@
             </call>
 
             <call method="setRootPath">
-                <argument>%cmf_sonata_phpcr_admin_integration.block.persistence.basepath%</argument>
+                <argument>%cmf_sonata_phpcr_admin_integration.block.basepath%</argument>
             </call>
         </service>
 
@@ -106,7 +106,7 @@
             </call>
 
             <call method="setRootPath">
-                <argument>%cmf_sonata_phpcr_admin_integration.block.persistence.basepath%</argument>
+                <argument>%cmf_sonata_phpcr_admin_integration.block.basepath%</argument>
             </call>
         </service>
 
@@ -130,7 +130,7 @@
             </call>
 
             <call method="setRootPath">
-                <argument>%cmf_sonata_phpcr_admin_integration.block.persistence.basepath%</argument>
+                <argument>%cmf_sonata_phpcr_admin_integration.block.basepath%</argument>
             </call>
         </service>
 
@@ -158,7 +158,7 @@
             </call>
 
             <call method="setRootPath">
-                <argument>%cmf_sonata_phpcr_admin_integration.block.persistence.basepath%</argument>
+                <argument>%cmf_sonata_phpcr_admin_integration.block.basepath%</argument>
             </call>
         </service>
 

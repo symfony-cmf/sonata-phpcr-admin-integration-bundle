@@ -25,10 +25,10 @@
             </call>
 
             <call method="setRootPath">
-                <argument>%cmf_sonata_phpcr_admin_integration.block.persistence.basepath%</argument>
+                <argument>%cmf_sonata_phpcr_admin_integration.block.basepath%</argument>
             </call>
             <call method="setMenuPath">
-                <argument>%cmf_sonata_phpcr_admin_integration.block.persistence.menu_basepath%</argument>
+                <argument>%cmf_sonata_phpcr_admin_integration.block.menu_basepath%</argument>
             </call>
         </service>
     </services>
