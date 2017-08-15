@@ -38,6 +38,7 @@ class MenuAdminFactory implements AdminFactoryInterface
     {
         $builder
             ->booleanNode('recursive_breadcrumbs')->defaultTrue()->end()
+            ->booleanNode('use_burgov_keyvalue_form')->defaultFalse()->end()
             ->arrayNode('extensions')
                 ->addDefaultsIfNotSet()
                 ->children()
@@ -72,6 +73,7 @@ class MenuAdminFactory implements AdminFactoryInterface
         $loader->load('menu.xml');
 
         $this->loadExtensions($config['extensions'], $container, $loader);
+        $this->loadBurgovKeyValueForm($container);
     }
 
     private function loadExtensions(array $config, ContainerBuilder $container, XmlFileLoader $loader)
@@ -101,4 +103,11 @@ class MenuAdminFactory implements AdminFactoryInterface
             }
         }
     }
+    
+    private function loadBurgovKeyValueForm(ContainerBuilder $container)
+    {
+        $bundles = $container->getParameter('kernel.bundles');
+
+        $container->setParameter('cmf_sonata_phpcr_admin_integration.menu.use_burgov_keyvalue_form', isset($bundles['BurgovKeyValueFormBundle']) );
+    }    
 }

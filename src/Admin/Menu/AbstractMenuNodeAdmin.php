@@ -34,6 +34,11 @@ abstract class AbstractMenuNodeAdmin extends AbstractAdmin
     protected $menuRoot;
 
     /**
+     * @var bool
+     */
+    protected $useBurgovKeyValueForm;
+    
+    /**
      * @var string
      */
     protected $translationDomain = 'CmfSonataPhpcrAdminIntegrationBundle';
@@ -92,6 +97,11 @@ abstract class AbstractMenuNodeAdmin extends AbstractAdmin
         $this->contentTreeBlock = $contentTreeBlock;
     }
 
+    public function setUseBurgovKeyValueForm($useBurgovKeyValueForm)
+    {
+        $this->useBurgovKeyValueForm = $useBurgovKeyValueForm;
+    }
+    
     public function toString($object)
     {
         if ($object instanceof MenuNodeBase && $object->getLabel()) {
