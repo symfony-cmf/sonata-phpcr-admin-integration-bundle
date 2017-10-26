@@ -18,12 +18,12 @@ class AppKernel extends TestKernel
     {
         $this->requireBundleSet('default');
 
-        $this->requireBundleSets(array(
+        $this->requireBundleSets([
             'phpcr_odm',
             'sonata_admin_phpcr',
-        ));
+        ]);
 
-        $this->addBundles(array(
+        $this->addBundles([
             new Sonata\SeoBundle\SonataSeoBundle(),
             new Burgov\Bundle\KeyValueFormBundle\BurgovKeyValueFormBundle(),
 
@@ -36,13 +36,13 @@ class AppKernel extends TestKernel
             new Symfony\Cmf\Bundle\ContentBundle\CmfContentBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle(),
             new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
-        ));
+        ]);
 
         if (class_exists('Symfony\Cmf\Bundle\ResourceRestBundle\CmfResourceRestBundle')) {
-            $this->addBundles(array(
+            $this->addBundles([
                 new Symfony\Cmf\Bundle\ResourceBundle\CmfResourceBundle(),
                 new Symfony\Cmf\Bundle\ResourceRestBundle\CmfResourceRestBundle(),
-            ));
+            ]);
         }
     }
 

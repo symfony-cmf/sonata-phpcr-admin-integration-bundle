@@ -23,7 +23,7 @@ class StringBlockAdminTest extends AbstractBlockAdminTestCase
     {
         $this->makeListAssertions(
             '/admin/cmf/block/stringblock/list',
-            array('string-block-1', 'string-block-2')
+            ['string-block-1', 'string-block-2']
         );
     }
 
@@ -34,7 +34,7 @@ class StringBlockAdminTest extends AbstractBlockAdminTestCase
     {
         $this->makeEditAssertions(
             '/admin/cmf/block/stringblock/test/blocks/string-block-1/edit',
-            array('string-block-1')
+            ['string-block-1']
         );
     }
 
@@ -45,11 +45,11 @@ class StringBlockAdminTest extends AbstractBlockAdminTestCase
     {
         $this->makeCreateAssertions(
             '/admin/cmf/block/stringblock/create',
-            array(
+            [
                 'parentDocument' => '/test/blocks',
                 'name' => 'foo-test-container',
                 'body' => 'string-block-1-body',
-            )
+            ]
         );
     }
 
@@ -68,7 +68,7 @@ class StringBlockAdminTest extends AbstractBlockAdminTestCase
     {
         $this->makeShowAssertions(
             '/admin/cmf/block/stringblock/test/blocks/string-block-1/show',
-            array('string-block-1')
+            ['string-block-1']
         );
     }
 }
