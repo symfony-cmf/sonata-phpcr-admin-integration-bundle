@@ -18,9 +18,9 @@ class PHPCRBlockLoaderTest extends BaseTestCase
 {
     public function setUp()
     {
-        $this->db('PHPCR')->loadFixtures(array(
+        $this->db('PHPCR')->loadFixtures([
             'Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Resources\DataFixtures\Phpcr\LoadBlockData',
-        ));
+        ]);
         $this->client = $this->createClient();
     }
 
@@ -28,8 +28,8 @@ class PHPCRBlockLoaderTest extends BaseTestCase
     {
         /** @var $service PhpcrBlockLoader */
         $service = $this->client->getContainer()->get('cmf.block.service');
-        $this->assertInstanceOf('Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SimpleBlock', $service->load(array('name' => '/test/blocks/block-1')));
+        $this->assertInstanceOf('Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SimpleBlock', $service->load(['name' => '/test/blocks/block-1']));
         // this block is not published, should be empty
-        $this->assertInstanceOf('Sonata\BlockBundle\Model\EmptyBlock', $service->load(array('name' => '/test/blocks/block-2')));
+        $this->assertInstanceOf('Sonata\BlockBundle\Model\EmptyBlock', $service->load(['name' => '/test/blocks/block-2']));
     }
 }

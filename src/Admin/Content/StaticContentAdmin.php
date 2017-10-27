@@ -102,7 +102,7 @@ class StaticContentAdmin extends AbstractAdmin
     {
         return $object instanceof StaticContentBase && $object->getTitle()
             ? $object->getTitle()
-            : $this->trans('link_add', array(), 'SonataAdminBundle')
+            : $this->trans('link_add', [], 'SonataAdminBundle')
         ;
     }
 }
