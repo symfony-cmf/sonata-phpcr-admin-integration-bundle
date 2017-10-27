@@ -31,14 +31,14 @@ class MenuAdmin extends AbstractMenuNodeAdmin
             $formMapper
                 ->tab('form.tab_general')
                     ->with('form.group_items', ['class' => 'col-md-6'])
-                        ->add('children', TreeManagerType::class, array(
+                        ->add('children', TreeManagerType::class, [
                             'root' => $this->menuRoot,
                             'edit_in_overlay' => false,
                             'create_in_overlay' => false,
                             'delete_in_overlay' => false,
-                        ), array(
+                        ], [
                             'help' => 'help.help_items',
-                        ))
+                        ])
                     ->end()
                 ->end()
             ;

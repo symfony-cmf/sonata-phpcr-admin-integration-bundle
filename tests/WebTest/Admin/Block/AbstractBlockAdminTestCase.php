@@ -54,9 +54,9 @@ abstract class AbstractBlockAdminTestCase extends BaseTestCase
      */
     public function setUp()
     {
-        $this->db('PHPCR')->loadFixtures(array(
+        $this->db('PHPCR')->loadFixtures([
             'Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Resources\DataFixtures\Phpcr\LoadBlockData',
-        ));
+        ]);
         $this->client = $this->createClient();
     }
 

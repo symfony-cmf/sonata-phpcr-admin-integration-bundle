@@ -11,8 +11,8 @@
 
 namespace Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\WebTest\Admin;
 
-use Symfony\Cmf\Component\Testing\Functional\BaseTestCase;
 use Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Resources\DataFixtures\Phpcr\LoadContentData;
+use Symfony\Cmf\Component\Testing\Functional\BaseTestCase;
 
 /**
  * @author Maximilian Berghoff <Maximilian.Berghoff@mayflower.de>
@@ -21,9 +21,9 @@ abstract class TestCase extends BaseTestCase
 {
     public function setUp()
     {
-        $this->db('PHPCR')->loadFixtures(array(
+        $this->db('PHPCR')->loadFixtures([
             LoadContentData::class,
-        ));
+        ]);
     }
 
     public function testAdminDashboard()

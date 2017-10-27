@@ -23,7 +23,7 @@ class BaseAdmin extends Admin
 {
     public function getExportFormats()
     {
-        return array();
+        return [];
     }
 
     protected function configureListFields(ListMapper $listMapper)
@@ -40,7 +40,7 @@ class BaseAdmin extends Admin
             ->with('form.group_general')
             ->add('name', 'text')
             ->add('title', 'text')
-            ->add('body', 'textarea', array('required' => false))
+            ->add('body', 'textarea', ['required' => false])
             ->end()
         ;
     }

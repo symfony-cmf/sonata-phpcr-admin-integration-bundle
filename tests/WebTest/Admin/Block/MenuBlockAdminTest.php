@@ -23,7 +23,7 @@ class MenuBlockAdminTest extends AbstractBlockAdminTestCase
     {
         $this->makeListAssertions(
             '/admin/cmf/block/menublock/list',
-            array('menu-block-1', 'menu-block-2')
+            ['menu-block-1', 'menu-block-2']
         );
     }
 
@@ -34,7 +34,7 @@ class MenuBlockAdminTest extends AbstractBlockAdminTestCase
     {
         $this->makeEditAssertions(
             '/admin/cmf/block/menublock/test/blocks/menu-block-1/edit',
-            array('menu-block-1')
+            ['menu-block-1']
         );
     }
 
@@ -45,10 +45,10 @@ class MenuBlockAdminTest extends AbstractBlockAdminTestCase
     {
         $this->makeCreateAssertions(
             '/admin/cmf/block/menublock/create',
-            array(
+            [
                 'parentDocument' => '/test/blocks',
                 'name' => 'foo-test-container',
-            )
+            ]
         );
     }
 
@@ -67,7 +67,7 @@ class MenuBlockAdminTest extends AbstractBlockAdminTestCase
     {
         $this->makeShowAssertions(
             '/admin/cmf/block/menublock/test/blocks/menu-block-1/show',
-            array('menu-block-1')
+            ['menu-block-1']
         );
     }
 }

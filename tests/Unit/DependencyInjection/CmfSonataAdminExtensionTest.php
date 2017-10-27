@@ -21,9 +21,9 @@ class CmfSonataAdminExtensionTest extends AbstractExtensionTestCase
      */
     protected function getContainerExtensions()
     {
-        return array(
+        return [
             new CmfSonataPhpcrAdminIntegrationExtension(),
-        );
+        ];
     }
 
     /**

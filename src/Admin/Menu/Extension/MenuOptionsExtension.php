@@ -79,11 +79,11 @@ class MenuOptionsExtension extends AbstractAdminExtension
             return;
         }
 
-        $child_options = array(
+        $child_options = [
             'value_type' => TextType::class,
             'label' => false,
-            'attr' => array('style' => 'clear:both'),
-        );
+            'attr' => ['style' => 'clear:both'],
+        ];
 
         $formMapper
             ->add(
