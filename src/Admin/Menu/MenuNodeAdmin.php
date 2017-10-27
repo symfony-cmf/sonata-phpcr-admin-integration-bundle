@@ -11,16 +11,16 @@
 
 namespace Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\Menu;
 
+use Doctrine\Common\Util\ClassUtils;
+use Knp\Menu\ItemInterface as MenuItemInterface;
+use Sonata\AdminBundle\Datagrid\ListMapper;
+use Sonata\AdminBundle\Form\FormMapper;
+use Sonata\DoctrinePHPCRAdminBundle\Form\Type\ChoiceFieldMaskType;
+use Symfony\Cmf\Bundle\MenuBundle\Model\MenuNode;
 use Symfony\Cmf\Bundle\TreeBrowserBundle\Form\Type\TreeSelectType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormEvents;
-use Symfony\Cmf\Bundle\MenuBundle\Model\MenuNode;
-use Sonata\AdminBundle\Datagrid\ListMapper;
-use Sonata\AdminBundle\Form\FormMapper;
-use Sonata\DoctrinePHPCRAdminBundle\Form\Type\ChoiceFieldMaskType;
-use Knp\Menu\ItemInterface as MenuItemInterface;
-use Doctrine\Common\Util\ClassUtils;
 
 class MenuNodeAdmin extends AbstractMenuNodeAdmin
 {
@@ -62,21 +62,21 @@ class MenuNodeAdmin extends AbstractMenuNodeAdmin
             $formMapper
                 ->tab('form.tab_general')
                     ->with('form.group_target', ['class' => 'col-sm-6'])
-                        ->add('linkType', ChoiceFieldMaskType::class, array(
-                            'choices' => array(
+                        ->add('linkType', ChoiceFieldMaskType::class, [
+                            'choices' => [
                                 'route' => 'route',
                                 'uri' => 'uri',
                                 'content' => 'content',
-                            ),
-                            'map' => array(
-                                'route' => array('link'),
-                                'uri' => array('link'),
-                                'content' => array('content', TreeSelectType::class),
-                            ),
+                            ],
+                            'map' => [
+                                'route' => ['link'],
+                                'uri' => ['link'],
+                                'content' => ['content', TreeSelectType::class],
+                            ],
                             'placeholder' => 'auto',
                             'required' => false,
-                        ))
-                        ->add('link', TextType::class, array('required' => false, 'mapped' => false))
+                        ])
+                        ->add('link', TextType::class, ['required' => false, 'mapped' => false])
                         ->add(
                             'content',
                             TreeSelectType::class,
@@ -112,10 +112,12 @@ class MenuNodeAdmin extends AbstractMenuNodeAdmin
             switch ($node->getLinkType()) {
                 case 'route':
                     $link->setData($node->getRoute());
+
                     break;
 
                 case 'uri':
                     $link->setData($node->getUri());
+
                     break;
 
                 case null:
@@ -150,10 +152,12 @@ class MenuNodeAdmin extends AbstractMenuNodeAdmin
             switch ($linkType) {
                 case 'route':
                     $node->setRoute($link);
+
                     break;
 
                 case 'uri':
                     $node->setUri($link);
+
                     break;
             }
         });
@@ -185,9 +189,9 @@ class MenuNodeAdmin extends AbstractMenuNodeAdmin
         $parentEditNode = $parentAdmin->buildBreadcrumbs($action, $menu);
         if ($parentAdmin->isGranted('EDIT' && $parentAdmin->hasRoute('edit'))) {
             $parentEditNode->setUri(
-                $parentAdmin->generateUrl('edit', array(
+                $parentAdmin->generateUrl('edit', [
                     'id' => $this->getUrlsafeIdentifier($parentDoc),
-                ))
+                ])
             );
         }
 

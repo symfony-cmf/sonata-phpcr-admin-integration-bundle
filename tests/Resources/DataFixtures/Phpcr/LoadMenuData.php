@@ -14,11 +14,11 @@ namespace Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Resources\D
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\ODM\PHPCR\DocumentManager;
-use Symfony\Cmf\Bundle\MenuBundle\Doctrine\Phpcr\MenuNode;
-use Symfony\Cmf\Bundle\MenuBundle\Doctrine\Phpcr\Menu;
-use Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Resources\Document\MenuContent;
-use Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\Route;
 use PHPCR\Util\NodeHelper;
+use Symfony\Cmf\Bundle\MenuBundle\Doctrine\Phpcr\Menu;
+use Symfony\Cmf\Bundle\MenuBundle\Doctrine\Phpcr\MenuNode;
+use Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\Route;
+use Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Resources\Document\MenuContent;
 
 class LoadMenuData implements FixtureInterface
 {
@@ -89,7 +89,7 @@ class LoadMenuData implements FixtureInterface
         $subNode->setLabel('This node has an assigned route with parameters');
         $subNode->setName('sub-item-3');
         $subNode->setRoute('link_test_route_with_params');
-        $subNode->setRouteParameters(array('foo' => 'bar', 'bar' => 'foo'));
+        $subNode->setRouteParameters(['foo' => 'bar', 'bar' => 'foo']);
         $manager->persist($subNode);
 
         $menuNode = new MenuNode();

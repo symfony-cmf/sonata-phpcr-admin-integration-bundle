@@ -11,10 +11,10 @@
 
 namespace Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\Core\Extension;
 
+use Doctrine\ODM\PHPCR\HierarchyInterface;
 use Sonata\AdminBundle\Admin\AbstractAdminExtension;
 use Sonata\AdminBundle\Admin\AdminInterface;
 use Symfony\Cmf\Bundle\CoreBundle\Model\ChildInterface;
-use Doctrine\ODM\PHPCR\HierarchyInterface;
 
 /**
  * Admin extension to handle child models.
@@ -42,9 +42,11 @@ class ChildExtension extends AbstractAdminExtension
         switch ($object) {
             case $object instanceof HierarchyInterface:
                 $object->setParentDocument($parent);
+
                 break;
             case $object instanceof ChildInterface:
                 $object->setParentObject($parent);
+
                 break;
             default:
                 throw new \InvalidArgumentException(sprintf('Class %s is not supported', get_class($object)));

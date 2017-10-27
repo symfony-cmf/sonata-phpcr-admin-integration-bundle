@@ -15,12 +15,12 @@ use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\CoreBundle\Form\Type\ImmutableArrayType;
+use Symfony\Cmf\Bundle\RoutingBundle\Form\Type\RouteTypeType;
+use Symfony\Cmf\Bundle\RoutingBundle\Model\Route;
 use Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\AbstractAdmin;
 use Symfony\Cmf\Bundle\TreeBrowserBundle\Form\Type\TreeSelectType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Cmf\Bundle\RoutingBundle\Model\Route;
-use Symfony\Cmf\Bundle\RoutingBundle\Form\Type\RouteTypeType;
 
 class RouteAdmin extends AbstractAdmin
 {
@@ -110,7 +110,7 @@ class RouteAdmin extends AbstractAdmin
 
     public function getExportFormats()
     {
-        return array();
+        return [];
     }
 
     /**
@@ -122,7 +122,7 @@ class RouteAdmin extends AbstractAdmin
      */
     protected function configureFieldsForDefaults($dynamicDefaults)
     {
-        $defaults = array(
+        $defaults = [
             '_controller' => ['_controller', TextType::class, ['required' => false, 'translation_domain' => 'CmfSonataPhpcrAdminIntegrationBundle']],
             '_template' => ['_template', TextType::class, ['required' => false, 'translation_domain' => 'CmfSonataPhpcrAdminIntegrationBundle']],
             'type' => ['type', RouteTypeType::class, [
@@ -130,7 +130,7 @@ class RouteAdmin extends AbstractAdmin
                 'required' => false,
                 'translation_domain' => 'CmfSonataPhpcrAdminIntegrationBundle',
             ]],
-        );
+        ];
 
         foreach ($dynamicDefaults as $name => $value) {
             if (!isset($defaults[$name])) {
@@ -201,7 +201,7 @@ class RouteAdmin extends AbstractAdmin
     {
         return $object instanceof Route && $object->getId()
             ? $object->getId()
-            : $this->trans('link_add', array(), 'SonataAdminBundle')
+            : $this->trans('link_add', [], 'SonataAdminBundle')
         ;
     }
 }

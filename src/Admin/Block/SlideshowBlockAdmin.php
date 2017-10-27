@@ -11,11 +11,11 @@
 
 namespace Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\Block;
 
-use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
+use Sonata\AdminBundle\Form\FormMapper;
+use Sonata\CoreBundle\Form\Type\CollectionType;
 use Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SlideshowBlock;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Sonata\CoreBundle\Form\Type\CollectionType;
 
 /**
  * @author Horner
@@ -66,15 +66,15 @@ class SlideshowBlockAdmin extends AbstractBlockAdmin
                     ? ['class' => 'col-md-9']
                     : []
                 )
-                    ->add('title', TextType::class, array('required' => false))
+                    ->add('title', TextType::class, ['required' => false])
                     ->add('children', CollectionType::class,
-                        array(),
-                        array(
+                        [],
+                        [
                             'edit' => 'inline',
                             'inline' => 'table',
                             'admin_code' => $this->embeddedAdminCode,
                             'sortable' => 'position',
-                        ))
+                        ])
                 ->end()
             ->end()
         ;

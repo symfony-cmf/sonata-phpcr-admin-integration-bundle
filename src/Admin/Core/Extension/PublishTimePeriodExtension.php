@@ -61,12 +61,12 @@ class PublishTimePeriodExtension extends AbstractAdminExtension
                     ? ['translation_domain' => 'CmfSonataPhpcrAdminIntegrationBundle']
                     : []
                 )
-                    ->add('publish_start_date', DateType::class, $dateOptions, array(
+                    ->add('publish_start_date', DateType::class, $dateOptions, [
                         'help' => 'form.help_publish_start_date',
-                    ))
-                    ->add('publish_end_date', DateType::class, $dateOptions, array(
+                    ])
+                    ->add('publish_end_date', DateType::class, $dateOptions, [
                         'help' => 'form.help_publish_end_date',
-                    ))
+                    ])
                 ->end()
             ->end();
     }
