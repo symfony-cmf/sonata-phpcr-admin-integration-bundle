@@ -28,6 +28,17 @@ class ContainerBlockAdmin extends AbstractBlockAdmin
         $listMapper
             ->addIdentifier('id', 'text')
             ->add('name', 'text')
+            ->add(
+                'children',
+                'sonata_type_collection',
+                ['label' => false, 'by_reference' => false, 'cascade_validation' => true],
+                [
+                    'admin_code' => 'cmf_sonata_phpcr_admin_integration.block.simple_admin',
+                    'edit' => 'inline',
+                    'inline' => 'table',
+                    'sortable' => 'position'
+                ]
+            )
         ;
     }
 
