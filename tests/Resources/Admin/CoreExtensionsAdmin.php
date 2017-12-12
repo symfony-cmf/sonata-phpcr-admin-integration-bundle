@@ -14,5 +14,6 @@ namespace Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Resources\A
 class CoreExtensionsAdmin extends BaseAdmin
 {
     protected $baseRouteName = 'cmf_core_extensions';
+
     protected $baseRoutePattern = 'cmf/core/extensions';
 }

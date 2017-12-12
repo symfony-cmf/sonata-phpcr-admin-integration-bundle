@@ -25,7 +25,7 @@ class MenuAdmin extends AbstractMenuNodeAdmin
         parent::configureFormFields($formMapper);
 
         $subject = $this->getSubject();
-        $isNew = $subject->getId() === null;
+        $isNew = null === $subject->getId();
 
         if (!$isNew) {
             $formMapper

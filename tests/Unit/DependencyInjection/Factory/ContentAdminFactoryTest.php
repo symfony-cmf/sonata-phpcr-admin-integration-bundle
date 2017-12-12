@@ -24,7 +24,9 @@ use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 class ContentAdminFactoryTest extends \PHPUnit_Framework_TestCase
 {
     private $factory;
+
     private $container;
+
     private $fileLoader;
 
     protected function setUp()

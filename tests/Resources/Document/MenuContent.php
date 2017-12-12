@@ -59,6 +59,7 @@ class MenuContent implements MenuNodeReferrersInterface, RouteReferrersReadInter
      * )
      */
     protected $routes;
+
     private $published;
 
     public function __construct()

@@ -21,6 +21,7 @@ use Sonata\DoctrinePHPCRAdminBundle\Admin\Admin;
 class MenuContentAdmin extends Admin
 {
     protected $baseRouteName = 'cmf_menu_test_content';
+
     protected $baseRoutePattern = '/cmf/menu-test/content';
 
     protected function configureListFields(ListMapper $listMapper)

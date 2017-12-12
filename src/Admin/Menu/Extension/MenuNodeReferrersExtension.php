@@ -23,6 +23,7 @@ use Sonata\CoreBundle\Form\Type\CollectionType;
 class MenuNodeReferrersExtension extends AbstractAdminExtension
 {
     private $formGroup;
+
     private $formTab;
 
     public function __construct($formGroup = 'form.group_menus', $formTab = 'form.tab_menu')

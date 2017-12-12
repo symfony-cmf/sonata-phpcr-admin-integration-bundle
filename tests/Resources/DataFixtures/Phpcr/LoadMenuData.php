@@ -23,6 +23,7 @@ use Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Resources\Documen
 class LoadMenuData implements FixtureInterface
 {
     protected $menuRoot;
+
     protected $routeRoot;
 
     public function load(ObjectManager $manager)
