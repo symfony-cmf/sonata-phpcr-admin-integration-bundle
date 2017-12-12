@@ -7,7 +7,8 @@
         <service
                 id="cmf_sonata_phpcr_admin_integration.content.admin"
                 class="Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\Content\StaticContentAdmin"
-                parent="cmf_sonata_phpcr_admin_integration.abstract_admin">
+                parent="cmf_sonata_phpcr_admin_integration.abstract_admin"
+                public="true">
             <tag
                     name="sonata.admin"
                     manager_type="doctrine_phpcr"

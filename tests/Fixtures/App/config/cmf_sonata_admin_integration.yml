@@ -55,24 +55,26 @@ cmf_menu:
 
 services:
     sonata.admin.seo_content:
-        class: Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Resources\Admin\SeoAwareContentAdmin
+        public: true
+        class: Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Fixtures\App\Admin\SeoAwareContentAdmin
         tags:
             - { name: sonata.admin, manager_type: doctrine_phpcr, label_catalogue: CmfSeoBundle, group: dashboard.cmf, label: dashboard.label_seo_content, label_translator_strategy: sonata.admin.label.strategy.underscore}
         arguments:
             - ~
-            - Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Resources\Document\SeoAwareContent
+            - Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Fixtures\App\Document\SeoAwareContent
             - SonataAdminBundle:CRUD
         calls:
             - [ setTranslationDomain, [CmfSonataPhpcrAdminIntegrationBundle]]
             - [ setRouteBuilder, ['@sonata.admin.route.path_info_slashes']]
             - [ setRootPath, [/test/content]]
     sonata.admin.core_examples:
-         class: Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Resources\Admin\CoreExtensionsAdmin
+         public: true
+         class: Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Fixtures\App\Admin\CoreExtensionsAdmin
          tags:
            - { name: sonata.admin, manager_type: doctrine_phpcr, label_catalogue: CmfSeoBundle, group: dashboard.cmf, label: dashboard.label_seo_content, label_translator_strategy: sonata.admin.label.strategy.underscore}
          arguments:
             - ~
-            - Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Resources\Document\CoreExtensionsAwareContent
+            - Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Fixtures\App\Document\CoreExtensionsAwareContent
             - SonataAdminBundle:CRUD
          calls:
             - [ setTranslationDomain, [CmfSonataPhpcrAdminIntegrationBundle]]
@@ -80,12 +82,13 @@ services:
             - [ setRootPath, [/test/core]]
 
     sonata.admin.menu:
-        class: Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Resources\Admin\MenuContentAdmin
+        public: true
+        class: Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Fixtures\App\Admin\MenuContentAdmin
         tags:
             - { name: sonata.admin, manager_type: doctrine_phpcr, group: Test, label: Test Content }
         arguments:
             - ~
-            - Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Resources\Document\MenuContent
+            - Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Fixtures\App\Document\MenuContent
             - SonataAdminBundle:CRUD
 
 sonata_admin:

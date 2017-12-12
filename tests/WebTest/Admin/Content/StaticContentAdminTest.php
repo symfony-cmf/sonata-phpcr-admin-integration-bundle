@@ -11,7 +11,7 @@
 
 namespace Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\WebTest\Admin;
 
-use Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Resources\DataFixtures\Phpcr\LoadStaticContentData;
+use Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Fixtures\App\DataFixtures\Phpcr\LoadStaticContentData;
 use Symfony\Cmf\Component\Testing\Functional\BaseTestCase;
 
 class StaticContentAdminTest extends BaseTestCase
