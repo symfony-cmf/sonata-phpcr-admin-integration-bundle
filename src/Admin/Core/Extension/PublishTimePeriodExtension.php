@@ -27,6 +27,7 @@ class PublishTimePeriodExtension extends AbstractAdminExtension
      * @var string
      */
     protected $formGroup;
+
     protected $formTab;
 
     /**

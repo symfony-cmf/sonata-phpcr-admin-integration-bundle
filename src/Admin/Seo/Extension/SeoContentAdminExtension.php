@@ -30,6 +30,7 @@ class SeoContentAdminExtension extends AbstractAdminExtension
      * @var string
      */
     protected $formGroup;
+
     protected $formTab;
 
     /**

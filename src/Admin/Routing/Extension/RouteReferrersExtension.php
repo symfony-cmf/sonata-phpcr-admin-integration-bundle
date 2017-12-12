@@ -24,6 +24,7 @@ use Sonata\CoreBundle\Form\Type\CollectionType;
 class RouteReferrersExtension extends AbstractAdminExtension
 {
     private $formGroup;
+
     private $formTab;
 
     public function __construct($formGroup = 'form.group_routes', $formTab = 'form.tab_routes')

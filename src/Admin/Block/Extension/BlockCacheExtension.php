@@ -23,6 +23,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 class BlockCacheExtension extends AbstractAdminExtension
 {
     private $formGroup;
+
     private $formTab;
 
     public function __construct($formGroup = 'form.group_metadata', $formTab = 'form.tab_general')

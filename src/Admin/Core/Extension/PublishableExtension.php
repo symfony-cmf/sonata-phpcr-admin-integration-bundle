@@ -27,6 +27,7 @@ class PublishableExtension extends AbstractAdminExtension
      * @var string
      */
     protected $formGroup;
+
     protected $formTab;
 
     /**
