@@ -27,7 +27,7 @@
         "symfony-cmf/core-bundle": "^2.1",
         "symfony-cmf/routing-bundle": "^2.1",
         "symfony-cmf/seo-bundle": "^2.1",
-        "symfony-cmf/menu-bundle": "^2.1",
+        "symfony-cmf/menu-bundle": "^2.2",
         "symfony-cmf/block-bundle": "^2.1",
         "symfony-cmf/content-bundle": "^2.1",
         "doctrine/orm": "^2.4",
