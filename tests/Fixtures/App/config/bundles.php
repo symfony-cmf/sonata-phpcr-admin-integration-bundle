@@ -9,7 +9,6 @@
  * file that was distributed with this source code.
  */
 
-use FOS\JsRoutingBundle\FOSJsRoutingBundle;
 use Knp\Bundle\MenuBundle\KnpMenuBundle;
 use Sonata\AdminBundle\SonataAdminBundle;
 use Sonata\BlockBundle\SonataBlockBundle;
