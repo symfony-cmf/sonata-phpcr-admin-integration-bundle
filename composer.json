@@ -18,7 +18,7 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/kejwmen/IvoryCKEditorBundle"
+            "url": "git@github.com:kejwmen/IvoryCKEditorBundle.git"
         }
     ],
     "require": {
