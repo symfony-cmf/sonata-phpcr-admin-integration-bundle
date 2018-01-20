@@ -15,12 +15,6 @@
             "homepage": "https://github.com/symfony-cmf/sonata-admin-bundle/contributors"
         }
     ],
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "git@github.com:kejwmen/IvoryCKEditorBundle.git"
-        }
-    ],
     "require": {
         "php": "^7.1",
         "symfony/framework-bundle": "^2.8 || ^3.3 || ^4.0",
@@ -44,7 +38,7 @@
         "matthiasnoback/symfony-dependency-injection-test": "^1.1",
         "matthiasnoback/symfony-config-test": "^2.1",
         "burgov/key-value-form-bundle": "^1.0",
-        "egeloen/ckeditor-bundle": "dev-feature/symfony4-compat",
+        "egeloen/ckeditor-bundle": "^4.0",
         "symfony/asset": "^2.8 || ^3.3 || ^4.0",
         "symfony/browser-kit": "^2.8 || ^3.3 || ^4.0",
         "symfony/css-selector": "^2.8 || ^3.3 || ^4.0"
