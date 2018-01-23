@@ -20,8 +20,7 @@
         "symfony/framework-bundle": "^2.8 || ^3.3 || ^4.0",
         "sonata-project/doctrine-phpcr-admin-bundle": "^2.1",
         "sonata-project/admin-bundle": "^3.6.0",
-        "symfony-cmf/tree-browser-bundle": "^2.0",
-        "symfony/symfony": "^3.4"
+        "symfony-cmf/tree-browser-bundle": "^2.0"
     },
     "require-dev": {
         "symfony-cmf/testing": "^2.1",
