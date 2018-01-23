@@ -56,7 +56,6 @@ class SonataEnhancerTest extends \PHPUnit_Framework_TestCAse
         $this->routeBuilder = new PathInfoBuilder($this->prophesize(AuditManagerInterface::class)->reveal());
         $this->admin->setRouteBuilder($this->routeBuilder);
         $this->admin->setModelManager($this->modelManager->reveal());
-        $this->admin->setBaseCodeRoute('test');
     }
 
     /**

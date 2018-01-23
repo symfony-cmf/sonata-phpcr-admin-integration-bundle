@@ -41,6 +41,14 @@ class SonataEnhancer implements DescriptionEnhancerInterface
 
     private $adminMap = [];
 
+    private static $linkKeyMapping = [
+        'list' => Descriptor::LINK_LIST_HTML,
+        'create' => Descriptor::LINK_CREATE_HTML,
+        'edit' => Descriptor::LINK_EDIT_HTML,
+        'delete' => Descriptor::LINK_REMOVE_HTML,
+        'show' => Descriptor::LINK_SHOW_HTML,
+    ];
+
     /**
      * @param Pool                  $pool
      * @param UrlGeneratorInterface $urlGenerator
@@ -62,8 +70,6 @@ class SonataEnhancer implements DescriptionEnhancerInterface
         $class = ClassUtils::getClass($object);
         $admin = $this->getAdminByClass($class);
 
-        $links = [];
-
         $routeCollection = $admin->getRoutes();
 
         foreach ($routeCollection->getElements() as $code => $route) {
@@ -72,34 +78,10 @@ class SonataEnhancer implements DescriptionEnhancerInterface
                 $admin->getIdParameter() => $admin->getUrlsafeIdentifier($object),
             ], true);
 
-            $routeRole = substr($code, strlen($admin->getCode()) + 1);
-
-            $links[$routeRole] = $url;
-        }
-
-        if (isset($links['list'])) {
-            $description->set('list', $links['list']);
-            unset($links['list']);
-        }
-
-        if (isset($links['create'])) {
-            $description->set(Descriptor::LINK_CREATE_HTML, $links['create']);
-            unset($links['create']);
-        }
-
-        if (isset($links['edit'])) {
-            $description->set(Descriptor::LINK_EDIT_HTML, $links['edit']);
-            unset($links['edit']);
-        }
-
-        if (isset($links['delete'])) {
-            $description->set(Descriptor::LINK_REMOVE_HTML, $links['delete']);
-            unset($links['delete']);
-        }
-
-        if (isset($links['show'])) {
-            $description->set(Descriptor::LINK_SHOW_HTML, $links['show']);
-            unset($links['show']);
+            $linkKey = trim($code, '.)');
+            if (array_key_exists($linkKey, self::$linkKeyMapping)) {
+                $description->set(self::$linkKeyMapping[$linkKey], $url);
+            }
         }
 
         $description->set(Descriptor::PAYLOAD_TITLE, $admin->toString($object));

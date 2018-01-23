@@ -8,7 +8,8 @@
         <service
                 id="cmf_sonata_phpcr_admin_integration.routing.route_admin"
                 class="Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\Routing\RouteAdmin"
-                parent="cmf_sonata_phpcr_admin_integration.abstract_admin">
+                parent="cmf_sonata_phpcr_admin_integration.abstract_admin"
+                public="true">
             <tag
                     name="sonata.admin"
                     manager_type="doctrine_phpcr"
@@ -36,7 +37,8 @@
         <service
                 id="cmf_sonata_phpcr_admin_integration.routing.redirect_route_admin"
                 class="Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\Routing\RedirectRouteAdmin"
-                parent="cmf_sonata_phpcr_admin_integration.abstract_admin">
+                parent="cmf_sonata_phpcr_admin_integration.abstract_admin"
+                public="true">
             <tag
                     name="sonata.admin"
                     manager_type="doctrine_phpcr"
@@ -59,7 +61,8 @@
 
         <service
                 id="cmf_sonata_phpcr_admin_integration.routing.extension.route_referrers"
-                class="Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\Routing\Extension\RouteReferrersExtension">
+                class="Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\Routing\Extension\RouteReferrersExtension"
+                public="true">
             <argument>%cmf_sonata_phpcr_admin_integration.routing.extension.referrers.from_group%</argument>
             <argument>%cmf_sonata_phpcr_admin_integration.routing.extension.referrers.from_tab%</argument>
             <tag name="sonata.admin.extension"/>
@@ -67,7 +70,8 @@
 
         <service
                 id="cmf_sonata_phpcr_admin_integration.routing.extension.frontend_link"
-                class="Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\Routing\Extension\FrontendLinkExtension">
+                class="Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\Routing\Extension\FrontendLinkExtension"
+                public="true">
             <tag name="sonata.admin.extension"/>
             <argument type="service" id="cmf_routing.router"/>
             <argument type="service" id="translator"/>

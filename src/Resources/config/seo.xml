@@ -7,7 +7,8 @@
     <services>
         <service
                 id="cmf_sonata_phpcr_admin_integration.seo.extension.metadata"
-                class="Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\Seo\Extension\SeoContentAdminExtension">
+                class="Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\Seo\Extension\SeoContentAdminExtension"
+                public="true">
             <argument>%cmf_sonata_phpcr_admin_integration.seo.extension.metadata.form_group%</argument>
             <argument>%cmf_sonata_phpcr_admin_integration.seo.extension.metadata.form_tab%</argument>
             <tag name="sonata.admin.extension" />

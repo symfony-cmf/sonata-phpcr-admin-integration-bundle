@@ -23,7 +23,7 @@ class CoreAdminExtensionTest extends TestCase
     public function setUp()
     {
         $this->db('PHPCR')->loadFixtures([
-            'Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Resources\DataFixtures\Phpcr\LoadCoreData',
+            'Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Fixtures\App\DataFixtures\Phpcr\LoadCoreData',
         ]);
         $this->client = $this->createClient();
     }

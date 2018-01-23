@@ -9,16 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Resources\DataFixtures\Phpcr;
+namespace Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Fixtures\App\DataFixtures\Phpcr;
 
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\ODM\PHPCR\Document\Generic;
 use PHPCR\Util\NodeHelper;
-use Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\RedirectRoute;
-use Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\Route;
+use Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Fixtures\App\Document\CoreExtensionsAwareContent;
 
-class LoadRouteData implements FixtureInterface
+/**
+ * @author Maximilian Berghoff <Maximilian.Berghoff@mayflower.de>
+ */
+class LoadCoreData implements FixtureInterface
 {
     public function load(ObjectManager $manager)
     {
@@ -27,18 +29,15 @@ class LoadRouteData implements FixtureInterface
         $root = $manager->find(null, '/test');
         $parent = new Generic();
         $parent->setParentDocument($root);
-        $parent->setNodename('routing');
+        $parent->setNodename('core');
         $manager->persist($parent);
 
-        $route = new Route();
-        $route->setParentDocument($parent);
-        $route->setName('route-1');
-        $manager->persist($route);
-
-        $redirectRoute = new RedirectRoute();
-        $redirectRoute->setParentDocument($parent);
-        $redirectRoute->setName('redirect-route-1');
-        $manager->persist($redirectRoute);
+        $coreContent = new CoreExtensionsAwareContent();
+        $coreContent->setParentDocument($parent);
+        $coreContent->setName('with-extensions');
+        $coreContent->setTitle('with-extensions');
+        $coreContent->setBody('with-extensions');
+        $manager->persist($coreContent);
 
         $manager->flush();
     }

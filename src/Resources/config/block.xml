@@ -8,7 +8,8 @@
 
         <service
                 id="cmf_sonata_phpcr_admin_integration.block.admin_extension.cache"
-                class="Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\Block\Extension\BlockCacheExtension">
+                class="Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\Block\Extension\BlockCacheExtension"
+                public="true">
             <argument>%cmf_sonata_phpcr_admin_integration.block.extension.block_cache.form_group%</argument>
             <argument>%cmf_sonata_phpcr_admin_integration.block.extension.block_cache.form_tab%</argument>
             <tag name="sonata.admin.extension"/>
@@ -17,7 +18,8 @@
         <service
                 id="cmf_sonata_phpcr_admin_integration.block.simple_admin"
                 class="Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\Block\SimpleBlockAdmin"
-                parent="cmf_sonata_phpcr_admin_integration.abstract_admin">
+                parent="cmf_sonata_phpcr_admin_integration.abstract_admin"
+                public="true">
             <tag
                     name="sonata.admin"
                     manager_type="doctrine_phpcr"
@@ -41,7 +43,8 @@
         <service
                 id="cmf_sonata_phpcr_admin_integration.block.action_admin"
                 class="Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\Block\ActionBlockAdmin"
-                parent="cmf_sonata_phpcr_admin_integration.abstract_admin">
+                parent="cmf_sonata_phpcr_admin_integration.abstract_admin"
+                public="true">
             <tag
                     name="sonata.admin"
                     manager_type="doctrine_phpcr"
@@ -65,7 +68,8 @@
         <service
                 id="cmf_sonata_phpcr_admin_integration.block.container_admin"
                 class="Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\Block\ContainerBlockAdmin"
-                parent="cmf_sonata_phpcr_admin_integration.abstract_admin">
+                parent="cmf_sonata_phpcr_admin_integration.abstract_admin"
+                public="true">
             <tag
                     name="sonata.admin"
                     manager_type="doctrine_phpcr"
@@ -89,7 +93,8 @@
         <service
                 id="cmf_sonata_phpcr_admin_integration.block.reference_admin"
                 class="Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\Block\ReferenceBlockAdmin"
-                parent="cmf_sonata_phpcr_admin_integration.abstract_admin">
+                parent="cmf_sonata_phpcr_admin_integration.abstract_admin"
+                public="true">
             <tag
                     name="sonata.admin"
                     manager_type="doctrine_phpcr"
@@ -113,7 +118,8 @@
         <service
                 id="cmf_sonata_phpcr_admin_integration.block.string_admin"
                 class="Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\Block\StringBlockAdmin"
-                parent="cmf_sonata_phpcr_admin_integration.abstract_admin">
+                parent="cmf_sonata_phpcr_admin_integration.abstract_admin"
+                public="true">
             <tag
                     name="sonata.admin"
                     manager_type="doctrine_phpcr"
@@ -137,7 +143,8 @@
         <service
                 id="cmf_sonata_phpcr_admin_integration.block.slideshow_admin"
                 class="Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\Block\SlideshowBlockAdmin"
-                parent="cmf_sonata_phpcr_admin_integration.abstract_admin">
+                parent="cmf_sonata_phpcr_admin_integration.abstract_admin"
+                public="true">
             <tag
                     name="sonata.admin"
                     manager_type="doctrine_phpcr"

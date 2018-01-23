@@ -9,7 +9,8 @@
         <service
                 id="cmf_sonata_phpcr_admin_integration.menu.menu_admin"
                 class="Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\Menu\MenuAdmin"
-                parent="cmf_sonata_phpcr_admin_integration.abstract_admin">
+                parent="cmf_sonata_phpcr_admin_integration.abstract_admin"
+                public="true">
             <tag
                 name="sonata.admin"
                 manager_type="doctrine_phpcr"
@@ -39,7 +40,8 @@
         <service
                 id="cmf_sonata_phpcr_admin_integration.menu.node_admin"
                 class="Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\Menu\MenuNodeAdmin"
-                parent="cmf_sonata_phpcr_admin_integration.abstract_admin">
+                parent="cmf_sonata_phpcr_admin_integration.abstract_admin"
+                public="true">
             <tag
                 name="sonata.admin"
                 manager_type="doctrine_phpcr"
@@ -72,7 +74,8 @@
 
         <service
                 id="cmf_sonata_phpcr_admin_integration.menu.extension.menu_node_referrers"
-                class="Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\Menu\Extension\MenuNodeReferrersExtension">
+                class="Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\Menu\Extension\MenuNodeReferrersExtension"
+                public="true">
             <argument>%cmf_sonata_phpcr_admin_integration.menu.extension.menu_node_referrers.form_group%</argument>
             <argument>%cmf_sonata_phpcr_admin_integration.menu.extension.menu_node_referrers.form_tab%</argument>
             <tag name="sonata.admin.extension"/>
@@ -80,7 +83,8 @@
 
         <service
                 id="cmf_sonata_phpcr_admin_integration.menu.extension.menu_options"
-                class="Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\Menu\Extension\MenuOptionsExtension">
+                class="Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\Menu\Extension\MenuOptionsExtension"
+                public="true">
             <argument>%cmf_sonata_phpcr_admin_integration.menu.extension.menu_options.form_group%</argument>
             <argument>%cmf_sonata_phpcr_admin_integration.menu.extension.menu_options.form_tab%</argument>
             <argument>%cmf_sonata_phpcr_admin_integration.menu.extension.menu_options.advanced%</argument>
