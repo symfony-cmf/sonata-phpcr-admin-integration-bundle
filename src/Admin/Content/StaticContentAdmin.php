@@ -16,6 +16,7 @@ use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Symfony\Cmf\Bundle\ContentBundle\Model\StaticContentBase;
+use Symfony\Cmf\Bundle\GrapesjsBundle\Form\Type\GrapesEdit;
 use Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\AbstractAdmin;
 use Symfony\Cmf\Bundle\TreeBrowserBundle\Form\Type\TreeSelectType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -66,8 +67,8 @@ class StaticContentAdmin extends AbstractAdmin
                     ->add('title', TextType::class)
                     ->add(
                         'body',
-                        $this->ckEditorConfig ? CKEditorType::class : TextareaType::class,
-                        $this->ckEditorConfig
+                        $this->ckEditorConfig ? GrapesEdit::class : TextareaType::class,
+                        ['root_node' => $editView ? $this->getSubject()->getId() : '']
                     )
                 ->end()
 
