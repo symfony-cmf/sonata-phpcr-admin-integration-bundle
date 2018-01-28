@@ -23,6 +23,12 @@
         "symfony-cmf/tree-browser-bundle": "^2.0",
         "symfony/symfony": "^3.4"
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/symfony-cmf/grapesjs-bundle.git"
+        }
+    ],
     "require-dev": {
         "symfony-cmf/testing": "^2.1",
         "symfony-cmf/core-bundle": "^2.1",
