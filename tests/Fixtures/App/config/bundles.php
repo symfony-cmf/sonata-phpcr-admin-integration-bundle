@@ -9,6 +9,7 @@
  * file that was distributed with this source code.
  */
 
+use FOS\CKEditorBundle\FOSCKEditorBundle;
 use Knp\Bundle\MenuBundle\KnpMenuBundle;
 use Sonata\AdminBundle\SonataAdminBundle;
 use Sonata\BlockBundle\SonataBlockBundle;
@@ -33,5 +34,5 @@ return [
     KnpMenuBundle::class => ['all' => true],
     SonataDoctrinePHPCRAdminBundle::class => ['all' => true],
     CmfTreeBrowserBundle::class => ['all' => true],
-    \FOS\CKEditorBundle\FOSCKEditorBundle::class => ['all' => true],
+    FOSCKEditorBundle::class => ['all' => true],
 ];
