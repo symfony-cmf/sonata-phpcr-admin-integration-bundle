@@ -11,7 +11,6 @@
 
 namespace Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\DependencyInjection\Factory;
 
-use Ivory\CKEditorBundle\IvoryCKEditorBundle;
 use Symfony\Component\Config\Definition\Builder\NodeBuilder;
 use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -63,7 +62,7 @@ class ContentAdminFactory implements AdminFactoryInterface
         $loader->load('content.xml');
 
         $message = 'IvoryCKEditorBundle integration was explicitely enabled, but the bundle is not available.';
-        if (class_exists(IvoryCKEditorBundle::class)) {
+        if (class_exists(FOSCKEditorBundle::class)) {
             $message .= ' (did you forget to register the bundle in the AppKernel?)';
         }
 
