@@ -62,15 +62,15 @@ class ContentAdminFactory implements AdminFactoryInterface
     {
         $loader->load('content.xml');
 
-        $message = 'FOSCKEditorBundle integration was explicitely enabled, but the bundle is not available.';
+        $message = 'CKEditorBundle integration was explicitely enabled, but the bundle is not available.';
         if (class_exists(FOSCKEditorBundle::class)) {
             $message .= ' (did you forget to register the bundle in the AppKernel?)';
         }
 
         $ckeditorConfig = [];
-        if ($this->isConfigEnabledAuto($container, $config['fos_ckeditor']['enabled'], 'FOSCKEditorBundle', $message)) {
+        if ($this->isConfigEnabledAuto($container, $config['fos_ckeditor']['enabled'], 'CKEditorBundle', $message)) {
             if (!isset($config['fos_ckeditor']['config_name'])) {
-                throw new InvalidConfigurationException('The cmf_sonata_phpcr_admin_integration.bundles.content.fos_ckeditor.config_name setting has to be defined when FOSCKEditorBundle integration is enabled.');
+                throw new InvalidConfigurationException('The cmf_sonata_phpcr_admin_integration.bundles.content.fos_ckeditor.config_name setting has to be defined when CKEditorBundle integration is enabled.');
             }
 
             unset($config['fos_ckeditor']['enabled']);

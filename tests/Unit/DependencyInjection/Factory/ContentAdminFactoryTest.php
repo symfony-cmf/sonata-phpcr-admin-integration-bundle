@@ -33,13 +33,13 @@ class ContentAdminFactoryTest extends \PHPUnit_Framework_TestCase
     {
         $this->factory = new ContentAdminFactory();
         $this->container = new ContainerBuilder();
-        $this->container->setParameter('kernel.bundles', ['FOSCKEditorBundle' => true]);
+        $this->container->setParameter('kernel.bundles', ['CKEditorBundle' => true]);
         $this->fileLoader = $this->createMock(XmlFileLoader::class);
     }
 
     /**
      * @expectedException \Symfony\Component\Config\Definition\Exception\InvalidConfigurationException
-     * @expectedExceptionMessage config_name setting has to be defined when FOSCKEditorBundle integration is enabled
+     * @expectedExceptionMessage config_name setting has to be defined when CKEditorBundle integration is enabled
      */
     public function testInvalidCKEditorEnabledWithoutConfigName()
     {

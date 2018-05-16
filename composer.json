@@ -49,7 +49,7 @@
         "doctrine/phpcr-bundle": "To persist the metadata in PHPCR ODM documents",
         "doctrine/doctrine-bundle": "To persist the metadata in ORM entities",
         "doctrine/orm": "To persist the metadata in ORM entities, ~2.4",
-        "friendsofsymfony/ckeditor-bundl": "To have CkEditor support on textareas."
+        "friendsofsymfony/ckeditor-bundle": "To have CkEditor support on textareas."
     },
     "autoload": {
         "psr-4": {
