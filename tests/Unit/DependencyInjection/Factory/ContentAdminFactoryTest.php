@@ -33,13 +33,13 @@ class ContentAdminFactoryTest extends \PHPUnit_Framework_TestCase
     {
         $this->factory = new ContentAdminFactory();
         $this->container = new ContainerBuilder();
-        $this->container->setParameter('kernel.bundles', ['IvoryCKEditorBundle' => true]);
+        $this->container->setParameter('kernel.bundles', ['CKEditorBundle' => true]);
         $this->fileLoader = $this->createMock(XmlFileLoader::class);
     }
 
     /**
      * @expectedException \Symfony\Component\Config\Definition\Exception\InvalidConfigurationException
-     * @expectedExceptionMessage config_name setting has to be defined when IvoryCKEditorBundle integration is enabled
+     * @expectedExceptionMessage config_name setting has to be defined when CKEditorBundle integration is enabled
      */
     public function testInvalidCKEditorEnabledWithoutConfigName()
     {
@@ -56,26 +56,26 @@ class ContentAdminFactoryTest extends \PHPUnit_Framework_TestCase
     {
         $config = $this->process($this->buildConfig(), [[
             'bundles' => [
-                'content' => ['ivory_ckeditor' => false],
+                'content' => ['fos_ckeditor' => false],
             ],
         ]]);
 
         $this->create($config);
 
-        $this->assertEquals([], $this->container->getParameter('cmf_sonata_phpcr_admin_integration.content.ivory_ckeditor'));
+        $this->assertEquals([], $this->container->getParameter('cmf_sonata_phpcr_admin_integration.content.fos_ckeditor'));
     }
 
     public function testCKEditorEnabledWithConfigName()
     {
         $config = $this->process($this->buildConfig(), [[
             'bundles' => [
-                'content' => ['ivory_ckeditor' => ['config_name' => 'default']],
+                'content' => ['fos_ckeditor' => ['config_name' => 'default']],
             ],
         ]]);
 
         $this->create($config);
 
-        $this->assertEquals(['config_name' => 'default'], $this->container->getParameter('cmf_sonata_phpcr_admin_integration.content.ivory_ckeditor'));
+        $this->assertEquals(['config_name' => 'default'], $this->container->getParameter('cmf_sonata_phpcr_admin_integration.content.fos_ckeditor'));
     }
 
     protected function buildConfig()

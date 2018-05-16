@@ -27,7 +27,7 @@ return [
     Symfony\Cmf\Bundle\MenuBundle\CmfMenuBundle::class => ['all' => true],
     Symfony\Cmf\Bundle\ContentBundle\CmfContentBundle::class => ['all' => true],
     JMS\SerializerBundle\JMSSerializerBundle::class => ['all' => true],
-    Ivory\CKEditorBundle\IvoryCKEditorBundle::class => ['all' => true],
+    CKEditorBundle::class => ['all' => true],
     SonataBlockBundle::class => ['all' => true],
     SonataCoreBundle::class => ['all' => true],
     SonataAdminBundle::class => ['all' => true],
