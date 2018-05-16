@@ -33,6 +33,7 @@ env:
     - KERNEL_CLASS=Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Fixtures\App\Kernel
     - SYMFONY_PHPUNIT_VERSION=5.7
     - TEST_INSTALLATION=false
+    - COMPOSER_MEMORY_LIMIT=-1
 
 matrix:
   include:
@@ -56,7 +57,7 @@ before_install:
   - if [ "$SYMFONY_VERSION" != "" ]; then composer require symfony/symfony:${SYMFONY_VERSION} --no-update; fi
   - export BRANCH=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then echo $TRAVIS_BRANCH; else echo $TRAVIS_PULL_REQUEST_BRANCH; fi)
 
-install: travis_wait php -d memory_limit=-1 composer  --prefer-source $COMPOSER_FLAGS
+install: travis_wait composer update --prefer-dist $COMPOSER_FLAGS
 
 script:
   - if [ "${TEST_INSTALLATION}" == true ]; then make test_installation; else make test; fi
