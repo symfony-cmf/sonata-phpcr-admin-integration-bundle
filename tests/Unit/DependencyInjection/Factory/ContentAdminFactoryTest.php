@@ -62,7 +62,7 @@ class ContentAdminFactoryTest extends \PHPUnit_Framework_TestCase
 
         $this->create($config);
 
-        $this->assertEquals([], $this->container->getParameter('cmf_sonata_phpcr_admin_integration.content.fos_ckeditor'));
+        $this->assertEquals([], $this->container->getParameter('cmf_sonata_phpcr_admin_integration.content.fos_ck_editor'));
     }
 
     public function testCKEditorEnabledWithConfigName()

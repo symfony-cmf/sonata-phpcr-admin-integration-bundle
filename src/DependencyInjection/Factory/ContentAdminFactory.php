@@ -84,7 +84,7 @@ class ContentAdminFactory implements AdminFactoryInterface
         $ckeditorConfig = [];
         if ($this->isConfigEnabledAuto($container, $config['fos_ck_editor']['enabled'], 'FOSCKEditorBundle', $message)) {
             if (!isset($config['fos_ck_editor']['config_name'])) {
-                throw new InvalidConfigurationException('The cmf_sonata_phpcr_admin_integration.bundles.content.fos_ck_editor.config_name setting has to be defined when IvoryCKEditorBundle integration is enabled.');
+                throw new InvalidConfigurationException('The cmf_sonata_phpcr_admin_integration.bundles.content.fos_ck_editor.config_name setting has to be defined when FOSCKEditorBundle integration is enabled.');
             }
 
             unset($config['fos_ck_editor']['enabled']);
