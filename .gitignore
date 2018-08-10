@@ -1,3 +1,4 @@
+.idea
 tests/Fixtures/App/var/cache
 tests/Fixtures/App/var/logs
 !tests/Fixtures/App/var/.gitempty
