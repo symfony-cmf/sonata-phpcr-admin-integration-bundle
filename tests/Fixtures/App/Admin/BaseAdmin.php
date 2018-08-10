@@ -15,6 +15,8 @@ use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\DoctrinePHPCRAdminBundle\Admin\Admin;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 /**
  * @author Maximilian Berghoff <Maximilian.Berghoff@mayflower.de>
@@ -38,9 +40,9 @@ class BaseAdmin extends Admin
     {
         $formMapper
             ->with('form.group_general')
-            ->add('name', 'text')
-            ->add('title', 'text')
-            ->add('body', 'textarea', ['required' => false])
+            ->add('name', TextType::class)
+            ->add('title', TextType::class)
+            ->add('body', TextareaType::class, ['required' => false])
             ->end()
         ;
     }

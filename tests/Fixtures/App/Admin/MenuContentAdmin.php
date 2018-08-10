@@ -14,6 +14,7 @@ namespace Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Fixtures\Ap
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\DoctrinePHPCRAdminBundle\Admin\Admin;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 /**
  * Common base admin for Menu and MenuNode.
@@ -42,7 +43,7 @@ class MenuContentAdmin extends Admin
     {
         $formMapper
             ->with('form.group_general')
-                ->add('title', 'text')
+                ->add('title', TextType::class)
             ->end()
         ;
     }
