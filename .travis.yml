@@ -33,6 +33,7 @@ env:
     - KERNEL_CLASS=Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Fixtures\App\Kernel
     - SYMFONY_PHPUNIT_VERSION=5.7
     - TEST_INSTALLATION=false
+    - GITHUB_TOKEN=50f7b2dd2c8b74e441a1da1010e1a45e6c2e69f9
 
 matrix:
   include:
