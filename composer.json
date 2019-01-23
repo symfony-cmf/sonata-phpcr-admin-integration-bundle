@@ -18,7 +18,7 @@
     "require": {
         "php": "^7.1",
         "symfony/framework-bundle": "^2.8 || ^3.3 || ^4.0",
-        "sonata-project/doctrine-phpcr-admin-bundle": "^2.1",
+        "sonata-project/doctrine-phpcr-admin-bundle": "^2.2",
         "sonata-project/admin-bundle": "^3.6.0",
         "symfony-cmf/tree-browser-bundle": "^2.0"
     },
@@ -37,10 +37,10 @@
         "matthiasnoback/symfony-dependency-injection-test": "^1.1",
         "matthiasnoback/symfony-config-test": "^2.1",
         "burgov/key-value-form-bundle": "^1.0",
-        "egeloen/ckeditor-bundle": "^4.0",
         "symfony/asset": "^2.8 || ^3.3 || ^4.0",
         "symfony/browser-kit": "^2.8 || ^3.3 || ^4.0",
-        "symfony/css-selector": "^2.8 || ^3.3 || ^4.0"
+        "symfony/css-selector": "^2.8 || ^3.3 || ^4.0",
+        "friendsofsymfony/ckeditor-bundle": "^1.0"
     },
     "suggest": {
         "symfony-cmf/routing-bundle": "To make use of the alternate locale provider.",

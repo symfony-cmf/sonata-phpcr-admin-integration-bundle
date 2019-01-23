@@ -4,7 +4,7 @@ cmf_sonata_phpcr_admin_integration:
         core: ~
         menu: ~
         content:
-            ivory_ckeditor: { config_name: cmf_sonata_admin_integration }
+            fos_ck_editor: { config_name: cmf_sonata_admin_integration }
 
         routing:
             basepath: /test/routing
@@ -44,7 +44,7 @@ cmf_core:
     multilang:
         locales: [en, de]
 
-ivory_ck_editor:
+fos_ck_editor:
     configs:
         cmf_sonata_admin_integration: { toolbar: standard }
 

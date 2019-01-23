@@ -11,7 +11,7 @@
 
 namespace Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\Content;
 
-use Ivory\CKEditorBundle\Form\Type\CKEditorType;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
@@ -40,7 +40,7 @@ class StaticContentAdmin extends AbstractAdmin
     /**
      * Set configuration for CKEditorType.
      *
-     * Documentation: http://symfony.com/doc/master/bundles/IvoryCKEditorBundle/usage/config.html
+     * Documentation: http://symfony.com/doc/master/bundles/FOSCKEditorBundle/usage/config.html
      *
      * @param array $config configuration for CKEditorType
      */
