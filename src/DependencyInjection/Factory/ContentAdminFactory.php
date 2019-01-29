@@ -11,7 +11,7 @@
 
 namespace Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\DependencyInjection\Factory;
 
-use Ivory\CKEditorBundle\IvoryCKEditorBundle;
+use FOS\CKEditorBundle\FOSCKEditorBundle;
 use Symfony\Component\Config\Definition\Builder\NodeBuilder;
 use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -38,7 +38,7 @@ class ContentAdminFactory implements AdminFactoryInterface
     public function addConfiguration(NodeBuilder $builder)
     {
         $builder
-            ->arrayNode('ivory_ckeditor')
+            ->arrayNode('fos_ckeditor')
                 ->treatFalseLike(['enabled' => false])
                 ->treatTrueLike(['enabled' => true])
                 ->treatNullLike(['enabled' => 'auto'])
@@ -62,22 +62,22 @@ class ContentAdminFactory implements AdminFactoryInterface
     {
         $loader->load('content.xml');
 
-        $message = 'IvoryCKEditorBundle integration was explicitely enabled, but the bundle is not available.';
-        if (class_exists(IvoryCKEditorBundle::class)) {
+        $message = 'FOSCKEditorBundle integration was explicitely enabled, but the bundle is not available.';
+        if (class_exists(FOSCKEditorBundle::class)) {
             $message .= ' (did you forget to register the bundle in the AppKernel?)';
         }
 
         $ckeditorConfig = [];
-        if ($this->isConfigEnabledAuto($container, $config['ivory_ckeditor']['enabled'], 'IvoryCKEditorBundle', $message)) {
-            if (!isset($config['ivory_ckeditor']['config_name'])) {
-                throw new InvalidConfigurationException('The cmf_sonata_phpcr_admin_integration.bundles.content.ivory_ckeditor.config_name setting has to be defined when IvoryCKEditorBundle integration is enabled.');
+        if ($this->isConfigEnabledAuto($container, $config['fos_ckeditor']['enabled'], 'FOSCKEditorBundle', $message)) {
+            if (!isset($config['fos_ckeditor']['config_name'])) {
+                throw new InvalidConfigurationException('The cmf_sonata_phpcr_admin_integration.bundles.content.fos_ckeditor.config_name setting has to be defined when FOSCKEditorBundle integration is enabled.');
             }
 
-            unset($config['ivory_ckeditor']['enabled']);
+            unset($config['fos_ckeditor']['enabled']);
 
-            $ckeditorConfig = $config['ivory_ckeditor'];
+            $ckeditorConfig = $config['fos_ckeditor'];
         }
 
-        $container->setParameter('cmf_sonata_phpcr_admin_integration.content.ivory_ckeditor', $ckeditorConfig);
+        $container->setParameter('cmf_sonata_phpcr_admin_integration.content.fos_ckeditor', $ckeditorConfig);
     }
 }

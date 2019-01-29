@@ -4,7 +4,7 @@ cmf_sonata_phpcr_admin_integration:
         core: ~
         menu: ~
         content:
-            ivory_ckeditor: { config_name: cmf_sonata_admin_integration }
+            fos_ckeditor: { config_name: cmf_sonata_admin_integration }
 
         routing:
             basepath: /test/routing
@@ -36,6 +36,8 @@ cmf_routing:
 
 twig:
     exception_controller: cmf_seo.error.suggestion_provider.controller:listAction
+    form_themes:
+        - '@FOSCKEditor/Form/ckeditor_widget.html.twig'
 
 cmf_core:
     persistence:
@@ -44,7 +46,7 @@ cmf_core:
     multilang:
         locales: [en, de]
 
-ivory_ck_editor:
+fos_ck_editor:
     configs:
         cmf_sonata_admin_integration: { toolbar: standard }
 
