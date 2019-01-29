@@ -23,7 +23,7 @@
         "symfony-cmf/tree-browser-bundle": "^2.0"
     },
     "require-dev": {
-        "symfony-cmf/testing": "^2.1",
+        "symfony-cmf/testing": "^2.1.11",
         "symfony-cmf/core-bundle": "^2.1",
         "symfony-cmf/routing-bundle": "^2.1",
         "symfony-cmf/seo-bundle": "^2.1",
