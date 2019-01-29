@@ -40,8 +40,9 @@ class StaticContentAdmin extends AbstractAdmin
     /**
      * Set configuration for CKEditorType.
      *
-     * Documentation: https://symfony.com/doc/master/bundles/FOSCKEditorBundle/index.html
-     * @param array $config configuration for CKEditorType
+     * Documentation: https://symfony.com/doc/master/bundles/FOSCKEditorBundle/usage/config.html
+     *
+     *  @param array $config configuration for CKEditorType
      */
     public function setCkEditorConfig(array $config)
     {
