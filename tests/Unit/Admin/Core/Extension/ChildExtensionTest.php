@@ -11,9 +11,10 @@
 
 namespace Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Unit\Admin\Core\Extension;
 
+use PHPUnit\Framework\TestCase;
 use Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Admin\Core\Extension\ChildExtension;
 
-class ChildExtensionTest extends \PHPUnit_Framework_TestCase
+class ChildExtensionTest extends TestCase
 {
     public function testAlterNewInstance()
     {

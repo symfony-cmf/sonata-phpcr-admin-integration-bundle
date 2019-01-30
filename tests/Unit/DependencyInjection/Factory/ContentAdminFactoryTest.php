@@ -11,6 +11,7 @@
 
 namespace Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Unit\DependencyInjection\Factory;
 
+use PHPUnit\Framework\TestCase;
 use Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\DependencyInjection\Factory\ContentAdminFactory;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\Processor;
@@ -21,7 +22,7 @@ use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
  * @author Wouter de Jong <wouter@wouterj.nl>
  * @author Maximilian Berghoff <Maximilian.Berghoff@mayflower.de>
  */
-class ContentAdminFactoryTest extends \PHPUnit_Framework_TestCase
+class ContentAdminFactoryTest extends TestCase
 {
     private $factory;
 
