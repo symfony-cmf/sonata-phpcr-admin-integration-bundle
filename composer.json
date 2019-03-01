@@ -17,7 +17,7 @@
     ],
     "require": {
         "php": "^7.1",
-        "symfony/framework-bundle": "^3.4 || ^4.0",
+        "symfony/framework-bundle": "^3.4 || ^4.1",
         "sonata-project/doctrine-phpcr-admin-bundle": "^2.2",
         "sonata-project/admin-bundle": "^3.6.0",
         "symfony-cmf/tree-browser-bundle": "^2.0",
@@ -37,9 +37,9 @@
         "symfony/phpunit-bridge": "^4.2.2",
         "burgov/key-value-form-bundle": "^1.0",
         "friendsofsymfony/ckeditor-bundle": "^1.0 || ^2.0",
-        "symfony/asset": "^3.4 || ^4.0",
-        "symfony/browser-kit": "^3.4 || ^4.0",
-        "symfony/css-selector": "^3.4 || ^4.0",
+        "symfony/asset": "^3.4 || ^4.1",
+        "symfony/browser-kit": "^3.4 || ^4.1",
+        "symfony/css-selector": "^3.4 || ^4.1",
         "matthiasnoback/symfony-dependency-injection-test": "^3.1",
         "matthiasnoback/symfony-config-test": "^4.0"
     },
