@@ -1,9 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the Symfony CMF package.
  *
- * (c) 2011-2017 Symfony CMF
+ * (c) Symfony CMF
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -16,21 +18,10 @@ use Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\DependencyInjection\Cmf
 
 class CmfSonataAdminExtensionTest extends AbstractExtensionTestCase
 {
-    /**
-     * {@inheritdoc}
-     */
-    protected function getContainerExtensions()
-    {
-        return [
-            new CmfSonataPhpcrAdminIntegrationExtension(),
-        ];
-    }
-
-    /**
-     * @expectedException \Symfony\Component\Config\Definition\Exception\InvalidConfigurationException
-     */
     public function testThatBundlesAreConfigured()
     {
+        $this->expectException(\Symfony\Component\Config\Definition\Exception\InvalidConfigurationException::class);
+
         $this->container->setParameter(
             'kernel.bundles',
             [
@@ -62,5 +53,15 @@ class CmfSonataAdminExtensionTest extends AbstractExtensionTestCase
             'cmf_resource.description.enhancer',
             ['alias' => 'sonata_phpcr_admin']
         );
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function getContainerExtensions()
+    {
+        return [
+            new CmfSonataPhpcrAdminIntegrationExtension(),
+        ];
     }
 }

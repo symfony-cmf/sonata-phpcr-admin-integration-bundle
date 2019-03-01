@@ -1,9 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the Symfony CMF package.
  *
- * (c) 2011-2017 Symfony CMF
+ * (c) Symfony CMF
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -75,15 +77,6 @@ class CmfSonataPhpcrAdminIntegrationExtension extends Extension implements Compi
         return new Configuration($this->factories);
     }
 
-    private function loadBundles(array $config, XmlFileLoader $loader, ContainerBuilder $container)
-    {
-        foreach ($this->factories as $name => $factory) {
-            if ($this->isConfigEnabled($container, $config[$name])) {
-                $factory->create($config[$name], $container, $loader);
-            }
-        }
-    }
-
     /**
      * Registers an admin factory.
      *
@@ -111,6 +104,15 @@ class CmfSonataPhpcrAdminIntegrationExtension extends Extension implements Compi
     public function getXsdValidationBasePath()
     {
         return __DIR__.'/../Resources/config/schema';
+    }
+
+    private function loadBundles(array $config, XmlFileLoader $loader, ContainerBuilder $container)
+    {
+        foreach ($this->factories as $name => $factory) {
+            if ($this->isConfigEnabled($container, $config[$name])) {
+                $factory->create($config[$name], $container, $loader);
+            }
+        }
     }
 
     private function addDefaultFactories(ContainerBuilder $container)

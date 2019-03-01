@@ -1,9 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the Symfony CMF package.
  *
- * (c) 2011-2017 Symfony CMF
+ * (c) Symfony CMF
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -11,6 +13,7 @@
 
 namespace Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Unit\DependencyInjection\Factory;
 
+use PHPUnit\Framework\TestCase;
 use Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\DependencyInjection\Factory\ContentAdminFactory;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\Processor;
@@ -21,7 +24,7 @@ use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
  * @author Wouter de Jong <wouter@wouterj.nl>
  * @author Maximilian Berghoff <Maximilian.Berghoff@mayflower.de>
  */
-class ContentAdminFactoryTest extends \PHPUnit_Framework_TestCase
+class ContentAdminFactoryTest extends TestCase
 {
     private $factory;
 
@@ -37,12 +40,11 @@ class ContentAdminFactoryTest extends \PHPUnit_Framework_TestCase
         $this->fileLoader = $this->createMock(XmlFileLoader::class);
     }
 
-    /**
-     * @expectedException \Symfony\Component\Config\Definition\Exception\InvalidConfigurationException
-     * @expectedExceptionMessage config_name setting has to be defined when FOSCKEditorBundle integration is enabled
-     */
     public function testInvalidCKEditorEnabledWithoutConfigName()
     {
+        $this->expectException(\Symfony\Component\Config\Definition\Exception\InvalidConfigurationException::class);
+        $this->expectExceptionMessage('config_name setting has to be defined when FOSCKEditorBundle integration is enabled');
+
         $config = $this->process($this->buildConfig(), [[
             'bundles' => [
                 'content' => true,

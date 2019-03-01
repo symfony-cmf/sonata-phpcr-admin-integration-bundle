@@ -1,9 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the Symfony CMF package.
  *
- * (c) 2011-2017 Symfony CMF
+ * (c) Symfony CMF
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -32,6 +34,36 @@ class RouteAdmin extends AbstractAdmin
      * @var string
      */
     protected $contentRoot;
+
+    public function setContentRoot($contentRoot)
+    {
+        $this->contentRoot = $contentRoot;
+    }
+
+    public function getExportFormats()
+    {
+        return [];
+    }
+
+    public function prePersist($object)
+    {
+        $defaults = array_filter($object->getDefaults());
+        $object->setDefaults($defaults);
+    }
+
+    public function preUpdate($object)
+    {
+        $defaults = array_filter($object->getDefaults());
+        $object->setDefaults($defaults);
+    }
+
+    public function toString($object)
+    {
+        return $object instanceof Route && $object->getId()
+            ? $object->getId()
+            : $this->trans('link_add', [], 'SonataAdminBundle')
+        ;
+    }
 
     protected function configureListFields(ListMapper $listMapper)
     {
@@ -101,16 +133,6 @@ class RouteAdmin extends AbstractAdmin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper->add('name', 'doctrine_phpcr_nodename');
-    }
-
-    public function setContentRoot($contentRoot)
-    {
-        $this->contentRoot = $contentRoot;
-    }
-
-    public function getExportFormats()
-    {
-        return [];
     }
 
     /**
@@ -183,25 +205,5 @@ class RouteAdmin extends AbstractAdmin
         }
 
         return $options;
-    }
-
-    public function prePersist($object)
-    {
-        $defaults = array_filter($object->getDefaults());
-        $object->setDefaults($defaults);
-    }
-
-    public function preUpdate($object)
-    {
-        $defaults = array_filter($object->getDefaults());
-        $object->setDefaults($defaults);
-    }
-
-    public function toString($object)
-    {
-        return $object instanceof Route && $object->getId()
-            ? $object->getId()
-            : $this->trans('link_add', [], 'SonataAdminBundle')
-        ;
     }
 }
