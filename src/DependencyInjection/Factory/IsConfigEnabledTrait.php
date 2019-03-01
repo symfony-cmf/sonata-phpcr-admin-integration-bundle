@@ -1,9 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the Symfony CMF package.
  *
- * (c) 2011-2017 Symfony CMF
+ * (c) Symfony CMF
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -18,7 +20,7 @@ trait IsConfigEnabledTrait
 {
     public function isConfigEnabled(ContainerBuilder $container, array $config)
     {
-        if (!array_key_exists('enabled', $config)) {
+        if (!\array_key_exists('enabled', $config)) {
             throw new InvalidArgumentException("The config array has no 'enabled' key.");
         }
 
@@ -28,7 +30,7 @@ trait IsConfigEnabledTrait
     public function isConfigEnabledAuto(ContainerBuilder $container, $enabled, $requiredBundle, $message = null)
     {
         $enabled = $container->getParameterBag()->resolveValue($enabled);
-        $bundleExists = array_key_exists($requiredBundle, $container->getParameter('kernel.bundles'));
+        $bundleExists = \array_key_exists($requiredBundle, $container->getParameter('kernel.bundles'));
 
         if ('auto' === $enabled) {
             $enabled = $bundleExists;

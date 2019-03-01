@@ -1,9 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the Symfony CMF package.
  *
- * (c) 2011-2017 Symfony CMF
+ * (c) Symfony CMF
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -25,70 +27,6 @@ use Symfony\Component\Form\FormEvents;
 class MenuNodeAdmin extends AbstractMenuNodeAdmin
 {
     protected $recursiveBreadcrumbs = true;
-
-    protected function configureListFields(ListMapper $listMapper)
-    {
-        parent::configureListFields($listMapper);
-
-        $listMapper
-            ->add('uri', 'text')
-            ->add('route', 'text')
-        ;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    protected function configureFormFields(FormMapper $formMapper)
-    {
-        $formMapper
-            ->tab('form.tab_general')
-                ->with('form.group_location', ['class' => 'col-sm-3'])
-                    ->add(
-                        'parentDocument',
-                        TreeSelectType::class,
-                        ['root_node' => $this->menuRoot, 'widget' => 'browser']
-                    )
-                ->end()
-            ->end()
-        ;
-
-        $this->addTransformerToField($formMapper->getFormBuilder(), 'parentDocument');
-
-        parent::configureFormFields($formMapper);
-
-        if (null === $this->getParentFieldDescription()) {
-            // Add the choice for the node links "target"
-            $formMapper
-                ->tab('form.tab_general')
-                    ->with('form.group_target', ['class' => 'col-sm-6'])
-                        ->add('linkType', ChoiceFieldMaskType::class, [
-                            'choices' => [
-                                'route' => 'route',
-                                'uri' => 'uri',
-                                'content' => 'content',
-                            ],
-                            'map' => [
-                                'route' => ['link'],
-                                'uri' => ['link'],
-                                'content' => ['content', TreeSelectType::class],
-                            ],
-                            'placeholder' => 'auto',
-                            'required' => false,
-                        ])
-                        ->add('link', TextType::class, ['required' => false, 'mapped' => false])
-                        ->add(
-                            'content',
-                            TreeSelectType::class,
-                            ['root_node' => $this->contentRoot, 'widget' => 'browser', 'required' => false]
-                        )
-                    ->end()
-                ->end()
-            ;
-
-            $this->addTransformerToField($formMapper->getFormBuilder(), 'content');
-        }
-    }
 
     /**
      * {@inheritdoc}
@@ -204,5 +142,69 @@ class MenuNodeAdmin extends AbstractMenuNodeAdmin
     public function setRecursiveBreadcrumbs($recursiveBreadcrumbs)
     {
         $this->recursiveBreadcrumbs = (bool) $recursiveBreadcrumbs;
+    }
+
+    protected function configureListFields(ListMapper $listMapper)
+    {
+        parent::configureListFields($listMapper);
+
+        $listMapper
+            ->add('uri', 'text')
+            ->add('route', 'text')
+        ;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function configureFormFields(FormMapper $formMapper)
+    {
+        $formMapper
+            ->tab('form.tab_general')
+                ->with('form.group_location', ['class' => 'col-sm-3'])
+                    ->add(
+                        'parentDocument',
+                        TreeSelectType::class,
+                        ['root_node' => $this->menuRoot, 'widget' => 'browser']
+                    )
+                ->end()
+            ->end()
+        ;
+
+        $this->addTransformerToField($formMapper->getFormBuilder(), 'parentDocument');
+
+        parent::configureFormFields($formMapper);
+
+        if (null === $this->getParentFieldDescription()) {
+            // Add the choice for the node links "target"
+            $formMapper
+                ->tab('form.tab_general')
+                    ->with('form.group_target', ['class' => 'col-sm-6'])
+                        ->add('linkType', ChoiceFieldMaskType::class, [
+                            'choices' => [
+                                'route' => 'route',
+                                'uri' => 'uri',
+                                'content' => 'content',
+                            ],
+                            'map' => [
+                                'route' => ['link'],
+                                'uri' => ['link'],
+                                'content' => ['content', TreeSelectType::class],
+                            ],
+                            'placeholder' => 'auto',
+                            'required' => false,
+                        ])
+                        ->add('link', TextType::class, ['required' => false, 'mapped' => false])
+                        ->add(
+                            'content',
+                            TreeSelectType::class,
+                            ['root_node' => $this->contentRoot, 'widget' => 'browser', 'required' => false]
+                        )
+                    ->end()
+                ->end()
+            ;
+
+            $this->addTransformerToField($formMapper->getFormBuilder(), 'content');
+        }
     }
 }

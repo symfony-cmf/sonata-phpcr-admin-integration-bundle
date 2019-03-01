@@ -1,9 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the Symfony CMF package.
  *
- * (c) 2011-2017 Symfony CMF
+ * (c) Symfony CMF
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -23,6 +25,17 @@ abstract class AbstractBlockAdminTestCase extends BaseTestCase
      * @var Client
      */
     protected $client;
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setUp()
+    {
+        $this->db('PHPCR')->loadFixtures([
+            'Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Fixtures\App\DataFixtures\Phpcr\LoadBlockData',
+        ]);
+        $this->client = $this->createClient();
+    }
 
     /**
      * Admin listing test case.
@@ -48,17 +61,6 @@ abstract class AbstractBlockAdminTestCase extends BaseTestCase
      * Admin show test case.
      */
     abstract public function testBlockShow();
-
-    /**
-     * {@inheritdoc}
-     */
-    public function setUp()
-    {
-        $this->db('PHPCR')->loadFixtures([
-            'Symfony\Cmf\Bundle\SonataPhpcrAdminIntegrationBundle\Tests\Fixtures\App\DataFixtures\Phpcr\LoadBlockData',
-        ]);
-        $this->client = $this->createClient();
-    }
 
     /**
      * Make defaults listing assertions.

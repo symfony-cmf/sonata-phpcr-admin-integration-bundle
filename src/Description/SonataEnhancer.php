@@ -1,9 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the Symfony CMF package.
  *
- * (c) 2011-2017 Symfony CMF
+ * (c) Symfony CMF
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -79,7 +81,7 @@ class SonataEnhancer implements DescriptionEnhancerInterface
             ], true);
 
             $linkKey = trim($code, '.)');
-            if (array_key_exists($linkKey, self::$linkKeyMapping)) {
+            if (\array_key_exists($linkKey, self::$linkKeyMapping)) {
                 $description->set(self::$linkKeyMapping[$linkKey], $url);
             }
         }
@@ -107,7 +109,7 @@ class SonataEnhancer implements DescriptionEnhancerInterface
 
     private function getAdminByClass($class)
     {
-        if (array_key_exists($class, $this->adminMap)) {
+        if (\array_key_exists($class, $this->adminMap)) {
             return $this->adminMap[$class];
         }
 

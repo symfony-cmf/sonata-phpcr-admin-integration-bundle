@@ -1,9 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the Symfony CMF package.
  *
- * (c) 2011-2017 Symfony CMF
+ * (c) Symfony CMF
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -47,6 +49,14 @@ class StaticContentAdmin extends AbstractAdmin
     public function setCkEditorConfig(array $config)
     {
         $this->ckEditorConfig = $config;
+    }
+
+    public function toString($object)
+    {
+        return $object instanceof StaticContentBase && $object->getTitle()
+            ? $object->getTitle()
+            : $this->trans('link_add', [], 'SonataAdminBundle')
+        ;
     }
 
     protected function configureListFields(ListMapper $listMapper)
@@ -95,14 +105,6 @@ class StaticContentAdmin extends AbstractAdmin
         $datagridMapper
             ->add('title', 'doctrine_phpcr_string')
             ->add('name', 'doctrine_phpcr_nodename')
-        ;
-    }
-
-    public function toString($object)
-    {
-        return $object instanceof StaticContentBase && $object->getTitle()
-            ? $object->getTitle()
-            : $this->trans('link_add', [], 'SonataAdminBundle')
         ;
     }
 }

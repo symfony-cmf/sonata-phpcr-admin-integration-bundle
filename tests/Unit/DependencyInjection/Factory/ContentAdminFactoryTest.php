@@ -1,9 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the Symfony CMF package.
  *
- * (c) 2011-2017 Symfony CMF
+ * (c) Symfony CMF
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -38,12 +40,11 @@ class ContentAdminFactoryTest extends TestCase
         $this->fileLoader = $this->createMock(XmlFileLoader::class);
     }
 
-    /**
-     * @expectedException \Symfony\Component\Config\Definition\Exception\InvalidConfigurationException
-     * @expectedExceptionMessage config_name setting has to be defined when FOSCKEditorBundle integration is enabled
-     */
     public function testInvalidCKEditorEnabledWithoutConfigName()
     {
+        $this->expectException(\Symfony\Component\Config\Definition\Exception\InvalidConfigurationException::class);
+        $this->expectExceptionMessage('config_name setting has to be defined when FOSCKEditorBundle integration is enabled');
+
         $config = $this->process($this->buildConfig(), [[
             'bundles' => [
                 'content' => true,

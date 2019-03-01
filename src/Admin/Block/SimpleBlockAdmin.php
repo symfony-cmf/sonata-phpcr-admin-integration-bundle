@@ -1,9 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the Symfony CMF package.
  *
- * (c) 2011-2017 Symfony CMF
+ * (c) Symfony CMF
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -23,6 +25,14 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
  */
 class SimpleBlockAdmin extends AbstractBlockAdmin
 {
+    public function toString($object)
+    {
+        return $object instanceof SimpleBlock && $object->getTitle()
+            ? $object->getTitle()
+            : parent::toString($object)
+        ;
+    }
+
     /**
      * {@inheritdoc}
      */
@@ -59,14 +69,6 @@ class SimpleBlockAdmin extends AbstractBlockAdmin
         $datagridMapper
             ->add('title', 'doctrine_phpcr_string')
             ->add('name', 'doctrine_phpcr_nodename')
-        ;
-    }
-
-    public function toString($object)
-    {
-        return $object instanceof SimpleBlock && $object->getTitle()
-            ? $object->getTitle()
-            : parent::toString($object)
         ;
     }
 }

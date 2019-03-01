@@ -1,9 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the Symfony CMF package.
  *
- * (c) 2011-2017 Symfony CMF
+ * (c) Symfony CMF
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -22,6 +24,19 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 class RedirectRouteAdmin extends AbstractAdmin
 {
     protected $translationDomain = 'CmfSonataPhpcrAdminIntegrationBundle';
+
+    public function getExportFormats()
+    {
+        return [];
+    }
+
+    public function toString($object)
+    {
+        return $object instanceof Route && $object->getId()
+            ? $object->getId()
+            : $this->trans('link_add', [], 'SonataAdminBundle')
+        ;
+    }
 
     protected function configureListFields(ListMapper $listMapper)
     {
@@ -57,18 +72,5 @@ class RedirectRouteAdmin extends AbstractAdmin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper->add('name', 'doctrine_phpcr_nodename');
-    }
-
-    public function getExportFormats()
-    {
-        return [];
-    }
-
-    public function toString($object)
-    {
-        return $object instanceof Route && $object->getId()
-            ? $object->getId()
-            : $this->trans('link_add', [], 'SonataAdminBundle')
-        ;
     }
 }

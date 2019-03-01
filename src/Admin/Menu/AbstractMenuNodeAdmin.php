@@ -1,9 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the Symfony CMF package.
  *
- * (c) 2011-2017 Symfony CMF
+ * (c) Symfony CMF
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -38,6 +40,35 @@ abstract class AbstractMenuNodeAdmin extends AbstractAdmin
      */
     protected $translationDomain = 'CmfSonataPhpcrAdminIntegrationBundle';
 
+    public function getExportFormats()
+    {
+        return [];
+    }
+
+    public function setContentRoot($contentRoot)
+    {
+        $this->contentRoot = $contentRoot;
+    }
+
+    public function setMenuRoot($menuRoot)
+    {
+        $this->menuRoot = $menuRoot;
+    }
+
+    public function setContentTreeBlock($contentTreeBlock)
+    {
+        $this->contentTreeBlock = $contentTreeBlock;
+    }
+
+    public function toString($object)
+    {
+        if ($object instanceof MenuNodeBase && $object->getLabel()) {
+            return $object->getLabel();
+        }
+
+        return $this->trans('link_add', [], 'SonataAdminBundle');
+    }
+
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
@@ -70,34 +101,5 @@ abstract class AbstractMenuNodeAdmin extends AbstractAdmin
             ->add('uri')
             ->add('content', null, ['associated_property' => 'title'])
         ;
-    }
-
-    public function getExportFormats()
-    {
-        return [];
-    }
-
-    public function setContentRoot($contentRoot)
-    {
-        $this->contentRoot = $contentRoot;
-    }
-
-    public function setMenuRoot($menuRoot)
-    {
-        $this->menuRoot = $menuRoot;
-    }
-
-    public function setContentTreeBlock($contentTreeBlock)
-    {
-        $this->contentTreeBlock = $contentTreeBlock;
-    }
-
-    public function toString($object)
-    {
-        if ($object instanceof MenuNodeBase && $object->getLabel()) {
-            return $object->getLabel();
-        }
-
-        return $this->trans('link_add', [], 'SonataAdminBundle');
     }
 }

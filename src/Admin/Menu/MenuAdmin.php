@@ -1,9 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the Symfony CMF package.
  *
- * (c) 2011-2017 Symfony CMF
+ * (c) Symfony CMF
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -17,6 +19,15 @@ use Symfony\Cmf\Bundle\MenuBundle\Doctrine\Phpcr\Menu;
 
 class MenuAdmin extends AbstractMenuNodeAdmin
 {
+    public function getNewInstance()
+    {
+        /** @var $new Menu */
+        $new = parent::getNewInstance();
+        $new->setParentDocument($this->getModelManager()->find(null, $this->menuRoot));
+
+        return $new;
+    }
+
     /**
      * {@inheritdoc}
      */
@@ -43,14 +54,5 @@ class MenuAdmin extends AbstractMenuNodeAdmin
                 ->end()
             ;
         }
-    }
-
-    public function getNewInstance()
-    {
-        /** @var $new Menu */
-        $new = parent::getNewInstance();
-        $new->setParentDocument($this->getModelManager()->find(null, $this->menuRoot));
-
-        return $new;
     }
 }

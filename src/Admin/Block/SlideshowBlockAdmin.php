@@ -1,9 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the Symfony CMF package.
  *
- * (c) 2011-2017 Symfony CMF
+ * (c) Symfony CMF
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -37,6 +39,36 @@ class SlideshowBlockAdmin extends AbstractBlockAdmin
     public function setEmbeddedSlidesAdmin($adminCode)
     {
         $this->embeddedAdminCode = $adminCode;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function prePersist($slideshow)
+    {
+        foreach ($slideshow->getChildren() as $child) {
+            $child->setName($this->generateName());
+        }
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function preUpdate($slideshow)
+    {
+        foreach ($slideshow->getChildren() as $child) {
+            if (!$this->modelManager->getNormalizedIdentifier($child)) {
+                $child->setName($this->generateName());
+            }
+        }
+    }
+
+    public function toString($object)
+    {
+        return $object instanceof SlideshowBlock && $object->getTitle()
+            ? $object->getTitle()
+            : parent::toString($object)
+        ;
     }
 
     /**
@@ -81,28 +113,6 @@ class SlideshowBlockAdmin extends AbstractBlockAdmin
     }
 
     /**
-     * {@inheritdoc}
-     */
-    public function prePersist($slideshow)
-    {
-        foreach ($slideshow->getChildren() as $child) {
-            $child->setName($this->generateName());
-        }
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function preUpdate($slideshow)
-    {
-        foreach ($slideshow->getChildren() as $child) {
-            if (!$this->modelManager->getNormalizedIdentifier($child)) {
-                $child->setName($this->generateName());
-            }
-        }
-    }
-
-    /**
      * Generate a most likely unique name.
      *
      * TODO: have blocks use the autoname annotation - https://github.com/symfony-cmf/BlockBundle/issues/149
@@ -111,14 +121,6 @@ class SlideshowBlockAdmin extends AbstractBlockAdmin
      */
     private function generateName()
     {
-        return 'child_'.time().'_'.rand();
-    }
-
-    public function toString($object)
-    {
-        return $object instanceof SlideshowBlock && $object->getTitle()
-            ? $object->getTitle()
-            : parent::toString($object)
-        ;
+        return 'child_'.time().'_'.random_int(0, getrandmax());
     }
 }

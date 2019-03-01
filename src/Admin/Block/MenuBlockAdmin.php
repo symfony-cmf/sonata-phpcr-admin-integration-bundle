@@ -1,9 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the Symfony CMF package.
  *
- * (c) 2011-2017 Symfony CMF
+ * (c) Symfony CMF
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -24,6 +26,31 @@ use Symfony\Cmf\Bundle\TreeBrowserBundle\Form\Type\TreeSelectType;
  */
 class MenuBlockAdmin extends AbstractBlockAdmin
 {
+    /**
+     * PHPCR to the root of all menu nodes for the selection of the target.
+     *
+     * @var string
+     */
+    private $menuPath;
+
+    /**
+     * Set the menu root for selection of the target of this block.
+     *
+     * @param string $menuPath
+     */
+    public function setMenuPath($menuPath)
+    {
+        $this->menuPath = $menuPath;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMenuPath()
+    {
+        return $this->menuPath;
+    }
+
     /**
      * {@inheritdoc}
      */
@@ -65,30 +92,5 @@ class MenuBlockAdmin extends AbstractBlockAdmin
         $datagridMapper
             ->add('name', 'doctrine_phpcr_nodename')
         ;
-    }
-
-    /**
-     * PHPCR to the root of all menu nodes for the selection of the target.
-     *
-     * @var string
-     */
-    private $menuPath;
-
-    /**
-     * Set the menu root for selection of the target of this block.
-     *
-     * @param string $menuPath
-     */
-    public function setMenuPath($menuPath)
-    {
-        $this->menuPath = $menuPath;
-    }
-
-    /**
-     * @return string
-     */
-    public function getMenuPath()
-    {
-        return $this->menuPath;
     }
 }
