@@ -41,7 +41,7 @@
         "symfony/browser-kit": "^3.4 || ^4.1",
         "symfony/css-selector": "^3.4 || ^4.1",
         "matthiasnoback/symfony-dependency-injection-test": "^3.1",
-        "matthiasnoback/symfony-config-test": "^4.0"
+        "matthiasnoback/symfony-config-test": "^4.0.1"
     },
     "suggest": {
         "symfony-cmf/routing-bundle": "To make use of the alternate locale provider.",
